@@ -71,6 +71,7 @@ Each phase must be submitted as a Pull Request:
 ## Instructor Role
 
 Acts as a Tech Lead reviewing PRs.
+---
 
 ---
 
