@@ -6,9 +6,12 @@
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Tassio Medrado
+* João Vitor
+* Lucas de Moraes
+* Gustavo Oliveira
+* Acenor de Lima
+* Guilherme Willian
 
 ## Repository Structure
 
