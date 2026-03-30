@@ -5,7 +5,7 @@
 
 ## Team Members
 
-* Matheus Pereira 
+* Mateus Pereira 
 * João Pedro Delguingaro
 * João Paulo
 * Caroline Cruz 
