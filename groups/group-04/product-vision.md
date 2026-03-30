@@ -8,7 +8,7 @@ No entanto alguns processos podem não ser tão satisfatórios conforme a propos
 Who are the users?
 
 ## Proposed Solution
-Describe the solution.
+A solução proposta para esses desafios, é a criação de um Software, o qual possibilitará a realização do cadastro online ao RU, utilizando as credenciais de acesso da Universidade. Nele, disponibilizando os itens do cardápio diário atualizado recorrentemente, a visualização do crédito disponível e sua recarga de forma online. Agilizando os processos e um acesso mais proveitoso do restaurante com o cadastro facilitado, a rápida identificação dos itens do cardápio e a agilidade com as recargas, sem o enfrentamento do filas desnecessárias.
 
 ## Competitors
 List competitors.
