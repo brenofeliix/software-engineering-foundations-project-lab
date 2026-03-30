@@ -8,7 +8,7 @@
 
 * Anthonio Marcos Olioni
 * Giovana Gomes da Silva
-* Name 3
+* Pedro Guilherme Mota Santos
 
 ## Repository Structure
 
