@@ -2,13 +2,14 @@
 
 ## Project Name
 
-(To be defined)
+Aplicativo RU (Estamos pensando)
 
 ## Team Members
 
 * Anthonio Marcos Olioni
 * Giovana Gomes da Silva
 * Pedro Guilherme Mota Santos
+* Guilherme Freitas da Costa Lopes
 
 ## Repository Structure
 
