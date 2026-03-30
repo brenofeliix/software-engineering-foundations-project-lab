@@ -6,8 +6,8 @@
 
 ## Team Members
 
-* Giovana Gomes da Silva
 * Anthonio Marcos Olioni
+* Giovana Gomes da Silva
 * Name 3
 
 ## Repository Structure
