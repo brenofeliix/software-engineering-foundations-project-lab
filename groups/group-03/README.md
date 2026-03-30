@@ -2,7 +2,6 @@
 
 ## É jogando que se aprende.
 
-(To be defined)
 
 ## Team Members
 
