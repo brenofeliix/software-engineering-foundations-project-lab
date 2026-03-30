@@ -2,14 +2,15 @@
 
 ## Project Name
 
-Aplicativo RU (Estamos pensando)
+PAPAR (nome até o momento)
 
 ## Team Members
 
 * Anthonio Marcos Olioni
 * Giovana Gomes da Silva
-* Pedro Guilherme Mota Santos
 * Guilherme Freitas da Costa Lopes
+* Gustavo Vinícius Coinete Silva
+* Pedro Guilherme Mota Santos
 
 ## Repository Structure
 
