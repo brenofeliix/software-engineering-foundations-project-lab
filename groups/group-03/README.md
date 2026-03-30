@@ -6,11 +6,11 @@
 
 ## Team Members
 
-*Matheus Pereira 
-*João Delguingaro
-*João Paulo
-*Caroline Cruz 
-*Pedro Lucas
+* Matheus Pereira 
+* João Pedro Delguingaro
+* João Paulo
+* Caroline Cruz 
+* Pedro Lucas
 
 ## Repository Structure
 
