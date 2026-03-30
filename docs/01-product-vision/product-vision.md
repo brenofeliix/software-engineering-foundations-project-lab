@@ -8,7 +8,7 @@ O atendimento presencial em estabelecimentos gastronômicos compromete a experi�
 
 ## Target Users
 * **Usuário Final:** o consumidor interessado por um atendimento mais ágil e transparente.
-* **Cliente (Stakeholder/Gestor):** proprietários e gerentes de estabelecimentos gastronômicos que necessitam de maior controle de negócio
+* **Cliente (Stakeholder/Gestor):** proprietários e gerentes de estabelecimentos gastronômicos que necessitam de maior controle de negócio.
 
 ## Proposed Solution
 Describe the solution.
