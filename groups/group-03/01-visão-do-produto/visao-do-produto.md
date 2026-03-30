@@ -6,7 +6,7 @@ lecionar antiquada que ainda vem sendo muito utilizada - adolescentes sentados e
 realizando atividades cansativas que geralmente não gera bons resultados
 
 ## Publico alvo
-Serão crianças/pré adolescentes que cursam entre o 5° ao 7° ano.
+Serão crianças/pré adolescentes que cursam entre o 6° ao 9° ano.
 
 ## Proposta de solucao
 Nosso projeto vem com a proposta de levar o estudo de forma intuitiva e estimulante, querendo auxiliar na vida acadêmica dos adoslescêntes.
