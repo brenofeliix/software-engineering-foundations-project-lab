@@ -7,7 +7,8 @@ O atendimento presencial em estabelecimentos gastronômicos compromete a experi�
 * Inflexibilidade de Custos, consequência direta dos recursos humanos empregados independentemente do horário de atendimento, o que compromete a escalabilidade dos lucros nos períodos de baixa demanda.
 
 ## Target Users
-Who are the users?
+* **Usuário Final:** o consumidor interessado por um atendimento mais ágil e transparente.
+* **Cliente (Stakeholder/Gestor):** proprietários e gerentes de estabelecimentos gastronômicos que necessitam de maior controle de negócio
 
 ## Proposed Solution
 Describe the solution.
