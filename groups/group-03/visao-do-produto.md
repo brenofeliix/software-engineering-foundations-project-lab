@@ -5,7 +5,7 @@ Cada vez mais se torna mais comum a evasão escolar e alto nível de desinteress
 lecionar antiquada que ainda vem sendo muito utilizada - adolescentes sentados em uma cadeira durante horas ao longo de uma semana
 realizando atividades maçantes.
 
-## Publico -alvo
+## Publico alvo
 Serão crianças/pré adolescentes que cursam entre o 5° ao 7° ano.
 
 ## Proposta de solucao
