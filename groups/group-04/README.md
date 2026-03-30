@@ -6,7 +6,7 @@
 
 ## Team Members
 
-* Name 1
+* Giovana Gomes da Silva
 * Name 2
 * Name 3
 
