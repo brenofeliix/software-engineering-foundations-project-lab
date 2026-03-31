@@ -9,6 +9,7 @@
 * Thiago Rafael Caixeta Tavares da Silva
 * Name 2
 * Name 3
+* Joaber Moreira da Silva
 
 ## Repository Structure
 
