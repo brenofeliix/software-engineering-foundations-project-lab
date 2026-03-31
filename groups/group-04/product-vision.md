@@ -1,9 +1,10 @@
 # Product Vision
 
 ## Problem
-A Universidade Federal de Rondonópolis, conta com o modelo de Restaurante Universitário em sua instituição, atendendo estudantes e servidores em suas refeições diárias, com preços mais acessíveis, cujo cadastro da conta e recarregamento dos creditos é realizado de maneira presencial e cobrado uma taxa para cada refeição. O estabelecimento nessa se faz conveniente com relação a agilidade e facilidade de acesso, pois está localizado no mesmo ambiente em que os estudantes e servidores tem acesso a estudos e aulas.
+A Universidade Federal de Rondonópolis (UFR) disponibiliza à comunidade acadêmica o Restaurante Universitário (RU) atendendo estudantes e servidores em suas refeições diárias, sendo essa uma unidade estratégica para a permanência estudantil que oferece refeições a preços acessíveis mediante um sistema de créditos pré-pagos realizado de forma presencial. Tendo em vista sua importância social, é relevante mitigar qualquer gargalo logístico que afete aficência desse processo. 
 
-No entanto alguns processos podem não ser satisfatórios conforme a proposta desses serviços, como o cadastro presencial é dificultoso, cardápio com acesso não tão usual e principalmente a recarga dos créditos, já que não é disponibilizado nenhuma plataforma que possibilita a visualização prévia da quantia disponível. Além da normal recorrência de filas para tal recarga, a qual prejudica estudantes e servidores no que deveria ser um ágil processo dentro da instituição.
+Destacam-se como principais problemas nesse modelo, a burocracia do cadastro exclusivamente presencial, dificuldade no aceso ao cardápio e, principalmente, a falta de uma interface que permita consulta de saldo e recarga remotamente. Esse cenário promove um fluxo e lento e filas longas, resultando na perda de tempo produtivo dos estudantes e servidores, reforçando a necessidade de um sistema digital que entre como facilitador desse serviço.
+
 
 ## Target Users
 Teste
