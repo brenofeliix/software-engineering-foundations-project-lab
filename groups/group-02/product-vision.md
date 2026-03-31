@@ -11,11 +11,7 @@ O atendimento presencial em estabelecimentos gastronômicos compromete a experi�
 * **Cliente (Stakeholder/Gestor):** proprietários e gerentes de estabelecimentos gastronômicos que necessitam de maior controle de negócio.
 
 ## Proposed Solution
-A solução consiste em uma Plataforma Web Responsiva que digitaliza a jornada de compra dentro do estabelecimento. O foco central é a desintermediação do pedido, transferindo o controle da montagem da comanda para o smartphone do próprio usuário.
 
-* **Otimização de Tempo:** Redução drástica do lead time entre a chegada do cliente e o envio do pedido para a produção.
-* **Confiabilidade de Dados:** Sistema de validação de pedidos que mitiga a incidência de pratos entregues incorretamente.
-* **Escalabilidade Operacional:** A infraestrutura tecnológica permite absorver aumentos de demanda sem a necessidade imediata de contratação de novos intermediários, estabilizando o custo fixo.
 
 ## Competitors
 Para se posicionar competitivamente frente às soluções de mercado, a aplicação integrará os seguintes módulos:
