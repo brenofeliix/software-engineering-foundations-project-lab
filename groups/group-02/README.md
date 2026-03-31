@@ -6,7 +6,7 @@
 
 ## Team Members
 
-* Name 1
+* Thiago Rafael Caixeta Tavares da Silva
 * Name 2
 * Name 3
 
