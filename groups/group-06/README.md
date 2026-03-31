@@ -34,7 +34,7 @@ Com o intuito de ajudar na organização e foco dos usuários durante os estudos
   
   04- Métrica
 
-  Baseado no tempo definido, o software criará um relatório que mostrará a evolução da pessoa durante os estudos por meio de gráficos, mostrando um relatório diário, que poderá ser acessado todos os dias, um relatório semanal que será divulgado no início de cada semana e, no último dia do mês, um relatório mensal.
+  Baseado no tempo definido, o software criará um relatório que mostrará a evolução da pessoa durante os estudos por meio de gráficos, mostrando um relatório diário que poderá ser acessado todos os dias, um relatório semanal que será divulgado no início de cada semana e, no último dia do mês, um relatório mensal.
 
   05- Recompensa
 
