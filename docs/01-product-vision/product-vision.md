@@ -12,7 +12,7 @@ Os principais usuários do aplicativo serão:
 	•	Gestores que precisam acompanhar relatórios e desempenho
 
 ## Proposed Solution
-Describe the solution.
+Esse software permite que as empresas moonitorem o fluxo de extoque em tempo real, acompanhando as entradas e saídas de produtos. Além disso, pode gerar relatorios personalizados simples com base nesses dados, como listas de saldos atuais e resumo de movimentações, além de oferecer alertas altomaticos para estoque baixoou excessivo.
 
 ## Competitors
 Alguns concorrentes ou soluções similares incluem:
