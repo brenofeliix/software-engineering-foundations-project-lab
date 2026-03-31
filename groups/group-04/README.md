@@ -2,7 +2,7 @@
 
 ## Project Name
 
-PAPAR (nome até o momento)
+APP RU (Ainda não temos um nome oficial)
 
 ## Team Members
 
