@@ -10,6 +10,7 @@
 * Flávio Eduardo Mendes Peixoto
 * Rafael Elim Oliveira
 * Joaber Moreira da Silva
+* Name
 
 ## Repository Structure
 
