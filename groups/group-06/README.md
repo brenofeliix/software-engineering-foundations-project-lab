@@ -30,7 +30,18 @@ Com o intuito de ajudar na organização e foco dos usuários durante os estudos
   
   03- Método Pomodoro:
   
-  Por meio do aplicativo, o usuário poderá definir um tempo de estudo e intervalo, sendo essa aplicação o Método Pomodoro. Isso será feito para que o estudante não se canse, desanime e desista de continuar o processo. Baseado no tempo definido, o software criará um relatório que mostrará a evolução da pessoa durante os estudos, com o objetivo de incetivá-la a continuar e melhorar seu rendimento. Tal relatório poderá ser acessado e verificado diariamente pela pessoa.
+  Por meio do aplicativo, o usuário poderá definir um tempo de estudo e intervalo para melhor gestão do tempo, sendo essa aplicação o Método Pomodoro. 
+  
+  04- Métrica
+
+  Baseado no tempo definido, o software criará um relatório que mostrará a evolução da pessoa durante os estudos por meio de gráficos.
+
+  05- Recompensa
+
+  Por intermédio dos dados presentes no relatório, ao final da semana, o usuário será recompensado com moedas fictícias que serão utilizadas dentro do aplicativo. Esse dinheiro será usado para a realização de compras de avatares e itens necessários para ele (casa, automóvel, vestimentas, alimentos). No aplicativo, será implementado um jogo em que nele há um mundo com avatar ou avatares, mas para ser conquistado cada item e avatares, é preciso ter uma boa métrica de estudo e ser recompensado por causa dela.
+
+  Todas essas funções foram pensadas com o objetivo de ajudar os usuários a persistirem no estudes e não desanimarem e desistirem durante o processo. 
+
 
 ## Competitons 
 Os três principais concorrentes do Fostudy são:
