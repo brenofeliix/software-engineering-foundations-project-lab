@@ -22,3 +22,7 @@ Para se posicionar competitivamente frente às soluções de mercado, a aplicaç
 
 * **Interface via QR Cod**e, ou seja, acesso aos serviços sem necessidade de baixar outros aplicativos.
 * **Cardápio Dinâmico e Interativo** detalhado com imagens de alta qualidade, ingredientes e preços.
+
+* **Customização dos pedidos,** permitindo ao cliente alterar ingredientes do prato e visualizar o subtotal da compra.
+* **Pagamento Integrado,** uma expansão do serviço autônomo e digital.
+** **Dashboard Administrativo,** ferramenta indispensável para os gestores no controle do consumo, atualização do cardápio, alteração de preços e disponibilidade de produto, isto tudo em tempo real.
