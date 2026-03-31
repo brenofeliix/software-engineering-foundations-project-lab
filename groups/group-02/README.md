@@ -7,7 +7,7 @@
 ## Team Members
 
 * Thiago Rafael Caixeta Tavares da Silva
-* Name 2
+* Flávio Eduardo Mendes Peixoto
 * Name 3
 * Joaber Moreira da Silva
 
