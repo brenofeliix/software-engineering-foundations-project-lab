@@ -22,11 +22,11 @@ Com o intuito de ajudar na organização e foco dos usuários durante os estudos
   
   01- Cronograma:
   
-  O usuário acessará a aba que contém uma agenda do ano para que seu cronograma semanal e diário seja criado. Esse cronograma diário será montado com caixas de selação no dia escolhido a fim de formar um cheklist. Com isso, o usuário saberá quais conteúdos e disciplinas estudar ao longo da semana e dia e poderá marcar as caixas de seleção após terminar de estudar cada conteúdo inserido. 
+  O usuário acessará a aba que contém uma agenda do ano para que seu cronograma semanal e diário seja criado. Esse cronograma diário será montado com caixas de selação no dia escolhido a fim de formar um cheklist. Com isso, o usuário saberá quais conteúdos e disciplinas estudar ao longo da semana e dia e poderá marcar as caixas de seleção após finalizar cada conteúdo inserido. 
   
   02- Flashcards:
   
-  Para que não seja necessário a instalação de outro aplicativo para a criação de flashcards, no próprio Fostudy a pessoa poderá montar seus flashcards e receber notificações que a lembre de revisar os conteúdos utilizados nos cards.  
+  Para que não seja necessário a instalação de outro aplicativo de criação de flashcards, no próprio Fostudy, a pessoa poderá montar seus flashcards e receber notificações que a lembre de revisar os conteúdos utilizados nos cards.  
   
   03- Método Pomodoro:
   
@@ -34,11 +34,11 @@ Com o intuito de ajudar na organização e foco dos usuários durante os estudos
   
   04- Métrica
 
-  Baseado no tempo definido, o software criará um relatório que mostrará a evolução da pessoa durante os estudos por meio de gráficos.
+  Baseado no tempo definido, o software criará um relatório que mostrará a evolução da pessoa durante os estudos por meio de gráficos, mostrando um relatório diário, que poderá ser acessado todos os dias, um relatório semanal que será divulgado no início de cada semana e, no último dia do mês, um relatório mensal.
 
   05- Recompensa
 
-  Por intermédio dos dados presentes no relatório, ao final da semana, o usuário será recompensado com moedas fictícias que serão utilizadas dentro do aplicativo. No aplicativo, será implementado um jogo em que nele há um mundo com avatar ou avatares, mas para ser conquistado cada item e avatares, é preciso ter uma boa métrica de estudo e ser recompensado por causa dela. O dinheiro fictício será usado para a realização de compras dos avatares e itens necessários para ele (casa, automóvel, vestimentas, alimentos) que estarão dentro do jogo.
+  Por intermédio dos dados presentes no relatório, ao final de cada semana, o usuário será recompensado com moedas fictícias que serão utilizadas dentro do aplicativo. No aplicativo, será implementado um jogo em que nele há um mundo com avatar ou avatares, mas para ser conquistado cada item e avatares, é preciso ter uma boa métrica de estudo e ser recompensado por causa dela. O dinheiro fictício será usado para a realização de compras dos avatares e itens necessários para ele (casa, automóvel, vestimentas, alimentos) que estarão dentro do jogo.
 
 
 ## Competitons 
