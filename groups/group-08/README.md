@@ -2,7 +2,7 @@
 
 ## Project Name
 
-Serpy - Smart Education and Research Platform for Venomous Species
+Serpy - Smart Education and Research Platform for Venomous Species 
 
 ## Team Members
 
