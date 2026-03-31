@@ -18,7 +18,7 @@ A solução consiste em uma **Plataforma Web Responsiva** que digitaliza a jorna
 * **Escalabilidade Operacional:** A infraestrutura tecnológica permite absorver aumentos de demanda sem a necessidade imediata de contratação de novos intermediários, estabilizando o custo fixo.
 
 ## Competitors
-Para se posicionar competitivamente frente às soluções de mercado, a aplicação integrará os seguintes módulos:
+ra se posicionar competitivamente frente às soluções de mercado, a aplicação integrará os seguintes módulos:
 
 * **Interface via QR Cod**e, ou seja, acesso aos serviços sem necessidade de baixar outros aplicativos.
 * **Cardápio Dinâmico e Interativo** detalhado com imagens de alta qualidade, ingredientes e preços.
