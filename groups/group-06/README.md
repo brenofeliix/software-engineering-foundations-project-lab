@@ -38,9 +38,7 @@ Com o intuito de ajudar na organização e foco dos usuários durante os estudos
 
   05- Recompensa
 
-  Por intermédio dos dados presentes no relatório, ao final da semana, o usuário será recompensado com moedas fictícias que serão utilizadas dentro do aplicativo. Esse dinheiro será usado para a realização de compras de avatares e itens necessários para ele (casa, automóvel, vestimentas, alimentos). No aplicativo, será implementado um jogo em que nele há um mundo com avatar ou avatares, mas para ser conquistado cada item e avatares, é preciso ter uma boa métrica de estudo e ser recompensado por causa dela.
-
-  Todas essas funções foram pensadas com o objetivo de ajudar os usuários a persistirem no estudes e não desanimarem e desistirem durante o processo. 
+  Por intermédio dos dados presentes no relatório, ao final da semana, o usuário será recompensado com moedas fictícias que serão utilizadas dentro do aplicativo. No aplicativo, será implementado um jogo em que nele há um mundo com avatar ou avatares, mas para ser conquistado cada item e avatares, é preciso ter uma boa métrica de estudo e ser recompensado por causa dela. O dinheiro fictício será usado para a realização de compras dos avatares e itens necessários para ele (casa, automóvel, vestimentas, alimentos) que estarão dentro do jogo.
 
 
 ## Competitons 
