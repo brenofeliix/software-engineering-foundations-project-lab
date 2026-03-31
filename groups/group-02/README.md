@@ -8,7 +8,7 @@
 
 * Thiago Rafael Caixeta Tavares da Silva
 * Flávio Eduardo Mendes Peixoto
-* Name 3
+* Rafael Elim Oliveira
 * Joaber Moreira da Silva
 
 ## Repository Structure
