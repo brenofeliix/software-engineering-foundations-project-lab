@@ -45,7 +45,7 @@ Cada etapa deve ser entregue em um arquivo separado:
 | Etapa | Nome do Arquivo |
 |------|----------------|
 | Product Vision | product-vision.md |
-| Requirements | requirements.md |
+| Requirements | requirementsPartX.md |
 | Modeling | modeling.md |
 | Architecture | architecture.md |
 | Testing | testing.md |
