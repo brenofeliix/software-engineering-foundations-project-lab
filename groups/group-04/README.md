@@ -6,7 +6,7 @@ APP RU (Ainda não temos um nome oficial)
 
 ## Team Members
 
-* Anthonio Marcos Olioni
+* Anthonio Marcos OlionI
 * Giovana Gomes da Silva
 * Guilherme Freitas da Costa Lopes
 * Gustavo Vinícius Coinete Silva
