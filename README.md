@@ -1,76 +1,93 @@
 # Software Engineering Foundations Project Lab
 
-## Course Overview
+## About
 
-This repository supports the course **Foundations of Software Engineering**.
+This repository represents a **project-based Software Engineering course** where students work in teams using real-world development practices.
 
-Students will work in teams to design and document a complete software system using industry practices.
+The course simulates a professional software engineering environment, including:
 
----
-
-## Learning Objectives
-
-* Understand the software engineering lifecycle
-* Apply requirements engineering techniques
-* Design system architecture
-* Create software models
-* Plan and execute testing strategies
+* GitHub workflows (Fork, Branch, Pull Request)
+* Code review process
+* Continuous Integration (CI) validation
+* Structured software development lifecycle
 
 ---
 
-## Repository Structure
+## My Role
 
-/docs
+**Software Engineering Instructor & Technical Lead**
 
-  /01-product-vision
-  
-  /02-requirements
-  
-  /03-modeling
-  
-  /04-architecture
-  
-  /05-testing
-  
-  /06-prototype
-  
+* Designed and implemented the project-based learning methodology
+* Defined development workflows using GitHub (Fork + PR model)
+* Created automated validation using GitHub Actions
+* Reviewed and provided feedback on all Pull Requests
+* Led multiple teams working on parallel software projects
 
 ---
 
-## Workflow
+## Project Structure
 
-1. Fork this repository
-2. Create a branch per feature
-3. Open Pull Requests (PR)
-4. Wait for review before merge
-
----
-
-## Deliverables
-
-Each phase must be submitted as a Pull Request:
+Students develop a complete software system through the following phases:
 
 * Product Vision
-* Requirements
-* Modeling
-* Architecture
-* Testing Plan
+* Requirements Engineering
+* System Modeling
+* Software Architecture
+* Testing Strategy
 * Prototype
 
 ---
 
-## Evaluation
+## Engineering Practices
 
-* Documentation quality
-* Engineering thinking
-* Organization
-* Participation in reviews
+This course enforces professional practices:
+
+* Mandatory Pull Requests for all changes
+* Branch naming conventions
+* Automated PR validation (CI)
+* Structured documentation
+* Peer collaboration
 
 ---
 
-## Instructor Role
+## Scale
 
-Acts as a Tech Lead reviewing PRs.
+* 40+ students
+* Multiple development teams
+* Parallel project execution
+
+---
+
+## Key Features
+
+* Real-world Git workflow simulation
+* CI/CD validation with GitHub Actions
+* Structured software engineering process
+* Team-based development
+
+---
+
+## Example Student Projects
+
+(You can later add links here)
+
+---
+
+## Skills Demonstrated
+
+* Software Engineering Processes
+* Technical Leadership
+* Code Review & Mentoring
+* Git & GitHub Workflows
+* CI/CD Automation
+* Requirements Engineering
+* System Design
+
+---
+
+## Context
+
+This project is part of a Software Engineering undergraduate program and reflects real-world development practices used in industry.
 
 ---
 
