@@ -6,9 +6,11 @@
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Thiago Rafael Caixeta Tavares da Silva
+* Flávio Eduardo Mendes Peixoto
+* Rafael Elim Oliveira
+* Joaber Moreira da Silva
+* Walky Antoine
 
 ## Repository Structure
 
