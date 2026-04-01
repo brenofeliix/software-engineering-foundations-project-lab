@@ -2,7 +2,7 @@
 
 ## Problema
 Cada vez torna-se mais comum a evasão escolar e o alto nível de desinteresse nas escolas, isso se deve, em partes, a forma de 
-lecionar antiquada que ainda vem sendo muito utilizada - adolescentes sentados em uma cadeira durante horas ao longo de uma semana
+lecionar antiquada que ainda vem sendo muito utilizada adolescentes sentados em uma cadeira durante horas ao longo de uma semana
 realizando atividades cansativas que geralmente não gera bons resultados.
 
 ## Publico alvo
@@ -15,4 +15,4 @@ A proposta são jogos interativos que vão auxiliar no entendimento e fixação,
 ## Concorrencia
 - Educacross  
 - Doulingo
- -Rachacuca
+- Rachacuca
