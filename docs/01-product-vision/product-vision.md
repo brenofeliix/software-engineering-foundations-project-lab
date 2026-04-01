@@ -13,4 +13,4 @@ Desenvolver um sistema inteligente que utiliza dados de satélites e inteligênc
 Sistemas tradicionais de monitoramento ambiental
 Ferramentas de sensoriamento remoto (ex: imagens de satélite convencionais)
 Soluções governamentais de detecção de queimadas
-Plataformas de monitoramento climático
+Plataformas de monitoramento climáticoaa
