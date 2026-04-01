@@ -1,16 +1,13 @@
 # Product Vision
 
 ## Problem
-Incêndios no agronegócio causam grandes prejuízos financeiros, ambientais e operacionais. Muitas vezes, a detecção ocorre de forma tardia, dificultando o controle rápido e aumentando os danos.
+Describe Problem.
 
 ## Target Users
-Produtores rurais, fazendeiros, empresas do agronegócio, cooperativas agrícolas e órgãos ambientais responsáveis pelo monitoramento de áreas rurais.
+Whon are the users?
 
 ## Proposed Solution
-Desenvolver um sistema inteligente que utiliza dados de satélites e inteligência artificial para detectar e prever princípios de incêndio em áreas rurais. O sistema irá monitorar continuamente as regiões, identificar padrões de risco e enviar alertas em tempo real para os usuários, permitindo uma resposta rápida e eficiente.
+Describe the solution.
 
 ## Competitors
-Sistemas tradicionais de monitoramento ambiental
-Ferramentas de sensoriamento remoto (ex: imagens de satélite convencionais)
-Soluções governamentais de detecção de queimadas
-Plataformas de monitoramento climático
+List competitors.
