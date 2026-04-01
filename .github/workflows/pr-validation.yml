@@ -9,10 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (full history)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      #  Validar descrição da PR
+      # ----------------------------
+      # Validate PR description
+      # ----------------------------
       - name: Check PR description
         uses: actions/github-script@v7
         with:
@@ -20,18 +24,20 @@ jobs:
             const body = context.payload.pull_request.body || "";
 
             if (!body.includes("## Description")) {
-              core.setFailed("Missing 'Description' section.");
+              core.setFailed("Missing '## Description' section.");
             }
 
             if (!body.includes("## Checklist")) {
-              core.setFailed("Missing 'Checklist' section.");
+              core.setFailed("Missing '## Checklist' section.");
             }
 
             if (!body.includes("## Related Issue")) {
-              core.setFailed("Missing 'Related Issue' section.");
+              core.setFailed("Missing '## Related Issue' section.");
             }
 
-      #  Validar checklist
+      # ----------------------------
+      # Validate checklist completion
+      # ----------------------------
       - name: Check checklist completion
         uses: actions/github-script@v7
         with:
@@ -43,18 +49,41 @@ jobs:
               core.setFailed("All checklist items must be completed.");
             }
 
-      #  Validar se mexeu na pasta correta do grupo
+      # ----------------------------
+      # Validate changed files (ROBUST FIX)
+      # ----------------------------
       - name: Validate group folder changes
         run: |
-          echo "Fetching base branch..."
-          git fetch origin main
+          echo "Fetching all history..."
+          git fetch --all --prune
 
-          echo "Checking changed files..."
-          files=$(git diff --name-only origin/main...HEAD)
+          BASE_SHA=${{ github.event.pull_request.base.sha }}
+          HEAD_SHA=${{ github.event.pull_request.head.sha }}
+
+          echo "Base SHA: $BASE_SHA"
+          echo "Head SHA: $HEAD_SHA"
+
+          echo "Detecting changed files..."
+
+          # Try using PR SHAs (ideal case)
+          files=$(git diff --name-only $BASE_SHA $HEAD_SHA 2>/dev/null || true)
+
+          # Fallback 1: use last commit
+          if [ -z "$files" ]; then
+            echo "Fallback: HEAD~1"
+            files=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || true)
+          fi
+
+          # Fallback 2: list all files changed in PR (safe fallback)
+          if [ -z "$files" ]; then
+            echo "Fallback: git show"
+            files=$(git show --name-only --pretty="" HEAD)
+          fi
 
           echo "Changed files:"
           echo "$files"
 
+          # Validate group folder
           group=$(echo "$files" | grep -o 'groups/group-[0-9]\+' | head -n 1)
 
           if [ -z "$group" ]; then
@@ -69,7 +98,9 @@ jobs:
             exit 1
           fi
 
-      #  Validar padrão da branch
+      # ----------------------------
+      # Validate branch naming
+      # ----------------------------
       - name: Validate branch name
         run: |
           branch="${{ github.head_ref }}"

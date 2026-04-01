@@ -1,4 +1,3 @@
-# Product Vision
 
 ## Problem
 Incêndios no agronegócio causam grandes prejuízos financeiros, ambientais e operacionais. Muitas vezes, a detecção ocorre de forma tardia, dificultando o controle rápido e aumentando os danos.
