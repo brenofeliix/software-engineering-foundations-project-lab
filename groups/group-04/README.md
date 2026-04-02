@@ -7,7 +7,7 @@
 ## Team Members
 
 * Name 1
-* Name 2
+* Giovana Gomes da Silva  
 * Name 3
 
 ## Repository Structure
