@@ -15,7 +15,7 @@ Os principais usuários do sistema são:
 
 Dessa forma, o sistema integra utilidade prática, educação e tecnologia, oferecendo suporte tanto para uso cotidiano quanto para situações de emergência, contribuindo para a redução de acidentes e aumento da conscientização da população.
 
-REQUISITOS FUNCIONAIS 
+## REQUISITOS FUNCIONAIS 
 
 FR01 - Permitir o cadastro de usuários no sistema.
 FR02 - Permitir autenticação de usuários por login e senha.
