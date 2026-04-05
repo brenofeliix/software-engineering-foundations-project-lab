@@ -15,9 +15,7 @@ Os principais usuários do sistema são:
 
 Dessa forma, o sistema integra utilidade prática, educação e tecnologia, oferecendo suporte tanto para uso cotidiano quanto para situações de emergência, contribuindo para a redução de acidentes e aumento da conscientização da população.
 
-
-
-## REQUISITOS FUNCIONAIS
+## Functional Requirements
 
 - FR01 - Permitir o cadastro de usuários no sistema.
 - FR02 - Permitir autenticação de usuários por login e senha.
@@ -59,4 +57,19 @@ Dessa forma, o sistema integra utilidade prática, educação e tecnologia, ofer
 - FR38 - Permitir funcionamento básico offline (conteúdos essenciais).
 - FR39 - Permitir sincronização de dados quando conexão for restabelecida.
 
+## Non-Functional Requirements
+
+- Performance: O sistema deve responder às requisições em até 2 segundos em condições normais de uso.
+- Performance: O sistema deve suportar pelo menos 1000 usuários simultâneos.
+- Performance: O carregamento inicial da aplicação deve ocorrer em até 3 segundos.
+  
+- Security: O sistema deve garantir autenticação segura com criptografia de senha.
+- Security: O sistema deve proteger dados sensíveis dos usuários.
+- Security: O sistema deve possuir controle de acesso baseado em perfis.
+- Security: O sistema deve prevenir ataques comuns (SQL Injection, XSS).
+
+- Usability: O sistema deve possuir interface intuitiva e de fácil navegação.
+- Usability: O sistema deve ser utilizável por pessoas sem conhecimento técnico.
+- Usability: O sistema deve possuir design responsivo (mobile e desktop).
+- Usability: O sistema deve minimizar o número de ações para tarefas críticas (ex: emergência).
 
