@@ -41,6 +41,20 @@ NFR05: O sistema deve integrar-se a PSPs via APIs RESTful (HTTPS, TLS maior ou i
 
 NFR06: O sistema deve realizar a automação de terminais físicos (Smart POS) via TEF ou SDKs, estabelecendo comunicação via HTTP Local ou WebSockets para envio de valores e recepção de status sem digitação manual, operando através de uma camada de abstração agnóstica que suporte diferentes adquirentes e modelos de hardware.
 
+**SEGURANÇA E PRIVACIDADE**:
 
+NFR07: O sistema deve criptografar de ponta a ponta todas as transações.
 
+NFR08: O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados.
 
+**QUALIDADE**:
+
+NFR09: A plataforma deve-se adaptar a diferentes tamanhos de tela.
+
+NFR10: O fluxo do pedido deve ser no máximo 4 ações (“Selecionar pedido”, “Fechar pedido”, “Confirmar pedido” e “Efetuar pagamento”).
+
+NFR11: O sistema deve suportar um aumento de 50% no volume de acesso durante alta demanda, sem interferir no desempenho.
+
+NFR12: A plataforma deve funcionar nos principais navegadores.
+
+NFR13: O sistema deve permitir atualizações no cardápio, sem interromper o serviço aos clientes.
