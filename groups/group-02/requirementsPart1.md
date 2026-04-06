@@ -6,40 +6,20 @@ Este documento descreve de forma estruturada os requisitos do sistema a ser dese
 
 ## 1. System Overview (Visão Geral do Sistema)
 
-### O que é:
-Descreva o sistema de forma geral, explicando seu propósito, contexto e objetivo.
-
-### Como fazer:
-- Explique qual problema o sistema resolve
-- Descreva brevemente a solução
-- Indique o público-alvo
-
-### Exemplo:
-O sistema FireSeeker é uma plataforma web que permite a detecção e monitoramento de focos de incêndio em áreas rurais utilizando sensores e dados em tempo real. O público-alvo inclui órgãos ambientais e fazendeiros.
-
----
+O Sistema de Gestão de Pedidos é uma plataforma web que visa reduzir a ineficiência do fluxo de atendimento tradicional oferecendo os serviços de cardápio digital e interativo, gerenciamento de pedidos e pagamento integrado. Este produto destina-se aos proprietários e/ou gestores de negócios gastronômicos e, em último caso, aos seus próprios clientes.
 
 ## 2. Functional Requirements (Requisitos Funcionais)
 
-### O que é:
-Descrevem **o que o sistema deve fazer** (funcionalidades).
+FR01: O sistema deve permitir que o cliente inicie seu pedido através de um menu principal.
 
-### Como fazer:
-- Escrever de forma clara e objetiva
-- Cada requisito deve ser numerado
-- Usar verbo no infinitivo (ex: "permitir", "exibir", "registrar")
+FR02: O sistema deve permitir que o cliente realize o pedido por categoria de prato.
 
-### Estrutura recomendada:
-FR01 - Descrição  
-FR02 - Descrição  
+FR03: O sistema deve permitir que o cliente tenha acesso aos detalhes dos pratos, como ingredientes, valores, tempo estimado e imagens dos mesmos.
 
-### Exemplo:
-- FR01: O sistema deve permitir o cadastro de usuários.
-- FR02: O sistema deve exibir os focos de incêndio em um mapa.
-- FR03: O sistema deve enviar alertas em tempo real para usuários cadastrados.
-- FR04: O sistema deve permitir login com autenticação por e-mail e senha.
+FR04: O sistema deve permitir que o cliente selecione a quantidade de itens por pedido.
 
----
+FR05: O sistema deve permitir que o cliente personalize o pedido adicionando ou excluindo acompanhamentos.
+
 
 ## 3. Non-Functional Requirements (Requisitos Não Funcionais)
 
