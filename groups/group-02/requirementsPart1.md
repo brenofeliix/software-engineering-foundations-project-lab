@@ -14,7 +14,7 @@ FR01: O sistema deve permitir que o cliente inicie seu pedido através de um men
 FR02: O sistema deve permitir que o cliente realize o pedido por categoria de prato.  
 FR03: O sistema deve permitir que o cliente tenha acesso aos detalhes dos pratos, como ingredientes, valores, tempo estimado e imagens dos mesmos.  
 FR04: O sistema deve permitir que o cliente selecione a quantidade de itens por pedido.  
-FR05: O sistema deve permitir que o cliente personalize o pedido adicionando ou excluindo acompanhamentos.
+FR05: O sistema deve permitir que o cliente personalize o pedido adicionando ou excluindo acompanhamentos.  
 FR06: O sistema deve permitir que o cliente envie seu pedido assim que selecionado o primeiro item.  
 FR07: O sistema deve exibir a descrição do pedido, subtotal e tempo total estimado assim que o cliente fechar o pedido.  
 FR08: O sistema deve exigir a confirmação de envio de pedido.  
