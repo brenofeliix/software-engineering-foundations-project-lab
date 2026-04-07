@@ -1,17 +1,14 @@
 # Group 01
 
-## Sistema Mini Mercado
+## Project Name
 
-O sistema a ser desenvolvido consiste em uma solução de gestão para Mini Mercado, com o objetivo de organizar e automatizar suas principais operações. Ele permitirá o cadastro de produtos, usuários e fornecedores, além de realizar o controle de estoque, registrando entradas e saídas de mercadorias, compras e vendas.
+(To be defined)
 
 ## Team Members
 
-* Daiane
-* Fernanda
-* Juan
-* Lara
-* Paula
-* Pedro Leo
+* Name 1
+* Name 2
+* Name 3
 
 ## Repository Structure
 
