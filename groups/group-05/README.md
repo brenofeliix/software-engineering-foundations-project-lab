@@ -2,7 +2,7 @@
 
 ## Project Name
 
-(To be defined)
+Gestão de Estoque para Pequenos E-commerces (Varejo).
 
 ## Team Members
 
