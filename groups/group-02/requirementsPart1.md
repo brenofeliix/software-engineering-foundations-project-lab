@@ -10,8 +10,7 @@ O Sistema de Gestão de Pedidos é uma plataforma web que visa reduzir a inefici
 
 ## 2. Functional Requirements (Requisitos Funcionais)
 
-FR01: O sistema deve permitir que o cliente inicie seu pedido através de um menu principal.
-
+FR01: O sistema deve permitir que o cliente inicie seu pedido através de um menu principal.  
 FR02: O sistema deve permitir que o cliente realize o pedido por categoria de prato.
 
 FR03: O sistema deve permitir que o cliente tenha acesso aos detalhes dos pratos, como ingredientes, valores, tempo estimado e imagens dos mesmos.
