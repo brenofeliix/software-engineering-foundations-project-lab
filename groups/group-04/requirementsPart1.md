@@ -24,10 +24,18 @@ O sistema proposto visa solucionar esse problema por meio de uma plataforma digi
 - RF07: O sistema deve exibir o registro de check-in.
 - RF08: O sistema deve permitir feedback sobre as refeições do dia. 
 - RF09: O sistema deve permitir integração com APIs.
+- RF10: O sistema deve permitir que o administrador realize o cadastro de usuários.
+- RF11: O sistema deve permitir que o administrador gerencie os créditos dos usuários.
+- RF12: O sistema deve permitir que o administrador gerencie o cardápio.
+- RF13: O sistema deve permitir que o administrador gere relatórios de uso do sistema.
+
 
 ## 3. Non-Functional Requirements (Requisitos Não Funcionais)
 
-RNF01:
+- RNF01: O sistema, em um cenário ideal, deve responder às requisições em até 2 segundos.
+- RNF02: O sistema deve suportar múltiplos acessos simultâneos com uma perda minima de desempenho.
+- RNF03: Os dados dos usuários devem ser armazenados de forma segura, utilizando criptografia
+
 
 ---
 
