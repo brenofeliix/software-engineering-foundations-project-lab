@@ -6,17 +6,7 @@ Este documento descreve de forma estruturada os requisitos do sistema a ser dese
 
 ## 1. System Overview (Visão Geral do Sistema)
 
-### O que é:
-Descreva o sistema de forma geral, explicando seu propósito, contexto e objetivo.
-
-### Como fazer:
-- Explique qual problema o sistema resolve
-- Descreva brevemente a solução
-- Indique o público-alvo
-
-### Exemplo:
-O sistema FireSeeker é uma plataforma web que permite a detecção e monitoramento de focos de incêndio em áreas rurais utilizando sensores e dados em tempo real. O público-alvo inclui órgãos ambientais e fazendeiros.
-
+A Universidade Federal de Rondonópolis (UFR) disponibiliza à comunidade acadêmica o Restaurante Universitário (RU) que atende estudantes e servidores em suas refeições diárias, sendo essa uma unidade estratégica para a permanência estudantil que oferece refeições a preços acessíveis mediante um sistema de créditos pré-pagos realizado de forma presencial. Tendo em vista sua importância social, é relevante mitigar qualquer gargalo logístico que afete a eficiência desse processo.
 ---
 
 ## 2. Functional Requirements (Requisitos Funcionais)
