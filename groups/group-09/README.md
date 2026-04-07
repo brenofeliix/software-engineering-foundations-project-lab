@@ -2,13 +2,14 @@
 
 ## Project Name
 
-(To be defined)
+Guia para Calouros
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Gabriel Souza Vieira
+* Matheus Cândido Goes
+* Victor Sudário Cândido
+* Marcos Ribeiro Rodrigues
 
 ## Repository Structure
 
