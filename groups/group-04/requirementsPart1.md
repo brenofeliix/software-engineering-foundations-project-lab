@@ -9,6 +9,7 @@ A Universidade Federal de Rondonópolis (UFR) disponibiliza à comunidade acadê
 
 Destacam-se como principais problemas nesse modelo, a burocracia do cadastro exclusivamente presencial, dificuldade no acesso ao cardápio e, principalmente, a falta de uma interface que permita consulta de saldo e recarga remotamente. Esse cenário promove um fluxo lento e filas longas, resultando na perda de tempo produtivo dos estudantes e servidores, reforçando a necessidade de um sistema digital que entre como facilitador desse serviço.
 
+O sistema proposto visa solucionar esse problema por meio de uma plataforma digital para o RU, baseada em uma arquitetura modular e desacoplada. Essa arquitetura é dividida em dois módulos principais: a interface amigável e o sistema gerenciador que são capazes de atuar independentemente entre si, garantindo maior flexibilidade e facilidade de manutenção, permitindo uma maior facilidade de evolução futura. Dessa forma, a aplicação pode atender tanto cenários em que é necessário um sistema completo quanto situações em que apenas a integração via API com sistemas já existentes é suficiente. A interface permite ao usuário realizar ações como login, consulta do saldo, visualização do cardápio, recarga via Pix e acesso à comunicados do RU. Já o sistema gerenciador é responsável pelo processamento das informações, controle de dados, regras de negócio e integração com sistemas externos, recomendada para RUs que não possuem um sistema de gestão próprio ou que utilizam sistemas considerados obsoletos.
 
 ---
 
