@@ -35,6 +35,15 @@ O sistema proposto visa solucionar esse problema por meio de uma plataforma digi
 - RNF01: O sistema, em um cenário ideal, deve responder às requisições em até 2 segundos.
 - RNF02: O sistema deve suportar múltiplos acessos simultâneos com uma perda minima de desempenho.
 - RNF03: Os dados dos usuários devem ser armazenados de forma segura, utilizando criptografia
+- RNF04: O sistema deve ser compatível com dispositivos móveis.
+- RNF05: A interface do sistema deve ser intuitiva e de fácil navegação.
+- RNF06: O sistema deve ser limitado a login por SUAP.
+- RNF07: O sistema deve estar disponível durante 99% do tempo, desconsiderando possíveis manutenções.
+- RNF08: O sistema deve garantir integridade dos dados durante as operações de recarga e pagamento.
+- RNF09: O sistema deve possuir mecanismos de backup e recuperação de dados.
+- RNF10: O sistema deve apresentar tempo de recuperação rápido em caso de falhas.
+- RNF11: O sistema deve possuir funções de acessibilidade, tais como alto contraste e tema claro ou escuro.
+- RNF12: O sistema deve possuir um modo para pessoas com deficiência visual.
 
 
 ---
