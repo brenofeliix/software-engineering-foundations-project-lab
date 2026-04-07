@@ -24,18 +24,22 @@ NRF01: A página deve carregar em menos de 2 segundos.
 NRF02: O sistema deve retornar a busca por pratos em menos de 1 segundo.  
 NRF03: O sistema deve processar pedidos simultâneos de centenas de clientes, sem comprometer sua fluidez.
 
-**DISPONIBILIDADE**:  
+**DISPONIBILIDADE**:
+
 NFR04: O sistema deve funcionar em 99,9% do tempo.
 
-**INTEROPERABILIDADE**:  
+**INTEROPERABILIDADE**:
+
 NFR05: O sistema deve integrar-se a PSPs via APIs RESTful (HTTPS, TLS maior ou igual á  1.2), processando Pix (QR Code Dinâmico/Copia e Cola) com confirmação via webhooks, e pagamentos via cartões/carteiras digitais sob conformidade PCI DSS, utilizando obrigatoriamente tokenização para evitar o tráfego ou armazenamento de dados sensíveis no servidor.  
 NFR06: O sistema deve realizar a automação de terminais físicos (Smart POS) via TEF ou SDKs, estabelecendo comunicação via HTTP Local ou WebSockets para envio de valores e recepção de status sem digitação manual, operando através de uma camada de abstração agnóstica que suporte diferentes adquirentes e modelos de hardware.
 
-**SEGURANÇA E PRIVACIDADE**:  
+**SEGURANÇA E PRIVACIDADE**:
+
 NFR07: O sistema deve criptografar de ponta a ponta todas as transações.  
 NFR08: O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados.
 
-**QUALIDADE**:  
+**QUALIDADE**:
+
 NFR09: A plataforma deve-se adaptar a diferentes tamanhos de tela.  
 NFR10: O fluxo do pedido deve ser no máximo 4 ações (“Selecionar pedido”, “Fechar pedido”, “Confirmar pedido” e “Efetuar pagamento”).  
 NFR11: O sistema deve suportar um aumento de 50% no volume de acesso durante alta demanda, sem interferir no desempenho.  
