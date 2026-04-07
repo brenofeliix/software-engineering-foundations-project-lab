@@ -28,6 +28,9 @@ O objetivo principal do sistema é auxiliar o usuário a planejar seus estudos, 
 ## Assumptions
 
 List assumptions.
+* Os usuários vão estudar, pelo menos, 25 minutos por dia.
+* O público-alvo usa mais o sistema operacional Android do que IOS.
+* O minigame incentivará mais a prática dos estudos.
 
 ## Constraints
 
