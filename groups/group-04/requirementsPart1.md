@@ -15,15 +15,15 @@ O sistema proposto visa solucionar esse problema por meio de uma plataforma digi
 
 ## 2. Functional Requirements (Requisitos Funcionais)
 
-RF01: O sistema deve permitir autenticação do usuário utilizando credenciais institucionais.
-RF02: O sistema deve permitir a consulta de saldo do usuário em tempo real.
-RF03: O sistema deve permitir a realização de recargas de saldo.
-RF04: O sistema deve exibir o cardápio semanal atualizado.
-RF05: O sistema deve exibir o histórico de recargas do usuário.
-RF06: O sistema deve enviar notificações ao usuário
-RF07: O sistema deve exibir o registro de check-in.
-RF08: O sistema deve permitir feedback sobre as refeições do dia. 
-RF09: O sistema deve permitir integração com APIs.
+- RF01: O sistema deve permitir autenticação do usuário utilizando credenciais institucionais.
+- RF02: O sistema deve permitir a consulta de saldo do usuário em tempo real.
+- RF03: O sistema deve permitir a realização de recargas de saldo.
+- RF04: O sistema deve exibir o cardápio semanal atualizado.
+- RF05: O sistema deve exibir o histórico de recargas do usuário.
+- RF06: O sistema deve enviar notificações ao usuário
+- RF07: O sistema deve exibir o registro de check-in.
+- RF08: O sistema deve permitir feedback sobre as refeições do dia. 
+- RF09: O sistema deve permitir integração com APIs.
 
 ## 3. Non-Functional Requirements (Requisitos Não Funcionais)
 
