@@ -6,7 +6,7 @@ PAPOU
 
 ## Team Members
 
-* Name 1
+* Anthonio Marcos Olioni dos Santos
 * Giovana Gomes da Silva
 * Gustavo Vinícius Coinete Silva
 * Name 3
