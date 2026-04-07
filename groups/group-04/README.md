@@ -2,7 +2,7 @@
 
 ## Project Name
 
-PAPOU
+JÁ PODE PAPAR
 
 ## Team Members
 
