@@ -15,6 +15,9 @@ FR02: O sistema deve permitir que o cliente realize o pedido por categoria de pr
 FR03: O sistema deve permitir que o cliente tenha acesso aos detalhes dos pratos, como ingredientes, valores, tempo estimado e imagens dos mesmos.  
 FR04: O sistema deve permitir que o cliente selecione a quantidade de itens por pedido.  
 FR05: O sistema deve permitir que o cliente personalize o pedido adicionando ou excluindo acompanhamentos.
+FR13: O sistema deve permitir que os gestores acompanhem os pedidos em tempo real.
+FR19: O sistema deve fazer um relatório mensal, contendo quantidade de pedidos feitos, porcentagem de pedidos de cada prato, avaliações de cada prato que foi pedido no mês, deve mostrar qual foi o prato que menos teve pedidos e avaliações e sugerir que mude o prato ou adicione um novo no lugar, e a receita bruta de todos os pagamentos do mês.
+
 
 ## 3. Non-Functional Requirements (Requisitos Não Funcionais)
 
