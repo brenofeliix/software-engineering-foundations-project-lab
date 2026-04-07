@@ -2,13 +2,15 @@
 
 ## Project Name
 
-(To be defined)
+APP RU (Ainda não temos um nome oficial)
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Anthonio Marcos OlionI
+* Giovana Gomes da Silva
+* Guilherme Freitas da Costa Lopes
+* Gustavo Vinícius Coinete Silva
+* Pedro Guilherme Mota Santos
 
 ## Repository Structure
 
