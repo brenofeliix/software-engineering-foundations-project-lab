@@ -2,12 +2,13 @@
 
 ## Project Name
 
-(To be defined)
+PAPOU
 
 ## Team Members
 
 * Name 1
-* Giovana Gomes da Silva  
+* Giovana Gomes da Silva
+* Gustavo Vinícius Coinete Silva
 * Name 3
 
 ## Repository Structure
