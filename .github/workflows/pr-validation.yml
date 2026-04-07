@@ -93,7 +93,6 @@ jobs:
               core.setFailed("Files outside group folder detected");
             }
 
-      # ----------------------------
       # NEW: Validate file by stage
       # ----------------------------
       - name: Validate files by stage
@@ -117,20 +116,37 @@ jobs:
             console.log("Branch:", branch);
             console.log("Files:", paths);
 
-            let expectedFile = "";
+            let valid = false;
 
-            if (branch.includes("product-vision")) expectedFile = "product-vision.md";
-            else if (branch.includes("requirements")) expectedFile = "requirements.md";
-            else if (branch.includes("modeling")) expectedFile = "modeling.md";
-            else if (branch.includes("architecture")) expectedFile = "architecture.md";
-            else if (branch.includes("testing")) expectedFile = "testing.md";
-
-            if (!expectedFile) {
-              core.setFailed("Invalid branch naming for stage.");
+            // PRODUCT VISION
+            if (branch.includes("product-vision")) {
+              valid = paths.some(p => p.endsWith("product-vision.md"));
             }
 
-            const hasCorrectFile = paths.some(p => p.endsWith(expectedFile));
+            // REQUIREMENTS (PART 1, 2, 3)
+            else if (branch.includes("requirements")) {
+              valid = paths.some(p =>
+                p.endsWith("requirementsPart1.md") ||
+                p.endsWith("requirementsPart2.md") ||
+                p.endsWith("requirementsPart3.md")
+              );
+            }
 
-            if (!hasCorrectFile) {
-              core.setFailed(`Expected file: ${expectedFile}`);
+            // MODELING
+            else if (branch.includes("modeling")) {
+              valid = paths.some(p => p.endsWith("modeling.md"));
+            }
+
+            // ARCHITECTURE
+            else if (branch.includes("architecture")) {
+              valid = paths.some(p => p.endsWith("architecture.md"));
+            }
+
+            // TESTING
+            else if (branch.includes("testing")) {
+              valid = paths.some(p => p.endsWith("testing.md"));
+            }
+
+            if (!valid) {
+              core.setFailed("Invalid file for this stage. Check naming and structure.");
             }
