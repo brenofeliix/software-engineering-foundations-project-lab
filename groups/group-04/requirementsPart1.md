@@ -5,8 +5,8 @@ Este documento descreve de forma estruturada os requisitos do sistema a ser dese
 ---
 
 ## 1. System Overview (Visão Geral do Sistema)
-
 A Universidade Federal de Rondonópolis (UFR) disponibiliza à comunidade acadêmica o Restaurante Universitário (RU) que atende estudantes e servidores em suas refeições diárias, sendo essa uma unidade estratégica para a permanência estudantil que oferece refeições a preços acessíveis mediante um sistema de créditos pré-pagos realizado de forma presencial. Tendo em vista sua importância social, é relevante mitigar qualquer gargalo logístico que afete a eficiência desse processo.
+
 ---
 
 ## 2. Functional Requirements (Requisitos Funcionais)
