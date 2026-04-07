@@ -14,7 +14,14 @@ FR01: O sistema deve permitir que o cliente inicie seu pedido através de um men
 FR02: O sistema deve permitir que o cliente realize o pedido por categoria de prato.  
 FR03: O sistema deve permitir que o cliente tenha acesso aos detalhes dos pratos, como ingredientes, valores, tempo estimado e imagens dos mesmos.  
 FR04: O sistema deve permitir que o cliente selecione a quantidade de itens por pedido.  
-FR05: O sistema deve permitir que o cliente personalize o pedido adicionando ou excluindo acompanhamentos.  
+FR05: O sistema deve permitir que o cliente personalize o pedido adicionando ou excluindo acompanhamentos.
+FR06: O sistema deve permitir que o cliente envie seu pedido assim que selecionado o primeiro item.
+FR07: O sistema deve exibir a descrição do pedido, subtotal e tempo total estimado assim que o cliente fechar o pedido.
+FR08: O sistema deve exigir a confirmação de envio de pedido.
+FR09: O sistema deve sugerir pedidos por classes, como jantar romântico, prato do dia, pratos mais bem avaliados do estabelecimento, entre outros.
+FR10: O sistema deve permitir que o cliente faça busca por prato.
+FR11: O sistema deve permitir que o cliente faça novos pedidos e acompanhe o status de outros já enviados.
+FR12: O sistema deve permitir que os clientes efetuem o pagamento via Pix
 FR13: O sistema deve permitir que os gestores acompanhem os pedidos em tempo real.  
 FR14: O sistema deve permitir que os responsáveis na cozinha modifiquem o status do pedido na seguinte sequência: “Em andamento”, “Pronto para servir” e os garçons para “Servido”.  
 FR15: O sistema deve permitir que os gestores modifiquem a disponibilidade dos pratos em tempo real.  
