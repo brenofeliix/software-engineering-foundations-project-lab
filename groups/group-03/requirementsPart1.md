@@ -1,5 +1,7 @@
 # Requirements Specification
 
+Este documento descreve de forma estruturada os requisitos do sistema a ser desenvolvido. Ele deve ser claro, objetivo e completo, servindo como base para desenvolvimento, testes e validação do software.
+
 ## System Overview
 
 O projeto consiste no desenvolvimento de um sistema educacional baseado em gamificação dos estudos, com o objetivo de tornar o aprendizado mais dinâmico, interativo e motivador para alunos do ensino fundamental.
@@ -15,10 +17,6 @@ Outro recurso importante será o sistema de grupos, permitindo que professores o
 No geral, o projeto busca unir tecnologia e educação de forma acessível, tornando o processo de aprendizagem mais leve, divertido e eficiente.
 
 ## Functional Requirements
-
-Requisitos Funcionais (RF)
-
-São tudo aquilo que o sistema deve fazer.
 
  Cadastro e Acesso
 *RF01: O sistema deve permitir o cadastro de alunos.
