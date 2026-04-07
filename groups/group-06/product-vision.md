@@ -14,8 +14,7 @@ Fostudy
 Muitos estudantes enfrentam dificuldades na organização de suas rotinas de estudos, como definir horários, manter a constância e revisar conteúdos de forma eficiente. Essa falta de organização pode levar a perda de foco, desorganização e baixo rendimento nos estudos.
 
 ## Target Users
-O público-alvo é composto por pessoas que necessitam de estrutura e organização no ambiente acadêmico para que seja possível atingir certas metas escolares
-de maneira eficiente e prática.
+O público-alvo é composto por estudantes do ensino médio e vestibulandos do ENEM que necessitam de estrutura e organização no ambiente acadêmico para atingir metas escolares de maneira eficiente e prática.
 
 ## Proposed Solution
 
