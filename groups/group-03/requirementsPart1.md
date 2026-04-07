@@ -18,35 +18,28 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 
 ## Functional Requirements
 
- Cadastro e Acesso
-*RF01: O sistema deve permitir o cadastro de alunos.
-*RF02: O sistema deve gerar um login para o aluno após o cadastro.
-*RF03: O sistema deve permitir que o aluno informe idade e ano escolar (6º ao 9º ano).
-*RF04: O sistema deve permitir login e autenticação do usuário.
-*Personalização
-*RF05: O sistema deve classificar o aluno em uma categoria com base na idade e ano escolar.
-*RF06: O sistema deve disponibilizar atividades compatíveis com a categoria do aluno.
- Jogos Educativos
-*RF07: O sistema deve oferecer jogos por disciplina (Português, Matemática, História, Geografia, Ciências, Arte e Inglês).
-*RF08: O sistema deve permitir ao aluno escolher a disciplina desejada.
-*RF09: O sistema deve oferecer a opção de jogos no modo “sortido”.
-*RF10: O sistema deve registrar o desempenho do aluno nos jogos.
-Gamificação
-*RF11: O sistema deve registrar a sequência de dias em que o aluno estudou (streak).
-*RF12: O sistema deve atualizar automaticamente o streak a cada acesso diário.
-*RF13: O sistema deve reiniciar o streak caso o aluno não acesse no dia.
-Grupos
-*RF14: O sistema deve permitir que professores criem grupos.
-*RF15: O sistema deve permitir que alunos entrem em grupos.
-*RF16: O sistema deve permitir que professores visualizem o desempenho dos alunos no grupo.
-Acompanhamento
-*RF17: O sistema deve armazenar o histórico de atividades do aluno.
-*RF18: O sistema deve permitir ao aluno visualizar seu progresso.
-*RF19: O sistema deve permitir que professores acompanhem o progresso dos alunos.
+* RF01: O sistema deve permitir o cadastro de alunos.
+* RF02: O sistema deve gerar um login para o aluno após o cadastro.
+* RF03: O sistema deve permitir que o aluno informe idade e ano escolar (6º ao 9º ano).
+* RF04: O sistema deve permitir login e autenticação do usuário.
+* RF05: O sistema deve classificar o aluno em uma categoria com base na idade e ano escolar.
+* RF06: O sistema deve disponibilizar atividades compatíveis com a categoria do aluno.
+* RF07: O sistema deve oferecer jogos por disciplina (Português, Matemática, História, Geografia, Ciências, Arte e Inglês).
+* RF08: O sistema deve permitir ao aluno escolher a disciplina desejada.
+* RF09: O sistema deve oferecer a opção de jogos no modo “sortido”.
+* RF10: O sistema deve registrar o desempenho do aluno nos jogos.
+* RF11: O sistema deve registrar a sequência de dias em que o aluno estudou (streak).
+* RF12: O sistema deve atualizar automaticamente o streak a cada acesso diário.
+* RF13: O sistema deve reiniciar o streak caso o aluno não acesse no dia.
+* RF14: O sistema deve permitir que professores criem grupos.
+* RF15: O sistema deve permitir que alunos entrem em grupos.
+* RF16: O sistema deve permitir que professores visualizem o desempenho dos alunos no grupo.
+* RF17: O sistema deve armazenar o histórico de atividades do aluno.
+* RF18: O sistema deve permitir ao aluno visualizar seu progresso.
+* RF19: O sistema deve permitir que professores acompanhem o progresso dos alunos.
 * FR20 : Trilhas das principais matérias do ensino fundamental: Lingua Portuguesa; Matemática; História; Geografia; Ciências; Arte; Inglês.
 * FR21: Sistema de ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
-* FR3
-* 22: Sistema de "grupos", onde professores/escolas podem criar um grupo para suas salas de aula.
+* FR22: Sistema de "grupos", onde professores/escolas podem criar um grupo para suas salas de aula.
 
 ## Non-Functional Requirements
 
