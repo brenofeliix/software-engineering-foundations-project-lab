@@ -9,7 +9,8 @@ PAPOU
 * Anthonio Marcos Olioni dos Santos
 * Giovana Gomes da Silva
 * Gustavo Vinícius Coinete Silva
-* Name 3
+*
+* Pedro Guilherme Mota Santos
 
 ## Repository Structure
 
