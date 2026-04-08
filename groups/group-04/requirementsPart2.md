@@ -39,17 +39,17 @@ Define a facilidade de uso do sistema.
 Descrevem funcionalidades do ponto de vista do usuário.
 
 ### Como fazer:
-Utilizar o padrão: As a [tipo de usuário], I want [objetivo], so that [benefício]
-Como usuário, eu quero realizar a recarga de saldo via Pix, Crédito ou Débito, dessa forma ...............
-Como usuário, eu quero acessar o cardápio na aplicação, ............
-Como usuáiro, eu quero conseguir acessar meu saldo,............
-Como usuário, eu quero receber notificações
+- Utilizar o padrão: As a [tipo de usuário], I want [objetivo], so that [benefício]
+- Como usuário, eu quero realizar a recarga de saldo via Pix, Crédito ou Débito, dessa forma ...............
+- Como usuário, eu quero acessar o cardápio na aplicação, ............
+- Como usuáiro, eu quero conseguir acessar meu saldo,............
+- Como usuário, eu quero receber notificações
 
-Como administrador, eu quero conseguir cadastrar o cardápio semanal
-Como administrador, eu quero conseguir gerenciar o cadastro de usuários (criar, atualizar, deletar, verificar histórico de pagamentos 
-Como administrador, eu quero conseguir gerar relatórios semanais, mensais e anuais com dados ...........
-Como administrador, eu quero conseguir criar posts com comunicados
-Como adminstrador eu 
+- Como administrador, eu quero conseguir cadastrar o cardápio semanal
+- Como administrador, eu quero conseguir gerenciar o cadastro de usuários (criar, atualizar, deletar, verificar histórico de pagamentos 
+- Como administrador, eu quero conseguir gerar relatórios semanais, mensais e anuais com dados ...........
+- Como administrador, eu quero conseguir criar posts com comunicados
+- Como adminstrador eu 
 
 
 ---
