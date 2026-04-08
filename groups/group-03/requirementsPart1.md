@@ -46,19 +46,3 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * Performance:
 * Security:
 * Usability:
-
-## User Stories
-
-* As a user, I want...
-
-## Assumptions
-
-List assumptions.
-
-## Constraints
-
-* Segurança e Privacidade: É de suma importância garantir o acesso e a proteção dos dados dos alunos, respeitando todas as leis de privacidade.
-* Políticas educacionais: O projeto deve seguir as normas da educação.
-* Resistência à mudanças: Pode ter resistência por parte dos alunos e professores por adotar novos métodos de ensino.
-* Atualização de novos conteúdos: Os materias costumam ser frequentemente atualizados, que consequentemente, exige tempo e recurso.
-* Dependência da gestão escolar: A adoção do projeto depende da aprovação e apoio da direção da escola.
