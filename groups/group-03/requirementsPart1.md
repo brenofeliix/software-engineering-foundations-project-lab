@@ -44,5 +44,14 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 ## Non-Functional Requirements
 
 * Performance:
+* RNF01: O sistema deve responder às ações do usuário em até 3 segundos.
+* RNF02: O sistema deve suportar múltiplos usuários simultaneamente.
 * Security:
+* RNF03: O sistema deve proteger os dados dos usuários (login e informações pessoais).
+* RNF04: O sistema deve garantir autenticação segura.
+* RNF05: O sistema deve impedir acesso não autorizado aos dados.
+  
 * Usability:
+* RNF06: O sistema deve possuir interface simples e intuitiva, adequada para crianças e adolescentes.
+* RNF07: O sistema deve ser fácil de navegar, com linguagem acessível.
+* RNF08: O sistema deve ser responsivo (funcionar em celular, tablet e computador).
