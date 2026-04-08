@@ -47,7 +47,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF01: responder às ações do usuário em até 3 segundos.
 * RNF02: suportar múltiplos usuários simultaneamente.
 * Security:
-* RNF03: O sistema deve proteger os dados dos usuários (login e informações pessoais).
+* RNF03: proteger os dados dos usuários (login e informações pessoais).
 * RNF04: garantir autenticação segura.
 * RNF05: impedir acesso não autorizado aos dados.
   
