@@ -18,25 +18,25 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 
 ## Functional Requirements
 
-* RF01: O sistema deve permitir o cadastro de alunos.
-* RF02: O sistema deve gerar um login para o aluno após o cadastro.
-* RF03: O sistema deve permitir que o aluno informe idade e ano escolar (6º ao 9º ano).
-* RF04: O sistema deve permitir login e autenticação do usuário.
-* RF05: O sistema deve classificar o aluno em uma categoria com base na idade e ano escolar.
-* RF06: O sistema deve disponibilizar atividades compatíveis com a categoria do aluno.
-* RF07: O sistema deve oferecer jogos por disciplina (Português, Matemática, História, Geografia, Ciências, Arte e Inglês).
-* RF08: O sistema deve permitir ao aluno escolher a disciplina desejada.
-* RF09: O sistema deve oferecer a opção de jogos no modo “sortido”.
-* RF10: O sistema deve registrar o desempenho do aluno nos jogos.
-* RF11: O sistema deve registrar a sequência de dias em que o aluno estudou (streak).
-* RF12: O sistema deve atualizar automaticamente o streak a cada acesso diário.
-* RF13: O sistema deve reiniciar o streak caso o aluno não acesse no dia.
-* RF14: O sistema deve permitir que professores criem grupos.
-* RF15: O sistema deve permitir que alunos entrem em grupos.
-* RF16: O sistema deve permitir que professores visualizem o desempenho dos alunos no grupo.
-* RF17: O sistema deve armazenar o histórico de atividades do aluno.
-* RF18: O sistema deve permitir ao aluno visualizar seu progresso.
-* RF19: O sistema deve permitir que professores acompanhem o progresso dos alunos.
+* RF01: permitir o cadastro de alunos.
+* RF02: gerar um login para o aluno após o cadastro.
+* RF03:  permitir que o aluno informe idade e ano escolar (6º ao 9º ano).
+* RF04: permitir login e autenticação do usuário.
+* RF05: classificar o aluno em uma categoria com base na idade e ano escolar.
+* RF06: disponibilizar atividades compatíveis com a categoria do aluno.
+* RF07: oferecer jogos por disciplina (Português, Matemática, História, Geografia, Ciências, Arte e Inglês).
+* RF08: permitir ao aluno escolher a disciplina desejada.
+* RF09: oferecer a opção de jogos no modo “sortido”.
+* RF10: registrar o desempenho do aluno nos jogos.
+* RF11: registrar a sequência de dias em que o aluno estudou (streak).
+* RF12: atualizar automaticamente o streak a cada acesso diário.
+* RF13: reiniciar o streak caso o aluno não acesse no dia.
+* RF14: permitir que professores criem grupos.
+* RF15: permitir que alunos entrem em grupos.
+* RF16: permitir que professores visualizem o desempenho dos alunos no grupo.
+* RF17: armazenar o histórico de atividades do aluno.
+* RF18: permitir ao aluno visualizar seu progresso.
+* RF19: permitir que professores acompanhem o progresso dos alunos.
 * FR20 : Trilhas das principais matérias do ensino fundamental: Lingua Portuguesa; Matemática; História; Geografia; Ciências; Arte; Inglês.
 * FR21: Sistema de ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
 * FR22: Sistema de "grupos", onde professores/escolas podem criar um grupo para suas salas de aula.
@@ -44,14 +44,14 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 ## Non-Functional Requirements
 
 * Performance:
-* RNF01: O sistema deve responder às ações do usuário em até 3 segundos.
-* RNF02: O sistema deve suportar múltiplos usuários simultaneamente.
+* RNF01: responder às ações do usuário em até 3 segundos.
+* RNF02: suportar múltiplos usuários simultaneamente.
 * Security:
 * RNF03: O sistema deve proteger os dados dos usuários (login e informações pessoais).
-* RNF04: O sistema deve garantir autenticação segura.
-* RNF05: O sistema deve impedir acesso não autorizado aos dados.
+* RNF04: garantir autenticação segura.
+* RNF05: impedir acesso não autorizado aos dados.
   
 * Usability:
-* RNF06: O sistema deve possuir interface simples e intuitiva, adequada para crianças e adolescentes.
-* RNF07: O sistema deve ser fácil de navegar, com linguagem acessível.
-* RNF08: O sistema deve ser responsivo (funcionar em celular, tablet e computador).
+* RNF06: possuir interface simples e intuitiva, adequada para crianças e adolescentes.
+* RNF07: ser fácil de navegar, com linguagem acessível.
+* RNF08: responsivo (funcionar em celular, tablet e computador).
