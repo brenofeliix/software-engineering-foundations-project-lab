@@ -7,11 +7,17 @@ O objetivo principal do sistema é auxiliar o usuário a planejar seus estudos, 
 ## 2. Functional Requirements
 
 FR1: O sistema deve permitir que o usuário crie uma conta com email e senha.
+
 FR2: O sistema deve permitir ao usuário criar e gerenciar um cronograma semanal de estudos.
+
 FR3: O sistema deve permitir a execução do método Pomodoro com contagem automática de tempo e intervalos.
+
 FR4: O sistema deve permitir a criação, edição e revisão de flashcards com registro de desempenho.
+
 FR5: O sistema deve gerar relatórios com base no tempo de estudo e nos resultados dos flashcards.
+
 FR6: O sistema deve permitir que o usuário ative ou desative o sistema de alerta.
+
 FR7: O sistema deve permitir a criação e modificação de uma nova tarefa.
 
 ## 3. Non-Functional Requirements
