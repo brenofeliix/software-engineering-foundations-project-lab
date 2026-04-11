@@ -35,19 +35,9 @@ Define a facilidade de uso do sistema.
 
 ## 4. User Stories (Histórias de Usuário)
 
-### O que é:
-Descrevem funcionalidades do ponto de vista do usuário.
-
-### Como fazer:
-Utilizar o padrão: As a [tipo de usuário], I want [objetivo], so that [benefício]
-
-
----
-
-### ✅ Exemplos:
-- As a farmer, I want to receive fire alerts, so that I can act quickly.
-- As a system administrator, I want to manage users, so that I can control access.
-- As a user, I want to view fire locations on a map, so that I understand risk areas.
+- Como usuário, quero estudar todas as matérias de forma interativa, para que possa facilitar o aprendizado do ensino básico.
+- Como professor, quero criar um grupo com meus alunos, para que eu possa passar atividades com recompensas para eles.
+- Como aluno, quero interagir em um _chat_ com meus colegas e professor, para que eu possa tirar dúvidas.
 
 ---
 
