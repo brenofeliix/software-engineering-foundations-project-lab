@@ -46,16 +46,22 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 ### Performance
 
 * RNF01: Responder às ações do usuário em até 3 segundos.
-* RNF02: Suportar múltiplos usuários simultaneamente.
+* RNF02: Suportar múltiplos usuários simultaneamente sem degradação significativa (ex: 10.000+ usuários online).
+* RNF03: As atualizações de pontuação, rankings e conquistas devem ocorrer em tempo quase real.
+* RNF04: O sistema deve ser escalável para suportar crescimento no número de usuários e dados.
 
 ### Security
 
-* RNF03: Proteger os dados dos usuários (login e informações pessoais).
-* RNF04: Garantir autenticação segura.
-* RNF05: Impedir acesso não autorizado aos dados.
+* RNF05: Proteger os dados dos usuários (login e informações pessoais).
+* RNF06: Garantir autenticação segura (ex: login com criptografia de senha).
+* RNF07: O sistema deve proteger contra ataques comuns (ex: SQL Injection, XSS).
+* RNF08: Deve haver controle de acesso (ex: aluno, professor, administrador).
+* RNF09: Deve existir backup automático periódico dos dados.
   
 ### Usability
 
-* RNF06: Possuir interface simples e intuitiva, adequada para crianças e adolescentes.
-* RNF07: Ser fácil de navegar, com linguagem acessível.
-* RNF08: Responsivo (funcionar em celular, tablet, computadore etc).
+* RNF10: Possuir interface simples e intuitiva, adequada para crianças e adolescentes.
+* RNF11: Ser fácil de navegar, com linguagem acessível.
+* RNF12: Responsivo (funcionar em celular, tablet, computadores e etc).
+* RNF13: O usuário deve conseguir registrar atividades de estudo com poucos cliques (máx 3 interações).
+* RNF14: O sistema deve fornecer mensagens de erro claras e orientativas.
