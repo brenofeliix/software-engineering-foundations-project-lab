@@ -50,8 +50,14 @@ risco.
 - US08 - Como usuário, quero receber alertas sobre áreas de risco para evitar acidentes.
 - US09 - Como usuário, quero acessar conteúdos educativos para aprender mais.
 - US10 - Como usuário, quero realizar quizzes para testar meu conhecimento.
-### Profissional
+
+## Profissional
 - US11 - Como profissional de saúde, quero consultar informações confiáveis para auxiliar no atendimento.
 
+## Sistema (Automático)
+- US12 - Como sistema, quero integrar dados de fontes públicas para manter as informações atualizadas.
 
-
+## Administrador
+- US13 - Como administrador, quero gerenciar usuários para manter o sistema organizado.
+- US14 - Como administrador, quero gerenciar conteúdos para garantir informações atualizadas.
+- US15 - Como administrador, quero visualizar estatísticas para analisar o uso do sistema.
