@@ -64,4 +64,4 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF11: Ser fácil de navegar, com linguagem acessível, adequada para crianças e adolescentes.
 * RNF12: Responsivo (funcionar em celular, tablet, computadores e etc).
 * RNF13: O usuário deve conseguir registrar atividades de estudo com poucos cliques (máx 3 interações).
-* RNF14: O sistema deve fornecer mensagens de erro claras e orientativas.
+* RNF14: Deve fornecer mensagens de erro claras e orientativas.
