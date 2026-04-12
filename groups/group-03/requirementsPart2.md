@@ -1,35 +1,28 @@
 ### Performance (Desempenho)
 
-#### O que é:
-Define velocidade, tempo de resposta e capacidade do sistema.
-
-#### Exemplo:
-- O sistema deve responder requisições em até 2 segundos.
-- O sistema deve suportar até 1.000 usuários simultâneos.
-
+- O sistema deve responder às ações do usuário em até 3 segundos em condições normais.
+- O sistema deve suportar múltiplos usuários simultaneamente sem degradação significativa (ex: 10.000+ usuários online).
+- O sistema deve ser escalável para suportar crescimento no número de usuários e dados.
+- O sistema deve implementar atualizações de pontuação, rankings e conquistas devem ocorrer em tempo quase real.
+  
 ---
 
 ### Security (Segurança)
 
-#### O que é:
-Define como os dados e acessos são protegidos.
-
-#### Exemplo:
-- O sistema deve criptografar senhas utilizando hash seguro.
-- O sistema deve implementar autenticação de usuários.
-- O sistema deve restringir acesso por níveis de permissão.
+- O sistema deve proteger os dados dos usuários (login e informações pessoais).
+- O sistema deve implementar autenticação de usuários segura (ex: login com criptografia de senha).
+- O sistema deve implementar níveis de acesso por perfil de usuário (ex: aluno, professor e administrador), limitando o acesso às funcionalidades.
+- O sistema deve validar todas as entradas do usuário no cliente e no servidor, garantindo proteção contra ataques como SQL Injection e XSS.
 
 ---
 
 ### Usability (Usabilidade)
 
-#### O que é:
-Define a facilidade de uso do sistema.
-
-#### Exemplo:
-- O sistema deve ser intuitivo e fácil de navegar.
+- O sistema deve possuir interface intuitiva e de fácil navegação, mesmo para novos usuários.
+- O sistema deve ser fácil de navegar, com linguagem acessível, adequada para crianças e adolescentes.
 - O sistema deve ser responsivo (adaptável a celular e desktop).
 - O usuário deve conseguir realizar ações principais em até 3 cliques.
+- O sistema deve fornecer mensagens de erro claras e orientativas.
 
 ---
 
@@ -38,15 +31,3 @@ Define a facilidade de uso do sistema.
 - Como usuário, quero estudar todas as matérias de forma interativa, para que possa facilitar o aprendizado do ensino básico.
 - Como professor, quero criar um grupo com meus alunos, para que eu possa passar atividades com recompensas para eles.
 - Como aluno, quero interagir em um _chat_ com meus colegas e professor, para que eu possa tirar dúvidas.
-
----
-
-## Considerações Finais
-
-Este documento deve ser:
-
-- Claro e organizado
-- Fácil de entender por qualquer membro da equipe
-- Utilizado como base para desenvolvimento e testes
-
- Um bom documento de requisitos evita retrabalho e garante qualidade no projeto.
