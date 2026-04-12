@@ -45,7 +45,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 
 ### Performance
 
-* RNF01: Responder às ações do usuário em até 3 segundos.
+* RNF01: Responder às ações do usuário em até 3 segundos em condições normais.
 * RNF02: Suportar múltiplos usuários simultaneamente sem degradação significativa (ex: 10.000+ usuários online).
 * RNF03: As atualizações de pontuação, rankings e conquistas devem ocorrer em tempo quase real.
 * RNF04: O sistema deve ser escalável para suportar crescimento no número de usuários e dados.
