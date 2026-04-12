@@ -55,7 +55,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF05: Proteger os dados dos usuários (login e informações pessoais).
 * RNF06: Garantir autenticação segura (ex: login com criptografia de senha).
 * RNF07: O sistema deve proteger contra ataques comuns (ex: SQL Injection, XSS).
-* RNF08: Deve haver controle de acesso (ex: aluno, professor, administrador).
+* RNF08: Implementar níveis de acesso por perfil de usuário (ex: aluno, professor e administrador), limitando o acesso às funcionalidades conforme o perfil.
 * RNF09: Deve existir backup automático periódico dos dados.
   
 ### Usability
