@@ -30,12 +30,12 @@
 
 ## 4. User Stories (Histórias de Usuário)
 
-- Como usuário, quero estudar todas as matérias de forma interativa, para que possa facilitar o aprendizado do ensino básico.
+- Como aluno, quero estudar todas as matérias de forma interativa, para que possa facilitar o aprendizado do ensino básico.
 - Como professor, quero criar um grupo com meus alunos, para que eu possa passar atividades com recompensas para eles.
 - Como aluno, quero interagir em um _chat_ com meus colegas e professor, para que eu possa tirar dúvidas.
 - Como aluno, quero acompanhar meu progresso, para entender minha evolução.
 - Como aluno, quero ganhar recompensas, para me sentir motivado a estudar.
-- Como usuário, quero acessar o sistema pelo celular, para estudar em qualquer lugar.
+- Como usuário, quero acessar o sistema pelo celular, para utilizá-lo em qualquer lugar.
 - Como professor, quero ferramentas modernas de ensino, para melhorar a participação e o desempenho dos alunos.
 - Como gestor, quero implementar métodos de ensino inovadores, para aumentar a satisfação e permanência dos estudantes.
 - Como gestor, quero analisar índices de evasão e faltas, para agir preventivamente.
