@@ -60,8 +60,8 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
   
 ### Usability
 
-* RNF10: Possuir interface simples e intuitiva, adequada para crianças e adolescentes.
-* RNF11: Ser fácil de navegar, com linguagem acessível.
+* RNF10: Possuir interface intuitiva e de fácil navegação, mesmo para novos usuários.
+* RNF11: Ser fácil de navegar, com linguagem acessível, adequada para crianças e adolescentes.
 * RNF12: Responsivo (funcionar em celular, tablet, computadores e etc).
 * RNF13: O usuário deve conseguir registrar atividades de estudo com poucos cliques (máx 3 interações).
 * RNF14: O sistema deve fornecer mensagens de erro claras e orientativas.
