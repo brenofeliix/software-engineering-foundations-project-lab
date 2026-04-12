@@ -36,3 +36,6 @@
 - Como aluno, quero acompanhar meu progresso, para entender minha evolução.
 - Como aluno, quero ganhar recompensas, para me sentir motivado a estudar.
 - Como usuário, quero acessar o sistema pelo celular, para estudar em qualquer lugar.
+- Como professor, quero ferramentas modernas de ensino, para melhorar a participação e o desempenho dos alunos.
+- Como gestor, quero implementar métodos de ensino inovadores, para aumentar a satisfação e permanência dos estudantes.
+- Como gestor, quero analisar índices de evasão e faltas, para agir preventivamente.
