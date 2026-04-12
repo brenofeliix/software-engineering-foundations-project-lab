@@ -38,7 +38,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RF18: Permitir ao aluno visualizar seu progresso.
 * RF19: Permitir que professores acompanhem o progresso dos alunos.
 * FR20: Trilhas das principais matérias do ensino fundamental: Lingua Portuguesa; Matemática; História; Geografia; Ciências; Arte; Inglês.
-* FR21:  ofoferecer no sistema ensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
+* FR21: Oferecer no sistema ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
 * FR22: Permitir aos professores/escolas podem criar um grupo para suas salas de aula.
 
 ## Non-Functional Requirements
