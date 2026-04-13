@@ -62,5 +62,5 @@ Define a facilidade de uso do sistema.
 
 **US07: Monitoramento e Relatórios (Ref: FR13, FR19)**
 
--User Story: As a manager, I want to monitor active orders in real-time and access monthly performance reports, so that I can make data-driven decisions to improve the restaurant's profitability.  
--Tradução: Como um gestor, eu quero monitorar os pedidos ativos em tempo real e acessar relatórios de desempenho mensais, para que eu possa tomar decisões baseadas em dados para melhorar a lucratividade do restaurante.
+- User Story: As a manager, I want to monitor active orders in real-time and access monthly performance reports, so that I can make data-driven decisions to improve the restaurant's profitability.  
+- Tradução: Como um gestor, eu quero monitorar os pedidos ativos em tempo real e acessar relatórios de desempenho mensais, para que eu possa tomar decisões baseadas em dados para melhorar a lucratividade do restaurante.
