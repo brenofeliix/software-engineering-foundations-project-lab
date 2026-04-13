@@ -18,15 +18,9 @@
 
 ### Usability (Usabilidade)
 
-#### O que é:
-Define a facilidade de uso do sistema.
-
-#### Exemplo:
-- O sistema deve ser intuitivo e fácil de navegar.
-- O sistema deve ser responsivo (adaptável a celular e desktop).
-- O usuário deve conseguir realizar ações principais em até 3 cliques.
-
----
+* O sistema deve adaptar-se a diferentes tamanhos de tela **(NFR09)**.
+* O sistema deve garantir que o fluxo do pedido seja concluído no máximo em 4 clicks **(NFR10)**.
+* O sistema deve operar nos quatro principais navegadores: Google Chrome, Apple Safari, Microsoft Edge e Mozilla Firefox **(NFR12)**.
 
 ## 4. User Stories (Histórias de Usuário)
 
