@@ -54,3 +54,13 @@ Define a facilidade de uso do sistema.
 
 - User Story: As a customer, I want to pay using Pix, credit cards, or digital wallets securely, so that I can complete my purchase using my preferred payment method without worrying about data safety.  
 - Tradução: Como um cliente, eu quero pagar usando Pix, cartões de crédito ou carteiras digitais de forma segura, para que eu possa concluir minha compra usando meu método de pagamento preferido sem me preocupar com a segurança dos dados.
+
+**US06: Gestão de Cardápio em Tempo Real (Ref: FR15, FR16, FR17 / NFR13)**  
+
+- User Story: As a manager, I want to update dish availability, prices, and descriptions instantly, so that the digital menu always reflects the current stock and pricing.
+- Tradução: Como um gestor, eu quero atualizar a disponibilidade dos pratos, preços e descrições instantaneamente, para que o cardápio digital sempre reflita o estoque e os preços atuais.  
+
+**US07: Monitoramento e Relatórios (Ref: FR13, FR19)**
+
+-User Story: As a manager, I want to monitor active orders in real-time and access monthly performance reports, so that I can make data-driven decisions to improve the restaurant's profitability.  
+-Tradução: Como um gestor, eu quero monitorar os pedidos ativos em tempo real e acessar relatórios de desempenho mensais, para que eu possa tomar decisões baseadas em dados para melhorar a lucratividade do restaurante.
