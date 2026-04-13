@@ -40,8 +40,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * FR20: Trilhas das principais matérias do ensino fundamental: Lingua Portuguesa; Matemática; História; Geografia; Ciências; Arte; Inglês.
 * FR21: Oferecer no sistema ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
 * FR22: Permitir aos professores/escolas podem criar um grupo para suas salas de aula.
-* FR21: Sistema de ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
-* FR22: Sistema de "grupos", onde professores/escolas podem criar um grupo para suas salas de aula.
+
 
 ## Non-Functional Requirements
 
