@@ -50,3 +50,7 @@ Define a facilidade de uso do sistema.
 - User Story: As a customer, I want to see a summary of my order with the estimated time and track its status, so that I can be informed about when my food will arrive.  
 - Tradução: Como um cliente, eu quero ver um resumo do meu pedido com o tempo estimado e acompanhar seu status, para que eu possa ser informado sobre quando minha comida chegará.  
 
+**US05: Pagamento Seguro e Versátil (Ref: FR12 / NFR05, NFR07)**
+
+- User Story: As a customer, I want to pay using Pix, credit cards, or digital wallets securely, so that I can complete my purchase using my preferred payment method without worrying about data safety.  
+- Tradução: Como um cliente, eu quero pagar usando Pix, cartões de crédito ou carteiras digitais de forma segura, para que eu possa concluir minha compra usando meu método de pagamento preferido sem me preocupar com a segurança dos dados.
