@@ -40,6 +40,8 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * FR20: Trilhas das principais matérias do ensino fundamental: Lingua Portuguesa; Matemática; História; Geografia; Ciências; Arte; Inglês.
 * FR21: Oferecer no sistema ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
 * FR22: Permitir aos professores/escolas podem criar um grupo para suas salas de aula.
+* FR21: Sistema de ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
+* FR22: Sistema de "grupos", onde professores/escolas podem criar um grupo para suas salas de aula.
 
 ## Non-Functional Requirements
 
@@ -65,3 +67,17 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF12: Responsivo (funcionar em celular, tablet, computadores e etc).
 * RNF13: O usuário deve conseguir registrar atividades de estudo com poucos cliques (máx 3 interações).
 * RNF14: Deve fornecer mensagens de erro claras e orientativas.
+* RNF01: Responder às ações do usuário em até 3 segundos.
+* RNF02: Suportar múltiplos usuários simultaneamente.
+
+### Security
+
+* RNF03: Proteger os dados dos usuários (login e informações pessoais).
+* RNF04: Garantir autenticação segura.
+* RNF05: Impedir acesso não autorizado aos dados.
+  
+### Usability
+
+* RNF06: Possuir interface simples e intuitiva, adequada para crianças e adolescentes.
+* RNF07: Ser fácil de navegar, com linguagem acessível.
+* RNF08: Responsivo (funcionar em celular, tablet, computadore etc).
