@@ -4,6 +4,11 @@
 Define velocidade, tempo de resposta e capacidade do sistema.
 
 ### Requisitos:
+- O sistema deve responder requisições em até **2 segundos** em condições normais.
+- O sistema deve suportar no mínimo **1.000 usuários simultâneos**.
+- O carregamento de imagens deve ocorrer em até **3 segundos**.
+- O sistema deve possuir disponibilidade mínima de **99% (uptime)**.
+- As consultas ao banco de dados devem ser otimizadas para evitar lentidão.
 
 ---
 
@@ -30,6 +35,11 @@ Define como os dados e acessos são protegidos.
 Define a facilidade de uso do sistema.
 
 ### Requisitos:
+- O sistema deve ser **intuitivo e fácil de navegar**.
+- O sistema deve ser **responsivo** (adaptável a celular e desktop).
+- O sistema deve fornecer **feedback visual** (ex: carregamento, confirmação).
+- O sistema deve utilizar linguagem clara e acessível.
+- O sistema deve possuir acesso rápido a **instruções de emergência**.
 
 ---
 
