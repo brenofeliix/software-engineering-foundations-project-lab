@@ -53,11 +53,15 @@ risco.
 
 ## Profissional
 - US11 - Como profissional de saúde, quero consultar informações confiáveis para auxiliar no atendimento.
+- US12 - Como um profissional, eu quero acessar dados de ocorrências, para analisar áreas de risco.
+- US13 - Como um profissional, eu quero visualizar relatórios, para apoiar a tomada de decisões.
+- US14 - Como um profissional, eu quero atualizar informações sobre animais, para manter o sistema preciso.
+
 
 ## Sistema (Automático)
-- US12 - Como sistema, quero integrar dados de fontes públicas para manter as informações atualizadas.
+- US15 - Como sistema, quero integrar dados de fontes públicas para manter as informações atualizadas.
 
 ## Administrador
-- US13 - Como administrador, quero gerenciar usuários para manter o sistema organizado.
-- US14 - Como administrador, quero gerenciar conteúdos para garantir informações atualizadas.
-- US15 - Como administrador, quero visualizar estatísticas para analisar o uso do sistema.
+- US16 - Como administrador, quero gerenciar usuários para manter o sistema organizado.
+- US17 - Como administrador, quero gerenciar conteúdos para garantir informações atualizadas.
+- US18 - Como administrador, quero visualizar estatísticas para analisar o uso do sistema.
