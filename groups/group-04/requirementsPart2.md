@@ -26,7 +26,6 @@ Define como os dados e acessos são protegidos.
 #### O que é:
 Define a facilidade de uso do sistema.
 
-
 - A interface do sistema deve ser intuitiva e de fácil navegação, permitindo que estudantes e servidores realizem suas ações principais sem necessidade de treinamento (RNF05).
 - O sistema deve ser compatível com dispositivos móveis, adaptando-se a diferentes tamanhos de tela (RNF04).
 - O sistema deve oferecer recursos de acessibilidade, incluindo alto contraste e alternância entre tema claro e escuro (RNF11).
@@ -36,12 +35,6 @@ Define a facilidade de uso do sistema.
 
 ## 4. User Stories (Histórias de Usuário)
 
-### O que é:
-Descrevem funcionalidades do ponto de vista do usuário.
-
-### Como fazer:
-- Utilizar o padrão: As a [tipo de usuário], I want [objetivo], so that [benefício]
-  
 **Usuário Final**
 
 - Como estudante ou servidor, eu quero recarregar meu saldo via Pix ou cartão de crédito, para que eu possa adicionar créditos remotamente sem precisar ir ao guichê físico.
@@ -59,13 +52,6 @@ Administrador
 - Como administrador, eu quero gerenciar os créditos dos usuários (adicionar, ajustar ou remover saldo), para que eu possa corrigir inconsistências e dar suporte a usuários com problemas financeiros.
 - Como administrador, eu quero gerar relatórios semanais, mensais e anuais de uso do sistema, para que eu possa monitorar a demanda, o fluxo financeiro e o desempenho geral do RU.
 - Como administrador, eu quero criar e publicar posts com comunicados, para que eu possa transmitir informações importantes diretamente à comunidade usuária do RU.
-
----
-
-### ✅ Exemplos:
-- As a farmer, I want to receive fire alerts, so that I can act quickly.
-- As a system administrator, I want to manage users, so that I can control access.
-- As a user, I want to view fire locations on a map, so that I understand risk areas.
 
 ---
 
