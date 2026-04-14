@@ -58,3 +58,11 @@
 
 - User Story: As a manager, I want to monitor active orders in real-time and access monthly performance reports, so that I can make data-driven decisions to improve the restaurant's profitability.  
 - Tradução: Como um gestor, eu quero monitorar os pedidos ativos em tempo real e acessar relatórios de desempenho mensais, para que eu possa tomar decisões baseadas em dados para melhorar a lucratividade do restaurante.
+  
+- US08: Controle de Fluxo de Preparo (Ref: FR14, FR18)
+User Story: As a kitchen staff member or waiter, I want to update the order status (In Progress, Ready, Served), so that the entire team and the customer stay synchronized on the progress.
+Tradução: Como um membro da equipe de cozinha ou garçom, eu quero atualizar o status do pedido (Em Andamento, Pronto, Servido), para que toda a equipe e o cliente permaneçam sincronizados sobre o progresso.
+US09: Experiência Fluida e Responsiva (Ref: NFR01, NFR09, NFR10)
+User Story: As a user, I want the interface to load quickly and adapt to my device screen, so that I can place an order in 4 steps or less without technical frustrations.
+Tradução: Como um usuário, eu quero que a interface carregue rapidamente e se adapte à tela do meu dispositivo, para que eu possa fazer um pedido em 4 etapas ou menos, sem frustrações técnicas.
+
