@@ -60,7 +60,7 @@ Administrador
 - Como administrador, eu quero gerenciar o cadastro de usuários (criar, atualizar, excluir e consultar histórico de pagamentos), para que eu possa controlar os acessos e manter os registros dos usuários do RU atualizados.
 - Como administrador, eu quero gerenciar os créditos dos usuários (adicionar, ajustar ou remover saldo), para que eu possa corrigir inconsistências e dar suporte a usuários com problemas financeiros.
 - Como administrador, eu quero gerar relatórios semanais, mensais e anuais de uso do sistema, para que eu possa monitorar a demanda, o fluxo financeiro e o desempenho geral do RU.
-- Como administrador, eu quero criar e publicar posts com comunicados, para que eu possa transmitir informações importantes diretamente à comunidade usuária do RU.
+- Como administrador, eu quero criar e enviar notificações para que eu possa transmitir informações importantes diretamente à comunidade usuária do RU.
 
 ---
 
