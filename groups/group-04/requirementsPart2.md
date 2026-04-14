@@ -18,7 +18,6 @@ Define velocidade, tempo de resposta e capacidade do sistema.
 #### O que é:
 Define como os dados e acessos são protegidos.
 
-#### Exemplo:
 - O sistema deve criptografar senhas utilizando hash seguro.
 - O sistema deve implementar autenticação de usuários.
 - O sistema deve restringir acesso por níveis de permissão.
