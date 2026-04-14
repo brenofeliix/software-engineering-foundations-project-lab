@@ -61,13 +61,3 @@ Administrador
 - Como administrador, eu quero criar e enviar notificações para que eu possa transmitir informações importantes diretamente à comunidade usuária do RU.
 
 ---
-
-## Considerações Finais
-
-Este documento deve ser:
-
-- Claro e organizado
-- Fácil de entender por qualquer membro da equipe
-- Utilizado como base para desenvolvimento e testes
-
- Um bom documento de requisitos evita retrabalho e garante qualidade no projeto.
