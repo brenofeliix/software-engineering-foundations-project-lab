@@ -1,13 +1,32 @@
 ### Performance (Desempenho)
 
-#### O que é:
-Define velocidade, tempo de resposta e capacidade do sistema.
+• O sistema deve garantir uma experiência fluida, respondendo a requisições de carregamento de tela em até 2 segundos em conexões 4G ou Wi-Fi.
 
-#### Exemplo:
-- O sistema deve responder requisições em até 2 segundos.
-- O sistema deve suportar até 1.000 usuários simultâneos.
+• O timer do Método Pomodoro deve iniciar ou pausar em no máximo 300ms após o comando do usuário, garantindo precisão imediata nas sessões de foco.
 
----
+• Para manter o fluxo de aprendizado sem interrupções, os Flashcards devem carregar e exibir seu conteúdo em até 1 segundo.
+
+• O relatório de métricas de estudo deve ser gerado e exibido em até 1,5 segundos se os dados estiverem em cache local, ou até 3 segundos mediante o uso de uma animação de carregamento para otimizar a percepção de espera.
+
+• Em termos de escalabilidade, a infraestrutura do backend deve suportar 1.000 usuários simultâneos sem qualquer degradação de performance.
+
+• O sistema deve ser capaz de absorver picos de até 5.000 usuários simultâneos por períodos de até 10 minutos, garantindo a estabilidade em momentos de alta demanda.
+
+• O sistema de alertas deve ser altamente confiável, disparando notificações com uma tolerância máxima de atraso de apenas 5 segundos em relação ao horário configurado pelo estudante.
+
+• No que diz respeito ao Mini Game, o desempenho gráfico deve ser estável, mantendo uma taxa de atualização mínima de 30 FPS em dispositivos Android 8+ ou iOS 13+.
+
+• O aplicativo deve permitir o funcionamento pleno em modo offline para as funções de cronograma, flashcards e Pomodoro, garantindo a continuidade dos estudos sem internet.
+
+• A sincronização de dados com a nuvem deve ocorrer de forma automática e em background assim que a conexão for restabelecida, sem nunca bloquear a interface do usuário.
+
+• Quanto à eficiência energética, o consumo de bateria do aplicativo em uso ativo não deve exceder 8% por hora em condições normais.
+
+• O tamanho total do pacote de instalação (APK/IPA) deve ser mantido em até 80MB, utilizando técnicas de compressão de assets, especialmente para os elementos do mini game.
+
+• O sistema deve garantir a acessibilidade, sendo totalmente compatível com leitores de tela e seguindo padrões de contraste WCAG 2.1 para assegurar a inclusão de todos os usuários
+
+
 
 ### Security (Segurança)
 
