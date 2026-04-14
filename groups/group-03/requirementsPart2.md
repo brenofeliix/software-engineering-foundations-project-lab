@@ -15,7 +15,6 @@
 - O sistema deve validar todas as entradas do usuário no cliente e no servidor, garantindo proteção contra ataques como SQL Injection e XSS.
 - O sistema deve conter recuperação de senha segura (via e-mail).
 
-
 ---
 
 ### Usability (Usabilidade)
@@ -39,4 +38,3 @@
 - Como gestor, quero implementar métodos de ensino inovadores, para aumentar a satisfação e permanência dos estudantes.
 - Como gestor, quero analisar índices de evasão e faltas, para agir preventivamente.
 - Como aluno, quero que o progresso seja visível do 6° ao 9° ano, para entender minha evolução.
-- 
