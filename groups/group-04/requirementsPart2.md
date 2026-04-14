@@ -26,10 +26,11 @@ Define como os dados e acessos são protegidos.
 #### O que é:
 Define a facilidade de uso do sistema.
 
-#### Exemplo:
-- O sistema deve ser intuitivo e fácil de navegar.
-- O sistema deve ser responsivo (adaptável a celular e desktop).
-- O usuário deve conseguir realizar ações principais em até 3 cliques.
+
+- A interface do sistema deve ser intuitiva e de fácil navegação, permitindo que estudantes e servidores realizem suas ações principais sem necessidade de treinamento (RNF05).
+- O sistema deve ser compatível com dispositivos móveis, adaptando-se a diferentes tamanhos de tela (RNF04).
+- O sistema deve oferecer recursos de acessibilidade, incluindo alto contraste e alternância entre tema claro e escuro (RNF11).
+- O sistema deve possuir um modo para pessoas com deficiência visual, garantindo inclusão a todos os usuários da comunidade acadêmica (RNF12).
 
 ---
 
