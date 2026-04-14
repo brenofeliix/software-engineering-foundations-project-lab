@@ -3,7 +3,6 @@
 #### O que é:
 Define velocidade, tempo de resposta e capacidade do sistema.
 
-#### Exemplo:
 - O sistema deve responder requisições em até 2 segundos.
 - O sistema deve suportar até 1.000 usuários simultâneos.
 
