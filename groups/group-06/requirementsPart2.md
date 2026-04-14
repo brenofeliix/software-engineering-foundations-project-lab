@@ -11,14 +11,19 @@ Define velocidade, tempo de resposta e capacidade do sistema.
 
 ### Security (Segurança)
 
-#### O que é:
-Define como os dados e acessos são protegidos.
-
-#### Exemplo:
-- O sistema deve criptografar senhas utilizando hash seguro.
-- O sistema deve implementar autenticação de usuários.
-- O sistema deve restringir acesso por níveis de permissão.
-
+- O sistema deve exigir autenticação
+segura por meio de login e senha,
+podendo incluir biometria. 
+- As senhas dos usuários devem ser
+armazenadas utilizando criptografia com
+hash seguro. 
+- O sistema deve bloquear
+temporariamente o acesso após
+múltiplas tentativas inválidas.
+- Os dados do usuário devem ser
+protegidos contra acessos não
+autorizados. 
+- O aplicativo deve seguir a LGPD.
 ---
 
 ### Usability (Usabilidade)
