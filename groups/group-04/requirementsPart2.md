@@ -7,6 +7,11 @@ Define velocidade, tempo de resposta e capacidade do sistema.
 - O sistema deve responder requisições em até 2 segundos.
 - O sistema deve suportar até 1.000 usuários simultâneos.
 
+
+- O sistema deve responder às requisições em até 2 segundos em condições normais de uso (RNF01).
+- O sistema deve suportar múltiplos acessos simultâneos com perda mínima de desempenho, garantindo estabilidade em horários de pico (RNF02).
+- O sistema deve estar disponível 99% do tempo, desconsiderando janelas de manutenção programada (RNF07).
+- O sistema deve apresentar tempo de recuperação rápido em caso de falhas, minimizando interrupções ao usuário (RNF10).
 ---
 
 ### Security (Segurança)
@@ -18,7 +23,11 @@ Define como os dados e acessos são protegidos.
 - O sistema deve criptografar senhas utilizando hash seguro.
 - O sistema deve implementar autenticação de usuários.
 - O sistema deve restringir acesso por níveis de permissão.
-
+- O sistema deve autenticar usuários exclusivamente via credenciais institucionais do SUAP, restringindo o acesso a membros da comunidade da UFR (RF01, RNF06).
+- Os dados dos usuários devem ser armazenados com criptografia, protegendo informações sensíveis contra acessos não autorizados (RNF03).
+- O sistema deve garantir a integridade dos dados durante operações de recarga e pagamento, prevenindo inconsistências financeiras (RNF08).
+- O sistema deve possuir mecanismos de backup e recuperação de dados, assegurando a continuidade do serviço em situações de falha (RNF09).
+- O acesso administrativo deve ser restrito a usuários com perfil de administrador, controlando as operações de cadastro, gestão de créditos e geração de relatórios (RF10, RF11, RF12, RF13).
 ---
 
 ### Usability (Usabilidade)
