@@ -11,6 +11,8 @@ Condições consideradas verdadeiras para o desenvolvimento.
 - Assume-se que os dados dos sensores serão confiáveis.
 - Assume-se que o sistema será utilizado via navegador web.
 
+- 
+
 - Assume-se que os usuários (estudantes e servidores) possuem cadastro ativo no SUAP da UFR.
 - Assume-se que os usuários terão acesso à internet para utilizar o sistema.
 - Assume-se que o sistema SUAP estará disponível e acessível para realizar a autenticação dos usuários.
@@ -36,6 +38,8 @@ Limitações técnicas, legais ou de negócio.
 - O sistema deve rodar em navegadores modernos (Chrome, Firefox).
 - O projeto deve ser entregue em até 4 semanas.
 - O sistema não poderá utilizar serviços pagos.
+
+
 - O sistema deve autenticar usuários exclusivamente via SUAP, não sendo permitido cadastro por outros meios (RNF06).
 - O sistema deve ser desenvolvido como uma aplicação web responsiva, compatível com dispositivos móveis e desktop (RNF04).
 - O sistema deve rodar em navegadores modernos como Chrome e Firefox.
