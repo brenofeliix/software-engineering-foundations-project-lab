@@ -1,12 +1,7 @@
 ### Performance (Desempenho)
 
-#### O que é:
-Define velocidade, tempo de resposta e capacidade do sistema.
-
 - O sistema deve responder requisições em até 2 segundos.
 - O sistema deve suportar até 1.000 usuários simultâneos.
-
-
 - O sistema deve responder às requisições em até 2 segundos em condições normais de uso (RNF01).
 - O sistema deve suportar múltiplos acessos simultâneos com perda mínima de desempenho, garantindo estabilidade em horários de pico (RNF02).
 - O sistema deve estar disponível 99% do tempo, desconsiderando janelas de manutenção programada (RNF07).
@@ -14,9 +9,6 @@ Define velocidade, tempo de resposta e capacidade do sistema.
 ---
 
 ### Security (Segurança)
-
-#### O que é:
-Define como os dados e acessos são protegidos.
 
 - O sistema deve criptografar senhas utilizando hash seguro.
 - O sistema deve implementar autenticação de usuários.
@@ -29,9 +21,6 @@ Define como os dados e acessos são protegidos.
 ---
 
 ### Usability (Usabilidade)
-
-#### O que é:
-Define a facilidade de uso do sistema.
 
 - A interface do sistema deve ser intuitiva e de fácil navegação, permitindo que estudantes e servidores realizem suas ações principais sem necessidade de treinamento (RNF05).
 - O sistema deve ser compatível com dispositivos móveis, adaptando-se a diferentes tamanhos de tela (RNF04).
@@ -52,7 +41,7 @@ Define a facilidade de uso do sistema.
 - Como estudante ou servidor, eu quero enviar feedback sobre as refeições do dia, para que eu possa contribuir com a melhoria da qualidade da alimentação oferecida.
 - Como estudante ou servidor, eu quero visualizar meu registro de check-in, para que eu possa confirmar meu histórico de refeições realizadas.
 
-Administrador
+**Administrador**
 
 - Como administrador, eu quero cadastrar e atualizar o cardápio semanal, para que os usuários tenham sempre acesso a informações corretas e atualizadas sobre as refeições.
 - Como administrador, eu quero gerenciar o cadastro de usuários (criar, atualizar, excluir e consultar histórico de pagamentos), para que eu possa controlar os acessos e manter os registros dos usuários do RU atualizados.
