@@ -23,40 +23,21 @@ Define como os dados e acessos são protegidos.
 
 ### Usability (Usabilidade)
 
-#### O que é:
-Define a facilidade de uso do sistema.
+- O sistema deve apresentar uma interface intuitiva e de fácil navegação, adequada ao público estudantil. 
 
-#### Exemplo:
-- O sistema deve ser intuitivo e fácil de navegar.
-- O sistema deve ser responsivo (adaptável a celular e desktop).
-- O usuário deve conseguir realizar ações principais em até 3 cliques.
+- As principais funcionalidades devem ser acessadas em até 5 interações do usuário. 
+
+- O sistema deve fornecer feedback visual imediato após ações realizadas. 
+
+- O sistema deve possuir design simples e organizado, reduzindo distrações durante o uso. 
 
 ---
 
 ## 4. User Stories (Histórias de Usuário)
 
-### O que é:
-Descrevem funcionalidades do ponto de vista do usuário.
-
-### Como fazer:
-Utilizar o padrão: As a [tipo de usuário], I want [objetivo], so that [benefício]
-
-
+- Como um estudante, quero criar e gerenciar um cronograma de estudos, para que eu possa organizar minha rotina de forma eficiente.
+- Como um estudante, quero utilizar o temporizador Pomodoro, para que eu consiga manter o foco durante as sessões de estudo.
+- Como um estudante, quero receber notificações sobre tarefas e revisões, para que eu não esqueça minhas atividades de estudo.
+- Como um estudante, quero criar e revisar flashcards, para que eu possa melhorar meu processo de aprendizagem.
 ---
 
-### ✅ Exemplos:
-- As a farmer, I want to receive fire alerts, so that I can act quickly.
-- As a system administrator, I want to manage users, so that I can control access.
-- As a user, I want to view fire locations on a map, so that I understand risk areas.
-
----
-
-## Considerações Finais
-
-Este documento deve ser:
-
-- Claro e organizado
-- Fácil de entender por qualquer membro da equipe
-- Utilizado como base para desenvolvimento e testes
-
- Um bom documento de requisitos evita retrabalho e garante qualidade no projeto.
