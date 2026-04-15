@@ -59,5 +59,9 @@ autorizados.
 - Como um estudante, quero utilizar o temporizador Pomodoro, para que eu consiga manter o foco durante as sessões de estudo.
 - Como um estudante, quero receber notificações sobre tarefas e revisões, para que eu não esqueça minhas atividades de estudo.
 - Como um estudante, quero criar e revisar flashcards, para que eu possa melhorar meu processo de aprendizagem.
+- Como um estudante, quero acompanhar meu desempenho nos estudos, para que eu possa identificar meus pontos fortes e fracos.
+- Como um estudante, quero realizar quizzes gerados a partir dos meus flashcards, para que eu possa testar meu conhecimento.
+- Como um estudante, quero personalizar meu avatar, para que eu me sinta mais engajado com o aplicativo.
+- Como um estudante, quero ganhar pontos e recompensas, para que eu me sinta motivado a manter a constância.
 ---
 
