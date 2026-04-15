@@ -2,6 +2,8 @@
 
 Este documento descreve de forma estruturada os requisitos do sistema a ser desenvolvido. Ele deve ser claro, objetivo e completo, servindo como base para desenvolvimento, testes e validação do software.
 
+---
+
 ## System Overview
 
 O projeto consiste no desenvolvimento de um sistema educacional baseado em gamificação dos estudos, com o objetivo de tornar o aprendizado mais dinâmico, interativo e motivador para alunos do ensino fundamental.
@@ -15,6 +17,8 @@ Além disso, o sistema contará com elementos típicos de gamificação para aum
 Outro recurso importante será o sistema de grupos, permitindo que professores ou escolas criem turmas dentro da plataforma. Dessa forma, será possível acompanhar o desempenho dos alunos, promover interação e integrar o uso do aplicativo ao ambiente escolar.
 
 No geral, o projeto busca unir tecnologia e educação de forma acessível, tornando o processo de aprendizagem mais leve, divertido e eficiente.
+
+---
 
 ## Functional Requirements
 
@@ -40,8 +44,8 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * FR20: Trilhas das principais matérias do ensino fundamental: Lingua Portuguesa; Matemática; História; Geografia; Ciências; Arte; Inglês.
 * FR21: Oferecer no sistema ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
 * FR22: Permitir aos professores/escolas podem criar um grupo para suas salas de aula.
-* FR21: Sistema de ofensiva individual, responsável por gravar quantos dias seguidos um aluno estudou usando o serviço.
-* FR22: Sistema de "grupos", onde professores/escolas podem criar um grupo para suas salas de aula.
+
+---
 
 ## Non-Functional Requirements
 
@@ -52,6 +56,8 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF03: As atualizações de pontuação, rankings e conquistas devem ocorrer em tempo quase real.
 * RNF04: O sistema deve ser escalável para suportar crescimento no número de usuários e dados.
 
+---
+
 ### Security
 
 * RNF05: Proteger os dados dos usuários (login e informações pessoais).
@@ -60,6 +66,8 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF08: Implementar níveis de acesso por perfil de usuário (ex: aluno, professor e administrador), limitando o acesso às funcionalidades conforme o perfil.
 * RNF09: Deve existir backup automático periódico dos dados.
   
+---
+
 ### Usability
 
 * RNF10: Possuir interface intuitiva e de fácil navegação, mesmo para novos usuários.
@@ -67,17 +75,3 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 * RNF12: Responsivo (funcionar em celular, tablet, computadores e etc).
 * RNF13: O usuário deve conseguir registrar atividades de estudo com poucos cliques (máx 3 interações).
 * RNF14: Deve fornecer mensagens de erro claras e orientativas.
-* RNF01: Responder às ações do usuário em até 3 segundos.
-* RNF02: Suportar múltiplos usuários simultaneamente.
-
-### Security
-
-* RNF03: Proteger os dados dos usuários (login e informações pessoais).
-* RNF04: Garantir autenticação segura.
-* RNF05: Impedir acesso não autorizado aos dados.
-  
-### Usability
-
-* RNF06: Possuir interface simples e intuitiva, adequada para crianças e adolescentes.
-* RNF07: Ser fácil de navegar, com linguagem acessível.
-* RNF08: Responsivo (funcionar em celular, tablet, computadore etc).
