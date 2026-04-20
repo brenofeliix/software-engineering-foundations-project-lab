@@ -5,7 +5,6 @@
 - Assume-se que os usuários estão começando o conteúdo do zero, sem nenhum conhecimento prévio sobre quaisquer matérias.
 - Assume-se que os usuários podem fazer parte de qualquer faixa etária.
 - Assume-se que, para usuários menores de idade, é necessário permissão parental para a participação dos recursos sociais(chat, grupos, entre outros).
-- Assume-se que as trilhas de cada matéria são independentes tanto entre si quanto de outros fatores externos(escolas, grupos, etc).
 - Assume-se que as trilhas seguem os padrões de conteúdo do ensino fundamental do MEC e BNCC.
 
 ---
