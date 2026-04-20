@@ -1,15 +1,12 @@
 ## 5. Assumptions (Premissas)
 
-### O que é:
-Condições consideradas verdadeiras para o desenvolvimento.
-
-### Como fazer:
-- Liste fatores externos ou suposições do projeto
-
-### Exemplos:
 - Assume-se que os usuários terão acesso à internet.
-- Assume-se que os dados dos sensores serão confiáveis.
-- Assume-se que o sistema será utilizado via navegador web.
+- Assume-se que o sistema será utilizado via dispositivos mobile e navegador web.
+- Assume-se que os usuários estão começando o conteúdo do zero, sem nenhum conhecimento prévio sobre quaisquer matérias.
+- Assume-se que os usuários podem fazer parte de qualquer faixa etária.
+- Assume-se que, para usuários menores de idade, é necessário permissão parental para a participação dos recursos sociais(chat, grupos, entre outros).
+- Assume-se que as trilhas de cada matéria são independentes tanto entre si quanto de outros fatores externos(escolas, grupos, etc).
+- Assume-se que as trilhas seguem os padrões de conteúdo do ensino fundamental do MEC e BNCC.
 
 ---
 
