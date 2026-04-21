@@ -86,14 +86,14 @@ FR30 – Permitir que moderadores (líderes comunitários) removam ou arquivem a
 
 ## 3. Non-Functional Requirements (Requisitos Não Funcionais)
 
-NFR01 – Todas as senhas devem ser armazenadas utilizando hash criptográfico
+NFR01 – Todas as senhas devem ser armazenadas utilizando hash criptográfico.
 
 NFR02 – O sistema deve implementar rate limiting: máximo de 5 tentativas de login por minuto por IP.
 
 NFR03 – A interface deve ser responsiva, adaptando-se a smartphones e desktops.
 
-NFR04 – O sistema deve fornecer feedback visual claro para ações do usuário (loading, mensagens de sucesso/erro)
+NFR04 – O sistema deve fornecer feedback visual claro para ações do usuário (loading, mensagens de sucesso/erro).
 
-NFR05 – A plataforma deve estar em conformidade com a LGPD:
+NFR05 – A plataforma deve estar em conformidade com a LGPD.
 
 NFR06 – Dados de localização (GPS) só podem ser coletados após autorização explícita do usuário.
