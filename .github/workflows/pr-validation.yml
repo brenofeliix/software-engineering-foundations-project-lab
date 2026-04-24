@@ -128,23 +128,33 @@ jobs:
               valid = paths.some(p =>
                 p.endsWith("requirementsPart1.md") ||
                 p.endsWith("requirementsPart2.md") ||
-                p.endsWith("requirementsPart3.md")
+                p.endsWith("requirementsPart3.md") ||
+                p.endsWith("Documento_de_Requisitos_Versao-Final.md")
               );
             }
 
             // MODELING
             else if (branch.includes("modeling")) {
-              valid = paths.some(p => p.endsWith("modeling.md"));
+              valid = paths.some(p => 
+              p.endsWith("modeling.md") ||
+              p.endsWith("Documento_de_Requisitos_Versao-Final.md")
+              );
             }
 
             // ARCHITECTURE
             else if (branch.includes("architecture")) {
-              valid = paths.some(p => p.endsWith("architecture.md"));
+              valid = paths.some(p => 
+              p.endsWith("architecture.md") ||
+              p.endsWith("Documento_de_Requisitos_Versao-Final.md")
+              );
             }
 
             // TESTING
             else if (branch.includes("testing")) {
-              valid = paths.some(p => p.endsWith("testing.md"));
+              valid = paths.some(p => 
+              p.endsWith("testing.md") ||
+              p.endsWith("Documento_de_Requisitos_Versao-Final.md")
+              );
             }
 
             if (!valid) {
