@@ -10,7 +10,7 @@ Os principais usuários do sistema serão donos de terras e gestores, incluindo 
 ## Functional Requirements
 
 --FR01 - Coletar dados de satélites (AEB e INPE) para monitoramento ambiental.
-*FR02 - Analisar dados históricos de queimadas para identificar padrões de risco.
+--FR02 - Analisar dados históricos de queimadas para identificar padrões de risco.
 *FR03 - Prever áreas propensas a incêndios utilizando algoritmos de Inteligência Artificial.
 *FR04 - Exibir mapa interativo com regiões classificadas por nível de risco de queimadas.
 *FR05 - Permitir visualização em dashboard com gráficos e indicadores de risco.
