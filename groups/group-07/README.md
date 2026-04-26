@@ -2,7 +2,7 @@
 
 ## Project Name
 
-(To be defined)
+Fireseeker
 
 ## Team Members
 
