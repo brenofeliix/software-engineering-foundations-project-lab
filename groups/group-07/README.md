@@ -6,9 +6,11 @@
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Acenor de Lima Ribeiro Alves Junior
+* Gustavo Oliveira Santos
+* João Vitor Andrade Almeida
+* Lucas de Moraes Bento da Silva
+* Tassio Medrado de Oliveira
 
 ## Repository Structure
 
