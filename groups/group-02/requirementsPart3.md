@@ -20,4 +20,11 @@
 - O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.
 - O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).
 - O projeto deve ser entregue em até 6 meses.
+O sistema deve realizar integrações com Payment Service Providers (PSPs) exclusivamente via APIs RESTful sobre HTTPS com TLS 1.2 ou superior.
+O projeto deve implementar uma camada de abstração agnóstica para hardware, permitindo a comunicação com diferentes adquirentes e modelos de Smart POS via TEF ou SDKs.
+O sistema deve utilizar obrigatoriamente comunicação via HTTP Local ou WebSockets para o envio de valores aos terminais, vedando a digitação manual.
+O sistema deve processar pagamentos via Pix, cartões e carteiras digitais utilizando obrigatoriamente tokenização, sendo proibido o armazenamento de dados sensíveis de pagamento em servidores próprios.
+O sistema deve garantir que o tempo de carregamento de qualquer página web seja inferior a 2 segundos.
+O projeto deve assegurar que o motor de busca de pratos retorne resultados em menos de 1 segundo.
+O sistema deve suportar a carga simultânea de até 1.000 usuários ativos sem perda de fluidez.
 
