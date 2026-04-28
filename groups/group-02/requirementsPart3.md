@@ -1,17 +1,13 @@
 ## 5. Assumptions (Premissas)
 
-### O que é:
-Condições consideradas verdadeiras para o desenvolvimento.
+- Pressupõe-se que os usuários possuam seus smartphones.
+- Pressupõe-se que os funcionários e gestores do estabelecimento tenham acesso ao sistema via smartphone, tablet, notebook ou desktop.
+- Assume-se que funcionários e gestores possuam cadastro no banco de dados do sistema para realizar-se às autenticações.
+- Exige-se que os usuários tenham acesso à internet.
+- Exige-se que todos os dispositivos eletrônicos/digitais do estabelecimento estejam conectados à internet.
+- Assume-se que todas as mesas possuam QR Code do endereço da aplicação web e estejam devidamente sinalizadas.
+- Assume-se que o estabelecimento possua maquininha de pagamentos.
 
-### Como fazer:
-- Liste fatores externos ou suposições do projeto
-
-### Exemplos:
-- Assume-se que os usuários terão acesso à internet.
-- Assume-se que os dados dos sensores serão confiáveis.
-- Assume-se que o sistema será utilizado via navegador web.
-
----
 
 ## 6. Constraints (Restrições)
 
