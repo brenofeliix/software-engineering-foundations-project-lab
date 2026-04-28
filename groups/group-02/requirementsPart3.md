@@ -11,10 +11,8 @@
 - Assume-se que o usuário final possui um dispositivo com acesso estável à internet e um navegador moderno (Chrome, Safari, Edge ou Firefox) para garantir a performance de carregamento prevista.
 - Pressupõe-se que os estabelecimentos utilizem terminais Smart POS ou hardware de rede compatíveis com os protocolos HTTP Local ou WebSockets para a automação física.
 - Exige-se que o provedor de infraestrutura (Cloud/Servidor) suporte escalabilidade horizontal para absorver picos de 50% de demanda sem degradação de performance.
-
-
-## 6. Constraints (Restrições)  
-
 - Considera-se que o gateway de pagamento (PSP) escolhido ofereça suporte nativo a Webhooks e APIs baseadas em REST com certificação PCI DSS.  
 - Assume-se que os gestores e a equipe da cozinha possuam treinamento básico para operar a interface administrativa e atualizar o status dos pedidos em tempo real.  
 - Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas.  
+
+## 6. Constraints (Restrições)  
