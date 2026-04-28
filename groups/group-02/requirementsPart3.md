@@ -13,7 +13,11 @@
 - Exige-se que o provedor de infraestrutura (Cloud/Servidor) suporte escalabilidade horizontal para absorver picos de 50% de demanda sem degradação de performance.
 
 
-## 6. Constraints (Restrições)
+## 6. Constraints (Restrições)  
+
+- O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.  
+- O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).
+
 
 ### O que é:
 Limitações técnicas, legais ou de negócio.
