@@ -15,30 +15,6 @@
 
 ## 6. Constraints (Restrições)  
 
-- O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.  
-- O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).
-
-
-### O que é:
-Limitações técnicas, legais ou de negócio.
-
-### Como fazer:
-- Liste tudo que limita o desenvolvimento
-
-### Exemplos:
-- O sistema deve ser desenvolvido utilizando tecnologia web.
-- O sistema deve rodar em navegadores modernos (Chrome, Firefox).
-- O projeto deve ser entregue em até 4 semanas.
-- O sistema não poderá utilizar serviços pagos.
-
----
-
-## Considerações Finais
-
-Este documento deve ser:
-
-- Claro e organizado
-- Fácil de entender por qualquer membro da equipe
-- Utilizado como base para desenvolvimento e testes
-
- Um bom documento de requisitos evita retrabalho e garante qualidade no projeto.
+- Considera-se que o gateway de pagamento (PSP) escolhido ofereça suporte nativo a Webhooks e APIs baseadas em REST com certificação PCI DSS.  
+- Assume-se que os gestores e a equipe da cozinha possuam treinamento básico para operar a interface administrativa e atualizar o status dos pedidos em tempo real.  
+- Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas.  
