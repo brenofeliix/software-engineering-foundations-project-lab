@@ -88,6 +88,11 @@ This course enforces professional practices:
 ## Context
 
 This project is part of a Software Engineering undergraduate program and reflects real-world development practices used in industry.
+# Notas da Disciplina
+
+## Acesso à Planilha
+
+[Clique aqui para acessar a planilha de notas](https://docs.google.com/spreadsheets/d/1FcggGMmtfKNhgfgkhz7b6WPbBKXZh5-tGiX2wgk7tMI/edit?usp=sharing)
 
 ---
 
