@@ -15,4 +15,9 @@
 - Assume-se que os gestores e a equipe da cozinha possuam treinamento básico para operar a interface administrativa e atualizar o status dos pedidos em tempo real.  
 - Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas.  
 
-## 6. Constraints (Restrições)  
+## 6. Constraints (Restrições)   
+
+- O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.
+- O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).
+- O projeto deve ser entregue em até 6 meses.
+
