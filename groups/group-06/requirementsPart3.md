@@ -5,4 +5,5 @@
 ---
 
 ## 6. Constraints (Restrições)
-
+- É obrigatório que todo acesso ao aplicativo seja realizado mediante a login.
+- A versão Aplicativo estará disponível apenas para dispositivos mobile. 
