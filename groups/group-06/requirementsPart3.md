@@ -1,8 +1,8 @@
 ## 5. Assumptions (Premissas)
-- Os usuários vão estudar, pelo menos, 25 minutos por dia.
-- O público-alvo usa mais o sistema operacional Android do que IOS.
-- * O minigame incentivará mais a prática dos estudos.
-- * Os usuários respondem positivamente a sistemas de recompensa e gamificação.
+- Assume-se que os usuários vão estudar, pelo menos, 25 minutos por dia.
+- Assume-se que o público-alvo usa mais o sistema operacional Android do que IOS.
+- Assume-se que o minigame incentivará mais a prática dos estudos.
+- Assume-se que os usuários respondem positivamente a sistemas de recompensa e gamificação.
 
 ---
 
