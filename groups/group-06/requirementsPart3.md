@@ -7,7 +7,7 @@
 ---
 
 ## 6. Constraints (Restrições)
-- É obrigatório que todo acesso ao aplicativo seja realizado mediante a login.
-- A versão Aplicativo estará disponível apenas para dispositivos mobile.
-- A ferramenta Pomodoro terá um tempo fixo de 25 minutos, sem personalização.
+- O sistema deve exigir que todo acesso ao aplicativo seja realizado mediante login.
+- O sistema deve ter a versão Aplicativo apenas para dispositivos mobile.
+- O sistema deve ter a ferramenta Pomodoro com um tempo fixo de 25 minutos, sem personalização.
 - O aplicativo deve funcionar com consumo mínimo de bateria e dados.
