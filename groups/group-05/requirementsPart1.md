@@ -12,8 +12,11 @@ O StockFácil é um aplicativo web e mobile para gestão de estoque de pequenas 
 ### Público-alvo
 
 Pequenos comerciantes com lojas físicas e/ou virtuais (e-commerce)
+
 Empreendedores do varejo que precisam controlar produtos, entradas e saídas
+
 Gestores de microempresas que desejam substituir controles manuais ou planilhas
+
 Equipes de estoque com múltiplos operadores e necessidade de controle de acesso
 
 ---
