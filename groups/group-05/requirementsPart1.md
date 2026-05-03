@@ -7,15 +7,14 @@ Este documento descreve de forma estruturada os requisitos do sistema a ser dese
 ## 1. System Overview (Visão Geral do Sistema)
 
 ### O que é:
-Descreva o sistema de forma geral, explicando seu propósito, contexto e objetivo.
+O StockFácil é um aplicativo web e mobile para gestão de estoque de pequenas empresas e e-commerces varejistas. A plataforma permite registrar e monitorar movimentações de produtos em tempo real, com alertas de reposição e relatórios, substituindo planilhas manuais e processos desorganizados.
 
-### Como fazer:
-- Explique qual problema o sistema resolve
-- Descreva brevemente a solução
-- Indique o público-alvo
+### Público-alvo
 
-### Exemplo:
-O sistema FireSeeker é uma plataforma web que permite a detecção e monitoramento de focos de incêndio em áreas rurais utilizando sensores e dados em tempo real. O público-alvo inclui órgãos ambientais e fazendeiros.
+Pequenos comerciantes com lojas físicas e/ou virtuais (e-commerce)
+Empreendedores do varejo que precisam controlar produtos, entradas e saídas
+Gestores de microempresas que desejam substituir controles manuais ou planilhas
+Equipes de estoque com múltiplos operadores e necessidade de controle de acesso
 
 ---
 
