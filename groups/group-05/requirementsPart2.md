@@ -8,25 +8,22 @@
 
 ### Security (Segurança)
 
-#### O que é:
-Define como os dados e acessos são protegidos.
-
-#### Exemplo:
-- O sistema deve criptografar senhas utilizando hash seguro.
-- O sistema deve implementar autenticação de usuários.
-- O sistema deve restringir acesso por níveis de permissão.
+- O sistema deve criptografar senhas utilizando algoritmo de hash seguro (bcrypt com salt).
+- O sistema deve implementar autenticação com bloqueio após 5 tentativas incorretas consecutivas.
+- O sistema deve restringir o acesso às funcionalidades conforme o perfil do usuário (administrador, operador, visualizador).
+- Todas as comunicações devem ser realizadas via HTTPS (TLS 1.2 ou superior).
+- Tokens de sessão devem expirar após 8 horas de inatividade, exigindo novo login.
+- O sistema deve registrar logs de auditoria para ações críticas como exclusão de produtos e alterações de estoque.
 
 ---
 
 ### Usability (Usabilidade)
 
-#### O que é:
-Define a facilidade de uso do sistema.
-
-#### Exemplo:
-- O sistema deve ser intuitivo e fácil de navegar.
-- O sistema deve ser responsivo (adaptável a celular e desktop).
-- O usuário deve conseguir realizar ações principais em até 3 cliques.
+- A interface deve ser intuitiva, permitindo que novos usuários realizem tarefas principais sem treinamento prévio.
+- O sistema deve ser totalmente responsivo, adaptando-se a dispositivos móveis, tablets e desktops.
+- O usuário deve conseguir registrar uma entrada ou saída de estoque em no máximo 3 cliques a partir do menu principal.
+- O sistema deve exibir mensagens de erro claras e orientações de correção sempre que uma ação falhar.
+- O dashboard principal deve apresentar os indicadores mais importantes de forma visual e de fácil interpretação.
 
 ---
 
