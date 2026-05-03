@@ -18,36 +18,32 @@ Liste termos importantes utilizados no documento.
 ##  2. Product Vision
 
 ### 2.1 Problema
-O Brasil registra mais de 30 mil acidentes com serpentes por ano, além de milhares de casos envolvendo escorpiões e aranhas. Muitos desses acidentes são agravados pela falta de informação da população sobre identificação dos animais e procedimentos corretos em situações de emergência.
+Em 2023, o Brasil registrou mais de 341 mil acidentes com animais peçonhentos, alta de 16% em relação ao ano anterior, segundo o Ministério da Saúde. O Instituto Butantan aponta que trabalhadores rurais estão entre os mais atingidos e que o tempo entre a picada e o atendimento é fator decisivo para a gravidade do caso. A falta de informação acessível sobre identificação de animais e procedimentos de emergência agrava diretamente esse cenário.
 
-Além disso, trabalhadores rurais, profissionais da linha de frente (bombeiros, policiais) e moradores de áreas próximas à vegetação estão constantemente expostos a esses riscos, especialmente em regiões como Mato Grosso. A ausência de ferramentas acessíveis que unam educação, prevenção e monitoramento torna o problema ainda mais crítico.
+### 2.2 Solução
+O Serpy é uma plataforma digital mobile e web que reúne identificação de animais peçonhentos, orientação em emergências, monitoramento de áreas de risco e educação preventiva em um único ambiente acessível a qualquer pessoa.
 
-### 2.2 Público-Alvo
-O sistema é voltado para:
-
-- Trabalhadores rurais
-- Profissionais como bombeiros, policiais e agentes ambientais
+### 2.3 Público-Alvo
+- Trabalhadores rurais, maior grupo de vítimas de acidentes no Brasil
+- Profissionais de saúde, bombeiros, policiais e agentes ambientais
 - Moradores de áreas urbanas próximas à vegetação
+- Comunidades com acesso limitado a serviços de saúde
 - Estudantes e população em geral
-O foco principal está nos usuários mais expostos ao risco, mas a solução é acessível para qualquer pessoa.
 
-### 2.3 Proposta de Valor
-O nosso projeto será uma plataforma digital (aplicativo) que oferece:
+### 2.4 Proposta de Valor
+A OMS classifica acidentes com animais peçonhentos como doença tropical negligenciada, e o Brasil se comprometeu a reduzir em 50% a mortalidade ofídica até 2030. O Serpy contribui para esse objetivo levando informação confiável e orientação de emergência para qualquer pessoa com um smartphone, reduzindo o tempo de resposta em situações críticas.
 
-- Catálogo de animais peçonhentos (cobras, escorpiões e aranhas)
-- Orientações de primeiros socorros e modo emergência
-- Registro e visualização de ocorrências em mapa
-- Conteúdos educativos e cursos
-- Sistema de gamificação com quizzes, pontos e conquistas
-A proposta é unir educação, prevenção e tecnologia, criando uma solução útil tanto no dia a dia quanto em situações críticas.
+### 2.5 Diferencial
+Soluções existentes são fragmentadas — sites informativos sem geolocalização, apps educativos sem modo emergência, conteúdos em redes sociais sem confiabilidade. O Serpy integra tudo em um único ambiente, com funcionamento offline para regiões com conexão limitada.
 
-### 2.4 Diferencial
-Atualmente, existem poucas soluções completas no mercado com esse foco integrado. Entre os concorrentes indiretos, destacam-se:
-
-- Sites informativos sobre animais peçonhentos
-- Aplicativos educativos genéricos
-- Conteúdos isolados em redes sociais e plataformas de vídeo
-No entanto, esses concorrentes não oferecem integração entre educação, geolocalização, emergência e engajamento, o que diferencia o projeto em si.
+### 2.6 Funcionalidades principais (alto nível)
+- Funcionalidade 1: Catálogo de animais peçonhentos com identificação por seleção manual ou imagem
+- Funcionalidade 2: Modo emergência com instruções de primeiros socorros e triagem por sintomas
+- Funcionalidade 3: Mapa colaborativo de ocorrências com alertas de risco por geolocalização
+- Funcionalidade 4: Módulo educacional com conteúdos, quizzes e certificados
+- Funcionalidade 5: Sistema de gamificação com pontuação, badges e ranking de usuários
+- Funcionalidade 6: Painel administrativo para gestão de usuários, conteúdos e estatísticas
+- Funcionalidade 7: Funcionamento offline com sincronização automática ao restabelecer conexão
 
 ---
 
