@@ -118,7 +118,7 @@ Descreva a funcionalidade.
 - O sistema deverá ser hospedado em ambiente de servidor, podendo ser em infraestrutura local (on-premise) ou em nuvem.
 - O sistema deverá exigir conexão com a internet para seu funcionamento, sendo recomendado o uso de conexão estável e de boa velocidade.
 - O acesso ao sistema deverá ocorrer por meio de navegadores web, permitindo sua utilização em diferentes dispositivos conectados à rede.
-- O sistema deverá utilizar protocolos seguros de comuni
+- O sistema deverá utilizar protocolos seguros de comunighfyt
 
 ### 6.2 Operacionais
 - Logs  
