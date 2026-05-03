@@ -63,19 +63,45 @@ Liste os principais envolvidos:
 
 ##  4. Requisitos Funcionais
 
-### RF01 - Nome do requisito
-**Descrição:**  
-Descreva a funcionalidade.
-
-**Prioridade:** Alta / Média / Baixa  
-**Entradas:**  
-**Saídas:**  
-**Regras de negócio:**  
-
----
-
-### RF02 - Nome do requisito
-(repita o padrão)
+- FR01 - Permitir o cadastro de usuários no sistema.
+- FR02 - Permitir autenticação de usuários por login e senha.
+- FR03 - Permitir recuperação de senha.
+- FR04 - Permitir edição de perfil do usuário.
+- FR05 - Permitir diferenciação de perfis (usuário comum, profissional e administrador).
+- FR06 - Permitir identificar animais peçonhentos por meio de seleção manual.
+- FR07 - Permitir identificar animais por meio de imagem (upload ou câmera).
+- FR08 - Exibir informações detalhadas sobre o animal identificado.
+- FR09 - Exibir nível de risco do animal (baixo, médio, alto).
+- FR10 - Exibir características físicas e comportamento do animal.
+- FR11 - Exibir habitat e regiões onde o animal é encontrado.
+- FR12 - Permitir acesso ao modo emergência.
+- FR13 - Exibir instruções de primeiros socorros.
+- FR14 - Exibir instruções do que não deve ser feito.
+- FR15 - Permitir acesso rápido a orientações por botão de emergência.
+- FR16 - Permitir triagem baseada em sintomas informados pelo usuário.
+- FR17 - Permitir registro de ocorrências com descrição.
+- FR18 - Permitir registro de localização da ocorrência.
+- FR19 - Permitir visualização de ocorrências em mapa.
+- FR20 - Permitir consulta de áreas de risco.
+- FR21 - Permitir filtragem de ocorrências por tipo de animal.
+- FR22 - Permitir acesso ao módulo educacional.
+- FR23 - Permitir visualização de conteúdos educativos.
+- FR24 - Permitir realização de quizzes.
+- FR25 - Permitir acompanhamento de progresso do usuário.
+- FR26 - Permitir emissão de certificados (se aplicável).
+- FR27 - Permitir sistema de pontuação (XP).
+- FR28 - Permitir conquista de badges.
+- FR29 - Permitir visualização de ranking de usuários.
+- FR30 - Permitir controle de sequência de uso (streak).
+- FR31 - Permitir envio de notificações ao usuário.
+- FR32 - Permitir alertas de áreas de risco com base em localização.
+- FR33 - Permitir acesso ao dashboard administrativo.
+- FR34 - Permitir gerenciamento de usuários.
+- FR35 - Permitir gerenciamento de conteúdos.
+- FR36 - Permitir gerenciamento de ocorrências.
+- FR37 - Permitir visualização de estatísticas do sistema.
+- FR38 - Permitir funcionamento básico offline (conteúdos essenciais).
+- FR39 - Permitir sincronização de dados quando conexão for restabelecida.
 
 ---
 
