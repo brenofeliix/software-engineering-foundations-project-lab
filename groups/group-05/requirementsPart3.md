@@ -14,26 +14,23 @@ Condições consideradas verdadeiras para o desenvolvimento.
 
 ## 6. Constraints (Restrições)
 
-### O que é:
-Limitações técnicas, legais ou de negócio.
-
-### Como fazer:
-- Liste tudo que limita o desenvolvimento
-
-### Exemplos:
-- O sistema deve ser desenvolvido utilizando tecnologia web.
-- O sistema deve rodar em navegadores modernos (Chrome, Firefox).
-- O projeto deve ser entregue em até 4 semanas.
-- O sistema não poderá utilizar serviços pagos.
+- O sistema deve ser desenvolvido utilizando tecnologias web (HTML, CSS, JavaScript), garantindo acesso via navegador sem instalação de software adicional.
+- O sistema deve ser compatível com navegadores modernos nas versões mais recentes: Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.
+- O projeto deve ser entregue em até 8 semanas, conforme cronograma definido pela equipe acadêmica.
+- O sistema não poderá utilizar serviços pagos ou APIs comerciais que gerem custos recorrentes, dado o contexto acadêmico do projeto.
+- O banco de dados deve ser relacional e utilizar soluções gratuitas e de código aberto, como PostgreSQL ou MySQL.
+- O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados (LGPD), garantindo privacidade e segurança no tratamento de dados dos usuários.
+- A hospedagem do sistema deverá ser realizada em serviços com plano gratuito (ex: Vercel, Railway, Render) para viabilizar o projeto sem custos.
+- O escopo do sistema está limitado à gestão de estoque, não incluindo módulos de vendas, financeiro ou integração com marketplaces nesta versão.
 
 ---
 
 ## Considerações Finais
 
-Este documento deve ser:
+Este documento deve ser tratado como referência central ao longo de todo o ciclo de desenvolvimento. Para garantir sua efetividade, é importante que ele seja:
 
-- Claro e organizado
-- Fácil de entender por qualquer membro da equipe
-- Utilizado como base para desenvolvimento e testes
+- Claro e organizado — redigido de forma que qualquer membro da equipe consiga compreender o escopo do sistema.
+- Fácil de entender por qualquer membro da equipe — independente de sua área de atuação (desenvolvimento, design, negócios).
+- Utilizado como base para desenvolvimento e testes — servindo de referência para implementação e validação do sistema.
+- Versionado e atualizado — mantido com registro das alterações a cada mudança de escopo aprovada pelos envolvidos.
 
- Um bom documento de requisitos evita retrabalho e garante qualidade no projeto.
