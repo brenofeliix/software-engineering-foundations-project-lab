@@ -55,9 +55,9 @@ O sistema proposto, denominado Serpy, tem como objetivo auxiliar na educação, 
 ### 3.2 Stakeholders
 Os principais usuários do sistema são:
 
-• Usuários comuns que buscam identificar animais e obter orientações (Trabalhadores rurais, moradores de áreas urbanas,estudantes)
-• Profissionais da saúde, que utilizam o sistema como apoio informativo
-• Administradores, responsáveis ​​pelo gerenciamento de dados e monitoramento do sistema
+- Usuários comuns que buscam identificar animais e obter orientações (Trabalhadores rurais, moradores de áreas urbanas,estudantes)
+- Profissionais da saúde, que utilizam o sistema como apoio informativo
+- Administradores, responsáveis ​​pelo gerenciamento de dados e monitoramento do sistema
 
 ### 3.3 Conclusão
 Dessa forma, o sistema integra praticidade, educação e tecnologia, oferecendo suporte tanto para o uso cotidiano quanto para situações de emergência, contribuindo para a redução de acidentes e aumento da conscientização da população.
