@@ -2,13 +2,14 @@
 
 ## Project Name
 
-(To be defined)
+Guia para Calouros: Mapeamento do Campus
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Gabriel Souza Vieira
+* Victor Sudário Cândido
+* Matheus Cândido Goes
+* Marcos Rodrigues Ribeiro
 
 ## Repository Structure
 
