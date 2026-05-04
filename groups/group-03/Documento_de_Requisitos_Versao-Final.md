@@ -18,23 +18,26 @@ Liste termos importantes utilizados no documento.
 ##  2. Product Vision
 
 ### 2.1 Problema
-Qual problema o sistema resolve?
+Cada vez torna-se mais comum a evasão escolar e o alto nível de desinteresse nas escolas, isso se deve, em partes, a forma de lecionar antiquada que ainda vem sendo muito utilizada adolescentes sentados em uma cadeira durante horas ao longo de uma semana realizando atividades cansativas que geralmente não gera bons resultados.
 
 ### 2.2 Solução
-Descreva a solução proposta.
+Nosso projeto vem com a proposta de levar o estudo de forma intuitiva e estimulante, querendo auxiliar na vida acadêmica dos adoslescentes. A proposta são jogos interativos que vão auxiliar no entendimento e fixação, vem como um auxilio para apresentação de trabalho e provas. A partir dessa forma de ensinar, mostrar aos alunos que estudar pode sim ser divertido.
 
 ### 2.3 Público-Alvo
-Quem utilizará o sistema?
+Serão crianças/pré adolescentes que cursam entre o 6° ao 9° ano.
 
 ### 2.4 Proposta de Valor
-Por que esse sistema é importante?
+Para tornar mais acessível o conteúdo do ensino básico. Auxiliando aqueles que ainda estão na escola à aprender de forma mais efetiva e divertida. Mas também pode auxiliar pessoas que já terminaram a escola, ou que não terminaram o ensino básico, a aprender/relembrar as partes mais fundamentais do ensino.
 
 ### 2.5 Diferencial
-O que torna esse sistema melhor que outros?
+Nosso sistema tem como principal diferencial a oferta de diversas matérias da grade curricular do ensino fundamental. Diferentemente da concorrência, não será um produto que oferece apenas aprendizado de uma área, como linguagens, mas sim todo o escopo do ensino fundamental, como matemática, história, geografia, artes, e muitos outros. Além de promover a interação entre usuários da plataforma para ensinar uns aos outros por meio de grupos.
 
 ### 2.6 Funcionalidades principais (alto nível)
-- Funcionalidade 1
-- Funcionalidade 2
+- Trilhas das matérias da grade curricular do MEC e BNCC.
+- Grupos entre usuários comuns(grupos de estudo), com intuito de impulsionar o aprendizado por meio da interação social.
+- Grupos entre alunos e professores de uma escola em comum(salas de aula), onde o professor pode passar atividades("missões") com recompensas para seus alunos, assim como fazer avisos.
+- Sistema de ofensiva, que grava quantos dias seguidos o usuário tem utilizado o aplicativo.
+- Sistema de "Loja", onde usuários podem comprar meios para impulsionar o ganho de "XP/experiência" na plataforma.
 
 ---
 
