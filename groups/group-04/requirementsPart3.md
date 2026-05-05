@@ -20,6 +20,15 @@
 
 ## 6. Constraints (Restrições)
 
+Restrições Técnicas
+- O sistema deve ser desenvolvido como aplicação web responsiva (PWA), compatível com dispositivos móveis e desktop.
+- O sistema deve ser compátivel com as versões mais recentes, e duas versões anteriores, de navegadores como Chrome, Firefox, Edge e Safari.
+- O sistema deve ter sua comunicação via HTTPS, garantindo a segurança dos dados trafegados.
+- O sistema não deve armazenar senhas dos usuários institucionais, delegando a autenticação inteiramente ao SUAP, utilizando protocolo seguro, como OAuth2, sem armazenamento de credenciais no sistema.
+- O sistema não substitui o controle físico de acesso ao RU (catracas e biometria), atuando apenas na gestão de créditos e informações.
+- O sistema deve garantir consistência e integridade no gerenciamento de créditos dos usuários.
+
+Restrições de Acesso, Permissões e Legais
 - O login institucional é restrito ao SUAP; usuários externos não utilizam autenticação institucional.
 - O operador não possui acesso a configurações técnicas do sistema, apenas às funcionalidades operacionais.
 - A manutenção técnica, atualizações de infraestrutura e correções de sistema são de responsabilidade exclusiva da equipe desenvolvedora.
@@ -27,13 +36,3 @@
 - Integrações com gateways de pagamento devem seguir as normas do Banco Central do Brasil para transações via Pix.
 
 ---
------APAGA O CONSIDERAÇÕES FINAIS, ACHO QUE TEM Q APAGAR 
-## Considerações Finais
-
-Este documento deve ser:
-
-- Claro e organizado
-- Fácil de entender por qualquer membro da equipe
-- Utilizado como base para desenvolvimento e testes
-
- Um bom documento de requisitos evita retrabalho e garante qualidade no projeto.
