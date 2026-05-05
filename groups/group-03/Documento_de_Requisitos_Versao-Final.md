@@ -5,13 +5,26 @@
 ##  1. Introdução
 
 ### 1.1 Objetivo
-Descrever o objetivo deste documento e do sistema.
+Este documento tem como objetivo descrever de forma clara e organizada os requisitos do sistema educacional baseado em gamificação. Ele serve como base para o desenvolvimento, validação e manutenção do sistema, alinhando as expectativas entre desenvolvedores, usuários e demais stakeholders.
 
 ### 1.2 Escopo
-Descrever o que o sistema faz, seus limites e o que está fora do escopo.
+O sistema tem como finalidade oferecer uma plataforma educacional interativa voltada para alunos do 6º ao 9º ano do ensino fundamental, utilizando jogos educativos como ferramenta de apoio ao aprendizado.
+
+A aplicação permitirá o cadastro e autenticação de usuários, personalização do conteúdo com base na idade e ano escolar, disponibilização de atividades por disciplina e em modo sortido, além de recursos de gamificação, como sistema de streak (sequência de estudos).
+
+Também será possível a criação de grupos por professores ou instituições, permitindo o acompanhamento do desempenho dos alunos e promovendo interação no ambiente educacional.
+
+Fora do escopo do sistema estão funcionalidades como substituição do ensino formal, emissão de certificados oficiais e integração com sistemas educacionais governamentais.
 
 ### 1.3 Definições, Acrônimos e Abreviações
-Liste termos importantes utilizados no documento.
+
+- **Gamificação:** Uso de elementos de jogos (pontuação, desafios, recompensas) em contextos não relacionados a jogos, com o objetivo de aumentar o engajamento.
+- **Streak (Ofensiva):** Contagem de dias consecutivos em que o usuário utiliza o sistema.
+- **Usuário:** Qualquer pessoa que utiliza o sistema (aluno, professor ou administrador).
+- **Aluno:** Usuário principal do sistema, responsável por realizar atividades e jogos educativos.
+- **Professor:** Usuário responsável por acompanhar alunos e gerenciar grupos.
+- **Grupo:** Conjunto de alunos organizados por um professor ou instituição dentro da plataforma.
+- **Sistema:** Plataforma educacional desenvolvida neste projeto.
 
 ---
 
