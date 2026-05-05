@@ -27,7 +27,7 @@
 - Integrações com gateways de pagamento devem seguir as normas do Banco Central do Brasil para transações via Pix.
 
 ---
-
+-----APAGA O CONSIDERAÇÕES FINAIS, ACHO QUE TEM Q APAGAR 
 ## Considerações Finais
 
 Este documento deve ser:
