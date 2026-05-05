@@ -86,8 +86,8 @@ Descreva a funcionalidade.
 - Estabilidade sob carga: Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável.
 
 ### 5.4 Espaço
--Limite de armazenamento: O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
-Uso eficiente de memória: O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
+- Limite de armazenamento: O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
+- Uso eficiente de memória: O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
 
 ### 5.5 Confiabilidade
 - Disponibilidade mínima: O sistema deve garantir uma disponibilidade de 99,9% do tempo.
