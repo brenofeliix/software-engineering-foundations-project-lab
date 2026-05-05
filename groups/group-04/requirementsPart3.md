@@ -1,15 +1,5 @@
 ## 5. Assumptions (Premissas)
 
-### O que é:
-Condições consideradas verdadeiras para o desenvolvimento.
-
-### Como fazer:
-- Liste fatores externos ou suposições do projeto
-
-
-  
-##
-
 - Assume-se que estudantes e servidores possuem cadastro ativo no SUAP da UFR.
 - Assume-se que os usuários possuem acesso à internet (via Wi-Fi do campus ou dados móveis) para operar o sistema.
 - Assume-se que os usuários possuem dispositivos compatíveis com navegadores modernos ou smartphones.
@@ -25,32 +15,16 @@ Condições consideradas verdadeiras para o desenvolvimento.
 - Assume-se que o módulo de interface será desenvolvido de forma agnóstica, consumindo dados via API independentemente da origem do sistema gerenciador.
 - Assume-se que a arquitetura modular permitirá adoção por outras instituições, com ou sem sistema gerenciador próprio.
 - Assume-se que instituições sem sistema de gestão próprio utilizarão o módulo gerenciador completo fornecido pela plataforma.
-- O login institucional é restrito ao SUAP; usuários externos não utilizam autenticação institucional.
-- O operador não possui acesso a configurações técnicas do sistema, apenas às funcionalidades operacionais.
-- A manutenção técnica, atualizações de infraestrutura e correções de sistema são de responsabilidade exclusiva da equipe desenvolvedora.
-- O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados (LGPD) no tratamento de dados de usuários institucionais e externos.
-- Integrações com gateways de pagamento devem seguir as normas do Banco Central do Brasil para transações via Pix.
-
-  
 
 ---
 
 ## 6. Constraints (Restrições)
 
-### O que é:
-Limitações técnicas, legais ou de negócio.
-
-### Como fazer:
-- Liste tudo que limita o desenvolvimento
-
-### Exemplos:
-- O sistema deve ser desenvolvido utilizando tecnologia web.
-- O sistema deve rodar em navegadores modernos (Chrome, Firefox).
-- O projeto deve ser entregue em até 4 semanas.
-- O sistema não poderá utilizar serviços pagos.
-
-
-
+- O login institucional é restrito ao SUAP; usuários externos não utilizam autenticação institucional.
+- O operador não possui acesso a configurações técnicas do sistema, apenas às funcionalidades operacionais.
+- A manutenção técnica, atualizações de infraestrutura e correções de sistema são de responsabilidade exclusiva da equipe desenvolvedora.
+- O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados (LGPD) no tratamento de dados de usuários institucionais e externos.
+- Integrações com gateways de pagamento devem seguir as normas do Banco Central do Brasil para transações via Pix.
 
 ---
 
