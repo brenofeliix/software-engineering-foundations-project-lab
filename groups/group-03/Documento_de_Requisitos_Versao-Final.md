@@ -72,19 +72,183 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 
 ##  4. Requisitos Funcionais
 
-### RF01 - Nome do requisito
+### RF01 - Cadastro de aluno
 **Descrição:**  
-Descreva a funcionalidade.
+O sistema deve permitir que o aluno realize seu cadastro informando dados básicos.
 
-**Prioridade:** Alta / Média / Baixa  
-**Entradas:**  
-**Saídas:**  
-**Regras de negócio:**  
+**Prioridade:** Alta  
+**Entradas:** Nome, idade, ano escolar, e-mail, senha  
+**Saídas:** Cadastro realizado  
 
 ---
 
-### RF02 - Nome do requisito
-(repita o padrão)
+### RF02 - Geração de login
+**Descrição:**  
+O sistema deve gerar automaticamente um login após o cadastro do aluno.
+
+**Prioridade:** Alta  
+**Entradas:** Dados do cadastro  
+**Saídas:** Conta criada  
+
+---
+
+### RF03 - Informar idade e ano escolar
+**Descrição:**  
+O sistema deve permitir que o aluno informe sua idade e ano escolar.
+
+**Prioridade:** Alta  
+**Entradas:** Idade, ano escolar  
+**Saídas:** Dados armazenados  
+
+---
+
+### RF04 - Login e autenticação
+**Descrição:**  
+O sistema deve permitir que o usuário realize login utilizando suas credenciais.
+
+**Prioridade:** Alta  
+**Entradas:** E-mail, senha  
+**Saídas:** Acesso ao sistema  
+
+---
+
+### RF05 - Classificação do aluno
+**Descrição:**  
+O sistema deve classificar o aluno com base na idade e no ano escolar.
+
+**Prioridade:** Média  
+**Entradas:** Idade, ano escolar  
+**Saídas:** Categoria do aluno  
+
+---
+
+### RF06 - Disponibilizar atividades
+**Descrição:**  
+O sistema deve disponibilizar atividades compatíveis com a categoria do aluno.
+
+**Prioridade:** Alta  
+**Entradas:** Categoria do aluno  
+**Saídas:** Lista de atividades  
+
+---
+
+### RF07 - Jogos por disciplina
+**Descrição:**  
+O sistema deve oferecer jogos organizados por disciplina.
+
+**Prioridade:** Alta  
+**Entradas:** Seleção de disciplina  
+**Saídas:** Jogos disponíveis  
+
+---
+
+### RF08 - Escolha de disciplina
+**Descrição:**  
+O sistema deve permitir que o aluno escolha a disciplina desejada.
+
+**Prioridade:** Alta  
+**Entradas:** Disciplina escolhida  
+**Saídas:** Conteúdo da disciplina  
+
+---
+
+### RF09 - Modo sortido
+**Descrição:**  
+O sistema deve oferecer atividades aleatórias de diferentes disciplinas.
+
+**Prioridade:** Média  
+**Entradas:** Seleção do modo sortido  
+**Saídas:** Jogos variados  
+
+---
+
+### RF10 - Registro de desempenho
+**Descrição:**  
+O sistema deve registrar o desempenho do aluno nos jogos.
+
+**Prioridade:** Alta  
+**Entradas:** Resultados das atividades  
+**Saídas:** Desempenho armazenado  
+
+---
+
+### RF11 - Sistema de streak (ofensiva)
+**Descrição:**  
+O sistema deve registrar e gerenciar a sequência de dias consecutivos de uso da plataforma.
+
+**Prioridade:** Média  
+**Entradas:** Acessos do aluno  
+**Saídas:** Contagem de dias consecutivos  
+
+---
+
+### RF12 - Criação de grupos
+**Descrição:**  
+O sistema deve permitir que professores ou instituições criem grupos.
+
+**Prioridade:** Alta  
+**Entradas:** Nome do grupo  
+**Saídas:** Grupo criado  
+
+---
+
+### RF13 - Entrada em grupos
+**Descrição:**  
+O sistema deve permitir que alunos entrem em grupos.
+
+**Prioridade:** Alta  
+**Entradas:** Código ou convite  
+**Saídas:** Aluno adicionado ao grupo  
+
+---
+
+### RF14 - Visualização de desempenho (professor)
+**Descrição:**  
+O sistema deve permitir que professores visualizem o desempenho dos alunos.
+
+**Prioridade:** Alta  
+**Entradas:** Seleção de grupo ou aluno  
+**Saídas:** Relatórios de desempenho  
+
+---
+
+### RF15 - Histórico de atividades
+**Descrição:**  
+O sistema deve armazenar o histórico de atividades do aluno.
+
+**Prioridade:** Média  
+**Entradas:** Resultados das atividades  
+**Saídas:** Histórico armazenado  
+
+---
+
+### RF16 - Visualização de progresso (aluno)
+**Descrição:**  
+O sistema deve permitir que o aluno visualize seu progresso.
+
+**Prioridade:** Média  
+**Entradas:** Dados de desempenho  
+**Saídas:** Relatório de progresso  
+
+---
+
+### RF17 - Acompanhamento de progresso (professor)
+**Descrição:**  
+O sistema deve permitir que professores acompanhem o progresso dos alunos.
+
+**Prioridade:** Alta  
+**Entradas:** Dados dos alunos  
+**Saídas:** Relatórios  
+
+---
+
+### RF18 - Trilhas de aprendizagem
+**Descrição:**  
+O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fundamental.
+
+**Prioridade:** Alta  
+**Entradas:** Seleção de matéria  
+**Saídas:** Conteúdo organizado  
 
 ---
 
