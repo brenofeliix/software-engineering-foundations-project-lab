@@ -2,6 +2,7 @@
 
 ## Project Name
 
+Gestão de Estoque para Pequenos E-commerces (Varejo).
 StockFácil
 
 ## Team Members
@@ -10,6 +11,7 @@ StockFácil
 * Gabriel Rodrigues de Lima
 * Marcilene Mendes da Silva
 * André Rufino da Silva Figueiredo
+  
 
 ## Repository Structure
 
