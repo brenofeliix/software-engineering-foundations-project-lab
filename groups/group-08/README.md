@@ -2,13 +2,16 @@
 
 ## Project Name
 
-(To be defined)
+Serpy - Smart Education and Research Platform for Venomous Species 
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* João Pedro Pavoni Cypriano
+* Gustavo Lugli
+* João Vitor Dorilêo
+* Enzo Cezar
+* Igor Matheus De Lima Centurião
+* Gustavo da Silva Gomes
 
 ## Repository Structure
 

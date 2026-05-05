@@ -1,14 +1,15 @@
 # Group 03
 
-## Project Name
+## É jogando que se aprende.
 
-(To be defined)
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Mateus Pereira 
+* João Pedro Delguingaro
+* João Paulo
+* Caroline Cruz 
+* Pedro Lucas
 
 ## Repository Structure
 

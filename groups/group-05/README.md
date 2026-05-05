@@ -2,13 +2,14 @@
 
 ## Project Name
 
-(To be defined)
+StockFácil
 
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
+* Igor Teixeira Delgado
+* Gabriel Rodrigues de Lima
+* Marcilene Mendes da Silva
+* André Rufino da Silva Figueiredo
 
 ## Repository Structure
 

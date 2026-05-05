@@ -1,15 +1,8 @@
-# Group 04
-
-## Project Name
-
-(To be defined)
-
+# Group 12
 ## Team Members
 
-* Name 1
-* Name 2
-* Name 3
-
+- Gustavo Alves da Silva
+  
 ## Repository Structure
 
 /docs
