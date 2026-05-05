@@ -16,6 +16,8 @@
 - Assume-se que a arquitetura modular permitirá adoção por outras instituições, com ou sem sistema gerenciador próprio.
 - Assume-se que instituições sem sistema de gestão próprio utilizarão o módulo gerenciador completo fornecido pela plataforma.
 
+
+
 ---
 
 ## 6. Constraints (Restrições)
