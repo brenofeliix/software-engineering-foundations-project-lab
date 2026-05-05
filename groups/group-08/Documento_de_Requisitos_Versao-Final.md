@@ -2,17 +2,60 @@
 
 ---
 
-##  1. Introdução
+## 1. Introdução
+
+Este documento apresenta a definição dos requisitos e a visão geral do sistema **Serpy**, uma plataforma digital voltada para educação, prevenção e resposta a acidentes com animais peçonhentos.
+
+O sistema tem como foco principal auxiliar a população na identificação de animais como serpentes, escorpiões e aranhas, além de fornecer orientações em situações de emergência e contribuir para o mapeamento de áreas de risco.
+
+A proposta busca unir tecnologia e impacto social, oferecendo uma solução acessível tanto para o público geral quanto para profissionais que lidam diretamente com esse tipo de ocorrência.
+
+---
 
 ### 1.1 Objetivo
-Descrever o objetivo deste documento e do sistema.
+
+O objetivo deste documento é descrever de forma clara e estruturada:
+
+- As funcionalidades do sistema
+- Os requisitos funcionais e não funcionais
+- O comportamento esperado da aplicação
+- As necessidades dos usuários
+
+Além disso, este documento servirá como base para o desenvolvimento, validação e evolução do sistema ao longo do projeto.
+
+---
 
 ### 1.2 Escopo
-Descrever o que o sistema faz, seus limites e o que está fora do escopo.
+
+O sistema Serpy tem como escopo:
+
+- Identificação de animais peçonhentos
+- Disponibilização de informações educativas
+- Orientação em casos de emergência
+- Registro e visualização de ocorrências
+- Mapeamento de áreas de risco
+- Suporte a diferentes perfis de usuários (comum, profissional e administrador)
+
+Fora do escopo do sistema:
+
+- Atendimento médico direto
+- Substituição de profissionais da saúde
+- Diagnósticos clínicos oficiais
+- Responsabilidade por decisões médicas
+
+O sistema atua como ferramenta de apoio informativo e preventivo.
+
+---
 
 ### 1.3 Definições, Acrônimos e Abreviações
-Liste termos importantes utilizados no documento.
 
+- **Animais peçonhentos**: Animais que produzem veneno e possuem mecanismo para inoculação (ex: serpentes, escorpiões, aranhas).
+- **Ocorrência**: Registro de encontro ou acidente envolvendo animal peçonhento.
+- **Usuário comum**: Pessoa que utiliza o sistema para consulta e aprendizado.
+- **Profissional**: Usuário com atuação na área (ex: saúde, bombeiros, agentes ambientais).
+- **Administrador**: Responsável pela gestão do sistema.
+- **LGPD**: Lei Geral de Proteção de Dados, que regula o uso de dados pessoais no Brasil.
+- **API**: Interface que permite integração entre sistemas.
 ---
 
 ##  2. Product Vision
