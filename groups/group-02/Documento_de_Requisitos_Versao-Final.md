@@ -73,31 +73,31 @@ Descreva a funcionalidade.
 ##  5. Requisitos Não Funcionais
 
 ### 5.1 Usabilidade
-- Interface intuitiva  
-- Tempo de aprendizado < X minutos  
-- Acessibilidade  
+- Interface intuitiva: O design deve ser responsivo e compatível com os principais navegadores, garantindo adaptabilidade a diferentes dispositivos.
+- Tempo de aprendizado: O fluxo de pedido deve ser otimizado para no máximo 4 ações principais: "Selecionar pedido", "Fechar pedido", "Confirmar pedido" e "Efetuar pagamento".
+- Acessibilidade: Implementar padrões de interface que suportem a navegação fluida em diferentes tamanhos de tela.
 
 ### 5.2 Eficiência
-- Tempo de resposta < X segundos  
-- Suporte a múltiplos usuários  
+- Tempo de resposta: Carregamento de página em menos de 2 segundos e retorno de busca por pratos em menos de 1 segundo.
+- Suporte a múltiplos usuários: Capacidade de processar múltiplos pedidos simultâneos sem perda de fluidez.  
 
 ### 5.3 Desempenho
-- Suporte a X usuários simultâneos  
-- Estabilidade sob carga  
+- Suporte a usuários simultâneos: Arquitetura capaz de escalar para atender centenas de clientes.
+- Estabilidade sob carga: Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável.
 
 ### 5.4 Espaço
-- Limite de armazenamento  
-- Uso eficiente de memória  
+-Limite de armazenamento: O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
+Uso eficiente de memória: O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
 
 ### 5.5 Confiabilidade
-- Disponibilidade mínima (ex: 99,9%)  
-- Recuperação de falhas  
+- Disponibilidade mínima: O sistema deve garantir uma disponibilidade de 99,9% do tempo.
+- Recuperação de falhas: Implementar mecanismos de persistência que garantam a integridade dos dados mesmo em eventuais quedas de conexão ou falhas de sistema.
 
 ### 5.6 Segurança (Proteção)
-- Autenticação  
-- Criptografia  
-- Controle de acesso  
-
+- Autenticação e Controle de Acesso: Implementação de controle de acesso restrito a gestores e colaboradores.
+- Criptografia: Criptografia de ponta a ponta em todas as transações  e conformidade com TLS 1.2 ou superior para APIs.
+- Privacidade e Conformidade: Conformidade total com a LGPD e padrões de segurança financeira PCI DSS, com uso de tokenização para dados sensíveis.
+- Interoperabilidade Segura: Integração com PSPs via webhooks e automação de terminais físicos (Smart POS) via camadas de abstração agnósticas, garantindo que nenhum dado sensível trafegue ou seja armazenado de forma insegura no servidor.
 ---
 
 ##  6. Requisitos Organizacionais
