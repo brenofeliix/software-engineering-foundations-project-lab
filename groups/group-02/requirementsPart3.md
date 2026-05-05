@@ -14,30 +14,6 @@
 - Considera-se que o gateway de pagamento (PSP) escolhido ofereça suporte nativo a Webhooks e APIs baseadas em REST com certificação PCI DSS.  
 - Assume-se que os gestores e a equipe da cozinha possuam treinamento básico para operar a interface administrativa e atualizar o status dos pedidos em tempo real.  
 - Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas.
-- Requisitos Não Funcionais
-
-5.1 Usabilidade
-Interface intuitiva: O design deve ser responsivo (NRF10) e compatível com os principais navegadores (NRF12), garantindo adaptabilidade a diferentes dispositivos.
-Tempo de aprendizado: O fluxo de pedido deve ser otimizado para no máximo 4 ações principais: "Selecionar pedido", "Fechar pedido", "Confirmar pedido" e "Efetuar pagamento" (NRF11).
-Acessibilidade: Implementar padrões de interface que suportem a navegação fluida em diferentes tamanhos de tela.
-5.2 Eficiência
-Tempo de resposta: Carregamento de página em menos de 2 segundos (NRF01) e retorno de busca por pratos em menos de 1 segundo (NRF02).
-Suporte a múltiplos usuários: Capacidade de processar múltiplos pedidos simultâneos sem perda de fluidez (NRF03).
-5.3 Desempenho
-Suporte a usuários simultâneos: Arquitetura capaz de escalar para atender centenas de clientes (NRF03).
-Estabilidade sob carga: Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável (NFR04).
-5.4 Espaço
-Limite de armazenamento: O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
-Uso eficiente de memória: O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor (NFR13).
-5.5 Confiabilidade
-Disponibilidade mínima: O sistema deve garantir uma disponibilidade de 99,9% do tempo (NFR05).
-Recuperação de falhas: Implementar mecanismos de persistência que garantam a integridade dos dados mesmo em eventuais quedas de conexão ou falhas de sistema.
-5.6 Segurança (Proteção)
-Autenticação e Controle de Acesso: Implementação de controle de acesso restrito a gestores e colaboradores.
-Criptografia: Criptografia de ponta a ponta em todas as transações (NFR08) e conformidade com TLS 1.2 ou superior para APIs (NFR06).
-Privacidade e Conformidade: Conformidade total com a LGPD (NFR09) e padrões de segurança financeira PCI DSS, com uso de tokenização para dados sensíveis (NFR06).
-Interoperabilidade Segura: Integração com PSPs via webhooks e automação de terminais físicos (Smart POS) via camadas de abstração agnósticas (NFR07), garantindo que nenhum dado sensível trafegue ou seja armazenado de forma insegura no servidor (NFR06).
-
 
 ## 6. Constraints (Restrições)   
 
