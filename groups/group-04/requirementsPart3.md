@@ -6,7 +6,7 @@ Condições consideradas verdadeiras para o desenvolvimento.
 ### Como fazer:
 - Liste fatores externos ou suposições do projeto
 
-### Exemplos:
+
 - Assume-se que estudantes e servidores possuem cadastro ativo no SUAP da UFR.
 - Assume-se que os usuários possuem acesso à internet (via Wi-Fi do campus ou dados móveis) para operar o sistema.
 - Assume-se que os usuários possuem dispositivos compatíveis com navegadores modernos ou smartphones.
