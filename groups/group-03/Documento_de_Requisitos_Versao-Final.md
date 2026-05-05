@@ -58,11 +58,15 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 
 
 ### 3.2 Stakeholders
-Liste os principais envolvidos:
-- Usuários
-- Clientes
-- Desenvolvedores
-- Outros
+- Alunos (usuários finais): utilizam a plataforma para estudar por meio de jogos educativos.
+- Professores: acompanham o desempenho dos alunos, criam ou gerenciam turmas e utilizam a plataforma como apoio pedagógico.
+- Escolas/Instituições de Ensino: adotam o sistema para uso educacional e acompanham resultados gerais.
+- Pais ou Responsáveis: acompanham o progresso e engajamento dos alunos.
+- Desenvolvedores: responsáveis pela criação, manutenção e evolução do sistema.
+- Equipe de suporte: presta auxílio técnico aos usuários e resolve problemas.
+- Administradores do sistema: gerenciam usuários, conteúdos e funcionamento geral da plataforma.
+- Equipe pedagógica: define conteúdos e valida os jogos educativos.
+- Gestores escolares: analisam relatórios e resultados.
 
 ---
 
