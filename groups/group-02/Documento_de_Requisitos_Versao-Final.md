@@ -3,15 +3,20 @@
 ---
 
 ##  1. Introdução
+A busca por agilidade no atendimento tornou-se um dos principais critérios na hora de escolher uma experiência gastronômica. A fim de proporcionar aos clientes uma visita agradável e atender habilmente a demanda de pedidos, muitos restaurantes e lanchonetes automatizaram seus serviços através de cardápio e formas de pagamento digitais.
 
-### 1.1 Objetivo
-Descrever o objetivo deste documento e do sistema.
+### 1.1 Objetivo 
+Este documento tem como objetivo principal, conter informações primordiais de todas as etapas do desenvolvimento da engenharia de requisitos do projeto proposto. Este projeto tem como foco principal, reduzir o tempo de atendimento e dar mais flexibilidade para clientes em suas escolhas do menu, automatizando o atendimento ao cliente com uma aplicação web à disposição dos usuários. 
+
+
 
 ### 1.2 Escopo
-Descrever o que o sistema faz, seus limites e o que está fora do escopo.
+O sistema incorpora a automação dos serviços prestados por restaurantes e lanchonetes, de forma que os clientes realizem seus próprios pedidos e efetuem os pagamentos de forma rápida e simples; auxilia também a equipe operacional no preparo e na entrega dos pedidos, assim como, os gerentes e proprietários na administração do negócio.
+
 
 ### 1.3 Definições, Acrônimos e Abreviações
-Liste termos importantes utilizados no documento.
+RF - Requisitos Funcionais.
+RNF - Requisitos não funcionais.
 
 ---
 
