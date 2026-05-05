@@ -100,22 +100,37 @@ Descreva a funcionalidade.
 - Interoperabilidade Segura: Integração com PSPs via webhooks e automação de terminais físicos (Smart POS) via camadas de abstração agnósticas, garantindo que nenhum dado sensível trafegue ou seja armazenado de forma insegura no servidor.
 ---
 
-##  6. Requisitos Organizacionais
+6. Requisitos Organizacionais
 
-### 6.1 Ambientais
-- Sistema operacional  
-- Infraestrutura  
+6.1 Ambientais
 
-### 6.2 Operacionais
-- Logs  
-- Monitoramento  
+SISTEMA OPERACIONAL
 
-### 6.3 Desenvolvimento
-- Versionamento (Git)  
-- Padrões de código  
-- Testes automatizados  
+- O sistema deve rodar em distribuição Linux (Ubuntu Server).
+- O sistema deve implementar tecnologia Docker.
+- O sistema deve suportar Android 8.0+ e iOS 14.0+ em dispositivos móveis.
+- O sistema deve ter compatibilidade com versões atuais dos principais navegadores, como Chrome e o Safari.
 
----
-# Regra de ouro
+INFRAESTRUTURA
 
-> Se não pode ser testado, não é um bom requisito.
+- O sistema deve possuir conectividade via HTTPS com gateways de pagamento.
+- O sistema deve garantir a escalabilidade durante os picos de atendimento através do uso de infraestrutura de nuvem.
+- O sistema deve manter um banco de dados com base relacional para pedidos e NoSQL para cache de cardápio.
+
+
+6.2 Operacionais
+
+	LOGS
+
+- O sistema deve registrar cada etapa do pagamento. Restrição: nunca registrar CVV e senha de cartão.
+- O sistema deve registrar quem acessou dados sensíveis ou alterou preços de cardápio no painel administrativo.
+- O sistema deve registrar o status do pedido e estipular o tempo de entrega.
+- O sistema deve armazenar logs financeiros por pelo menos 5 anos em conformidade fiscal e jurídica.
+
+MONITORAMENTO
+
+- O sistema deve monitorar se os dispositivos (monitor, impressora etc.) da cozinha estão online. Um alerta deve soar se o dispositivo não responder por mais de 30 segundos.
+- O sistema deve emitir alertas se o tempo entre o pedido feito no celular do cliente e a aceitação no dispositivo da cozinha for alto demais.
+- O sistema deve monitorar a consistência entre o que está no banco de dados e o que aparece no menu. Se um item "esgotado" for pedido, um log de erro crítico deve ser gerado para ajuste imediato.
+- O sistema deve monitorar a latência da aplicação para garantir que o cardápio digital não demore a carregar em horários de pico no restaurante.
+
