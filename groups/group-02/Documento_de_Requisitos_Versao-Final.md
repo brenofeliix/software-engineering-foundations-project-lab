@@ -15,7 +15,7 @@ O sistema incorpora a automação dos serviços prestados por restaurantes e lan
 
 
 ### 1.3 Definições, Acrônimos e Abreviações
-RF - Requisitos Funcionais.
+RF - Requisitos Funcionais.  
 RNF - Requisitos não funcionais.
 
 ---
