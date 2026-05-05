@@ -135,10 +135,4 @@ Descreva a funcionalidade.
 - Adoção de padrões pedagógicos atualizados
 - Capacitação contínua de professores
 
-### 6.4 Segurança
-- Proteção de dados dos alunos
-- Políticas de privacidade
-- Controle de acesso às plataformas educacionais
-  
-
 ---
