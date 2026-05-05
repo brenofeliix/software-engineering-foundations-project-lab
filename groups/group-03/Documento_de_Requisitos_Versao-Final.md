@@ -106,16 +106,27 @@ Descreva a funcionalidade.
 ##  6. Requisitos Organizacionais
 
 ### 6.1 Ambientais
-- Sistema operacional  
-- Infraestrutura  
+- Infraestrutura tecnológica adequada (internet estável, computadores, tablets) 
+- Acesso a plataformas digitais educacionais
+- Conectividade para alunos e professores dentro da instituição
+- Disponibilidade de equipamentos para uso em sala
 
 ### 6.2 Operacionais
-- Logs  
-- Monitoramento  
+- Comunicação eficiente entre professores, alunos e coordenação  
+- Registro e acompanhamento do desempenho acadêmico
+- Monitoramento contínuo do engajamento e frequência dos alunos
+- Definição de regras para uso de dispositivos em sala de aula  
 
 ### 6.3 Desenvolvimento
-- Versionamento (Git)  
-- Padrões de código  
-- Testes automatizados  
+- Atualização constante dos conteúdos e métodos aplicados  
+- Treinamentos para uso de ferramentas digitais
+- Adoção de padrões pedagógicos atualizados
+- Capacitação contínua de professores
+
+### 6.4 Segurança
+- Proteção de dados dos alunos
+- Políticas de privacidade
+- Controle de acesso às plataformas educacionais
+  
 
 ---
