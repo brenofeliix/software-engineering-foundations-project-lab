@@ -59,7 +59,6 @@ Liste os principais envolvidos:
 
 ##  4. Requisitos Funcionais
 
-##  4. Requisitos Funcionais
 ## RF01 - Início de Pedido via Menu Principal  
 **Descrição:** O sistema deve fornecer uma interface inicial (menu principal) onde o cliente pode iniciar o processo de compra.  
 **Prioridade:** Alta.  
