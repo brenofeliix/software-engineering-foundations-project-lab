@@ -298,7 +298,7 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 - O sistema deve possuir armazenamento seguro das informações.
 - O sistema deve conter consistência dos dados acadêmicos. 
 
-### 5.6 Segurança (Proteção)
+### 5.6 Segurança
 - O sistema deve proteger os dados dos usuários (login e informações pessoais).
 - O sistema deve implementar autenticação de usuários segura (ex: login com criptografia de senha).
 - O sistema deve implementar níveis de acesso por perfil de usuário (ex: aluno, professor e administrador), limitando o acesso às funcionalidades.
