@@ -244,7 +244,7 @@ INFRAESTRUTURA
 
 6.2 Operacionais
 
-	LOGS
+LOGS
 
 - O sistema deve registrar cada etapa do pagamento. Restrição: nunca registrar CVV e senha de cartão.
 - O sistema deve registrar quem acessou dados sensíveis ou alterou preços de cardápio no painel administrativo.
