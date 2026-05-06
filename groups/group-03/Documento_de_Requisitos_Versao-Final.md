@@ -310,21 +310,21 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 ## 6. Requisitos Organizacionais
 
 ### 6.1 Ambientais
-- Infraestrutura tecnológica adequada (internet estável, computadores, tablets) 
-- Acesso a plataformas digitais educacionais
-- Conectividade para alunos e professores dentro da instituição
-- Disponibilidade de equipamentos para uso em sala
+- Infraestrutura tecnológica adequada (internet estável, computadores, tablets).
+- Acesso a plataformas digitais educacionais.
+- Conectividade para alunos e professores dentro da instituição.
+- Disponibilidade de equipamentos para uso em sala.
 
 ### 6.2 Operacionais
-- Comunicação eficiente entre professores, alunos e coordenação  
-- Registro e acompanhamento do desempenho acadêmico
-- Monitoramento contínuo do engajamento e frequência dos alunos
-- Definição de regras para uso de dispositivos em sala de aula  
+- Definição de políticas de uso do sistema em ambiente escolar.  
+- Disponibilidade de suporte técnico para usuários.  
+- Realização de treinamento para professores e alunos.  
+- Monitoramento do uso do sistema pela instituição.
 
 ### 6.3 Desenvolvimento
-- Atualização constante dos conteúdos e métodos aplicados  
-- Treinamentos para uso de ferramentas digitais
-- Adoção de padrões pedagógicos atualizados
-- Capacitação contínua de professores
+- O sistema deve ser desenvolvido seguindo boas práticas de engenharia de software.  
+- O sistema deve utilizar ferramentas de controle de versão.  
+- O sistema deve permitir manutenção e evolução contínua.  
+- O sistema deve seguir padrões de qualidade e documentação de software.
 
 ---
