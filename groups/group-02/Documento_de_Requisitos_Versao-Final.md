@@ -23,23 +23,38 @@ RNF - Requisitos não funcionais.
 ##  2. Product Vision
 
 ### 2.1 Problema
-Qual problema o sistema resolve?
+O atendimento presencial em estabelecimentos gastronômicos compromete a experiência do cliente e a eficiência de negócio, entre os quais:
+- **Ineficiência no Fluxo de Atendimento** devido a dependência de interação humana, gerando tempo de espera e insatisfação do cliente.
+- **Falhas de Comunicação Operacional**, como erros no preenchimento da comanda física.
+- **Inflexibilidade de Custos**, consequência direta dos recursos humanos empregados independentemente do horário de atendimento, o que compromete a escalabilidade dos lucros nos períodos de baixa demanda.
+
 
 ### 2.2 Solução
-Descreva a solução proposta.
+A solução consiste em uma Plataforma Web que acompanhe o processo de compra e gestão de negócio, proporcionando:
+- **Redução drástica do tempo de espera** no que diz respeito ao atendimento imediato;
+- **Confiabilidade dos pedidos entregues** ao mitigar erros na comanda;
+- **Eficiência operacional** ao atender diferentes níveis de demanda a custos mais estabilizados, isso porque o sistema permite o atendimento simultâneo de clientes.
+
 
 ### 2.3 Público-Alvo
-Quem utilizará o sistema?
+- **Usuário Final**: o consumidor interessado pelo atendimento mais ágil e transparente.
+- **Cliente (Stakeholder/Gestor)**: proprietários e gerentes de estabelecimentos gastronômicos que necessitam de maior controle de negócio.
+
 
 ### 2.4 Proposta de Valor
-Por que esse sistema é importante?
+Porque aumenta a produtividade do estabelecimento, pois os pedidos são feitos mais rápidos e sem erros de comunicação. Otimiza o tempo que o cliente leva para fazer seus pedidos e mantém um ambiente organizado e bem estruturado.
+
 
 ### 2.5 Diferencial
 O que torna esse sistema melhor que outros?
 
 ### 2.6 Funcionalidades principais (alto nível)
-- Funcionalidade 1
-- Funcionalidade 2
+- Interface via QR Code;
+- Cardápio dinâmico e interativo;
+- Customização dos pedidos;
+- Pagamento integrado;
+- Dashboard Administrativo;
+
 
 ---
 
