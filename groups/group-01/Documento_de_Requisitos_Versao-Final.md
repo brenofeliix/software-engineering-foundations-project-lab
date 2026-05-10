@@ -1,3 +1,214 @@
+# Documento de Requisitos e Projeto de Software
+
+---
+
+# 1. Introdução
+
+## 1.1 Objetivo
+Descrever o desenvolvimento de um minimercado autônomo instalado no campus universitário, oferecendo itens essenciais, higiene pessoal, primeiros socorros e alimentação rápida para a comunidade acadêmica.
+
+## 1.2 Escopo
+O sistema permitirá que usuários realizem compras de forma independente através de um terminal digital de autoatendimento, utilizando leitura de código de barras e pagamentos digitais.
+
+O sistema contempla:
+- Cadastro de usuários
+- Leitura de produtos
+- Pagamentos digitais
+- Controle de estoque
+- Emissão de comprovantes digitais
+
+Fora do escopo:
+- Atendimento presencial contínuo
+- Pagamentos em dinheiro
+- Entregas externas
+
+## 1.3 Definições, Acrônimos e Abreviações
+- PIX: Sistema de pagamento instantâneo
+- LGPD: Lei Geral de Proteção de Dados
+- Self-checkout: Sistema de autoatendimento
+- Totem: Terminal de autoatendimento
+
+---
+
+# 2. Product Vision
+
+## 2.1 Problema
+Dificuldade de acesso a itens de higiene, alimentação e primeiros socorros durante o horário de aula, principalmente no período noturno, além dos riscos de sair do campus à noite.
+
+## 2.2 Solução
+Um minimercado autônomo onde o usuário escolhe os produtos e realiza o pagamento digital sem necessidade de atendente.
+
+## 2.3 Público-Alvo
+- Estudantes universitários
+- Professores
+- Funcionários da instituição
+
+## 2.4 Proposta de Valor
+Oferecer praticidade, rapidez e segurança para a comunidade acadêmica dentro do campus universitário.
+
+## 2.5 Diferencial
+- Funcionamento 24 horas
+- Autoatendimento
+- Pagamento rápido via PIX e cartão
+- Segurança para alunos do turno noturno
+
+## 2.6 Funcionalidades principais (alto nível)
+- Cadastro de usuários
+- Leitura de código de barras
+- Pagamento digital
+- Controle de estoque
+- Emissão de comprovantes
+
+---
+
+# 3. Visão Geral do Sistema
+
+## 3.1 Descrição Geral
+O sistema consiste em um mercadinho autônomo instalado dentro da universidade, permitindo compras rápidas de produtos essenciais através de um terminal touch screen.
+
+## 3.2 Stakeholders
+Liste os principais envolvidos:
+- Usuários
+- Administração da universidade
+- Desenvolvedores
+- Repositores de estoque
+
+---
+
+# 4. Requisitos Funcionais
+
+## RF01 - Cadastro de usuários
+
+**Descrição:**
+Permitir o cadastro de usuários utilizando e-mail institucional.
+
+**Prioridade:** Alta
+
+**Entradas:**
+- Nome
+- E-mail institucional
+- Senha
+
+**Saídas:**
+- Cadastro realizado com sucesso
+
+**Regras de negócio:**
+- Apenas e-mails institucionais válidos serão aceitos
+
+---
+
+## RF02 - Leitura de produtos
+
+**Descrição:**
+Permitir leitura de produtos por código de barras.
+
+**Prioridade:** Alta
+
+**Entradas:**
+- Código de barras
+
+**Saídas:**
+- Nome do produto
+- Valor
+- Quantidade disponível
+
+**Regras de negócio:**
+- A leitura deve ocorrer em até 2 segundos
+
+---
+
+## RF03 - Exibição do valor total
+
+**Descrição:**
+Exibir o valor total da compra antes da finalização.
+
+**Prioridade:** Alta
+
+**Entradas:**
+- Produtos adicionados ao carrinho
+
+**Saídas:**
+- Valor total atualizado
+
+**Regras de negócio:**
+- O valor deve atualizar automaticamente
+
+---
+
+## RF04 - Pagamento digital
+
+**Descrição:**
+Processar pagamentos via PIX e cartão.
+
+**Prioridade:** Alta
+
+**Entradas:**
+- Dados da transação
+- Método de pagamento
+
+**Saídas:**
+- Confirmação do pagamento
+
+**Regras de negócio:**
+- Os dados financeiros devem ser criptografados
+
+---
+
+## RF05 - Envio de comprovante digital
+
+**Descrição:**
+Enviar comprovante digital após a compra.
+
+**Prioridade:** Média
+
+**Entradas:**
+- Dados da compra
+- E-mail do usuário
+
+**Saídas:**
+- Comprovante enviado
+
+**Regras de negócio:**
+- O comprovante deve conter itens, data e valor total
+
+---
+
+# 5. Requisitos Não Funcionais
+
+## 5.1 Usabilidade
+- Interface intuitiva
+- Compatibilidade com touch screen
+- Botões grandes e legíveis
+- Compra finalizada em até 3 etapas
+- Usuário deve concluir compras rapidamente
+
+## 5.2 Eficiência
+- Leitura de produtos em menos de 2 segundos
+- Consulta ao banco em até 1,5 segundos
+- Suporte à sincronização automática de estoque
+
+## 5.3 Desempenho
+- Funcionamento 24 horas por dia
+- Estabilidade sob carga
+- Suporte a múltiplos usuários simultâneos
+
+## 5.4 Espaço
+- Uso eficiente de memória
+- Sistema leve para hardware limitado
+- Estoque limitado ao espaço físico disponível
+
+## 5.5 Confiabilidade
+- Disponibilidade contínua
+- Recuperação de falhas
+- Integridade dos dados das compras
+
+## 5.6 Segurança (Proteção)
+- Autenticação de usuários
+- Criptografia de ponta a ponta
+- Controle de acesso
+- Conformidade com LGPD
+
+---
 ## 6. Requisitos Organizacionais 
 
 ### 6.1 Ambientais 
