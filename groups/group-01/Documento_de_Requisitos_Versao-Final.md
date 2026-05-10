@@ -1,4 +1,4 @@
-## 6.Requisitos Organizacionais 
+## 6. Requisitos Organizacionais 
 
 ### 6.1 Ambientais 
 - Sistema Operacional: O programa de rodar de forma leve, considerando que o hardware do tablet de autoatendimento possui recursos de processamento limitados. A interface deve ser compatível com operações via touch, eliminando a necessidade de teclados e mouse. O ideal seria um sistema operacional Android, visando baixo custo e fácil manutenção, além de alta compatibilidade com outros sistemas.
