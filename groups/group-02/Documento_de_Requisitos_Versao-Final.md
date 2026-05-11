@@ -239,9 +239,9 @@ Liste os principais envolvidos:
 - Interoperabilidade Segura: Integração com PSPs via webhooks e automação de terminais físicos (Smart POS) via camadas de abstração agnósticas, garantindo que nenhum dado sensível trafegue ou seja armazenado de forma insegura no servidor.
 ---
 
-6. Requisitos Organizacionais
+## 6. Requisitos Organizacionais
 
-6.1 Ambientais
+### 6.1 Ambientais
 
 SISTEMA OPERACIONAL
 
@@ -257,7 +257,7 @@ INFRAESTRUTURA
 - O sistema deve manter um banco de dados com base relacional para pedidos e NoSQL para cache de cardápio.
 
 
-6.2 Operacionais
+### 6.2 Operacionais
 
 LOGS
 
@@ -272,4 +272,28 @@ MONITORAMENTO
 - O sistema deve emitir alertas se o tempo entre o pedido feito no celular do cliente e a aceitação no dispositivo da cozinha for alto demais.
 - O sistema deve monitorar a consistência entre o que está no banco de dados e o que aparece no menu. Se um item "esgotado" for pedido, um log de erro crítico deve ser gerado para ajuste imediato.
 - O sistema deve monitorar a latência da aplicação para garantir que o cardápio digital não demore a carregar em horários de pico no restaurante.
+---
 
+## 7. Requisitos Externos
+
+### 7.1 Reguladores
+- LGPD  
+- Normas específicas  
+
+### 7.2 Éticos
+- Não discriminação  
+- Transparência  
+
+### 7.3 Legais
+
+### 7.4 Segurança Externa
+- Proteção contra ataques  
+- Auditorias  
+
+### 7.5 Contábeis
+- O sistema deve registrar cada transação (Pix, Crédito, Débito) vinculando o ID da transação do Gateway/Adquirente ao pedido interno. Isso é essencial para bater o saldo bancário com as vendas realizadas.  
+- Contabilmente, é necessário registrar o valor bruto da venda, a taxa de intermediação (cobrada pelo PSP/Adquirente) e o valor líquido a receber. 
+- Diferenciar contabilmente receitas vindas de e-commerce (NFR06) de receitas de lojas físicas (NFR07). 
+- Registro imutável de quem acessou os dados financeiros e quando as transações foram confirmadas via webhooks. 
+- O sistema deve fornecer relatórios claros sobre cancelamentos para ajustes de dedução de receita bruta no fechamento contábil.
+- Relatórios que prevejam as datas de recebimento (D+0 para Pix, D+30 para crédito, etc.), permitindo o controle de fluxo de caixa e provisionamento contábil.
