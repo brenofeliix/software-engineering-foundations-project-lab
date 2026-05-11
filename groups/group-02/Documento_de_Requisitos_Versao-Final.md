@@ -272,6 +272,36 @@ MONITORAMENTO
 - O sistema deve emitir alertas se o tempo entre o pedido feito no celular do cliente e a aceitação no dispositivo da cozinha for alto demais.
 - O sistema deve monitorar a consistência entre o que está no banco de dados e o que aparece no menu. Se um item "esgotado" for pedido, um log de erro crítico deve ser gerado para ajuste imediato.
 - O sistema deve monitorar a latência da aplicação para garantir que o cardápio digital não demore a carregar em horários de pico no restaurante.
+  
+### 6.3 Desenvolvimento
+
+VERSIONAMENTO (GIT)  
+
+- A codificação do sistema deve seguir estrutura ramificada, separando o código principal em branches de incrementações futuras, temporárias e de emergências (em caso de falha na estrutura principal).
+- A organização deve padronizar as mensagens utilizando-se de Conventional Commits.
+- A organização deve incluir a identificação do requisito em todo commit para que fique claro que mudança de negócio aquele trecho de código representa.
+- A organização deve criar tags para o lançamento de versões estáveis contendo o número da versão e a descrição do incremento (Git Tags).
+- A organização deve garantir o retorno à versão anterior em segundos caso a versão mais recente apresente erro no cálculo da conta (Rollback rápido).
+- A organização deve bloquear commits direto na main.
+- A organização deve revisar os códigos através de Pull Requests (PRs).
+- A organização deve impedir o commit caso o código esteja fora do padrão.
+
+	PADRÃO DE CÓDIGO
+
+- A codificação deve utilizar-se de indentação e espaçamento quando necessário.
+- Os nomes de variáveis, funções e comentários devem ser escritos em língua portuguesa.
+- A nomenclatura para as variáveis e funções devem ser claras e descritivas.
+- A função ou classe deve executar apenas uma tarefa.
+- A função deve suceder o comentário que a descreve.
+
+	TESTES AUTOMATIZADOS
+
+A organização deve verificar o comportamento do sistema adotando a estratégia da Pirâmide de Testes, o qual consiste em:
+
+- realizar testes unitários para verificar o funcionamento de cada módulo;
+- realizar testes de integração a fim de garantir que todos os módulos e serviços estejam funcionando bem em conjunto;
+- simular o comportamento do usuário navegando por toda a aplicação (uso de robô).
+
 ---
 
 ## 7. Requisitos Externos
@@ -285,6 +315,12 @@ MONITORAMENTO
 - Transparência  
 
 ### 7.3 Legais
+- A Nota Fiscal de Serviço Eletrônica (NFS-e) deve seguir o padrão nacional.
+- Sistemas de emissão devem configurar automaticamente os novos campos para IBS e CBS.
+- O pagamento da taxa de 10% (ou similar) deve ser configurado como opcional no checkout da aplicação.
+- A plataforma digital deve detalhar de forma visível como o valor pago pelo consumidor é dividido entre o estabelecimento e a plataforma.
+- Qualquer cartão de benefício (VA/VR) deve ser aceito em qualquer terminal ou sistema de pagamento devido à nova regra de interoperabilidade do Programa de Alimentação do Trabalhador (PAT). 
+
 
 ### 7.4 Segurança Externa
 - Proteção contra ataques  
