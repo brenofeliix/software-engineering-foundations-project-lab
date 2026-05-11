@@ -286,7 +286,7 @@ VERSIONAMENTO (GIT)
 - A organização deve revisar os códigos através de Pull Requests (PRs).
 - A organização deve impedir o commit caso o código esteja fora do padrão.
 
-	PADRÃO DE CÓDIGO
+PADRÃO DE CÓDIGO
 
 - A codificação deve utilizar-se de indentação e espaçamento quando necessário.
 - Os nomes de variáveis, funções e comentários devem ser escritos em língua portuguesa.
@@ -294,7 +294,7 @@ VERSIONAMENTO (GIT)
 - A função ou classe deve executar apenas uma tarefa.
 - A função deve suceder o comentário que a descreve.
 
-	TESTES AUTOMATIZADOS
+TESTES AUTOMATIZADOS
 
 A organização deve verificar o comportamento do sistema adotando a estratégia da Pirâmide de Testes, o qual consiste em:
 
