@@ -323,9 +323,20 @@ A organização deve verificar o comportamento do sistema adotando a estratégia
 
 
 ### 7.4 Segurança Externa
-- Proteção contra ataques  
-- Auditorias  
+- O sistema deve possuir proteção contra ataques de força bruta e tentativas de invasão.
+- O sistema deve utilizar criptografia para proteger os dados dos clientes e pagamentos.
+- O sistema deve realizar autenticação segura para administradores e funcionários.
+- O sistema deve possuir proteção contra ataques DDoS (Negação de Serviço Distribuída) e acessos maliciosos.
+- O sistema deve monitorar atividades suspeitas em tempo real.
+- O sistema deve realizar backups automáticos dos dados do sistema.
+- O sistema deve registrar logs de acesso e alterações realizadas na plataforma.
+- O sistema deve possuir auditorias periódicas para identificar vulnerabilidades.
+- O sistema deve manter atualização constante de segurança contra novas ameaças digitais.
+- O sistema deve limitar acessos administrativos apenas a usuários autorizados.
+- O sistema deve garantir segurança nas integrações com gateways de pagamento e APIs externas.
+- O sistema deve possuir mecanismos de recuperação rápida em caso de falhas ou ataques.
 
+  
 ### 7.5 Contábeis
 - O sistema deve registrar cada transação (Pix, Crédito, Débito) vinculando o ID da transação do Gateway/Adquirente ao pedido interno. Isso é essencial para bater o saldo bancário com as vendas realizadas.  
 - Contabilmente, é necessário registrar o valor bruto da venda, a taxa de intermediação (cobrada pelo PSP/Adquirente) e o valor líquido a receber. 
