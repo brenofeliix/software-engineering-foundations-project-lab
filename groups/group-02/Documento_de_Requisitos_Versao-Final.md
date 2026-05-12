@@ -319,8 +319,11 @@ A solução deve respeitar as políticas internas da instituição ou empresa on
 Sempre que aplicável, o sistema deverá seguir padrões de qualidade de software e acessibilidade digital, garantindo melhor experiência e inclusão dos usuários.
 
 ### 7.2 Éticos
-- Não discriminação  
-- Transparência  
+-  O sistema deve garantir um atendimento a todo tipo de cliente.
+-  O sistema deve coletar unicamente os dados necessários para prestar um bom atendimento ao cliente.
+-  O sistema deve ser responsável por erros que não são de controle do cliente.
+-  O sistema deve seguir a Lei Geral de Proteção de Dados(LGPD).
+-  O sistema deve ter total transparência sobre como utiliza os dados coletados do cliente.
 
 ### 7.3 Legais
 - A Nota Fiscal de Serviço Eletrônica (NFS-e) deve seguir o padrão nacional.
