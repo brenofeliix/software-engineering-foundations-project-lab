@@ -53,23 +53,58 @@ O sistema contempla:
 ##  2. Product Vision
 
 ### 2.1 Problema
-Qual problema o sistema resolve?
+A Universidade Federal de Rondonópolis (UFR) disponibiliza à comunidade acadêmica o Restaurante Universitário (RU), responsável por atender estudantes e servidores em suas refeições diárias. Trata-se de um serviço essencial para a permanência estudantil, oferecendo refeições a preços acessíveis por meio de um sistema de créditos pré-pagos realizado de forma presencial.
+
+Entretanto, o modelo atual apresenta limitações significativas, como:
+- Cadastro realizado exclusivamente de forma presencial
+- Dificuldade de acesso ao cardápio atualizado
+- Ausência de uma interface para consulta de saldo e recarga remota
+
+Esses fatores geram filas, lentidão no atendimento e perda de tempo produtivo, evidenciando a necessidade de uma solução digital que otimize esse processo.
+
+---
 
 ### 2.2 Solução
-Descreva a solução proposta.
+Propõe-se o desenvolvimento de um sistema digital integrado ao SUAP, que permitirá:
+- Cadastro online de usuários  
+- Consulta de saldo em tempo real  
+- Recarga de créditos via Pix ou cartão de crédito  
+- Acesso ao cardápio semanal atualizado  
+
+O sistema busca melhorar a experiência dos usuários ao eliminar a necessidade de deslocamento para tarefas administrativas, reduzindo filas e proporcionando maior controle financeiro sobre o uso do RU.
+
+---
 
 ### 2.3 Público-Alvo
-Quem utilizará o sistema?
+- Estudantes matriculados na UFR com acesso ao SUAP  
+- Servidores públicos da UFR
+
+---
 
 ### 2.4 Proposta de Valor
-Por que esse sistema é importante?
+A proposta de valor está centrada na otimização do tempo e na digitalização dos serviços do Restaurante Universitário.
+O sistema elimina a necessidade de processos presenciais para atividades administrativas, tornando o acesso ao RU mais ágil e eficiente.
+
+O projeto se fundamenta em três pilares:
+- *Permanência Estudantil:* Redução de filas e melhor aproveitamento do tempo acadêmico  
+- *Eficiência Operacional:* Diminuição da carga de trabalho manual no atendimento físico  
+- *Modernização Institucional:* Uso de tecnologia para aprimorar serviços e processos internos
+
+---
 
 ### 2.5 Diferencial
-O que torna esse sistema melhor que outros?
+- *Arquitetura Desacoplada (API-First):* Permite integração e evolução do sistema sem necessidade de reestruturação completa
+- *Foco na Experiência do Usuário (UX):* Interface simples, intuitiva e adaptada às necessidades da comunidade acadêmica
+- *Centralização de Informações:* Reúne saldo, cardápio e comunicados em um único ambiente digital
+
+---
 
 ### 2.6 Funcionalidades principais (alto nível)
-- Funcionalidade 1
-- Funcionalidade 2
+- *Gestão de Carteira Digital:* Consulta de saldo em tempo real  
+- *Recarga Remota:* Compra de créditos via Pix ou cartão de crédito  
+- *Consulta de Cardápio e Avisos:* Visualização de refeições e recebimento de notificações  
+- *Autenticação e Cadastro Digital:* Login integrado e pré-cadastro online  
+- *API de Gerenciamento:* Painel administrativo com relatórios e controle operacional
 
 ---
 
