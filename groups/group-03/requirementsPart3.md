@@ -23,3 +23,33 @@
 - O conteúdo e funcionalidades do sistema devem ser adequados ao público-alvo (alunos do 6º ao 9º ano).
 - O sistema deve seguir padrões de usabilidade, permitindo que ações principais sejam realizadas com até 3 interações.
 - As atualizações de progresso, pontuação e ranking devem ocorrer em tempo quase real, limitadas pela capacidade do sistema.
+
+
+##  7. Requisitos Externos
+
+### 7.1 Reguladores
+- **LGPD**:
+  
+- Proteger informações como nome, idade, e-mail, senha e dados escolares.
+- Permitir que o usuário visualize, altere ou solicite exclusão de seus dados.
+- Armazenar senhas utilizando criptografia.
+- Informar claramente como os dados serão utilizados através da Política de Privacidade.
+  
+- Normas específicas  
+
+### 7.2 Éticos
+- Não discriminação  
+- Transparência  
+
+### 7.3 Legais
+- Leis aplicáveis  
+
+### 7.4 Segurança Externa
+- Proteção contra ataques  
+- Auditorias  
+
+### 7.5 Contábeis
+- Registro de transações  
+- Relatórios  
+
+---
