@@ -23,6 +23,16 @@ Muitos estudantes enfrentam dificuldades na organização de suas rotinas de est
 ### 2.2 Solução
 O Fostudy é um aplicativo que visa ajudar principalmente na organização e foco dos estudantes durante o processo de estudos. Para isso, é disponibilizado algumas funções: agenda, cronograma, Flashcards, Método Pomodoro, métrica de estudos, sistema de alerta e mini game. 
 
+### 2.3 Público-Alvo
+O público-alvo é composto por estudantes do ensino médio e vestibulandos do ENEM que necessitam de estrutura e organização no ambiente acadêmico para atingir metas escolares de maneira eficiente e prática.
+
+### 2.4 Proposta de Valor
+Por que esse sistema é importante?
+
+### 2.5 Diferencial
+O que torna esse sistema melhor que outros?
+
+### 2.6 Funcionalidades principais (alto nível)
 **01 - Agenda**
 
 Estará disponível uma agenda para a verificação de datas, a fim de ajudar o usuário no momento de criação de seu cronograma e melhor visualização de datas e tarefas de maneira micro e macro. Com isso, será possível verificar dias, semanas, meses e ano. 
@@ -50,19 +60,6 @@ O sistema de alerta será incluído com o objetivo de enviar notificações rela
 **07 - Game**
 
 Será incluído um mini   game ao aplicativo Fostudy. Esse jogo tem relação com um mundo vazio com avatares a ser construído desde o início pelo próprio usuário. Para isso, o estudante deverá jogar um quiz baseado nos conteúdos dos flashcards criados. Ao término do jogo, a pessoa receberá pontuações, que acumularão e serão utilizadas para desbloquear cada item para construir o mini mundo de seu avatar: casa, roupas, alimentos, pets, avatares, etc.
-
-### 2.3 Público-Alvo
-O público-alvo é composto por estudantes do ensino médio e vestibulandos do ENEM que necessitam de estrutura e organização no ambiente acadêmico para atingir metas escolares de maneira eficiente e prática.
-
-### 2.4 Proposta de Valor
-Por que esse sistema é importante?
-
-### 2.5 Diferencial
-O que torna esse sistema melhor que outros?
-
-### 2.6 Funcionalidades principais (alto nível)
-- Funcionalidade 1
-- Funcionalidade 2
 
 ### 2.7 Concorrentes
 Os três principais concorrentes do Fostudy são:
