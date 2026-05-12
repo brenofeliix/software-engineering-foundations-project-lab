@@ -23,31 +23,31 @@ Muitos estudantes enfrentam dificuldades na organização de suas rotinas de est
 ### 2.2 Solução
 O Fostudy é um aplicativo que visa ajudar principalmente na organização e foco dos estudantes durante o processo de estudos. Para isso, é disponibilizado algumas funções: agenda, cronograma, Flashcards, Método Pomodoro, métrica de estudos, sistema de alerta e mini game. 
 
-01 - Agenda 
+**01 - Agenda**
 
 Estará disponível uma agenda para a verificação de datas, a fim de ajudar o usuário no momento de criação de seu cronograma e melhor visualização de datas e tarefas de maneira micro e macro. Com isso, será possível verificar dias, semanas, meses e ano. 
 
-02 - Cronograma 
+**02 - Cronograma**
 
 Em cada dia da semana, a pessoa incluirá as tarefas a serem executadas e concluídas ao longo da semana e dia. Após a inclusão, as atividades diárias serão organizadas em formato de cheklist, que poderão ser marcadas, por causa das caixas de seleção, assim que as tarefas forem concluídas. 
 
-03 - Método Pomodoro 
+**03 - Método Pomodoro**
 
 O Método Pomodoro visa a definição de tempo para o processo de estudo e intervalo. Para auxiliar o estudante, o software indicará um tempo corrido de 25min para o estudo de um conteúdo e, após a finalização desse tempo, um tempo de 5mim de intervalo é iniciado. Com a finalização do intervalo, é ativado novamente o tempo de 25min, assim sucessivamente até que o conteúdo seja completamente estudado ou seu tempo total diário seja atingido. Por exemplo, a pessoa estabecele um total de 2h para estudar um conteúdo específico, ou seja, uma das tarefas inseridas no cronograma. Esse tempo de 2h será fracionado em 25min, sem contar o tempo de intervalo. Além disso, ao clicar na atividade a ser realizada no momento, o Método Pomodoro enviará uma mensagem sugerindo um tempo de estudo, com a intenção de não haver demora, o que contribui para a procrastinação e desistência.
 
-04 - Flashcards 
+**04 - Flashcards**
 
 Para ajudar na revisão e aprendizagem dos conteúdos, será possível a criação de flashcards, um método de estudo que consiste na formação de uma pergunta em um card e a reposta no verso desse card. O estudante deverá responder a pergunta antes de verificar a resposta no verso no card. Após responder e verificar, o usuário deverá marcar uma das opções que aparecer "Acertei" ou "Errei". 
 
-05 - Métrica de estudo
+**05 - Métrica de estudo**
 
 Baseado no tempo de estudo e quantidade de erros e acertos dos flashcards, um relatório será criado, com o objetivo de mostrar a evolução do usuário ao longo dos estudos. Referente a quantidade de acertos e erros dos Flashcards, o software indicará ao usuário quais conteúdos devem ser revisados com mais frequência ( conteúdos com mais erros) e  quais podem ter revisões espaçadas (conteúdos com mais acertos).
 
-06 - Sistema de alerta 
+**06 - Sistema de alerta**
 
 O sistema de alerta será incluído com o objetivo de enviar notificações relacionadas às revisões aos estudantes e às atividades inseridas no cronograma a serem estudadas no dia determinado. Isto é, quando o usuário criar seu cronograma, ele definirá um horário para que seja lembrado sobre seus afazeres do dia, além de receber um lembrete para as revisões agendadas. Também, ao término do tempo de estudo (aplicação do Método Pomodoro), o usuário receberá alertas sonoros  sobre a finalização do tempo de estudo e intervalo e, início do tempo de intervalo. 
 
-07 - Game 
+**07 - Game**
 
 Será incluído um mini   game ao aplicativo Fostudy. Esse jogo tem relação com um mundo vazio com avatares a ser construído desde o início pelo próprio usuário. Para isso, o estudante deverá jogar um quiz baseado nos conteúdos dos flashcards criados. Ao término do jogo, a pessoa receberá pontuações, que acumularão e serão utilizadas para desbloquear cada item para construir o mini mundo de seu avatar: casa, roupas, alimentos, pets, avatares, etc.
 
@@ -92,35 +92,352 @@ Liste os principais envolvidos:
 
 ##  4. Requisitos Funcionais
 
-- FR1: O sistema deve permitir que o usuário crie uma conta com email e senha.
+## RF01 - Cadastro de Usuário
 
-- FR2: O sistema deve permitir ao usuário criar e gerenciar um cronograma semanal de estudos.
+**Descrição:**
+O sistema deve permitir que o usuário crie uma conta utilizando e-mail e senha para acesso à plataforma.
 
-- FR3: O sistema deve permitir a execução do método Pomodoro com contagem automática de tempo e intervalos.
+**Prioridade:** Alta
 
-- FR4: O sistema deve permitir a criação, edição e revisão de flashcards com registro de desempenho.
+**Entradas:**
 
-- FR5: O sistema deve gerar relatórios com base no tempo de estudo e nos resultados dos flashcards.
+* Nome do usuário
+* E-mail
+* Senha
 
-- FR6: O sistema deve permitir que o usuário ative ou desative o sistema de alerta.
+**Saídas:**
 
-- FR7: O sistema deve permitir a criação e modificação de uma nova tarefa.
+* Conta cadastrada com sucesso
+* Mensagem de erro em caso de dados inválidos
 
-- FR8: O sistema deve permitir o desbloqueio de itens no minigame.
+**Regras de negócio:**
 
-- FR9: O sistema deve permitir a visualização da agenda online e offline.
+* O e-mail deve ser único no sistema.
+* A senha deve possuir no mínimo 8 caracteres.
+* O sistema deve validar o formato do e-mail.
 
-- FR10: O sistema deve acumular as pontuações obtidas nos quizzes e permitir que sejam usadas para desbloquear itens do mini mundo.
+---
 
-- FR11: O sistema deve identificar e indicar os conteúdos com maior índice de erros nos quizzes, sugerindo revisão prioritária ao usuário. 
+## RF02 - Gerenciamento de Cronograma Semanal
 
-- FR12: O sistema deve gerar quizzes automaticamente com base nos flashcards criados pelo usuário. 
+**Descrição:**
+O sistema deve permitir ao usuário criar, editar e excluir cronogramas semanais de estudos.
 
-- FR13: O sistema deve permitir a personalização do avatar com itens desbloqueados
+**Prioridade:** Alta
 
-- FR14: O sistema deve organizar os flashcards por matéria ou tema
+**Entradas:**
 
-- FR15: O sistema deve permitir que o usuário edite seus dados de perfil.
+* Matéria
+* Horário
+* Dias da semana
+
+**Saídas:**
+
+* Cronograma salvo e exibido ao usuário
+
+**Regras de negócio:**
+
+* O usuário pode possuir múltiplos cronogramas.
+* O sistema deve impedir conflitos de horários.
+
+---
+
+## RF03 - Execução do Método Pomodoro
+
+**Descrição:**
+O sistema deve permitir a execução do método Pomodoro com temporizador automático e intervalos programados.
+
+**Prioridade:** Alta
+
+**Entradas:**
+
+* Quantidade de ciclos
+
+**Saídas:**
+
+* Contagem regressiva do tempo
+* Alertas de início e fim dos ciclos
+
+**Regras de negócio:**
+
+* O sistema deve iniciar automaticamente o intervalo após o término do foco.
+* O usuário pode pausar ou encerrar o cronômetro.
+
+---
+
+## RF04 - Gerenciamento de Flashcards
+
+**Descrição:**
+O sistema deve permitir criar, editar, excluir e revisar flashcards com registro de desempenho.
+
+**Prioridade:** Alta
+
+**Entradas:**
+
+* Pergunta
+* Resposta
+* Categoria/Tema
+
+**Saídas:**
+
+* Flashcard salvo
+* Histórico de desempenho do usuário
+
+**Regras de negócio:**
+
+* O sistema deve registrar acertos e erros.
+* O usuário pode revisar flashcards ilimitadamente.
+
+---
+
+## RF05 - Geração de Relatórios de Desempenho
+
+**Descrição:**
+O sistema deve gerar relatórios com base no tempo de estudo e resultados obtidos nos flashcards.
+
+**Prioridade:** Média
+
+**Entradas:**
+
+* Dados de sessões de estudo
+* Resultados dos flashcards
+
+**Saídas:**
+
+* Relatórios estatísticos
+* Gráficos de desempenho
+
+**Regras de negócio:**
+
+* O sistema deve atualizar os relatórios automaticamente.
+* Os relatórios devem considerar apenas dados do usuário autenticado.
+
+---
+
+## RF06 - Controle de Alertas
+
+**Descrição:**
+O sistema deve permitir ativar ou desativar notificações e alertas.
+
+**Prioridade:** Média
+
+**Entradas:**
+
+* Preferência do usuário
+
+**Saídas:**
+
+* Confirmação da alteração de configuração
+
+**Regras de negócio:**
+
+* O usuário pode alterar as notificações a qualquer momento.
+* As alterações devem ser salvas automaticamente.
+
+---
+
+## RF07 - Gerenciamento de Tarefas
+
+**Descrição:**
+O sistema deve permitir a criação, edição e exclusão de tarefas.
+
+**Prioridade:** Alta
+
+**Entradas:**
+
+* Nome da tarefa
+* Data
+* Horário
+* Descrição
+
+**Saídas:**
+
+* Tarefa cadastrada ou atualizada
+
+**Regras de negócio:**
+
+* O usuário pode marcar tarefas como concluídas.
+* O sistema deve organizar tarefas por data.
+
+---
+
+## RF08 - Desbloqueio de Itens do Minigame
+
+**Descrição:**
+O sistema deve permitir o desbloqueio de itens dentro do minigame.
+
+**Prioridade:** Média
+
+**Entradas:**
+
+* Pontuação do usuário
+* Solicitação de desbloqueio
+
+**Saídas:**
+
+* Item desbloqueado
+
+**Regras de negócio:**
+
+* Apenas usuários com pontuação suficiente podem desbloquear itens.
+* Itens desbloqueados devem permanecer vinculados à conta do usuário.
+
+---
+
+## RF09 - Visualização da Agenda Online e Offline
+
+**Descrição:**
+O sistema deve permitir a visualização da agenda mesmo sem conexão com a internet.
+
+**Prioridade:** Alta
+
+**Entradas:**
+
+* Dados da agenda
+
+**Saídas:**
+
+* Agenda exibida ao usuário
+
+**Regras de negócio:**
+
+* O sistema deve sincronizar os dados quando houver conexão.
+* Dados offline devem permanecer armazenados localmente.
+
+---
+
+## RF10 - Acúmulo de Pontuações em Quizzes
+
+**Descrição:**
+O sistema deve acumular pontuações obtidas nos quizzes e permitir sua utilização para desbloquear itens do mini mundo.
+
+**Prioridade:** Média
+
+**Entradas:**
+
+* Resultado dos quizzes
+
+**Saídas:**
+
+* Atualização da pontuação do usuário
+
+**Regras de negócio:**
+
+* As pontuações devem ser acumulativas.
+* O sistema deve impedir saldo negativo de pontos.
+
+---
+
+## RF11 - Identificação de Conteúdos com Maior Índice de Erros
+
+**Descrição:**
+O sistema deve identificar conteúdos com maior índice de erros nos quizzes e sugerir revisões prioritárias.
+
+**Prioridade:** Média
+
+**Entradas:**
+
+* Histórico de respostas dos quizzes
+
+**Saídas:**
+
+* Lista de conteúdos prioritários para revisão
+
+**Regras de negócio:**
+
+* O sistema deve calcular o percentual de erros por tema.
+* As recomendações devem ser atualizadas automaticamente.
+
+---
+
+## RF12 - Geração Automática de Quizzes
+
+**Descrição:**
+O sistema deve gerar quizzes automaticamente com base nos flashcards criados pelo usuário.
+
+**Prioridade:** Alta
+
+**Entradas:**
+
+* Flashcards cadastrados
+
+**Saídas:**
+
+* Quiz gerado automaticamente
+
+**Regras de negócio:**
+
+* O sistema deve selecionar perguntas aleatoriamente.
+* O quiz deve respeitar a matéria ou tema escolhido.
+
+---
+
+## RF13 - Personalização de Avatar
+
+**Descrição:**
+O sistema deve permitir a personalização do avatar utilizando itens desbloqueados.
+
+**Prioridade:** Baixa
+
+**Entradas:**
+
+* Seleção de itens pelo usuário
+
+**Saídas:**
+
+* Avatar atualizado
+
+**Regras de negócio:**
+
+* Apenas itens desbloqueados podem ser utilizados.
+* As alterações devem ser salvas automaticamente.
+
+---
+
+## RF14 - Organização de Flashcards
+
+**Descrição:**
+O sistema deve organizar os flashcards por matéria ou tema.
+
+**Prioridade:** Alta
+
+**Entradas:**
+
+* Categoria definida pelo usuário
+
+**Saídas:**
+
+* Flashcards agrupados por tema
+
+**Regras de negócio:**
+
+* Um flashcard deve pertencer a pelo menos uma categoria.
+* O usuário pode alterar a categoria posteriormente.
+
+---
+
+## RF15 - Edição de Perfil do Usuário
+
+**Descrição:**
+O sistema deve permitir que o usuário edite seus dados de perfil.
+
+**Prioridade:** Média
+
+**Entradas:**
+
+* Nome
+* Foto de perfil
+* Senha
+* Informações pessoais
+
+**Saídas:**
+
+* Perfil atualizado
+
+**Regras de negócio:**
+
+* O sistema deve solicitar autenticação para alteração de senha.
+* As alterações devem ser refletidas imediatamente no perfil do usuário.
 
 ---
 
