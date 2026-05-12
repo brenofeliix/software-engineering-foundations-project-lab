@@ -122,12 +122,16 @@ O Módulo Gerenciador (Backend + Painel Administrativo) é a camada de gestão o
 Essa separação garante flexibilidade de implantação: no caso da UFR, o frontend pode ser integrado via API ao sistema já existente do RU; em outras instituições sem sistema próprio, o pacote completo pode ser implantado.
 
 ### 3.2 Stakeholders
-Liste os principais envolvidos:
-- Usuários
-- Clientes
-- Desenvolvedores
-- Outros
+### Stakeholders
 
+| Papel | Descrição |
+|------|----------|
+| Estudantes e Servidores da UFR | Usuários finais do sistema, beneficiados pela digitalização do processo |
+| Gestão do RU da UFR | Responsável pela operação do restaurante; utilizará o painel administrativo |
+| Equipe Desenvolvedora | Responsável pelo desenvolvimento, manutenção técnica e evolução do sistema |
+| Instituições Parceiras | Outras universidades que poderão adotar a plataforma |
+| Banco Central do Brasil | Regulador das transações via Pix |
+| SUAP | Provedor da API de autenticação institucional |
 ---
 
 ##  4. Requisitos Funcionais
