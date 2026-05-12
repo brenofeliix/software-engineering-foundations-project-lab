@@ -16,71 +16,71 @@ O CromStudy é um aplicativo voltado para estudantes do Ensino Médio e vestibul
 
 ### Dentro do escopo do sistema:
 
-Agenda e Cronograma - Planejamento de tarefas diárias, semanais e mensais com visualização em checklist.
+- Agenda e Cronograma - Planejamento de tarefas diárias, semanais e mensais com visualização em checklist.
 
-Método Pomodoro - Temporizador de estudo com ciclos de 25 minutos de foco e 5 minutos de intervalo.
+- Método Pomodoro - Temporizador de estudo com ciclos de 25 minutos de foco e 5 minutos de intervalo.
 
-Flashcards - Criação de cartões de memorização com registro de acertos e erros.
+- Flashcards - Criação de cartões de memorização com registro de acertos e erros.
 
-Métricas de Estudo - Relatórios de desempenho com base no tempo estudado e no aproveitamento nos flashcards.
+- Métricas de Estudo - Relatórios de desempenho com base no tempo estudado e no aproveitamento nos flashcards.
 
-Sistema de Alertas - Notificações e alertas sonoros para revisões, tarefas e ciclos do Pomodoro.
+- Sistema de Alertas - Notificações e alertas sonoros para revisões, tarefas e ciclos do Pomodoro.
 
-Minijogo - Quiz baseado nos flashcards do usuário com recompensas para construção de um mundo virtual.
+- Minijogo - Quiz baseado nos flashcards do usuário com recompensas para construção de um mundo virtual.
 
 ### Fora do escopo do sistema:
 
-Integração com plataformas educacionais externas (ex: Google Classroom, Moodle).
+- Integração com plataformas educacionais externas (ex: Google Classroom, Moodle).
 
-Comunicação ou colaboração em tempo real entre usuários.
+- Comunicação ou colaboração em tempo real entre usuários.
 
-Geração automática de conteúdo de estudo ou questões por inteligência artificial.
+- Geração automática de conteúdo de estudo ou questões por inteligência artificial.
 
-Funcionalidades de pagamento ou assinatura premium.
+- Funcionalidades de pagamento ou assinatura premium.
 
-Suporte a usuários do Ensino Fundamental ou Ensino Superior..
+- Suporte a usuários do Ensino Fundamental ou Ensino Superior..
 
 ### 1.3 Definições, Acrônimos e Abreviações
 
-CromStudy - Nome do aplicativo mobile de organização de estudos desenvolvido pelo Grupo 06.
+- **CromStudy** - Nome do aplicativo mobile de organização de estudos desenvolvido pelo Grupo 06.
 
-Pomodoro - Técnica de gestão de tempo que alterna ciclos de foco (25 min) e intervalos curtos (5 min).
+- **Pomodoro** - Técnica de gestão de tempo que alterna ciclos de foco (25 min) e intervalos curtos (5 min).
 
-Flashcard - Cartão de memorização com uma pergunta na frente e a resposta no verso, usado para revisão ativa de conteúdo.
+- **Flashcard** - Cartão de memorização com uma pergunta na frente e a resposta no verso, usado para revisão ativa de conteúdo.
 
-Checklist - Lista de tarefas com caixas de seleção que podem ser marcadas conforme concluídas.
+- **Checklist** - Lista de tarefas com caixas de seleção que podem ser marcadas conforme concluídas.
 
-Minijogo - Funcionalidade de gamificação do Fostudy baseada em quiz com recompensas virtuais.
+- **Minijogo** - Funcionalidade de gamificação do Fostudy baseada em quiz com recompensas virtuais.
 
-Quiz -  Conjunto de perguntas e respostas geradas a partir dos flashcards criados pelo usuário.
+- **Quiz** -  Conjunto de perguntas e respostas geradas a partir dos flashcards criados pelo usuário.
 
-Avatar - Personagem virtual personalizável pelo usuário dentro do minijogo do Fostudy.
+- **Avatar** - Personagem virtual personalizável pelo usuário dentro do minijogo do Fostudy.
 
-Métrica - Indicador de desempenho calculado com base no tempo de estudo e resultados dos flashcards.
+- **Métrica** - Indicador de desempenho calculado com base no tempo de estudo e resultados dos flashcards.
 
-Alerta - Notificação sonora ou visual enviada ao usuário pelo sistema em momentos definidos.
+- **Alerta** - Notificação sonora ou visual enviada ao usuário pelo sistema em momentos definidos.
 
-Feedback - Retorno de resposta ou avaliação ao usuário relacionado com os conteúdos com mais erros no quiz, indicando quais conteúdos devem ser priorizados e estudados com mais frequência. 
+- **Feedback** - Retorno de resposta ou avaliação ao usuário relacionado com os conteúdos com mais erros no quiz, indicando quais conteúdos devem ser priorizados e estudados com mais frequência. 
 
-Escalabilidade - Capacidade do aplicativo manter bom desempenho à medida que haja acréscimo de novas funções e aumento de usuários.
+- **Escalabilidade** - Capacidade do aplicativo manter bom desempenho à medida que haja acréscimo de novas funções e aumento de usuários.
 
-Backend - Área não acessada e visível para o usuário, como: códigos, documentação sobre o aplicativo, sistema de segurança, banco de dados  
+- **Backend** - Área não acessada e visível para o usuário, como: códigos, documentação sobre o aplicativo, sistema de segurança, banco de dados.
 
-30 FPS (Frames Per Second ou Quadros Por Segundo) - Quantidade de imagens exibidas por segundo para criar ilusão de movimento. 
+- **30 FPS (Frames Per Second ou Quadros Por Segundo)** - Quantidade de imagens exibidas por segundo para criar ilusão de movimento. 
 
-Android 8+ e iOS 13+ - Versões mínimas dos sistemas operacionais Android e iOS com capacidade de suportar aplicativos e funções mais exigentes, não suportadas por versões inferiores.
+- **Android 8+ e iOS 13+** - Versões mínimas dos sistemas operacionais Android e iOS com capacidade de suportar aplicativos e funções mais exigentes, não suportadas por versões inferiores.
 
-APK (Android Package Kit ou Pacote de Aplicativo Android) - Formato de aplicativo (app) usado para instalação de app em dispositivos Android.
+- **APK** (Android Package Kit ou Pacote de Aplicativo Android) - Formato de aplicativo (app) usado para instalação de app em dispositivos Android.
 
-IPA (iPhone Application ou Aplicativo para iPhone) -  Formato de aplicativo usado para a instalação de app em dispositivos iOS.
+- **IPA** (iPhone Application ou Aplicativo para iPhone) -  Formato de aplicativo usado para a instalação de app em dispositivos iOS.
 
-WCAG (Web Content Accessibility Guidelines ou Diretrizes de Acessibilidade para Conteúdo Web) - Diretrizes para tornar conteúdos digitais acessíveis para pessoas com deficiência.
+- **WCAG** (Web Content Accessibility Guidelines ou Diretrizes de Acessibilidade para Conteúdo Web) - Diretrizes para tornar conteúdos digitais acessíveis para pessoas com deficiência.
 
-Criptografia - Prática de transformar informações legíveis em formato ilegível a fim de proteger dados e informações contra roubos, alteração e acesso não autorizado. 
+- **Criptografia** - Prática de transformar informações legíveis em formato ilegível a fim de proteger dados e informações contra roubos, alteração e acesso não autorizado. 
 
-Hash - Um dos métodos usados para criptografar dados, transformando-os em um código de tamanho fixo.
+- **Hash** - Um dos métodos usados para criptografar dados, transformando-os em um código de tamanho fixo.
 
-LGPD (Lei Geral de Proteção de Dados) - Lei brasileira que obriga órgãos e empresas a protegerem os dados e informações de seus usuários contra vazamento e roubo.
+- **LGPD** (Lei Geral de Proteção de Dados) - Lei brasileira que obriga órgãos e empresas a protegerem os dados e informações de seus usuários contra vazamento e roubo.
 
 ---
 
@@ -96,10 +96,10 @@ O CromStudy é um aplicativo que visa ajudar principalmente na organização e f
 O público-alvo é composto por estudantes do ensino médio e vestibulandos do ENEM que necessitam de estrutura e organização no ambiente acadêmico para atingir metas escolares de maneira eficiente e prática.
 
 ### 2.4 Proposta de Valor
-Por que esse sistema é importante?
+O sistema é importante porque auxilia estudantes a organizarem melhor seu tempo e manterem uma rotina de estudos mais eficiente e produtiva. Dessa forma, o aplicativo busca centralizar ferramentas essenciais de planejamento, controle e motivação em uma única plataforma, facilitando o gerenciamento dos estudos.
 
 ### 2.5 Diferencial
-O que torna esse sistema melhor que outros?
+O principal diferencial está na integração de múltiplas funcionalidades em uma única aplicação, combinando agenda, cronograma, métricas de desempenho, flashcards, sistemas de alertas e elementos de gamificação por meio de um mini game educativo. Essa abordagem proporciona uma experiência mais dinâmica e motivadora, incentivando a criação de hábitos de estudos consistentes e melhorando o egajamento de usuário durante o processo de aprendizagem.
 
 ### 2.6 Funcionalidades principais (alto nível)
 **01 - Agenda**
@@ -517,8 +517,7 @@ O sistema deve permitir que o usuário edite seus dados de perfil.
 
 - O sistema deve possuir design simples e organizado, reduzindo distrações durante o uso. 
 
-### 5.2 Eficiência
-- Tempo de resposta < X segundos  
+### 5.2 Eficiência  
 - Suporte a múltiplos usuários  
 - O aplicativo deve responder rapidamente às ações do usuário para evitar atrasos durante o uso
 - O aplicativo deve minimizar o consumo de bateria durante o uso contínuo
@@ -552,9 +551,7 @@ O sistema deve permitir que o usuário edite seus dados de perfil.
 - Recursos não utilizados devem ser liberados automaticamente
 - O minigame não deve comprometer funções principais do app
 
-### 5.5 Confiabilidade
-- Disponibilidade mínima (ex: 99,9%)  
-- Recuperação de falhas
+### 5.5 Confiabilidade  
 - O sistema deve realizar salvamento automático
 - O sistema deve registrar corretamente pontos, experiência e conquistas do usuário
 
