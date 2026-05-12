@@ -328,3 +328,26 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 - O sistema deve seguir padrões de qualidade e documentação de software.
 
 ---
+
+##  7. Requisitos Externos
+
+### 7.1 Reguladores
+- LGPD  
+- Normas específicas  
+
+### 7.2 Éticos
+- Não discriminação  
+- Transparência  
+
+### 7.3 Legais
+- Leis aplicáveis  
+
+### 7.4 Segurança Externa
+- Proteção contra ataques  
+- Auditorias  
+
+### 7.5 Contábeis
+- Registro de transações  
+- Relatórios  
+
+---
