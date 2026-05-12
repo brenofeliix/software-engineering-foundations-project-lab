@@ -41,7 +41,46 @@ Funcionalidades de pagamento ou assinatura premium.
 Suporte a usuários do Ensino Fundamental ou Ensino Superior..
 
 ### 1.3 Definições, Acrônimos e Abreviações
-Liste termos importantes utilizados no documento.
+
+CromStudy - Nome do aplicativo mobile de organização de estudos desenvolvido pelo Grupo 06.
+
+Pomodoro - Técnica de gestão de tempo que alterna ciclos de foco (25 min) e intervalos curtos (5 min).
+
+Flashcard - Cartão de memorização com uma pergunta na frente e a resposta no verso, usado para revisão ativa de conteúdo.
+
+Checklist - Lista de tarefas com caixas de seleção que podem ser marcadas conforme concluídas.
+
+Minijogo - Funcionalidade de gamificação do Fostudy baseada em quiz com recompensas virtuais.
+
+Quiz -  Conjunto de perguntas e respostas geradas a partir dos flashcards criados pelo usuário.
+
+Avatar - Personagem virtual personalizável pelo usuário dentro do minijogo do Fostudy.
+
+Métrica - Indicador de desempenho calculado com base no tempo de estudo e resultados dos flashcards.
+
+Alerta - Notificação sonora ou visual enviada ao usuário pelo sistema em momentos definidos.
+
+Feedback - Retorno de resposta ou avaliação ao usuário relacionado com os conteúdos com mais erros no quiz, indicando quais conteúdos devem ser priorizados e estudados com mais frequência. 
+
+Escalabilidade - Capacidade do aplicativo manter bom desempenho à medida que haja acréscimo de novas funções e aumento de usuários.
+
+Backend - Área não acessada e visível para o usuário, como: códigos, documentação sobre o aplicativo, sistema de segurança, banco de dados  
+
+30 FPS (Frames Per Second ou Quadros Por Segundo) - Quantidade de imagens exibidas por segundo para criar ilusão de movimento. 
+
+Android 8+ e iOS 13+ - Versões mínimas dos sistemas operacionais Android e iOS com capacidade de suportar aplicativos e funções mais exigentes, não suportadas por versões inferiores.
+
+APK (Android Package Kit ou Pacote de Aplicativo Android) - Formato de aplicativo (app) usado para instalação de app em dispositivos Android.
+
+IPA (iPhone Application ou Aplicativo para iPhone) -  Formato de aplicativo usado para a instalação de app em dispositivos iOS.
+
+WCAG (Web Content Accessibility Guidelines ou Diretrizes de Acessibilidade para Conteúdo Web) - Diretrizes para tornar conteúdos digitais acessíveis para pessoas com deficiência.
+
+Criptografia - Prática de transformar informações legíveis em formato ilegível a fim de proteger dados e informações contra roubos, alteração e acesso não autorizado. 
+
+Hash - Um dos métodos usados para criptografar dados, transformando-os em um código de tamanho fixo.
+
+LGPD (Lei Geral de Proteção de Dados) - Lei brasileira que obriga órgãos e empresas a protegerem os dados e informações de seus usuários contra vazamento e roubo.
 
 ---
 
