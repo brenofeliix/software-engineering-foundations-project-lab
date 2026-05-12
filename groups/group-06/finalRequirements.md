@@ -83,11 +83,10 @@ O público-alvo do sistema é composto por estudantes do ensino médio e vestibu
 
 ### 3.2 Stakeholders
 Liste os principais envolvidos:
-- Usuários
-- Clientes
-- Desenvolvedores
-- Outros
-
+- Estudantes do Ensino Médio 
+- Vestibulandos do ENEM
+- Equipe de Desenvolvimento
+  
 ---
 
 ##  4. Requisitos Funcionais
