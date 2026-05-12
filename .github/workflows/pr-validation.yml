@@ -93,7 +93,8 @@ jobs:
               core.setFailed("Files outside group folder detected");
             }
 
-      # NEW: Validate file by stage
+      # ----------------------------
+      # Validate file by stage
       # ----------------------------
       - name: Validate files by stage
         uses: actions/github-script@v7
@@ -117,14 +118,25 @@ jobs:
             console.log("Files:", paths);
 
             let valid = false;
+            let stageDetected = false;
 
+            // -----------------------------------
             // PRODUCT VISION
+            // -----------------------------------
             if (branch.includes("product-vision")) {
-              valid = paths.some(p => p.endsWith("product-vision.md"));
+              stageDetected = true;
+
+              valid = paths.some(p =>
+                p.endsWith("product-vision.md")
+              );
             }
 
-            // REQUIREMENTS (PART 1, 2, 3)
+            // -----------------------------------
+            // REQUIREMENTS
+            // -----------------------------------
             else if (branch.includes("requirements")) {
+              stageDetected = true;
+
               valid = paths.some(p =>
                 p.endsWith("requirementsPart1.md") ||
                 p.endsWith("requirementsPart2.md") ||
@@ -133,30 +145,66 @@ jobs:
               );
             }
 
+            // -----------------------------------
             // MODELING
+            // -----------------------------------
             else if (branch.includes("modeling")) {
-              valid = paths.some(p => 
-              p.endsWith("modeling.md") ||
-              p.endsWith("Documento_de_Requisitos_Versao-Final.md")
+              stageDetected = true;
+
+              valid = paths.some(p =>
+                p.endsWith("modeling.md") ||
+                p.endsWith("Documento_de_Requisitos_Versao-Final.md")
               );
             }
 
+            // -----------------------------------
             // ARCHITECTURE
+            // -----------------------------------
             else if (branch.includes("architecture")) {
-              valid = paths.some(p => 
-              p.endsWith("architecture.md") ||
-              p.endsWith("Documento_de_Requisitos_Versao-Final.md")
+              stageDetected = true;
+
+              valid = paths.some(p =>
+                p.endsWith("architecture.md") ||
+                p.endsWith("Documento_de_Requisitos_Versao-Final.md")
               );
             }
 
+            // -----------------------------------
             // TESTING
+            // -----------------------------------
             else if (branch.includes("testing")) {
-              valid = paths.some(p => 
-              p.endsWith("testing.md") ||
-              p.endsWith("Documento_de_Requisitos_Versao-Final.md")
+              stageDetected = true;
+
+              valid = paths.some(p =>
+                p.endsWith("testing.md") ||
+                p.endsWith("Documento_de_Requisitos_Versao-Final.md")
               );
             }
 
-            if (!valid) {
-              core.setFailed("Invalid file for this stage. Check naming and structure.");
+            // -----------------------------------
+            // INTELLECTUAL PROPERTY / INNOVATION
+            // -----------------------------------
+            else if (
+              branch.includes("innovation") ||
+              branch.includes("intellectual-property") ||
+              branch.includes("-ip")
+            ) {
+              stageDetected = true;
+
+              valid = paths.some(p =>
+                p.endsWith("innovation-record.md") ||
+                p.endsWith("prior-art-analysis.md") ||
+                p.endsWith("authors-and-contributions.md")
+              );
+            }
+
+            // -----------------------------------
+            // FINAL VALIDATION
+            // -----------------------------------
+            if (stageDetected && !valid) {
+              core.setFailed(
+                "Invalid file for this stage. Check naming and structure."
+              );
+            } else {
+              console.log("Validation passed.");
             }
