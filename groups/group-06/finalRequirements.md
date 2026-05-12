@@ -481,7 +481,9 @@ O sistema deve permitir que o usuário edite seus dados de perfil.
 ### 5.2 Eficiência
 - Tempo de resposta < X segundos  
 - Suporte a múltiplos usuários  
-
+- O aplicativo deve responder rapidamente às ações do usuário para evitar atrasos durante o uso
+- O aplicativo deve minimizar o consumo de bateria durante o uso contínuo
+  
 ### 5.3 Desempenho
 - O sistema deve garantir uma experiência fluida, respondendo a requisições de carregamento de tela em até 2 segundos em conexões 4G ou Wi-Fi.
 
@@ -507,11 +509,15 @@ O sistema deve permitir que o usuário edite seus dados de perfil.
 
 ### 5.4 Espaço
 - Limite de armazenamento  
-- Uso eficiente de memória  
+- Uso eficiente de memória
+- Recursos não utilizados devem ser liberados automaticamente
+- O minigame não deve comprometer funções principais do app
 
 ### 5.5 Confiabilidade
 - Disponibilidade mínima (ex: 99,9%)  
-- Recuperação de falhas  
+- Recuperação de falhas
+- O sistema deve realizar salvamento automático
+- O sistema deve registrar corretamente pontos, experiência e conquistas do usuário
 
 ### 5.6 Segurança (Proteção)
 - O sistema deve exigir autenticação
