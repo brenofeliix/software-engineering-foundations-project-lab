@@ -10,21 +10,25 @@ O sistema visa digitalizar e modernizar o processo de gestão e uso do RU, elimi
 
 
 ### 1.2 Escopo
-##O sistema contempla:
-•	Autenticação de usuários institucionais via SUAP
-•	Consulta de saldo e histórico de recargas em tempo real
-•	Recarga de créditos via Pix
-•	Visualização do cardápio semanal
-•	Registro e consulta de check-ins
-•	Envio de notificações e comunicados
-•	Feedback sobre refeições
-•	Painel administrativo para gestão operacional do RU
-•	Geração de relatórios visuais com gráficos e indicadores
-•	Integração com APIs externas
-##Fora do escopo:
-•	Controle físico de acesso (catracas e reconhecimento facial) — responsabilidade do sistema existente do RU
-•	Manutenção técnica da infraestrutura — responsabilidade exclusiva da equipe desenvolvedora
-•	Integração com sistemas de folha de pagamento ou ERP institucional
+
+O sistema contempla:
+
+- Autenticação de usuários institucionais via SUAP  
+- Consulta de saldo e histórico de recargas em tempo real  
+- Recarga de créditos via Pix  
+- Visualização do cardápio semanal  
+- Registro e consulta de check-ins  
+- Envio de notificações e comunicados  
+- Feedback sobre refeições  
+- Painel administrativo para gestão operacional do RU  
+- Geração de relatórios visuais com gráficos e indicadores  
+- Integração com APIs externas  
+
+#### Fora do escopo:
+
+- Controle físico de acesso (catracas e reconhecimento facial) — responsabilidade do sistema existente do RU  
+- Manutenção técnica da infraestrutura — responsabilidade exclusiva da equipe desenvolvedora  
+- Integração com sistemas de folha de pagamento ou ERP institucional  
 
 
 ### 1.3 Definições, Acrônimos e Abreviações
