@@ -5,10 +5,40 @@
 ##  1. Introdução
 
 ### 1.1 Objetivo
-Descrever o objetivo deste documento e do sistema.
+
+Este documento tem como objetivo apresentar a visão geral do produto CromStudy, descrevendo o problema identificado, os usuários-alvo, a solução proposta e as funcionalidades planejadas. Ele serve como referência para a equipe de desenvolvimento, garantindo o alinhamento entre os membros ao longo de todas as etapas do projeto.
+
+O CromStudy tem como objetivo auxiliar estudantes do Ensino Médio e vestibulandos na organização de sua rotina de estudos, promovendo foco, constância e eficiência no aprendizado por meio de ferramentas integradas de planejamento, revisão e gamificação.
 
 ### 1.2 Escopo
-Descrever o que o sistema faz, seus limites e o que está fora do escopo.
+
+O CromStudy é um aplicativo voltado para estudantes do Ensino Médio e vestibulandos que necessitam de estrutura e organização em sua rotina acadêmica, disponível nas versões mobile e web (notebooks e desktops). O sistema oferece as seguintes funcionalidades:
+
+### Dentro do escopo do sistema:
+
+Agenda e Cronograma - Planejamento de tarefas diárias, semanais e mensais com visualização em checklist.
+
+Método Pomodoro - Temporizador de estudo com ciclos de 25 minutos de foco e 5 minutos de intervalo.
+
+Flashcards - Criação de cartões de memorização com registro de acertos e erros.
+
+Métricas de Estudo - Relatórios de desempenho com base no tempo estudado e no aproveitamento nos flashcards.
+
+Sistema de Alertas - Notificações e alertas sonoros para revisões, tarefas e ciclos do Pomodoro.
+
+Minijogo - Quiz baseado nos flashcards do usuário com recompensas para construção de um mundo virtual.
+
+### Fora do escopo do sistema:
+
+Integração com plataformas educacionais externas (ex: Google Classroom, Moodle).
+
+Comunicação ou colaboração em tempo real entre usuários.
+
+Geração automática de conteúdo de estudo ou questões por inteligência artificial.
+
+Funcionalidades de pagamento ou assinatura premium.
+
+Suporte a usuários do Ensino Fundamental ou Ensino Superior..
 
 ### 1.3 Definições, Acrônimos e Abreviações
 Liste termos importantes utilizados no documento.
