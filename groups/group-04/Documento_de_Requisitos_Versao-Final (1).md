@@ -483,27 +483,103 @@ Os testes abragar:
 
 As rotinas de teste devem ser realizadas antes da publicação de novas versões do sistema, reduzindo riscos de falhas na produção.
 
+---
 
-##  7. Requisitos Externos
+#  7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD  
-- Normas específicas  
 
-### 7.2 Éticos
-- Não discriminação  
-- Transparência  
+### Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)
+O sistema PODE PAPAR deverá estar em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD), que regula o tratamento de dados pessoais no Brasil. Por tratar dados de estudantes e servidores públicos, incluindo informações de vínculo institucional, histórico financeiro e padrões de consumo, a plataforma se enquadra diretamente no escopo da lei.
 
-### 7.3 Legais
-- Leis aplicáveis  
+Embora o sistema atue de forma integrada ao ecossistema de dados da UFR via API do SUAP, a plataforma assegura a conformidade com a LGPD ao adotar o modelo de privacidade por design (privacy by design). O sistema não replicará a base de dados integral do SUAP, limitando-se ao consumo e exibição dos dados necessários para a operação do RU, garantindo que o trânsito de informações entre as plataformas ocorra sob protocolos de criptografia e autenticação segura.
 
-### 7.4 Segurança Externa
-- Proteção contra ataques  
-- Auditorias  
+As obrigações aplicáveis ao sistema incluem:
 
-### 7.5 Contábeis
-- Registro de transações  
-- Relatórios  
+- **Base legal para tratamento de dados:** O tratamento dos dados pessoais dos usuários deverá ser fundamentado em base legal prevista no Art. 7º da LGPD, especialmente no cumprimento de obrigação legal (prestação de serviço público) e no legítimo interesse institucional da UFR.
+- **Princípio da finalidade:** Os dados coletados deverão ser utilizados exclusivamente para as finalidades declaradas no sistema — autenticação, gestão de créditos, controle de acesso ao RU e comunicação institucional —, sendo vedado o uso para finalidades incompatíveis.
+- **Princípio da minimização:** O sistema deverá coletar apenas os dados estritamente necessários para a execução de suas funcionalidades, evitando a coleta excessiva de informações pessoais.
+- **Relatório de Impacto à Proteção de Dados (RIPD):** Deverá ser elaborado um RIPD antes da entrada em produção do sistema, avaliando os riscos do tratamento de dados pessoais e as medidas adotadas para mitigá-los, conforme Art. 38 da LGPD.
+- **Incidentes de segurança:** Em caso de vazamento ou acesso não autorizado a dados pessoais, a UFR deverá comunicar o incidente à ANPD e aos titulares afetados em prazo razoável, conforme Art. 48 da LGPD.
+
+### Normas Específicas Aplicáveis
+- **Resolução CFM / Normas do Banco Central (Bacen):** As operações de pagamento via Pix deverão estar em conformidade com o Regulamento do Pix instituído pelo Banco Central do Brasil, respeitando os requisitos de segurança, autenticação e rastreabilidade das transações instantâneas.
+- **PCI-DSS (Payment Card Industry Data Security Standard):** O processamento de pagamentos via cartão de crédito deverá obedecer ao padrão PCI-DSS, conforme já previsto nos requisitos não funcionais de segurança (RNF03 e RNF08). Isso implica que dados sensíveis de cartão jamais deverão ser armazenados diretamente no sistema, sendo delegados integralmente ao gateway de pagamento contratado.
+- **Decreto nº 8.777/2016 — Política de Dados Abertos do Poder Executivo Federal:** Como sistema de uma instituição federal, relatórios e dados estatísticos agregados e anonimizados poderão estar sujeitos a demandas de transparência ativa, devendo o sistema viabilizar a exportação de dados em formatos abertos quando solicitado.
+- **Lei de Acesso à Informação (LAI — Lei nº 12.527/2011):** Informações de caráter público relativas ao funcionamento do RU — como cardápios, comunicados e indicadores gerais de uso — deverão estar acessíveis em conformidade com os princípios de transparência da LAI, sem que isso implique exposição de dados pessoais dos usuários.
+
+---
+
+## 7.2 Éticos
+
+### Não Discriminação
+O sistema deverá ser desenvolvido e operado de forma a garantir igualdade de acesso e tratamento a todos os membros da comunidade acadêmica da UFR, independentemente de condição socioeconômica, raça, gênero, deficiência ou qualquer outro fator que possa ensejar discriminação.
+
+- **Acessibilidade universal:** Conforme previsto nos requisitos RNF11 e RNF12, o sistema deverá oferecer recursos de acessibilidade, como alto contraste, alternância entre temas e suporte a leitores de tela, de modo a não excluir usuários com deficiência visual ou outras necessidades específicas.
+- **Inclusão digital:** Reconhecendo que nem todos os usuários possuem familiaridade com plataformas digitais, o sistema deverá manter a coexistência com os guichês físicos de atendimento durante o período de transição, não forçando a exclusividade digital como condição de acesso ao serviço de alimentação.
+
+### Transparência
+- **Clareza nas operações financeiras:** O sistema deverá exibir de forma clara e compreensível todas as informações relacionadas a saldo, recargas, débitos por refeição e histórico de transações, sem ambiguidades que possam prejudicar o usuário.
+- **Comunicação de alterações:** Qualquer modificação relevante nas regras de uso, preços das refeições ou funcionamento do sistema deverá ser comunicada aos usuários com antecedência adequada, por meio das notificações previstas no RF06.
+- **Uso de dados:** O sistema deverá informar aos usuários, de forma acessível, quais dados são coletados, com qual finalidade e por quanto tempo são armazenados, em conformidade com o princípio da transparência da LGPD.
+- **Feedbacks e avaliações:** O mecanismo de feedback sobre refeições (RF08) deverá ser conduzido de forma que o usuário compreenda o caráter anônimo de suas avaliações perante outros usuários e saiba que os dados agregados serão utilizados para fins de melhoria do serviço.
+- **Auditorias administrativas:** Todas as operações realizadas por administradores (especialmente ajustes manuais de crédito (RF11)) deverão ser registradas com identificação do responsável e justificativa, garantindo rastreabilidade e inibindo práticas arbitrárias ou abusivas.
+
+---
+
+## 7.3 Legais
+
+- **Constituição Federal de 1988, Art. 6º:** O acesso à alimentação é direito social fundamental. O sistema, como instrumento de viabilização do RU, deverá ser desenvolvido de modo a não criar barreiras adicionais ao acesso à alimentação por parte dos estudantes, especialmente aqueles em situação de vulnerabilidade.
+- **Lei nº 9.784/1999 — Lei do Processo Administrativo Federal:** Como sistema de uma autarquia federal, os procedimentos administrativos realizados por meio da plataforma, tais quais como cadastro de usuários e ajustes de crédito, deverão observar os princípios da legalidade, impessoalidade, moralidade, publicidade e eficiência previstos nesta lei.
+- **Lei nº 8.078/1990 — Código de Defesa do Consumidor (CDC):** Embora o RU não seja uma relação de consumo típica, as operações de recarga financeira realizadas no sistema envolvem transação econômica e deverão respeitar princípios de proteção ao consumidor, incluindo clareza nas condições de uso, direito à informação e ausência de práticas abusivas.
+- **Lei nº 12.527/2011 — Lei de Acesso à Informação:** Dados públicos relativos ao funcionamento do RU e ao uso dos recursos institucionais deverão estar disponíveis para acesso mediante solicitação formal, respeitados os limites de proteção de dados pessoais.
+- **Decreto-Lei nº 200/1967 e legislação aplicável às IFES:** A UFR, como Instituição Federal de Ensino Superior, está sujeita ao controle da administração pública federal. O sistema deverá viabilizar a geração de informações compatíveis com as obrigações de prestação de contas aos órgãos de controle, como TCU e CGU.
+- **Marco Civil da Internet (Lei nº 12.965/2014):** O sistema deverá observar os princípios do Marco Civil da Internet no que se refere à proteção dos dados dos usuários, neutralidade de rede, responsabilidade dos provedores e guarda de registros de acesso, em conformidade com os Arts. 10 a 17 da referida lei.
+
+---
+
+## 7.4 Segurança Externa
+
+### Proteção contra Ataques
+
+O sistema deverá adotar medidas técnicas e procedimentais para prevenção, detecção e resposta a ameaças de segurança cibernética, em conformidade com as boas práticas do mercado e as diretrizes do Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança no Brasil (CERT.br).
+
+As proteções mínimas exigidas incluem:
+
+- **Prevenção a Injeção de Código (SQL Injection e XSS):** Todas as entradas de dados fornecidas pelos usuários deverão ser validadas, sanitizadas e tratadas de forma a impedir ataques de injeção de SQL, Cross-Site Scripting (XSS) e outras vulnerabilidades.
+- **Proteção contra CSRF (Cross-Site Request Forgery):** O sistema deverá implementar tokens de verificação em requisições que alterem estado, como recargas, edições de perfil e operações administrativas, para impedir que ações sejam executadas de forma não intencional por terceiros.
+- **Limitação de tentativas de acesso (Rate Limiting e Brute Force Protection):** O sistema deverá bloquear ou limitar requisições excessivas a endpoints críticos, especialmente o de autenticação, para mitigar ataques de força bruta e negação de serviço (DoS).
+- **Proteção contra ataques DDoS:** A infraestrutura de hospedagem deverá contar com mecanismos de mitigação de ataques de negação de serviço distribuída (DDoS), seja por meio de serviços de CDN, firewalls de aplicação web (WAF) ou recursos oferecidos pelo provedor de hospedagem.
+- **Gerenciamento seguro de sessões:** Tokens de sessão deverão ser gerados com entropia suficiente, ter prazo de expiração definido e ser invalidados imediatamente após o logout ou detecção de comportamento suspeito.
+- **Segurança na comunicação com APIs externas:** Toda comunicação com o SUAP e com os gateways de pagamento deverá ocorrer por meio de canais criptografados (HTTPS/TLS 1.2 ou superior), com validação de certificados e uso de credenciais seguras gerenciadas por variáveis de ambiente, jamais expostas no código-fonte.
+- **Gestão de vulnerabilidades:** O sistema deverá manter suas dependências e bibliotecas atualizadas, com monitoramento de CVEs (Common Vulnerabilities and Exposures) conhecidas que possam afetar os componentes utilizados.
+
+### Auditorias de Segurança
+
+- **Revisão de código com foco em segurança (Code Review):** O processo de desenvolvimento deverá incluir revisões de código orientadas à identificação de vulnerabilidades antes da integração à branch principal, conforme previsto nos requisitos organizacionais de desenvolvimento.
+- **Testes de penetração (Pentest):** Recomenda-se a realização de testes de penetração periódicos (ao menos antes da entrada em produção e após mudanças significativas na arquitetura) para identificar vulnerabilidades não detectadas na fase de desenvolvimento.
+- **Auditoria de logs de segurança:** Os logs de acesso, tentativas de autenticação inválidas e operações administrativas deverão ser revisados periodicamente pela equipe de TI da UFR para identificação de padrões anômalos ou tentativas de uso indevido do sistema.
+- **Conformidade com o padrão PCI-DSS:** As operações com cartão de crédito deverão ser submetidas a avaliações periódicas de conformidade com o PCI-DSS, garantindo que os requisitos de segurança para dados de pagamento sejam mantidos ao longo do ciclo de vida do sistema.
+- **Política de divulgação responsável de vulnerabilidades:** A UFR deverá estabelecer um canal formal para recebimento de relatos de vulnerabilidades identificadas por terceiros (responsible disclosure), permitindo que falhas sejam comunicadas e corrigidas antes de sua eventual exploração.
+
+---
+
+## 7.5 Contábeis
+
+### Registro de Transações
+
+Todas as movimentações financeiras realizadas no sistema deverão ser registradas de forma íntegra, rastreável e imutável, em conformidade com os princípios contábeis de confiabilidade e oportunidade.
+
+- **Registro atômico e auditável:** Cada operação de recarga ou débito de crédito deverá ser registrada como uma transação única e indivisível, contendo: identificação do usuário, valor da operação, método de pagamento utilizado, data e hora, status da transação e identificador único da operação junto ao gateway de pagamento ou ao sistema interno.
+- **Imutabilidade dos registros:** Registros de transações concluídas não deverão ser passíveis de edição ou exclusão por nenhum perfil de usuário, incluindo administradores. Eventuais correções deverão ser realizadas por meio de lançamentos de estorno ou ajuste devidamente justificados, preservando o histórico completo.
+- **Conciliação financeira:** O sistema deverá permitir a conciliação entre os registros internos de recargas e os extratos fornecidos pelos gateways de pagamento (Pix e cartão de crédito), viabilizando a identificação de eventuais divergências.
+- **Rastreabilidade de ajustes manuais:** Toda operação de ajuste manual de crédito realizada por administradores (RF11) deverá gerar um registro contábil específico, distinguindo-se das recargas automáticas e contendo a justificativa da operação, conforme exigido pelas regras de negócio do requisito funcional correspondente.
+
+### Relatórios Contábeis e de Prestação de Contas
+
+- **Relatórios financeiros periódicos:** O sistema deverá permitir a geração de relatórios consolidados de arrecadação (total de recargas por período), consumo (total de débitos por refeição) e ajustes manuais, com granularidade diária, semanal, mensal e por período personalizado, conforme previsto no RF13.
+- **Compatibilidade com auditorias institucionais:** Os dados financeiros gerados pelo sistema deverão ser exportáveis em formatos estruturados (CSV ou PDF) para subsidiar auditorias internas da UFR e eventuais fiscalizações dos órgãos de controle externo, como o Tribunal de Contas da União (TCU) e a Controladoria-Geral da União (CGU).
+- **Retenção de dados financeiros:** Os registros de transações financeiras deverão ser armazenados por prazo mínimo compatível com as exigências legais aplicáveis à administração pública federal, observando ao menos o prazo de 5 (cinco) anos previsto para guarda de documentos fiscais, sem prejuízo de prazos mais longos definidos pela política de arquivamento da UFR.
 
 ---
 
