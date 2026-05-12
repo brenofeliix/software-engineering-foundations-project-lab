@@ -136,20 +136,183 @@ Essa separação garante flexibilidade de implantação: no caso da UFR, o front
 
 ##  4. Requisitos Funcionais
 
-### RF01 - Nome do requisito
-**Descrição:**  
-Descreva a funcionalidade.
-
-**Prioridade:** Alta / Média / Baixa  
-**Entradas:**  
-**Saídas:**  
-**Regras de negócio:**  
+### RF01 - Autenticação Institucional
+*Prioridade:* Alta
+*Entradas:*
+- Credenciais institucionais do usuário (login e senha do SUAP)
+*Saídas:*
+- Acesso autenticado ao sistema com sessão iniciada
+- Mensagem de erro em caso de credenciais inválidas
+*Regras de negócio:*
+- O sistema deve autenticar o usuário exclusivamente via integração com o SUAP, não sendo permitido cadastro por e-mail ou outros provedores externos.
+- Sessões inativas por tempo prolongado devem ser encerradas automaticamente.
+- O acesso deve ser diferenciado por perfil: estudante, servidor ou administrador.
 
 ---
 
-### RF02 - Nome do requisito
-(repita o padrão)
+### RF02 - Consulta de Saldo
+*Prioridade:* Alta
+*Entradas:*
+- Sessão autenticada do usuário
+*Saídas:*
+- Exibição do saldo disponível em créditos na conta do usuário, atualizado em tempo real
+*Regras de negócio:*
+- O saldo exibido deve refletir o estado mais recente da conta, considerando recargas e consumos já processados.
+- A consulta de saldo deve estar disponível na tela inicial após o login.
+- Não deve ser possível consultar o saldo de outro usuário.
 
+---
+
+### RF03 - Recarga de Saldo
+*Prioridade:* Alta
+*Entradas:*
+- Valor desejado para recarga
+- Método de pagamento selecionado (Pix ou cartão de crédito cadastrado)
+*Saídas:*
+- Confirmação de recarga bem-sucedida com atualização imediata do saldo
+- Comprovante ou notificação da transação realizada
+- Mensagem de erro em caso de falha no pagamento
+*Regras de negócio:*
+- O sistema deve suportar pagamento via Pix e cartão de crédito previamente cadastrado pelo usuário.
+- O saldo só deve ser creditado após a confirmação do pagamento pela instituição financeira.
+- Recargas com falha não devem alterar o saldo do usuário.
+- Deve haver um valor mínimo de recarga definido pelo administrador.
+
+---
+
+### RF04 - Exibição do Cardápio Semanal
+*Prioridade:* Alta
+*Entradas:*
+- Solicitação de visualização do cardápio pelo usuário autenticado
+*Saídas:*
+- Exibição do cardápio da semana vigente, organizado por dia e tipo de refeição
+*Regras de negócio:*
+- O cardápio deve ser atualizado semanalmente pelo administrador.
+- Caso o cardápio da semana ainda não tenha sido publicado, o sistema deve exibir uma mensagem informativa ao usuário.
+- O cardápio deve indicar claramente a data de vigência de cada refeição listada.
+
+---
+
+### RF05 - Histórico de Recargas
+*Prioridade:* Média
+*Entradas:*
+- Sessão autenticada do usuário
+- Filtros opcionais (período, método de pagamento)
+*Saídas:*
+- Lista paginada das recargas realizadas, contendo data, valor e método de pagamento
+*Regras de negócio:*
+- O histórico deve exibir apenas as recargas do próprio usuário autenticado.
+- Os registros devem ser apresentados em ordem cronológica decrescente (mais recente primeiro).
+- O sistema deve manter o histórico por, no mínimo, 12 meses.
+
+---
+
+### RF06 - Envio de Notificações
+*Prioridade:* Média
+*Entradas:*
+- Eventos disparadores: saldo baixo, recarga confirmada, publicação de novo cardápio, manutenções programadas
+*Saídas:*
+- Notificação enviada ao usuário pelo canal configurado (push, e-mail institucional ou in-app)
+*Regras de negócio:*
+- O usuário deve poder configurar quais tipos de notificações deseja receber.
+- Notificações de saldo baixo devem ser disparadas quando o saldo atingir um limite mínimo configurável.
+- Notificações críticas do sistema (ex.: manutenção programada) não podem ser desabilitadas pelo usuário.
+
+---
+
+### RF07 - Registro de Check-in
+*Prioridade:* Média
+*Entradas:*
+- Identificação do usuário no acesso ao RU (via QR Code, cartão ou biometria)
+*Saídas:*
+- Registro da entrada do usuário com data e hora
+- Desconto automático do crédito correspondente à refeição no saldo do usuário
+*Regras de negócio:*
+- Cada check-in deve debitar automaticamente o valor da refeição do saldo do usuário.
+- Não deve ser permitido o check-in caso o saldo seja insuficiente.
+- O registro deve ser armazenado para consulta no histórico do usuário e nos relatórios administrativos.
+
+---
+
+### RF08 - Feedback sobre Refeições
+*Prioridade:* Baixa
+*Entradas:*
+- Avaliação do usuário (nota e/ou comentário) referente à refeição do dia
+*Saídas:*
+- Confirmação de recebimento do feedback
+- Dados agregados disponíveis para o administrador nos relatórios
+*Regras de negócio:*
+- O usuário só pode enviar feedback referente a refeições nas quais realizou check-in.
+- Cada usuário pode enviar apenas um feedback por refeição por dia.
+- Os feedbacks devem ser anônimos para outros usuários, sendo identificáveis apenas pelos administradores.
+
+---
+
+### RF09 - Integração com APIs Externas
+*Prioridade:* Alta
+*Entradas:*
+- Dados de autenticação e transação encaminhados às APIs externas (SUAP, gateways de pagamento)
+*Saídas:*
+- Respostas das APIs processadas e refletidas no sistema (autenticação validada, pagamento confirmado, etc.)
+*Regras de negócio:*
+- A integração com o SUAP deve ser utilizada exclusivamente para autenticação e validação de vínculo institucional.
+- A integração com o gateway de pagamento deve seguir os padrões de segurança PCI-DSS.
+- Falhas na comunicação com APIs externas devem ser tratadas com mensagens de erro adequadas ao usuário, sem expor detalhes técnicos.
+
+---
+
+### RF10 - Cadastro de Usuários pelo Administrador
+*Prioridade:* Alta
+*Entradas:*
+- Dados do usuário a ser cadastrado (nome, matrícula, vínculo institucional, perfil de acesso)
+*Saídas:*
+- Confirmação de cadastro realizado com sucesso
+- Mensagem de erro em caso de dados inválidos ou usuário já existente
+*Regras de negócio:*
+- O administrador pode cadastrar usuários dos tipos: estudante, servidor e administrador.
+- Não deve ser permitido cadastrar usuários com matrícula já existente no sistema.
+- O cadastro deve verificar o vínculo ativo do usuário com a instituição via integração com o SUAP.
+
+---
+
+### RF11 - Gerenciamento de Créditos pelo Administrador
+*Prioridade:* Alta
+*Entradas:*
+- Identificação do usuário e operação desejada (adição, remoção ou ajuste manual de créditos)
+*Saídas:*
+- Confirmação da operação realizada com atualização do saldo do usuário
+- Registro da alteração no histórico administrativo
+*Regras de negócio:*
+- Toda alteração manual de crédito deve ser registrada com identificação do administrador responsável, data, hora e justificativa.
+- Não deve ser possível definir saldo negativo a um usuário.
+- Apenas administradores com permissão específica podem realizar ajustes manuais de crédito.
+
+---
+
+### RF12 - Gerenciamento do Cardápio pelo Administrador
+*Prioridade:* Alta
+*Entradas:*
+- Dados do cardápio (data, tipo de refeição, itens do menu)
+*Saídas:*
+- Cardápio publicado e disponível para visualização pelos usuários
+- Confirmação de atualização ou mensagem de erro em caso de dados inválidos
+*Regras de negócio:*
+- O cardápio deve ser cadastrado com antecedência mínima de 24 horas antes da refeição correspondente.
+- Somente administradores podem criar, editar ou excluir entradas do cardápio.
+- Alterações no cardápio já publicado devem gerar notificação automática aos usuários.
+
+---
+
+### RF13 - Geração de Relatórios pelo Administrador
+*Prioridade:* Média
+*Entradas:*
+- Filtros selecionados pelo administrador (período, tipo de relatório, usuário ou grupo)
+*Saídas:*
+- Relatório gerado com dados de uso do sistema (recargas, check-ins, feedbacks, acessos) em formato exportável (PDF ou CSV)
+*Regras de negócio:*
+- Os relatórios devem estar disponíveis apenas para usuários com perfil de administrador.
+- O sistema deve permitir a geração de relatórios por período (diário, semanal, mensal e personalizado).
+- Os dados exibidos nos relatórios devem ser anonimizados quando exportados para fins estatísticos.
 ---
 
 ##  5. Requisitos Não Funcionais
