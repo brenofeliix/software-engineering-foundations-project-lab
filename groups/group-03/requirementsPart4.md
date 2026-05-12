@@ -5,7 +5,11 @@
 ##  7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD  
+- **LGPD**: 
+- Proteger informações como nome, idade, e-mail, senha e dados escolares.
+- Permitir que o usuário visualize, altere ou solicite exclusão de seus dados.
+- Armazenar senhas utilizando criptografia.
+- Informar claramente como os dados serão utilizados através da Política de Privacidade.
 - Normas específicas  
 
 ### 7.2 Éticos
