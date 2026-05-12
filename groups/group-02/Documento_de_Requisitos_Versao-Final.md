@@ -307,8 +307,16 @@ A organização deve verificar o comportamento do sistema adotando a estratégia
 ## 7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD  
-- Normas específicas  
+- LGPD (Lei Geral de Proteção de Dados – Lei nº 13.709/2018)
+O sistema deve garantir a proteção dos dados pessoais dos usuários, assegurando princípios como privacidade, transparência, consentimento e segurança das informações coletadas e armazenadas.
+- Normas específicas de segurança da informação
+Devem ser consideradas práticas e normas relacionadas à segurança digital, como controle de acesso, criptografia de dados, autenticação de usuários e prevenção contra vazamento de informações.
+- Regulamentações de uso de Inteligência Artificial
+O sistema deve seguir diretrizes éticas para utilização de IA, evitando discriminação algorítmica.
+- Políticas de conformidade organizacional
+A solução deve respeitar as políticas internas da instituição ou empresa onde será implementada, incluindo regras de armazenamento, auditoria e monitoramento de dados.
+- Normas técnicas de software e acessibilidade
+Sempre que aplicável, o sistema deverá seguir padrões de qualidade de software e acessibilidade digital, garantindo melhor experiência e inclusão dos usuários.
 
 ### 7.2 Éticos
 - Não discriminação  
