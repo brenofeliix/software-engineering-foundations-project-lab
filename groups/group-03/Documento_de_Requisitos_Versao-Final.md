@@ -332,8 +332,11 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 ##  7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD  
-- Normas específicas  
+- LGPD (Lei Geral de Proteção de Dados): O sistema deve cumprir rigorosamente os artigos 14 e 15 da LGPD, que tratam do tratamento de dados de crianças e adolescentes. Isso implica a necessidade de consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal para o tratamento de dados pessoais de menores.
+
+- BNCC e MEC: Os conteúdos pedagógicos inseridos nas trilhas de aprendizagem devem estar estritamente alinhados às competências e habilidades definidas pela Base Nacional Comum Curricular (BNCC) para o Ensino Fundamental II.
+
+- Acessibilidade (LBI): O software deve seguir a Lei Brasileira de Inclusão (Lei 13.146) e as diretrizes do WCAG 2.1, garantindo que alunos com deficiência visual ou motora possam utilizar o app de forma equivalente aos demais.
 
 ### 7.2 Éticos
 - Não discriminação  
