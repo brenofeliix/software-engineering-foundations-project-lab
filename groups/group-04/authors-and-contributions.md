@@ -2,11 +2,10 @@
 
 | Nome | Função | Contribuições |
 |---|---|---|
-| Aluno 1 | Backend | API e banco |
-| Aluno 2 | Frontend | Interface |
-| Aluno 3 | Documentação | Requisitos |
+| Giovana Gomes da Silva | Project Owner | Gerenciamento do Projeto |
+| Gustavo Vinícius Coinete Silva | Documentação | Requisitos |
+| Anthonio Olioni | Backend | API e banco |
+| Guilherme Freitas da Costa Lopes| Backend | API e banco |
+| Pedro Guilherme Mota Santos | Frontend | Interface |
 
 ---
-
-## Observações
-As contribuições devem refletir os commits realizados no GitHub.
