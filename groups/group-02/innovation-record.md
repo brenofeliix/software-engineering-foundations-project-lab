@@ -54,7 +54,10 @@ Explique o potencial acadêmico, social ou comercial.
 ---
 
 ## Autores
-- Nome 1
-- Nome 2
+- Thiago Rafael Caixeta Tavares da Silva
+- Flávio Eduardo Mendes Peixoto
+- Rafael Elim Oliveira
+- Joaber Moreira da Silva
+- Walky Antoine
 
 ---
