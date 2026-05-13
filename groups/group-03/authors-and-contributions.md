@@ -2,9 +2,11 @@
 
 | Nome | Função | Contribuições |
 |---|---|---|
-| Aluno 1 | Backend | API e banco |
-| Aluno 2 | Frontend | Interface |
-| Aluno 3 | Documentação | Requisitos |
+| João Pedro Delguingaro | Backend | API e banco |
+| Mateus | Backend | API e banco |
+| Caroline | Frontend | Interface |
+| João Paulo | Frontend | Interface |
+| Pedro Lucas | Documentação | Requisitos |
 
 ---
 
