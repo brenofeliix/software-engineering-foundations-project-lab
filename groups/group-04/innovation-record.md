@@ -11,7 +11,7 @@ O Restaurante Universitário da Universidade Federal de Rondonópolis (UFR) oper
 ---
 
 ## Solução Proposta
-Como o sistema resolve o problema?
+Desenvolvimento de uma plataforma digital modular e desacoplada composta por dois módulos independentes: o Módulo de Interface (Frontend PWA), acessível via navegador ou instalável em dispositivos móveis, que permite ao usuário autenticar via SUAP, consultar saldo, visualizar cardápio, recarregar créditos via Pix ou cartão de crédito e receber notificações; e o Módulo Gerenciador (Backend + Painel Administrativo), que permite aos operadores do RU gerenciar usuários, créditos, cardápio e gerar relatórios visuais sem necessidade de conhecimento técnico.
 
 ---
 
