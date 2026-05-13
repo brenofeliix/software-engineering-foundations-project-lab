@@ -23,7 +23,7 @@ A solução consiste em uma Plataforma Web que acompanhe o processo de compra e 
 ---
 
 ## Diferencial Inovador
-Considerando que a ultilização dos sistemas acima proposto, aquele que propomos temos vatagens que são aproveitadas pelo cliente final, tais como:  
+Considerando que a ultilização de sistemas semelhantes, o que propomos oferece vatagens que são aproveitadas pelo cliente final, tais como:  
 - Não precisa baixar o sistema no aparalho do cliente;  
 - O cliente faz o seu pedido diretamente no sistema, não precisando de outro para ter uma experiência completa;
 - Por ser mais interativo, também se torna um diferencial aos olhos do cliente final;  
