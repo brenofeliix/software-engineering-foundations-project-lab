@@ -365,3 +365,29 @@ A organização deve verificar o comportamento do sistema adotando a estratégia
 - Registro imutável de quem acessou os dados financeiros e quando as transações foram confirmadas via webhooks. 
 - O sistema deve fornecer relatórios claros sobre cancelamentos para ajustes de dedução de receita bruta no fechamento contábil.
 - Relatórios que prevejam as datas de recebimento (D+0 para Pix, D+30 para crédito, etc.), permitindo o controle de fluxo de caixa e provisionamento contábil.
+
+---
+
+8. Arquitetura do Sistema
+
+8.1 Visão Geral
+Descreva a arquitetura (ex: monolito, microsserviços).
+
+8.2 Componentes
+Frontend  
+Backend  
+Banco de dados  
+APIs externas  
+
+8.3 Tecnologias
+Linguagem  
+Framework  
+Banco de dados  
+
+8.4 Decisões Arquiteturais
+Explique como a arquitetura atende aos requisitos não funcionais:
+Desempenho  
+Segurança  
+Escalabilidade
+
+---
