@@ -27,6 +27,7 @@ Considerando que a ultilização dos sistemas acima proposto, aquele que propomo
 - Não precisa baixar o sistema no aparalho do cliente;  
 - O cliente faz o seu pedido diretamente no sistema, não precisando de outro para ter uma experiência completa;
 - Por ser mais interativo, também se torna um diferencial aos olhos do cliente final;  
+
 Sendo assim, as vantagens que o sistema proposto tem, é justamente focado em melhor experiência dos clientes. Sendo uma experiência que foca na satisfação do cliente.
 
 ---
