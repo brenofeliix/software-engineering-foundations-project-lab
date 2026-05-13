@@ -2,7 +2,7 @@
 
 | Nome | Função | Contribuições |
 |---|---|---|
-| Pedro Lép | Backend | API e banco |
+| Pedro Léo | Backend | API e banco |
 | Ruan | Frontend | Interface  |
 | Lara | Documentação | Requisitos |
 | Fernanda | Database | criação do banco de dados|
