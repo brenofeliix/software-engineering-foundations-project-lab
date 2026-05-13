@@ -1,7 +1,7 @@
 # Registro de Inovação
 
 ## Nome da Solução
-PODE PAPAR.
+PODE PAPAR — Plataforma Digital do Restaurante Universitário da UFR.
 
 ---
 
