@@ -6,7 +6,9 @@ PODE PAPAR.
 ---
 
 ## Problema
-Qual problema está sendo resolvido?
+O Restaurante Universitário da Universidade Federal de Rondonópolis (UFR) opera com um modelo presencial de créditos pré-pagos que gera filas, burocracia e perda de tempo produtivo para estudantes e servidores. 
+
+A ausência de uma interface digital impede a consulta remota de saldo, a recarga de créditos sem deslocamento ao campus e o acesso ágil ao cardápio semanal, comprometendo a eficiência do serviço e a permanência estudantil.
 
 ---
 
