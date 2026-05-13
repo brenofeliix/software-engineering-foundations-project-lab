@@ -7,7 +7,7 @@
 | Lara | Documentação | Requisitos |
 | Fernanda | Database | criação do banco de dados|
 | Paula | Desingner | identidade visual|
-| Daiane | Testes | correção de bugs|
+| Daiane | Testes | correção de bugs |
 ---
 
 ## Observações
