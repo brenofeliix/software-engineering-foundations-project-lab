@@ -54,15 +54,15 @@ Onde essa solução pode ser utilizada?
 ---
 
 ## Data de Registro
-12/05/2026
+12/05/2026 (doze de maio de dois mil e vinte e seis).
 
 ---
 
 ## Autores
-- Anthonio
-- Geovana
-- Guilherme
-- Gustavo
-- Pedro
+- Anthonio Olioni
+- Giovana Gomes da Silva
+- Guilherme Freitas da Costa Lopes
+- Gustavo Vinícius Coinete Silva
+- Pedro Guilherme Mota Santos
 
 ---
