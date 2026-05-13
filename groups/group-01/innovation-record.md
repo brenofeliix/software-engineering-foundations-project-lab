@@ -1,7 +1,11 @@
 # Registro de Inovação
 
 ## Nome da Solução
+
+Sistema de compra seguro.
+
 Nome do projeto.
+
 Sistema MiniMercadinho
 ---
 
