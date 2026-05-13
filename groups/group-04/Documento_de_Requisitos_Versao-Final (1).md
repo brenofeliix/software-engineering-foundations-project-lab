@@ -89,9 +89,10 @@ O projeto se fundamenta em três pilares:
 ---
 
 ### 2.5 Diferencial
-- *Arquitetura Desacoplada (API-First):* Permite integração e evolução do sistema sem necessidade de reestruturação completa
-- *Foco na Experiência do Usuário (UX):* Interface simples, intuitiva e adaptada às necessidades da comunidade acadêmica
-- *Centralização de Informações:* Reúne saldo, cardápio e comunicados em um único ambiente digital
+- Arquitetura modular e agnóstica (API-First): o frontend opera de forma independente do backend, permitindo integração com sistemas já existentes em outras instituições ou implantação do pacote completo onde não há sistema próprio.
+- Autenticação institucional via SUAP: elimina a necessidade de cadastro adicional, aproveitando a base de dados já existente da UFR.
+- Escalabilidade comercial (white-label): o sistema pode ser adaptado e comercializado para outros restaurantes universitários do país.
+- Acessibilidade nativa: suporte a alto contraste, tema escuro/claro e modo para deficientes visuais desde a concepção do produto.
 
 ---
 
