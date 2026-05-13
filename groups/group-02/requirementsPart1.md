@@ -47,16 +47,17 @@ NFR04: O sistema deve funcionar em 99,9% do tempo.
 
 NFR05: O sistema deve integrar-se a PSPs via APIs RESTful (HTTPS, TLS maior ou igual á  1.2), processando Pix (QR Code Dinâmico/Copia e Cola) com confirmação via webhooks, e pagamentos via cartões/carteiras digitais sob conformidade PCI DSS, utilizando obrigatoriamente tokenização para evitar o tráfego ou armazenamento de dados sensíveis no servidor.  
 NFR06: O sistema deve realizar a automação de terminais físicos (Smart POS) via TEF ou SDKs, estabelecendo comunicação via HTTP Local ou WebSockets para envio de valores e recepção de status sem digitação manual, operando através de uma camada de abstração agnóstica que suporte diferentes adquirentes e modelos de hardware.
+NFR07: O sistema deve garantir a segregação e a integridade dos dados financeiros em todo o ciclo de vida do pedido: a intenção de pagamento gerada via interface Web (QR Code) deve ser transmitida de forma segura ao servidor e notificada aos terminais Smart POS via comunicação criptografada. A execução da transação física deve ocorrer através de uma camada de abstração agnóstica que popule o terminal automaticamente com os dados da mesa, utilizando obrigatoriamente tokenização para assegurar que nenhum dado sensível de cartão de crédito (PAN, CVV) seja processado, trafegado ou armazenado no servidor da aplicação, mantendo conformidade estrita com o padrão PCI DSS e utilizando Webhooks autenticados para a confirmação final da liquidação.
 
 **SEGURANÇA E PRIVACIDADE**:
 
-NFR07: O sistema deve criptografar de ponta a ponta todas as transações.  
-NFR08: O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados.
+NFR08: O sistema deve criptografar de ponta a ponta todas as transações.  
+NFR09: O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados.
 
 **QUALIDADE**:
 
-NFR09: A plataforma deve-se adaptar a diferentes tamanhos de tela.  
-NFR10: O fluxo do pedido deve ser no máximo 4 ações (“Selecionar pedido”, “Fechar pedido”, “Confirmar pedido” e “Efetuar pagamento”).  
-NFR11: O sistema deve suportar um aumento de 50% no volume de acesso durante alta demanda, sem interferir no desempenho.  
-NFR12: A plataforma deve funcionar nos principais navegadores.  
-NFR13: O sistema deve permitir atualizações no cardápio, sem interromper o serviço aos clientes.
+NFR10: A plataforma deve-se adaptar a diferentes tamanhos de tela.  
+NFR11: O fluxo do pedido deve ser no máximo 4 ações (“Selecionar pedido”, “Fechar pedido”, “Confirmar pedido” e “Efetuar pagamento”).  
+NFR12: O sistema deve suportar um aumento de 50% no volume de acesso durante alta demanda, sem interferir no desempenho.  
+NFR13: A plataforma deve funcionar nos principais navegadores.  
+NFR14: O sistema deve permitir atualizações no cardápio, sem interromper o serviço aos clientes.
