@@ -515,7 +515,9 @@ O sistema deve permitir que o usuário edite seus dados de perfil.
 
 - O sistema deve fornecer feedback visual imediato após ações realizadas. 
 
-- O sistema deve possuir design simples e organizado, reduzindo distrações durante o uso. 
+- O sistema deve possuir design simples e organizado, reduzindo distrações durante o uso.
+
+- O sistema deverá possuir um botão de acessibilidade localizado na lateral direita da interface, permitindo ativar recursos de leitura por voz para usuários com deficiência visual e suporte em Libras para usuários com deficiência auditiva ou de fala.
 
 ### 5.2 Eficiência  
 - Suporte a múltiplos usuários  
@@ -597,12 +599,15 @@ autorizados.
 ##  7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD  
-- Normas específicas  
-
+- O sistema deverá estar em conformidade com a Lei Geral de Proteção de Dados (LGPD), garantindo proteção dos dados pessoais cadastrados pelos estudantes, como nome, e-mail e histórico de estudos.
+- O aplicativo deverá solicitar autorização do usuário antes de enviar notificações e alertas relacionados ao cronograma e sessões de estudo.
+- O sistema deverá garantir armazenamento seguro das métricas de desempenho, flashcards e informações da agenda do usuário.
+  
 ### 7.2 Éticos
-- Não discriminação  
-- Transparência  
+- O sistema não deverá utilizar métricas de desempenho para expor, constranger ou comparar usuários de forma negativa.
+- O aplicativo deverá apresentar de forma transparente como os dados de estudo e produtividade são utilizados pelo sistema.
+- O mini game integrado deverá incentivar hábitos saudáveis de estudo, evitando estímulos excessivos ou comportamentos prejudiciais ao usuário.
+
 
 ### 7.3 Legais
 - Leis aplicáveis
