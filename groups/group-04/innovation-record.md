@@ -29,8 +29,17 @@ Onde essa solução pode ser utilizada?
 ---
 
 ## Tecnologias Utilizadas
-- Tecnologia 1
-- Tecnologia 2
+
+- React.js + Vite (Frontend PWA)  
+- Node.js + Express (Backend API REST)  
+- PostgreSQL (Banco de Dados)  
+- Redis (Cache)  
+- OAuth2 + JWT (Autenticação via SUAP)  
+- Tailwind CSS (Estilização responsiva)  
+- Workbox (Service Worker para PWA e notificações push)  
+- Docker + Nginx (Infraestrutura e containerização)  
+- GitHub Actions (CI/CD)  
+- Figma (Prototipação)
 
 ---
 
