@@ -605,7 +605,10 @@ autorizados.
 - Transparência  
 
 ### 7.3 Legais
-- Leis aplicáveis  
+- Leis aplicáveis
+- O sistema deverá disponibilizar termos de uso e política de privacidade durante o cadastro do usuário.
+- O aplicativo deverá respeitar direitos autorais relacionados aos conteúdos adicionados nos flashcards e materiais cadastrados pelos usuários.
+- O sistema deverá cumprir legislações brasileiras relacionadas ao armazenamento de dados digitais e privacidade dos usuários.
 
 ### 7.4 Segurança Externa
 - Proteção contra ataques  
