@@ -6,7 +6,7 @@ Nome do projeto.
 ---
 
 ## Problema
-Qual problema está sendo resolvido?
+A solução tem como objetivo aumentar a confiabilidade das informações armazenadas, reduzir inconsistências operacionais e facilitar a identificação de perdas, entradas e saídas incorretas, garantindo maior eficiência no gerenciamento do estoque e suporte às análises auditoriais.
 
 ---
 
