@@ -2,9 +2,10 @@
 
 | Nome | Função | Contribuições |
 |---|---|---|
-| Aluno 1 | Backend | API e banco |
-| Aluno 2 | Frontend | Interface |
-| Aluno 3 | Documentação | Requisitos |
+| ANDRE | Backend | API e banco |
+| IGOR | Frontend | Interface |
+| Gabriel | Documentação | Requisitos |
+| Marcilene | Documentação | Requisitos |
 
 ---
 
