@@ -42,11 +42,16 @@ A solução consiste em uma Plataforma Web que acompanhe o processo de compra e 
 
 
 ### 2.4 Proposta de Valor
-Porque aumenta a produtividade do estabelecimento, pois os pedidos são feitos mais rápidos e sem erros de comunicação. Otimiza o tempo que o cliente leva para fazer seus pedidos e mantém um ambiente organizado e bem estruturado.
+Aumenta a produtividade do estabelecimento, pois os pedidos são feitos mais rápidos e sem erros de comunicação. Otimiza o tempo que o cliente leva para fazer seus pedidos e mantém um ambiente organizado e bem estruturado.
 
 
 ### 2.5 Diferencial
-O que torna esse sistema melhor que outros?
+Considerando que a ultilização de sistemas semelhantes, o que propomos oferece vatagens que são aproveitadas pelo cliente final, tais como:
+- Não precisa baixar o sistema no aparalho do cliente;
+- O cliente faz o seu pedido diretamente no sistema, não precisando de outro para ter uma experiência completa;
+- Por ser mais interativo, também se torna um diferencial aos olhos do cliente final;  
+
+Sendo assim, as vantagens que o sistema proposto tem, é justamente focado em melhor experiência dos clientes. Sendo uma experiência que foca na satisfação do cliente.
 
 ### 2.6 Funcionalidades principais (alto nível)
 - Interface via QR Code;
@@ -166,7 +171,7 @@ Liste os principais envolvidos:
 **Regras de Negócio:** A atualização deve ter um delay mínimo (latência baixa).
 
 ## RF14 - Alteração de Status Operacional
-**Descrição:** Fluxo de alteração de status: Cozinha muda para “Em andamento”/“Pronto para servir” e Garçom muda para “Servido”.
+**Descrição:** Cozinha muda para “Em andamento”/“Pronto para servir” e Garçom muda para “Servido”.
 **Prioridade:** Alta.
 **Entradas:** Seleção do novo status no painel operacional.
 **Saídas:** Notificação de atualização para o cliente e gestor.
@@ -212,31 +217,31 @@ Liste os principais envolvidos:
 ##  5. Requisitos Não Funcionais
 
 ### 5.1 Usabilidade
-- Interface intuitiva: O design deve ser responsivo e compatível com os principais navegadores, garantindo adaptabilidade a diferentes dispositivos.
-- Tempo de aprendizado: O fluxo de pedido deve ser otimizado para no máximo 4 ações principais: "Selecionar pedido", "Fechar pedido", "Confirmar pedido" e "Efetuar pagamento".
-- Acessibilidade: Implementar padrões de interface que suportem a navegação fluida em diferentes tamanhos de tela.
+- O design deve ser responsivo e compatível com os principais navegadores, garantindo adaptabilidade a diferentes dispositivos.
+- O fluxo de pedido deve ser otimizado para no máximo 4 ações principais: "Selecionar pedido", "Fechar pedido", "Confirmar pedido" e "Efetuar pagamento".
+- Implementar padrões de interface que suportem a navegação fluida em diferentes tamanhos de tela.
 
 ### 5.2 Eficiência
 - Tempo de resposta: Carregamento de página em menos de 2 segundos e retorno de busca por pratos em menos de 1 segundo.
 - Suporte a múltiplos usuários: Capacidade de processar múltiplos pedidos simultâneos sem perda de fluidez.  
 
 ### 5.3 Desempenho
-- Suporte a usuários simultâneos: Arquitetura capaz de escalar para atender centenas de clientes.
-- Estabilidade sob carga: Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável.
+- Arquitetura capaz de escalar para atender centenas de clientes.
+- Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável.
 
 ### 5.4 Espaço
-- Limite de armazenamento: O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
-- Uso eficiente de memória: O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
+- O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
+- O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
 
 ### 5.5 Confiabilidade
-- Disponibilidade mínima: O sistema deve garantir uma disponibilidade de 99,9% do tempo.
-- Recuperação de falhas: Implementar mecanismos de persistência que garantam a integridade dos dados mesmo em eventuais quedas de conexão ou falhas de sistema.
+- O sistema deve garantir uma disponibilidade de 99,9% do tempo.
+- Implementar mecanismos de persistência que garantam a integridade dos dados mesmo em eventuais quedas de conexão ou falhas de sistema.
 
 ### 5.6 Segurança (Proteção)
-- Autenticação e Controle de Acesso: Implementação de controle de acesso restrito a gestores e colaboradores.
-- Criptografia: Criptografia de ponta a ponta em todas as transações  e conformidade com TLS 1.2 ou superior para APIs.
-- Privacidade e Conformidade: Conformidade total com a LGPD e padrões de segurança financeira PCI DSS, com uso de tokenização para dados sensíveis.
-- Interoperabilidade Segura: Integração com PSPs via webhooks e automação de terminais físicos (Smart POS) via camadas de abstração agnósticas, garantindo que nenhum dado sensível trafegue ou seja armazenado de forma insegura no servidor.
+- Implementação de controle de acesso restrito a gestores e colaboradores.
+- Criptografia de ponta a ponta em todas as transações  e conformidade com TLS 1.2 ou superior para APIs.
+- Conformidade total com a LGPD e padrões de segurança financeira PCI DSS, com uso de tokenização para dados sensíveis.
+- O sistema deve garantir a segurança no fluxo de pagamento Web-to-Physical: a intenção de pagamento gerada via interface Web (QR Code) deve ser notificada ao terminal Smart POS de forma criptografada. A transação deve ser executada via camada agnóstica, populando o terminal automaticamente e utilizando tokenização para impedir o tráfego ou armazenamento de dados sensíveis no servidor, em conformidade com o PCI DSS.
 ---
 
 ## 6. Requisitos Organizacionais
@@ -307,16 +312,11 @@ A organização deve verificar o comportamento do sistema adotando a estratégia
 ## 7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD (Lei Geral de Proteção de Dados – Lei nº 13.709/2018)
-O sistema deve garantir a proteção dos dados pessoais dos usuários, assegurando princípios como privacidade, transparência, consentimento e segurança das informações coletadas e armazenadas.
-- Normas específicas de segurança da informação
-Devem ser consideradas práticas e normas relacionadas à segurança digital, como controle de acesso, criptografia de dados, autenticação de usuários e prevenção contra vazamento de informações.
-- Regulamentações de uso de Inteligência Artificial
-O sistema deve seguir diretrizes éticas para utilização de IA, evitando discriminação algorítmica.
-- Políticas de conformidade organizacional
-A solução deve respeitar as políticas internas da instituição ou empresa onde será implementada, incluindo regras de armazenamento, auditoria e monitoramento de dados.
-- Normas técnicas de software e acessibilidade
-Sempre que aplicável, o sistema deverá seguir padrões de qualidade de software e acessibilidade digital, garantindo melhor experiência e inclusão dos usuários.
+- LGPD (Lei Geral de Proteção de Dados – Lei nº 13.709/2018): O sistema deve garantir a proteção dos dados pessoais dos usuários, assegurando princípios como privacidade, transparência, consentimento e segurança das informações coletadas e armazenadas.
+- Normas específicas de segurança da informação: Devem ser consideradas práticas e normas relacionadas à segurança digital, como controle de acesso, criptografia de dados, autenticação de usuários e prevenção contra vazamento de informações.
+- Regulamentações de uso de Inteligência Artificial: O sistema deve seguir diretrizes éticas para utilização de IA, evitando discriminação algorítmica.
+- Políticas de conformidade organizacional: A solução deve respeitar as políticas internas da instituição ou empresa onde será implementada, incluindo regras de armazenamento, auditoria e monitoramento de dados.
+- Normas técnicas de software e acessibilidade: Sempre que aplicável, o sistema deverá seguir padrões de qualidade de software e acessibilidade digital, garantindo melhor experiência e inclusão dos usuários.
 
 ### 7.2 Éticos
 -  O sistema deve garantir um atendimento a todo tipo de cliente.
@@ -351,7 +351,7 @@ Sempre que aplicável, o sistema deverá seguir padrões de qualidade de softwar
 ### 7.5 Contábeis
 - O sistema deve registrar cada transação (Pix, Crédito, Débito) vinculando o ID da transação do Gateway/Adquirente ao pedido interno. Isso é essencial para bater o saldo bancário com as vendas realizadas.  
 - Contabilmente, é necessário registrar o valor bruto da venda, a taxa de intermediação (cobrada pelo PSP/Adquirente) e o valor líquido a receber. 
-- Diferenciar contabilmente receitas vindas de e-commerce (NFR06) de receitas de lojas físicas (NFR07). 
+- Diferenciar contabilmente receitas vindas de e-commerce de receitas de lojas físicas. 
 - Registro imutável de quem acessou os dados financeiros e quando as transações foram confirmadas via webhooks. 
 - O sistema deve fornecer relatórios claros sobre cancelamentos para ajustes de dedução de receita bruta no fechamento contábil.
 - Relatórios que prevejam as datas de recebimento (D+0 para Pix, D+30 para crédito, etc.), permitindo o controle de fluxo de caixa e provisionamento contábil.
