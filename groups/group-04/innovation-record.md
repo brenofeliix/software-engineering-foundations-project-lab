@@ -34,18 +34,26 @@ Onde essa solução pode ser utilizada?
 
 ---
 
-## Possível contribuição científica ou tecnológica
-Explique o potencial acadêmico, social ou comercial.
+## Possível Contribuição Científica ou Tecnológica
+
+**Acadêmica:** o projeto demonstra na prática a aplicação de arquitetura desacoplada e padrões API-First no contexto de sistemas públicos, podendo servir como base para trabalhos de conclusão de curso, artigos e estudos de caso sobre modernização de serviços institucionais.
+
+**Social:** contribui diretamente com a permanência estudantil ao reduzir barreiras de acesso à alimentação subsidiada, impactando populações em situação de vulnerabilidade econômica atendidas pelo RU.
+
+**Comercial:** o modelo white-label permite que a solução seja licenciada ou adaptada para outras instituições, gerando potencial de receita e sustentabilidade para o projeto após sua implantação inicial na UFR.
 
 ---
 
 ## Data de Registro
-DD/MM/AAAA
+12/05/2026
 
 ---
 
 ## Autores
-- Nome 1
-- Nome 2
+- Anthonio
+- Geovana
+- Guilherme
+- Gustavo
+- Pedro
 
 ---
