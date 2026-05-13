@@ -4,7 +4,7 @@
 
 Sistema de compra seguro.
 
-Nome do projeto.
+## Nome do projeto.
 
 Sistema MiniMercadinho
 ---
