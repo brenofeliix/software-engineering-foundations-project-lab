@@ -575,16 +575,21 @@ autorizados.
 ##  6. Requisitos Organizacionais
 
 ### 6.1 Ambientais
-- Sistema operacional  
-- Infraestrutura  
-
+- O sistema deverá ser compatível com dispositivos Android e IOS.
+- O aplicativo deverá funcionar em diferentes resoluções de tela.
+- O sistema deverá utilizar banco de dados para armazenamento das informações dos usuários.
+- A infraestrutura deverá suportar múltiplos acessos simultâneos.
+  
 ### 6.2 Operacionais
-- Logs  
-- Monitoramento  
+- O sistema deverá registrar erros e falhas de execução. 
+- Os logs deverão auxiliar na identificação e correção de problemas do sistema.
+- O sistema deverá identificar falhas de disponibilidade dos serviços.
 
 ### 6.3 Desenvolvimento
-- Versionamento (Git)  
-- Padrões de código  
-- Testes automatizados  
+- O projeto deverá utilizar o Git para controle de versões.
+- O sistema deverá manter histórico de alterações no código-fonte.
+- O sistema deverá utilizar boas práticas de programação.
+- O código-fonte deverá ser organizado e documentado.
+- Os testes automatizados deverão auxiliar na redução de falhas e erros do sistema.
 
 ---
