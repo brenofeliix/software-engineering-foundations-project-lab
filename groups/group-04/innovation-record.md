@@ -24,7 +24,10 @@ Desenvolvimento de uma plataforma digital modular e desacoplada composta por doi
 ---
 
 ## Potencial de Aplicação
-Onde essa solução pode ser utilizada?
+- Restaurantes universitários de instituições federais e estaduais que não possuem sistema digital próprio
+- Universidades que possuem sistemas legados e necessitam apenas de uma interface moderna integrada via API
+- Refeitórios de institutos federais (IFs) com perfil similar ao da UFR
+- Modelo replicável para qualquer instituição pública que opere serviços de alimentação subsidiada com controle de créditos
 
 ---
 
