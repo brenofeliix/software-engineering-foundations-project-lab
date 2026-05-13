@@ -38,13 +38,25 @@ Em empreendimentos gastronômicos.
 ---
 
 ## Tecnologias Utilizadas
-- Tecnologia 1
-- Tecnologia 2
+
+- Linguagem JavaScript com sua variante TypeScript.
+- NestJS Framework.
+- APIs RESTful: Para a comunicação entre o seu servidor e os provedores de pagamento (PSPs).
+- WebSockets: Tecnologia usada para a comunicação em tempo real (bidirecional), permitindo que o servidor "avise" instantaneamente a maquininha sobre um novo pagamento.
+- Tecnologias Web (HTML5/CSS3/JavaScript): O sistema é disponibilizado via navegador (Web), permitindo o acesso através da leitura de QR Codes nas mesas sem a necessidade de o cliente instalar um aplicativo.
+- Protocolos de Pagamento: Integração com PSPs (Payment Service Providers) para processar Pix e Cartões.
+- TEF (Transferência Eletrônica de Fundos) ou SDKs: Softwares específicos para conversar com o hardware das maquininhas.
+- Smart POS (Android): Os terminais físicos que rodam as aplicações de pagamento e interagem com o seu sistema.
+- HTTPS / TLS ($\ge$ 1.2): Protocolos de segurança para criptografia de dados em trânsito na internet.
+- Tokenização: Tecnologia para substituir dados sensíveis de cartões por chaves aleatórias (tokens).
+- Webhooks: Para o recebimento de notificações automáticas de confirmação de pagamento.
+- Criptografia de Ponta a Ponta: Garantindo a privacidade desde o celular do cliente até o banco de dados.
+- NoSQL para cache de cardápio e um banco de dados relacional para as demais interações, como o (PostgreSQL).
 
 ---
 
 ## Possível contribuição científica ou tecnológica
-Explique o potencial acadêmico, social ou comercial.
+Este projeto representa uma solução de vanguarda para a automação do food service, unificando a agilidade do autoatendimento via QR Code com a robustez da automação financeira em terminais Smart POS. Ao implementar uma arquitetura agnóstica e segura, baseada em tokenização e comunicação em tempo real, a aplicação elimina erros humanos, protege dados sensíveis e otimiza a logística de pagamentos. O resultado é um ecossistema tecnológico de alta performance que oferece conformidade rigorosa com normas internacionais, reduz custos operacionais e entrega uma experiência de consumo fluida, posicionando-se como uma infraestrutura digital escalável e competitiva para o mercado global.
 
 ---
 
