@@ -8,20 +8,20 @@ Investigar soluções semelhantes existentes.
 ## Soluções Encontradas
 
 ### Solução 1
-- Nome:
-- Link:
-- Diferenças para nossa proposta:
+- Nome: Notion: notas, tarefas e IA (Notion Labs, Inc.)
+- Link: https://www.notion.com/
+- Diferenças para nossa proposta: O Notion é uma ferramenta genérica de organização, enquanto o aplicativo proposto seria focado exclusivamente na produtividade e rotina acadêmica dos estudantes
 
 ---
 
 ### Solução 2
-- Nome:
-- Link:
-- Diferenças para nossa proposta:
+- Nome: My Study Life 
+- Link: https://mystudylife.com/
+- Diferenças para nossa proposta: Focado em organização de estudos, mas possui pouca gamificação.
 
 ---
 
 ## Conclusão
-Explique o possível diferencial da proposta.
+O diferencial da proposta é unir organização de estudos com gamificação em um único aplicativo, tornando o aprendizado mais motivador e interativo.
 
 ---
