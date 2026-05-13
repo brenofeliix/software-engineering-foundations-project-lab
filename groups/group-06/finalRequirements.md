@@ -608,9 +608,7 @@ autorizados.
 - O aplicativo deverá apresentar de forma transparente como os dados de estudo e produtividade são utilizados pelo sistema.
 - O mini game integrado deverá incentivar hábitos saudáveis de estudo, evitando estímulos excessivos ou comportamentos prejudiciais ao usuário.
 
-
 ### 7.3 Legais
-- Leis aplicáveis
 - O sistema deverá disponibilizar termos de uso e política de privacidade durante o cadastro do usuário.
 - O aplicativo deverá respeitar direitos autorais relacionados aos conteúdos adicionados nos flashcards e materiais cadastrados pelos usuários.
 - O sistema deverá cumprir legislações brasileiras relacionadas ao armazenamento de dados digitais e privacidade dos usuários.
@@ -620,7 +618,7 @@ autorizados.
 - O aplicativo deverá criptografar dados sensíveis, como senhas e informações pessoais dos estudantes.
 
 ### 7.5 Contábeis
-- Registro de transações  
-- Relatórios 
-
+- O sistema deverá registrar transações caso haja monetização.
+- O sistema deve permitir a exportação de dados financeiros para softwares contábeis.
+- O sistema deve seguir as normas fiscais e tributárias brasileiras.
 ---
