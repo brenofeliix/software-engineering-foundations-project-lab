@@ -2,9 +2,11 @@
 
 | Nome | Função | Contribuições |
 |---|---|---|
-| Aluno 1 | Backend | API e banco |
-| Aluno 2 | Frontend | Interface |
-| Aluno 3 | Documentação | Requisitos |
+| Joaber Moreira | Backend | API e banco |
+| Thiago Caixeta | Frontend | Interface |
+| Flávio Mendes | Documentação | Requisitos |
+| Walky Antoine | Gerente de projeto| Direcionamento e entregas|
+| Rafael Elim | Arquiteto de Software| Estruturas e linguagens |
 
 ---
 
