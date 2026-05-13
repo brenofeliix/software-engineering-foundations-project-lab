@@ -15,19 +15,19 @@ O sistema incorpora a automação dos serviços prestados por restaurantes e lan
 
 
 ### 1.3 Definições, Acrônimos e Abreviações
-RF - Requisitos Funcionais.  
-RNF - Requisitos não funcionais.
-LGPD - Lei Geral de Proteção de Dados.
-Smart POS - Smart Point of Sale.
-HTTP - Hypertext Transfer Protocol.
-HTTPS - Hypertext Transfer Protocol Secure.
-PSP - Payment Service Providers.
-APIs - Application Programming Interface.
-REST - Representational State Transfer.
-PCI DSS - Payment Card Industry Data Security Standard.
-TLS - Transport Layer Security. 
-TEF - Transferência Eletrônica de Fundos.
-SDK - Software Development Kit.
+RF - Requisitos Funcionais.    
+RNF - Requisitos não funcionais.  
+LGPD - Lei Geral de Proteção de Dados.  
+Smart POS - Smart Point of Sale.  
+HTTP - Hypertext Transfer Protocol.  
+HTTPS - Hypertext Transfer Protocol Secure.  
+PSP - Payment Service Providers.  
+APIs - Application Programming Interface.  
+REST - Representational State Transfer.  
+PCI DSS - Payment Card Industry Data Security Standard.  
+TLS - Transport Layer Security.   
+TEF - Transferência Eletrônica de Fundos.  
+SDK - Software Development Kit.  
 
 ---
 
