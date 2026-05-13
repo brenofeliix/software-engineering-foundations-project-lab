@@ -616,8 +616,8 @@ autorizados.
 - O sistema deverá cumprir legislações brasileiras relacionadas ao armazenamento de dados digitais e privacidade dos usuários.
 
 ### 7.4 Segurança Externa
-- Proteção contra ataques  
-- Auditorias  
+- O sistema deverá proteger contas de usuários contra acessos não autorizados por meio de autenticação segura.
+- O aplicativo deverá criptografar dados sensíveis, como senhas e informações pessoais dos estudantes.
 
 ### 7.5 Contábeis
 - Registro de transações  
