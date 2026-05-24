@@ -371,13 +371,35 @@ A organização deve verificar o comportamento do sistema adotando a estratégia
 ## 8. Arquitetura do Sistema
 
 ### 8.1 Visão Geral
-Descreva a arquitetura (ex: monolito, microsserviços).
+
+A arquitetura desta aplicação prioriza alta velocidade, atualizações em tempo real e tolerância à falhas. Quanto à estrutura do código, recomenda-se organizá-lo em monólito modular para este etapa inicial de pequena escala.
 
 ### 8.2 Componentes
-Frontend  
-Backend  
-Banco de dados  
-APIs externas  
+
+FRONTEND
+
+- HTML5/CSS3/JavaScript.
+- Linguagem JavaScript/TypeScript.
+
+BACKEND
+
+- NestJS Framework.
+- Linguagem JavaScript/TypeScript.
+- WebSockets.
+- Tokenização.
+- Webhooks.
+- 
+BANCO DE DADOS
+
+- Banco de dados relacional (PostgreSQL).
+- NoSQL para cache de cardápio.
+
+APIS EXTERNAS
+
+- APIs RESTful.
+- Protocolos de Pagamento.
+- TEF ou SDKs.
+
 
 ### 8.3 Tecnologias
 
