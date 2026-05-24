@@ -368,18 +368,18 @@ A organização deve verificar o comportamento do sistema adotando a estratégia
 
 ---
 
-8. Arquitetura do Sistema
+## 8. Arquitetura do Sistema
 
-8.1 Visão Geral
+### 8.1 Visão Geral
 Descreva a arquitetura (ex: monolito, microsserviços).
 
-8.2 Componentes
+### 8.2 Componentes
 Frontend  
 Backend  
 Banco de dados  
 APIs externas  
 
-8.3 Tecnologias
+### 8.3 Tecnologias
 
 - Linguagem JavaScript com sua variante TypeScript.
 - NestJS Framework.
@@ -395,7 +395,7 @@ APIs externas
 - Criptografia de Ponta a Ponta: Garantindo a privacidade desde o celular do cliente até o banco de dados.
 - NoSQL para cache de cardápio e um banco de dados relacional para as demais interações, como o (PostgreSQL).
 
-8.4 Decisões Arquiteturais
+### 8.4 Decisões Arquiteturais
 
 Explique como a arquitetura atende aos requisitos não funcionais:
 Desempenho  
