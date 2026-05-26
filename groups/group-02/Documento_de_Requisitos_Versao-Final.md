@@ -419,9 +419,16 @@ APIS EXTERNAS
 
 ### 8.4 Decisões Arquiteturais
 
-Explique como a arquitetura atende aos requisitos não funcionais:
-Desempenho  
-Segurança  
-Escalabilidade
+DESEMPENHO
+
+- A aplicação deve utilizar WebSockets para comunicação em tempo real entre clientes, cozinha e painel administrativo, reduzindo atrasos na atualização de pedidos e status.
+- O sistema deve utilizar cache NoSQL para armazenar dados frequentes do cardápio, diminuindo o tempo de resposta e reduzindo consultas ao banco relacional.
+- A arquitetura deve permitir escalabilidade horizontal e balanceamento de carga, suportando múltiplos acessos simultâneos em horários de pico sem perda de desempenho.
+- O backend deve implementar processamento assíncrono para pagamentos, notificações e webhooks, evitando bloqueios no fluxo principal da aplicação.
+- O sistema deve monitorar continuamente métricas de desempenho, como latência, uso de recursos e volume de requisições, permitindo ajustes preventivos na infraestrutura.
+
+SEGURANÇA
+
+ESCALABILIDADE
 
 ---
