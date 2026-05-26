@@ -609,10 +609,11 @@ Explique como a arquitetura atende aos requisitos não funcionais:
 
 ##  9. Casos de Uso
 
-### UC01 - Nome do caso de uso
-**Ator:**  
-**Descrição:**  
-**Fluxo principal:**  
+### UC01 - Autenticar no Sistema
+**Ator:**Usuário Instituicional (estudante ou servidor)  
+**Descrição:** O usuário acessa o sistema e realiza login com suas credenciais institucionais do SUAP.
+**Fluxo principal:** 
+---1 
 **Fluxo alternativo:**  
 
 ---
