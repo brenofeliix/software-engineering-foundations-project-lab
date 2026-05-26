@@ -1080,6 +1080,14 @@ Defina como validar os requisitos:
 - Assume-se que a API do SUAP estará disponível e acessível para autenticação dos usuários institucionais.
 - Assume-se que o sistema interno do RU da UFR expõe ou poderá expor uma API para integração com o módulo de interface.
 - Assume-se a disponibilidade de uma API de pagamento externa para processamento de transações via Pix.
+- Assume-se que funcionários autorizados do RU serão responsáveis por cadastrar e manter o cardápio atualizado no sistema.
+- Assume-se que haverá ao menos um operador responsável pela gestão operacional do sistema no RU.
+- Assume-se que o operador do painel administrativo é um usuário não técnico, responsável apenas pela gestão operacional.
+- Assume-se que a manutenção técnica do sistema é responsabilidade da equipe de desenvolvimento.
+- Assume-se que o controle de acesso físico (catracas e reconhecimento facial) continuará operando de forma independente.
+- Assume-se que o módulo de interface será desenvolvido de forma agnóstica, consumindo dados via API independentemente da origem do sistema gerenciador.
+- Assume-se que a arquitetura modular permitirá adoção por outras instituições, com ou sem sistema gerenciador próprio.
+- Assume-se que instituições sem sistema de gestão próprio utilizarão o módulo gerenciador completo fornecido pela plataforma.
 
 ---
 
