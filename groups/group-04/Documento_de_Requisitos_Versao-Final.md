@@ -610,11 +610,21 @@ Explique como a arquitetura atende aos requisitos não funcionais:
 ##  9. Casos de Uso
 
 ### UC01 - Autenticar no Sistema
-**Ator:**Usuário Instituicional (estudante ou servidor)  
+
+**Ator:** Usuário institucional (estudante ou servidor)  
+
 **Descrição:** O usuário acessa o sistema e realiza login com suas credenciais institucionais do SUAP.
-**Fluxo principal:** 
----1 
+
+**Fluxo principal:**  
+1. O usuário acessa a URL do sistema pelo navegador ou abre a PWA instalada.
+2. O sistema exibe a tela de login com o botão “Entrar com SUAP”.
+3. O usuário clica no botão e é redirecionado para a página de autenticação do SUAP.
+4. O usuário insere suas credenciais no SUAP.
+5. O SUAP retorna o token de autorização para o sistema.
+6. O sistema gera um JWT e redireciona o usuário para a tela inicial.
+
 **Fluxo alternativo:**  
+Se as credenciais forem inválidas, o SUAP exibe uma mensagem de erro e o usuário pode tentar novamente.
 
 ---
 
