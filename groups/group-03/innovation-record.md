@@ -16,7 +16,8 @@ Torna as aulas mais interativas e dinâmicas fazendo com que os alunos foquem ma
 ---
 
 ## Diferencial Inovador
-Esse projeto busca ser implementado nas escolas como uma plataforma de ensino para tornar a Fixação do conteúdo diferente. 
+Esse projeto busca ser implementado nas escolas como uma plataforma de ensino para tornar a Fixação do conteúdo diferente.
+
 ---
 
 ## Potencial de Aplicação
