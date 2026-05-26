@@ -1814,20 +1814,14 @@ Cada critério é composto por:
 
 ##  14. Observações Finais
 
-Informações adicionais relevantes.
+O desenvolvimento do sistema PODE PAPAR busca modernizar e otimizar os serviços oferecidos pelo Restaurante Universitário da Universidade Federal de Rondonópolis, utilizando recursos tecnológicos para reduzir processos manuais, filas e dificuldades enfrentadas pelos usuários no modelo atual.
 
----
+Ao longo deste documento foram definidos os requisitos funcionais, não funcionais, organizacionais e externos necessários para garantir que o sistema atenda às necessidades da comunidade acadêmica de forma eficiente, segura e escalável. A proposta apresentada prioriza não apenas a digitalização dos serviços do RU, mas também aspectos relacionados à acessibilidade, segurança da informação, confiabilidade das operações financeiras e conformidade com legislações vigentes, como a LGPD.
 
-#  Orientações importantes
+A utilização de uma arquitetura desacoplada baseada em APIs REST permite maior flexibilidade de implantação e manutenção, além de possibilitar futura expansão da plataforma para outras instituições de ensino que possuam demandas semelhantes. Da mesma forma, o uso de tecnologias modernas contribui para a criação de um sistema modular, reutilizável e preparado para evolução contínua.
 
-- Requisitos devem ser claros, específicos e mensuráveis  
-- Evite termos vagos como “rápido” ou “bom”  
-- Requisitos não funcionais são obrigatórios  
-- A arquitetura deve responder aos requisitos  
-- Todo requisito deve ser testável  
+Além dos benefícios operacionais para a gestão do RU, o sistema também busca melhorar diretamente a experiência dos estudantes e servidores, oferecendo maior praticidade no acesso às informações, realização de recargas e acompanhamento do uso dos serviços do restaurante universitário.
 
----
+Por fim, ressalta-se que este documento representa uma especificação inicial do sistema, podendo sofrer ajustes e evoluções durante as etapas de desenvolvimento, validação e implantação, conforme novas necessidades institucionais sejam identificadas pelos stakeholders envolvidos no projeto.
 
-# Regra de ouro
 
-> Se não pode ser testado, não é um bom requisito.
