@@ -339,21 +339,43 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 - Acessibilidade (LBI): O software deve seguir a Lei Brasileira de Inclusão (Lei 13.146) e as diretrizes do WCAG 2.1, garantindo que alunos com deficiência visual ou motora possam utilizar o app de forma equivalente aos demais.
 
 ### 7.2 Éticos
-- Não discriminação  
-- Transparência
-- Inclusão educacional 
 
-### 7.3 Legais
-- Leis aplicáveis
-- Direitos autorais  
+- Acessibilidade e inclusão: O sistema deve assegurar que todos os usuários possam utilizar a plataforma em condições equivalentes de acesso e usabilidade.
+  
+- Transparência: O sistema deve assegurar clareza na coleta, armazenamento e utilização de dados acadêmicos e pessoais dos usuários.
 
-### 7.4 Segurança Externa
-- Proteção contra ataques  
-- Auditorias
-- Criptografia
-
-### 7.5 Contábeis
-- Registro de transações  
-- Relatórios  
+- Inclusão educacional: O sistema deve promover acessibilidade e usabilidade compatíveis com diferentes perfis de estudantes, incluindo usuários com deficiência.
 
 ---
+
+### 7.3 Legais
+
+- LGPD (Lei Geral de Proteção de Dados): O sistema deve estar em conformidade com a Lei nº 13.709/2018, garantindo privacidade, segurança e tratamento adequado das informações pessoais.
+
+- Direitos autorais: O sistema deve respeitar a legislação de direitos autorais aplicada a conteúdos pedagógicos, documentos e materiais disponibilizados na plataforma.
+
+- Normas educacionais: O sistema deve atender às regulamentações definidas pelos órgãos competentes, como MEC e BNCC.
+
+---
+
+### 7.4 Segurança Externa
+
+- Proteção contra ataques: O sistema deve implementar mecanismos de segurança contra ataques cibernéticos, incluindo autenticação segura e controle de acesso.
+
+- Auditorias: O sistema deve manter registros de auditoria para rastreamento das operações realizadas por usuários e administradores.
+
+- Criptografia: O sistema deve utilizar protocolos de criptografia para proteção de dados sensíveis durante armazenamento e transmissão.
+
+- Backup e recuperação: O sistema deve possuir políticas de backup e recuperação de dados para garantir continuidade operacional em casos de falha.
+
+---
+
+### 7.5 Contábeis
+
+- Registro de transações: O sistema deve registrar transações financeiras e operacionais de forma íntegra, consistente e auditável.
+
+- Relatórios: O sistema deve gerar relatórios contábeis e financeiros para apoio à gestão administrativa e prestação de contas.
+
+- Histórico financeiro: O sistema deve manter histórico de movimentações financeiras para rastreabilidade e conferência de informações.
+
+- Conformidade fiscal: O sistema deve garantir conformidade com normas contábeis e fiscais aplicáveis à instituição.
