@@ -409,7 +409,6 @@ APIS EXTERNAS
 - WebSockets: Tecnologia usada para a comunicação em tempo real (bidirecional), permitindo que o servidor "avise" instantaneamente a maquininha sobre um novo pagamento.
 - Tecnologias Web (HTML5/CSS3/JavaScript): O sistema é disponibilizado via navegador (Web), permitindo o acesso através da leitura de QR Codes nas mesas sem a necessidade de o cliente instalar um aplicativo.
 - Protocolos de Pagamento: Integração com PSPs (Payment Service Providers) para processar Pix e Cartões.
-- TEF (Transferência Eletrônica de Fundos) ou SDKs: Softwares específicos para conversar com o hardware das maquininhas.
 - Smart POS (Android): Os terminais físicos que rodam as aplicações de pagamento e interagem com o seu sistema.
 - HTTPS / TLS (≥ 1.2): Protocolos de segurança para criptografia de dados em trânsito na internet.
 - Tokenização: Tecnologia para substituir dados sensíveis de cartões por chaves aleatórias (tokens).
