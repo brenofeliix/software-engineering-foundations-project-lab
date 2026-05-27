@@ -58,7 +58,7 @@ Esta seção segue as diretrizes de qualidade de software da norma **ISO/IEC 250
 ## 5. Arquitetura do Sistema
 ### 5.1 Estilo Arquitetural
 A solução adotará uma arquitetura de **Microsserviços** ou **Monólito Modular** (dependendo das restrições do free-tier), orientada a eventos para o fluxo de alertas, visando alta coesão no processamento de dados pesados e baixo acoplamento na entrega ao cliente.
-### 5.2 Stack Tecnológica Recomendada
+### 5.2 Stack Tecnológica
 | Camada | Tecnologia Principal | Justificativa de Engenharia |
 |---|---|---|
 | **Frontend (Cliente)** | React.js | Reatividade fluida para manipulação de componentes geoespaciais e mapas. |
