@@ -227,31 +227,31 @@ Liste os principais envolvidos:
 ##  5. Requisitos Não Funcionais
 
 ### 5.1 Usabilidade
-- O design deve ser responsivo e compatível com os principais navegadores, garantindo adaptabilidade a diferentes dispositivos.
-- O fluxo de pedido deve ser otimizado para no máximo 4 ações principais: "Selecionar pedido", "Fechar pedido", "Confirmar pedido" e "Efetuar pagamento".
-- Implementar padrões de interface que suportem a navegação fluida em diferentes tamanhos de tela.
+## RNF01 - O design deve ser responsivo e compatível com os principais navegadores, garantindo adaptabilidade a diferentes dispositivos.
+## RNF02 - O fluxo de pedido deve ser otimizado para no máximo 4 ações principais: "Selecionar pedido", "Fechar pedido", "Confirmar pedido" e "Efetuar pagamento".
+## RNF03 - Implementar padrões de interface que suportem a navegação fluida em diferentes tamanhos de tela.
 
 ### 5.2 Eficiência
-- Tempo de resposta: Carregamento de página em menos de 2 segundos e retorno de busca por pratos em menos de 1 segundo.
-- Suporte a múltiplos usuários: Capacidade de processar múltiplos pedidos simultâneos sem perda de fluidez.  
+## RNF04 - Tempo de resposta: Carregamento de página em menos de 2 segundos e retorno de busca por pratos em menos de 1 segundo.
+## RNF05 - Suporte a múltiplos usuários: Capacidade de processar múltiplos pedidos simultâneos sem perda de fluidez.  
 
 ### 5.3 Desempenho
-- Arquitetura capaz de escalar para atender centenas de clientes.
-- Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável.
+## RNF06 - Arquitetura capaz de escalar para atender centenas de clientes.
+## RNF07 - Suporte a um aumento de 50% no volume de acesso durante picos de demanda, mantendo a performance estável.
 
 ### 5.4 Espaço
-- O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
-- O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
+## RNF08 - O sistema deve otimizar o armazenamento de logs e histórico de transações para não comprometer o banco de dados principal.
+## RNF09 - O sistema deve permitir atualizações de cardápio em tempo real sem a necessidade de reiniciar o serviço ou sobrecarregar a memória do servidor.
 
 ### 5.5 Confiabilidade
-- O sistema deve garantir uma disponibilidade de 99,9% do tempo.
-- Implementar mecanismos de persistência que garantam a integridade dos dados mesmo em eventuais quedas de conexão ou falhas de sistema.
+## RNF10 - O sistema deve garantir uma disponibilidade de 99,9% do tempo.
+## RNF11 - Implementar mecanismos de persistência que garantam a integridade dos dados mesmo em eventuais quedas de conexão ou falhas de sistema.
 
 ### 5.6 Segurança (Proteção)
-- Implementação de controle de acesso restrito a gestores e colaboradores.
-- Criptografia de ponta a ponta em todas as transações  e conformidade com TLS 1.2 ou superior para APIs.
-- Conformidade total com a LGPD e padrões de segurança financeira PCI DSS, com uso de tokenização para dados sensíveis.
-- O sistema deve garantir a segurança no fluxo de pagamento Web-to-Physical: a intenção de pagamento gerada via interface Web (QR Code) deve ser notificada ao terminal Smart POS de forma criptografada. A transação deve ser executada via camada agnóstica, populando o terminal automaticamente e utilizando tokenização para impedir o tráfego ou armazenamento de dados sensíveis no servidor, em conformidade com o PCI DSS.
+## RNF12 - Implementação de controle de acesso restrito a gestores e colaboradores.
+## RNF13 - Criptografia de ponta a ponta em todas as transações  e conformidade com TLS 1.2 ou superior para APIs.
+## RNF14 - Conformidade total com a LGPD e padrões de segurança financeira PCI DSS, com uso de tokenização para dados sensíveis.
+## RNF15 - O sistema deve garantir a segurança no fluxo de pagamento Web-to-Physical: a intenção de pagamento gerada via interface Web (QR Code) deve ser notificada ao terminal Smart POS de forma criptografada. A transação deve ser executada via camada agnóstica, populando o terminal automaticamente e utilizando tokenização para impedir o tráfego ou armazenamento de dados sensíveis no servidor, em conformidade com o PCI DSS.
 ---
 
 ## 6. Requisitos Organizacionais
@@ -388,7 +388,7 @@ BACKEND
 - WebSockets.
 - Tokenização.
 - Webhooks.
-- 
+
 BANCO DE DADOS
 
 - Banco de dados relacional (PostgreSQL).
