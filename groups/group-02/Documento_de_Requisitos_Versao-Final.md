@@ -1,3 +1,22 @@
+<details>
+  <summary><b>Clique para expandir o Sumário</b></summary>
+  
+  * [1. Introdução](#1-Introdução)
+  * [2. Product Vision](#2-Product-Vision)
+  * [3. Visão-Geral do Sistema](#3-Visão-Geral-do-Sistema)
+  * [4. Requisitos Funcionais](#4-Requisitos-Funcionais)
+  * [5. Requisitos Não Funcionais](#5-Requisitos-Não-Funcionais)
+  * [6. Requisitos Organizacionais](#6-Requisitos-Organizacionais)
+  * [7. Requisitos Externos](#7-Requisitos-Externos)
+  * [8. Arquitetura do Sistema](#8-Arquitetura-do-Sistema)
+  * [9. Casos de Uso e Diagramas UML](#9-Casos-de-Uso-e-Diagramas-UML)
+  * [10. Plano de Testes](#10-Plano-de-Testes)
+  * [11. Critérios de Aceitação](#11-Critérios-de-Aceitação)
+  * [12. Restrições](#12-Restrições)
+  * [13. Premissas](#13-Premissas)
+  * [14. Observações Finais](#14-Observações-Finais)
+</details>
+
 #  Documento de Requisitos e Projeto de Software
 
 ---
