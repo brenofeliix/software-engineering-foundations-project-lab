@@ -453,29 +453,206 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ---
 
-### UC01 - Realizar Login
+### UC01 - Consultar Cardápio e Buscar Pratos
 
-**Ator:** Usuário  
+**Ator:** Cliente.  
 
-**Descrição:**  
-Permite que o usuário acesse o sistema utilizando credenciais válidas.
+**Descrição:**  Permite ao cliente visualizar a tela inicial, navegar por categorias, buscar itens específicos e visualizar detalhes de cada prato.  
 
 ---
 
 ### Fluxo principal
-1. Usuário acessa a tela de login  
-2. Usuário informa e-mail e senha  
-3. Sistema valida credenciais  
-4. Sistema libera acesso  
+1. O cliente acessa o menu principal do sistema.  
+2. O sistema exibe o catálogo inicial com as sugestões contextuais (ex: "Prato do Dia", "Mais Bem Avaliados").  
+3. O cliente seleciona uma categoria (ex: Bebidas, Sobremesas) ou digita um termo na barra de busca.  
+4. O sistema exibe a lista filtrada de pratos ativos.  
+5. O cliente clica em um prato específico.  
+6. O sistema exibe os detalhes: foto em alta resolução, ingredientes, preço e tempo estimado de preparo.  
 
 ---
 
 ### Fluxo alternativo
-- Credenciais inválidas  
-- Usuário esqueceu senha  
+- Nenhum resultado na busca: Se o termo digitado não corresponder a nenhum prato, o sistema exibe a mensagem "Nenhum prato encontrado" e sugere retornar ao menu principal.  
 
 ---
 
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+### UC02 - Gerenciar Carrinho e Personalizar Itens
+
+**Ator:** Cliente.  
+
+**Descrição:**  Permite ao cliente adicionar itens ao carrinho, ajustar quantidades e personalizar ingredientes.  
+
+---
+
+### Fluxo principal
+1. Na tela de detalhes do prato, o cliente ajusta a quantidade desejada através dos botões (+ ou -).  
+2. O cliente seleciona os acompanhamentos adicionais ou marca a remoção de ingredientes específicos.  
+3. O sistema atualiza o valor total do item dinamicamente com base nas escolhas.  
+4. O cliente confirma a adição ao carrinho.  
+
+---
+
+### Fluxo alternativo
+- Limite de Estoque/Regra da Casa: Se o cliente tentar incrementar uma quantidade superior ao limite permitido, o sistema bloqueia o avanço e exibe um aviso em tela.  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+### UC03 - Enviar Pedido Parcial
+
+**Ator:** Cliente.  
+
+**Descrição:**  Permite enviar um item selecionado diretamente para a produção na cozinha sem necessidade de fechar a conta inteira.  
+
+---
+
+### Fluxo principal
+1. No carrinho ou na tela do item, o cliente aciona a opção "Enviar para Cozinha".  
+2. O sistema envia as especificações do prato para o painel da cozinha.  
+3. O sistema exibe uma notificação confirmando o envio do item parcial.
+4. O sistema inclui este pedido diretamente na comanda, para ser visualizado no pagamento.  
+
+---
+
+### Fluxo alternativo
+- Tentativa de Edição: Se o cliente tentar editar um item que já foi enviado para a cozinha, o sistema impede a ação e informa que o item só poderá ser cancelado mediante regra interna da casa.  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+### UC04 - Fechar e Confirmar Pedido
+
+**Ator:** Cliente.  
+
+**Descrição:** Apresenta o resumo financeiro e operacional antes de consolidar o pedido na base de dados.   
+
+---
+
+### Fluxo principal
+1. O cliente clica em "Ir para o Carrinho" ou "Fechar Pedido".
+2. O sistema exibe a lista de itens, o subtotal e o tempo total estimado de entrega (maior tempo entre os pratos selecionados).
+3. O cliente clica em "Confirmar Envio".
+4. O sistema exibe uma janela de confirmação (pop-up) para evitar cliques acidentais.
+5. O cliente confirma a ação.
+6. O sistema registra o pedido definitivamente no banco de dados e inicia o processamento. 
+
+---
+
+### Fluxo alternativo
+- No passo 4 (exibição do pop-up de confirmação), o cliente decide não enviar o pedido e clica em "Cancelar".
+- O sistema fecha a janela flutuante.  
+- O sistema mantém o cliente na tela do carrinho, preservando todos os itens e configurações intocados para modificação posterior.  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+### UC05 - Acompanhar Status do Pedido
+
+**Ator:** Cliente.
+
+**Descrição:** Permite monitorar o progresso dos pedidos em andamento enquanto mantém a liberdade de realizar novas compras. 
+
+---
+
+### Fluxo principal
+1. O cliente acessa a aba "Meus Pedidos".  
+2. O sistema exibe os pedidos ativos e seus respectivos status atualizados em tempo real (Recebido, Em Preparo, Pronto, etc.).  
+3. O cliente pode alternar para a tela inicial a qualquer momento para abrir um novo pedido simultâneo.  
+
+---
+
+### Fluxo alternativo
+- O sistema tenta atualizar o status do pedido em tempo real, mas detecta uma falha de conexão com o servidor.
+- O sistema exibe um aviso discreto na tela: "Atualizando status... Verifique sua conexão".
+- O sistema exibe a última informação de status salva em cache local.
+- Assim que a conexão é restabelecida, o status é sincronizado automaticamente com a cozinha. 
+
+---
+
+### UC06 - 
+
+**Ator:** 
+
+**Descrição:**  
+
+---
+
+### Fluxo principal
+1. 
+
+---
+
+### Fluxo alternativo
+-  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
 ## Exemplo de Diagrama de Caso de Uso
 
 [Usuário]
