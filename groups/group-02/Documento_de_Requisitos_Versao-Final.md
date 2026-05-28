@@ -124,103 +124,103 @@ Liste os principais envolvidos:
 **Saídas:** Resumo da personalização no item do pedido.  
 **Regras de Negócio:** Adicionais podem alterar o valor final do prato.  
 
-## RF06 - Envio de Pedido Parcial
-**Descrição:** O sistema deve permitir que o cliente envie o pedido para a cozinha assim que o primeiro item for selecionado, sem necessidade de fechar todo o carrinho primeiro.
-**Prioridade:** Média.
-**Entradas:** Comando de "Enviar para Cozinha" no item selecionado.
-**Saídas:** Notificação de item enviado.
-**Regras de Negócio:** Itens enviados não podem ser editados, apenas cancelados mediante regra específica.
+## RF06 - Envio de Pedido Parcial  
+**Descrição:** O sistema deve permitir que o cliente envie o pedido para a cozinha assim que o primeiro item for selecionado, sem necessidade de fechar todo o carrinho primeiro.  
+**Prioridade:** Média.  
+**Entradas:** Comando de "Enviar para Cozinha" no item selecionado.  
+**Saídas:** Notificação de item enviado.  
+**Regras de Negócio:** Itens enviados não podem ser editados, apenas cancelados mediante regra específica.  
 
-## RF07 - Resumo e Fechamento de Pedido
-**Descrição:** Ao finalizar, o sistema deve exibir a lista de itens, o subtotal financeiro e o tempo total estimado para entrega/serviço.
-**Prioridade:** Alta.
-**Entradas:** Ação de "Fechar Pedido" ou "Ir para o Carrinho".
-**Saídas:** Relatório visual do pedido antes do pagamento.
-**Regras de Negócio:** O tempo estimado deve ser a soma lógica ou o maior tempo entre os pratos selecionados.
+## RF07 - Resumo e Fechamento de Pedido  
+**Descrição:** Ao finalizar, o sistema deve exibir a lista de itens, o subtotal financeiro e o tempo total estimado para entrega/serviço.  
+**Prioridade:** Alta.  
+**Entradas:** Ação de "Fechar Pedido" ou "Ir para o Carrinho".  
+**Saídas:** Relatório visual do pedido antes do pagamento.  
+**Regras de Negócio:** O tempo estimado deve ser a soma lógica ou o maior tempo entre os pratos selecionados.  
 
-## RF08 - Confirmação de Envio
-**Descrição:** O sistema deve exigir que o cliente confirme explicitamente o envio do pedido para evitar pedidos acidentais.
-**Prioridade:** Alta.
-**Entradas:** Clique no botão de confirmação em pop-up ou tela dedicada.
-**Saídas:** Mensagem de sucesso e início do processamento.
-**Regras de Negócio:** O pedido só é registrado no banco de dados após esta confirmação.
+## RF08 - Confirmação de Envio  
+**Descrição:** O sistema deve exigir que o cliente confirme explicitamente o envio do pedido para evitar pedidos acidentais.  
+**Prioridade:** Alta.  
+**Entradas:** Clique no botão de confirmação em pop-up ou tela dedicada.  
+**Saídas:** Mensagem de sucesso e início do processamento.  
+**Regras de Negócio:** O pedido só é registrado no banco de dados após esta confirmação.  
 
-## RF09 - Sugestões por Contexto (Classes)
-**Descrição:** O sistema deve sugerir pratos baseados em categorias especiais como "Jantar Romântico", "Prato do Dia" ou "Mais Bem Avaliados".
-**Prioridade:** Baixa.
-**Entradas:** Dados de avaliação e tags de categorias especiais.
-**Saídas:** Carrossel ou seção de destaques na tela inicial.
-**Regras de Negócio:** As sugestões devem ser atualizadas dinamicamente conforme as avaliações dos clientes.
+## RF09 - Sugestões por Contexto (Classes)  
+**Descrição:** O sistema deve sugerir pratos baseados em categorias especiais como "Jantar Romântico", "Prato do Dia" ou "Mais Bem Avaliados".  
+**Prioridade:** Baixa.  
+**Entradas:** Dados de avaliação e tags de categorias especiais.  
+**Saídas:** Carrossel ou seção de destaques na tela inicial.  
+**Regras de Negócio:** As sugestões devem ser atualizadas dinamicamente conforme as avaliações dos clientes.  
 
-## RF10 - Busca de Pratos
-**Descrição:** Disponibilizar uma barra de pesquisa para localização rápida de pratos por nome ou palavra-chave.
-**Prioridade:** Média.
-**Entradas:** Texto digitado pelo cliente.
-**Saídas:** Lista de resultados correspondentes.
-**Regras de Negócio:** A busca deve ser insensível a maiúsculas/minúsculas.
+## RF10 - Busca de Pratos  
+**Descrição:** Disponibilizar uma barra de pesquisa para localização rápida de pratos por nome ou palavra-chave.  
+**Prioridade:** Média.  
+**Entradas:** Texto digitado pelo cliente.  
+**Saídas:** Lista de resultados correspondentes.  
+**Regras de Negócio:** A busca deve ser insensível a maiúsculas/minúsculas.  
 
-## RF11 - Acompanhamento de Status e Novos Pedidos
-**Descrição:** O cliente deve poder visualizar o progresso de pedidos ativos e iniciar novos pedidos simultaneamente.
-**Prioridade:** Alta.
-**Entradas:** Acesso à aba "Meus Pedidos".
-**Saídas:** Status atualizado (ex: Recebido, Em Preparo, Pronto).
-**Regras de Negócio:** O status deve ser sincronizado com a atualização feita pela cozinha/garçom.
+## RF11 - Acompanhamento de Status e Novos Pedidos  
+**Descrição:** O cliente deve poder visualizar o progresso de pedidos ativos e iniciar novos pedidos simultaneamente.  
+**Prioridade:** Alta.  
+**Entradas:** Acesso à aba "Meus Pedidos".  
+**Saídas:** Status atualizado (ex: Recebido, Em Preparo, Pronto).  
+**Regras de Negócio:** O status deve ser sincronizado com a atualização feita pela cozinha/garçom.  
 
-## RF12 - Múltiplas Formas de Pagamento
-**Descrição:** O sistema deve processar pagamentos via Pix, cartões (crédito/débito) e carteiras digitais.
-**Prioridade:** Alta.
-**Entradas:** Maquininha ou geração de QR Code Pix.
-**Saídas:** Comprovante de pagamento e atualização de status.
-**Regras de Negócio:** A transação deve ser criptografada e seguir normas de segurança financeira.
+## RF12 - Múltiplas Formas de Pagamento  
+**Descrição:** O sistema deve processar pagamentos via Pix, cartões (crédito/débito) e carteiras digitais.  
+**Prioridade:** Alta.  
+**Entradas:** Maquininha ou geração de QR Code Pix.  
+**Saídas:** Comprovante de pagamento e atualização de status.  
+**Regras de Negócio:** A transação deve ser criptografada e seguir normas de segurança financeira.  
 
-## RF13 - Monitoramento em Tempo Real (Gestores)
-**Descrição:** Painel para gestores visualizarem todos os pedidos que entram no sistema instantaneamente.
-**Prioridade:** Alta.
-**Entradas:** Fluxo de dados dos pedidos dos clientes.
-**Saídas:** Dashboard com lista de pedidos ativos e tempos de espera.
-**Regras de Negócio:** A atualização deve ter um delay mínimo (latência baixa).
+## RF13 - Monitoramento em Tempo Real (Gestores)  
+**Descrição:** Painel para gestores visualizarem todos os pedidos que entram no sistema instantaneamente.  
+**Prioridade:** Alta.  
+**Entradas:** Fluxo de dados dos pedidos dos clientes.  
+**Saídas:** Dashboard com lista de pedidos ativos e tempos de espera.  
+**Regras de Negócio:** A atualização deve ter um delay mínimo (latência baixa).  
 
-## RF14 - Alteração de Status Operacional
-**Descrição:** Cozinha muda para “Em andamento”/“Pronto para servir” e Garçom muda para “Servido”.
-**Prioridade:** Alta.
-**Entradas:** Seleção do novo status no painel operacional.
-**Saídas:** Notificação de atualização para o cliente e gestor.
-**Regras de Negócio:** A sequência de status deve ser respeitada cronologicamente.
+## RF14 - Alteração de Status Operacional  
+**Descrição:** Cozinha muda para “Em andamento”/“Pronto para servir” e Garçom muda para “Servido”.  
+**Prioridade:** Alta.  
+**Entradas:** Seleção do novo status no painel operacional.  
+**Saídas:** Notificação de atualização para o cliente e gestor.  
+**Regras de Negócio:** A sequência de status deve ser respeitada cronologicamente.  
 
-## RF15 - Gestão de Disponibilidade
-**Descrição:** Gestores podem ativar ou desativar a visibilidade de pratos conforme a disponibilidade de estoque.
-**Prioridade:** Média.
-**Entradas:** Botão de alternância (on/off) no painel administrativo.
-**Saídas:** Remoção/Inclusão imediata do item no menu do cliente.
-**Regras de Negócio:** Pratos desativados não devem aparecer na busca nem nas categorias.
+## RF15 - Gestão de Disponibilidade  
+**Descrição:** Gestores podem ativar ou desativar a visibilidade de pratos conforme a disponibilidade de estoque.  
+**Prioridade:** Média.  
+**Entradas:** Botão de alternância (on/off) no painel administrativo.  
+**Saídas:** Remoção/Inclusão imediata do item no menu do cliente.  
+**Regras de Negócio:** Pratos desativados não devem aparecer na busca nem nas categorias.  
 
-## RF16 - Edição de Descrição e Valores
-**Descrição:** Permite que o gestor altere textos descritivos e preços dos produtos.
-**Prioridade:** Média.
-**Entradas:** Novos dados inseridos no formulário de edição do prato.
-**Saídas:** Dados atualizados no banco de dados e interface do cliente.
-**Regras de Negócio:** Alterações de preço não afetam pedidos que já foram finalizados/pagos.
+## RF16 - Edição de Descrição e Valores  
+**Descrição:** Permite que o gestor altere textos descritivos e preços dos produtos.  
+**Prioridade:** Média.  
+**Entradas:** Novos dados inseridos no formulário de edição do prato.  
+**Saídas:** Dados atualizados no banco de dados e interface do cliente.  
+**Regras de Negócio:** Alterações de preço não afetam pedidos que já foram finalizados/pagos.  
 
-## RF17 - Gestão de Cardápio (Inclusão/Exclusão)
-**Descrição:** Funcionalidade para cadastrar novos pratos ou excluir pratos existentes permanentemente.
-**Prioridade:** Média.
-**Entradas:** Formulário de cadastro (nome, foto, preço, ingredientes).
-**Saídas:** Atualização da estrutura do menu.
-**Regras de Negócio:** A exclusão deve ser lógica (arquivamento) para manter histórico de relatórios antigos.
+## RF17 - Gestão de Cardápio (Inclusão/Exclusão)  
+**Descrição:** Funcionalidade para cadastrar novos pratos ou excluir pratos existentes permanentemente.  
+**Prioridade:** Média.  
+**Entradas:** Formulário de cadastro (nome, foto, preço, ingredientes).  
+**Saídas:** Atualização da estrutura do menu.  
+**Regras de Negócio:** A exclusão deve ser lógica (arquivamento) para manter histórico de relatórios antigos.  
 
-## RF18 - Finalização Automática por Pagamento
-**Descrição:** O status do pedido deve mudar automaticamente para “Finalizado” assim que a confirmação do pagamento for recebida.
-**Prioridade:** Alta.
-**Entradas:** Confirmação da API de pagamento ou baixa manual.
-**Saídas:** Status do pedido atualizado para Finalizado.
-**Regras de Negócio:** Somente pedidos com status "Servido" ou conforme regra de fluxo podem ser finalizados via pagamento.
+## RF18 - Finalização Automática por Pagamento  
+**Descrição:** O status do pedido deve mudar automaticamente para “Finalizado” assim que a confirmação do pagamento for recebida.  
+**Prioridade:** Alta.  
+**Entradas:** Confirmação da API de pagamento ou baixa manual.  
+**Saídas:** Status do pedido atualizado para Finalizado.  
+**Regras de Negócio:** Somente pedidos com status "Servido" ou conforme regra de fluxo podem ser finalizados via pagamento.  
 
-## RF19 - Relatório Gerencial Mensal
-**Descrição:** Geração de relatório consolidado com: volume de pedidos, popularidade de pratos, avaliações, identificação de pratos de baixa performance (com sugestão de substituição) e receita bruta.
-**Prioridade:** Baixa.
-**Entradas:** Histórico de vendas, avaliações e dados financeiros do mês.
-**Saídas:** Documento (PDF/Painel) com gráficos e dados analíticos.
-**Regras de Negócio:** O sistema deve calcular a porcentagem de cada prato em relação ao total de vendas do período.
+## RF19 - Relatório Gerencial Mensal  
+**Descrição:** Geração de relatório consolidado com: volume de pedidos, popularidade de pratos, avaliações, identificação de pratos de baixa performance (com sugestão de substituição) e receita bruta.  
+**Prioridade:** Baixa.  
+**Entradas:** Histórico de vendas, avaliações e dados financeiros do mês.  
+**Saídas:** Documento (PDF/Painel) com gráficos e dados analíticos.  
+**Regras de Negócio:** O sistema deve calcular a porcentagem de cada prato em relação ao total de vendas do período.  
 
 ---
 
