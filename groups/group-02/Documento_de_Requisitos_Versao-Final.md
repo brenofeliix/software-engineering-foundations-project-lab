@@ -478,15 +478,12 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ## Exemplo de Diagrama de Caso de Uso
 
-[Usuário]
-
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+    [Cliente]
+        |
+        | ---- (Consultar Cardápio)
+        | ---- (Navegar por Categoria)
+        | ---- (Visualizar Detalhes do Prato)
+        | ---- (Buscar Pratos)
 
 ---
 
@@ -513,15 +510,11 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ## Exemplo de Diagrama de Caso de Uso
 
-[Usuário]
-
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+    [Cliente]
+        |
+        | ---- (Selecionar Quantidade)
+        | ---- (Personalizar Acompanhamentos)
+        | ---- (Adicionar Item ao Carrinho)
 
 ---
 
@@ -548,15 +541,10 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ## Exemplo de Diagrama de Caso de Uso
 
-[Usuário]
-
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+    [Cliente]
+        |
+        | ---- (Enviar Pedido Parcial para a Cozinha)
+        | ---- (Adicionar pedido a comanda final)
 
 ---
 
@@ -587,15 +575,11 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ## Exemplo de Diagrama de Caso de Uso
 
-[Usuário]
-
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+    [Cliente] 
+        |
+        | ---- (Visualizar Resumo do Pedido)
+        | ---- (Fechar Pedido)
+        | ---- (Confirmar Envio do Pedido)
 
 ---
 
@@ -622,48 +606,215 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ---
 
-### UC06 - 
+## Exemplo de Diagrama de Caso de Uso
 
-**Ator:** 
+    [Cliente]
+        |
+        | ---- (Visualizar Progresso de Pedidos Ativos)
+        | ---- (Iniciar Novo Pedido Simultâneo)
 
-**Descrição:**  
+---
+
+### UC06 - Realizar Pagamento
+
+**Ator:** Cliente e Sistema de Pagamento (API).
+
+**Descrição:** Processa a cobrança do pedido através da modalidade escolhida e finaliza o fluxo comercial.
 
 ---
 
 ### Fluxo principal
-1. 
+1. O cliente seleciona a forma de pagamento (Pix, Cartão de Crédito/Débito, Carteira Digital ou Vale Refeição).
+2. O sistema gera as credenciais (como o QR Code Pix) ou faz a interface com a maquininha/integração de terminal POS.  
+3. O Sistema de Pagamento processa a transação e envia o retorno de sucesso.  
+4. O sistema valida se o status operacional do pedido é "Servido".  
+5. O sistema altera automaticamente o status do pedido para “Finalizado” e emite o comprovante na tela.  
 
 ---
 
 ### Fluxo alternativo
--  
+- No passo 3, o Sistema de Pagamento (API) retorna um erro (ex: saldo insuficiente, cartão bloqueado ou timeout do Pix).  
+- O sistema notifica o cliente sobre o motivo da recusa.  
+- O sistema permite que o cliente selecione uma nova modalidade de pagamento (ex: trocar de cartão ou mudar para Pix) e reinicie o processo a partir do passo 1.
+- No passo 4, o sistema valida que o pedido atual ainda não atingiu o status operacional "Servido" (conforme a regra de fluxo da casa).
+- O sistema impede a finalização automática e exibe um alerta ao operador ou ao cliente: "Este pedido ainda está em preparação e não pode ser finalizado".
 
 ---
 
 ## Exemplo de Diagrama de Caso de Uso
 
-[Usuário]
+    [Cliente]    
+        |
+        | ---- (Selecionar Forma de Pagamento)
+        | ---- (Efetuar Pagamento)
 
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+    [Sistema de Pagamento (API)]
+              |
+              | ---- (Processar Transação Financeira)
+              | ---- (Confirmar Pagamento)
 
 ---
+
+### UC07 - Monitorar Pedidos em Tempo Real
+
+**Ator:** Gestor.
+
+**Descrição:** Disponibiliza uma tela de gerenciamento centralizado para visualização imediata do fluxo do estabelecimento.  
+
+---
+
+### Fluxo principal
+1. O Gestor acessa o Dashboard Administrativo.
+2. O sistema exibe, com baixa latência, todos os pedidos ativos, seus respectivos tempos de espera e status atuais.
+
+---
+
+### Fluxo alternativo
+- O sistema detecta que o fluxo de dados em tempo real com a cozinha/mesas sofreu uma interrupção.
+- O painel do Gestor exibe um alerta visual indicando que os dados podem estar desatualizados.
+- O sistema disponibiliza um botão de "Forçar Atualização Manual" para tentar restabelecer o canal de baixa latência imediatamente. 
+
+---
+
 ## Exemplo de Diagrama de Caso de Uso
 
-[Usuário]
+    [Gestor]
+        |
+        | ---- (Acessar Dashboard)
+        | ---- (Visualizar Pedidos Ativos e Tempos de Espera)
 
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+---
+
+### UC08 - Alterar Status Operacional
+
+**Ator:** Operador (Cozinha/Garçom) ou Gestor
+
+**Descrição:** Permite atualizar a situação física do pedido na linha de produção e atendimento.  
+
+---
+
+### Fluxo principal
+1. O operador visualiza o pedido no painel operacional.
+2. A Cozinha altera o status para “Em andamento” e posteriormente para “Pronto para servir”.
+3. O Garçom altera o status para “Servido” ao entregar o prato na mesa.
+4. O sistema dispara notificações automáticas de atualização para o cliente e para o painel do gestor.
+
+---
+
+### Fluxo alternativo
+- No passo 2 ou 3, o operador tenta mudar o status de um pedido pulando etapas (ex: tentar mudar de "Recebido" direto para "Servido", sem passar por "Em andamento" ou "Pronto").
+- O sistema bloqueia a alteração.
+- O sistema exibe uma mensagem de erro na tela operacional informando que a sequência cronológica dos status deve ser respeitada. 
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+    [Operador (Cozinha/Garçom)]
+              |
+              | ---- (Alterar Status para "Em Andamento")
+              | ---- (Alterar Status para "Pronto para Servir")
+              | ---- (Alterar Status para "Servido")
+
+    [Gestor]
+        |
+        | ---- (Monitorar Alterações de Status Operacional)
+
+---
+
+### UC09 - Gerenciar Disponibilidade de Itens
+
+**Ator:** Gestor.
+
+**Descrição:** Permite ocultar ou reexibir pratos no cardápio do cliente com base no estoque de insumos.
+
+---
+
+### Fluxo principal
+1. O Gestor acessa a lista de produtos no painel administrativo.
+2. O Gestor altera a chave de visibilidade (on/off) de um prato específico.
+3. O sistema remove ou inclui imediatamente o item do cardápio visualizado pelo cliente, bloqueando-o também nas buscas.
+
+---
+
+### Fluxo alternativo
+- No passo 2, o Gestor altera a chave para off (desativado) de um prato que possui unidades em preparação na cozinha naquele exato momento.  
+- O sistema remove o item imediatamente para novas buscas e compras dos clientes.  
+- O sistema emite um aviso ao Gestor: "O prato foi ocultado do cardápio. Nota: Existem [X] pedidos ativos deste item que continuarão em produção até a entrega."  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+    [Gestor]
+        |
+        | ---- (Ativar Visibilidade de Prato)
+        | ---- (Desativar Visibilidade de Prato)
+
+---
+
+### UC10 - Manter Itens do Cardápio
+
+**Ator:** Gestor.
+
+**Descrição:** grupa as operações de cadastro, edição de valores/descrições e arquivamento de pratos. 
+
+---
+
+### Fluxo principal
+1. O Gestor preenche o formulário com nome, foto, preço, ingredientes e submete.  
+2. O sistema valida e inclui o novo item na estrutura do menu.  
+
+---
+
+### Fluxo alternativo
+- O Gestor altera o valor de um prato existente.  
+- O sistema atualiza o banco de dados. Os pedidos anteriores já finalizados mantêm seus valores históricos inalterados.  
+- O Gestor solicita a exclusão de um prato.  
+- O sistema realiza uma exclusão lógica (arquivamento), mantendo o prato oculto para o cliente, mas preservando seus dados para estatísticas de relatórios passados.  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+    [Gestor]
+        |
+        | ---- (Cadastrar Novo Prato)
+        | ---- (Editar Descrição e Valores)
+        | ---- (Excluir Prato Permanentemente)
+
+---
+
+### UC11 - Gerar Relatório Gerencial Mensal
+
+**Ator:** Gestor.
+
+**Descrição:** Consolida os dados financeiros e operacionais do mês para suporte à tomada de decisões.
+
+---
+
+### Fluxo principal
+1. O Gestor solicita o fechamento do mês na aba de relatórios.
+2. O sistema compila o histórico de vendas, avaliações e receitas.
+3. O sistema calcula a porcentagem de saída de cada prato em relação ao volume total.
+4. O sistema gera um documento analítico estruturado com gráficos, destacando pratos de alta performance e indicando sugestões de substituição para os de baixa performance.
+
+---
+
+### Fluxo alternativo
+- No passo 1, o Gestor solicita o relatório de um mês específico em que o sistema ficou inativo ou não houve movimentação comercial registrada.
+- O sistema interrompe o processamento do relatório.
+- O sistema exibe a mensagem: "Não foram encontrados registros financeiros ou de vendas para o período selecionado".
+- O sistema retorna o Gestor para a tela de seleção de datas.
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+    [Gestor]
+        |
+        | ---- (Solicitar Relatório Consolidado)
+        | ---- (Visualizar Gráficos e Dados Analíticos)
 
 ---
 
