@@ -327,29 +327,143 @@ O sistema deverá manter controle das funcionalidades financeiras e registros ad
 - Controle de assinaturas e funcionalidades premium.
 - Armazenamento seguro de comprovantes e registros administrativos.
 ---
-##  8. Arquitetura do Sistema
+# 8. Arquitetura do Sistema
 
-### 8.1 Visão Geral
-Descreva a arquitetura (ex: monolito, microserviços).
+## 8.1 Visão Geral
 
-### 8.2 Componentes
-- Frontend  
-- Backend  
-- Banco de dados  
-- APIs externas  
+O sistema Serpy seguirá uma arquitetura baseada em API REST, organizada em camadas, separando frontend, backend e banco de dados.
 
-### 8.3 Tecnologias
-- Linguagem  
-- Framework  
-- Banco de dados  
+A arquitetura adotada será do tipo monolítica modular, adequada ao contexto acadêmico do projeto, permitindo desenvolvimento mais simples, manutenção organizada e futura expansão para microsserviços, caso necessário.
 
-### 8.4 Decisões Arquiteturais
-Explique como a arquitetura atende aos requisitos não funcionais:
-- Desempenho  
-- Segurança  
-- Escalabilidade  
+O sistema será dividido em:
+
+- Frontend Web
+- Aplicativo Mobile
+- Backend/API
+- Banco de Dados
+- Serviços externos
+
+Essa separação melhora organização, reutilização de código e manutenção.
 
 ---
+
+## 8.2 Componentes
+
+### Frontend
+
+Responsável pela interface visual do sistema.
+
+Funções:
+- Login e cadastro
+- Catálogo de animais
+- Mapa de ocorrências
+- Dashboard
+- Módulo educativo
+- Área administrativa
+
+Tecnologias:
+- React
+- Flutter (mobile)
+
+---
+
+### Backend
+
+Responsável pelas regras de negócio do sistema.
+
+Funções:
+- Autenticação
+- Processamento de dados
+- Integração com IA
+- Registro de ocorrências
+- Comunicação com banco
+
+Tecnologias:
+- Node.js
+- API REST
+
+---
+
+### Banco de Dados
+
+Responsável pelo armazenamento das informações.
+
+Dados armazenados:
+- Usuários
+- Animais
+- Ocorrências
+- Alertas
+- Estatísticas
+- Cursos
+
+Tecnologia:
+- MySQL
+
+---
+
+### APIs Externas
+
+Serviços utilizados:
+- APIs de mapas/geolocalização
+- APIs de dados públicos
+- Serviços de IA para reconhecimento de imagem
+
+---
+
+## 8.3 Tecnologias
+
+### Linguagens
+- JavaScript
+- Dart
+- SQL
+
+### Frameworks
+- React
+- Flutter
+- Node.js
+
+### Banco de Dados
+- MySQL
+
+### Ferramentas
+- GitHub
+- Figma
+- Draw.io
+
+---
+
+## 8.4 Decisões Arquiteturais
+
+### Desempenho
+
+A arquitetura separada entre frontend e backend melhora desempenho e organização.
+
+O sistema utilizará:
+- APIs otimizadas
+- Consultas eficientes no banco
+- Carregamento modular
+- Processamento assíncrono
+
+---
+
+### Segurança
+
+O sistema implementará:
+- Criptografia de senhas
+- Autenticação segura
+- Controle de permissões
+- HTTPS
+- Proteção contra SQL Injection e XSS
+
+---
+
+### Escalabilidade
+
+A arquitetura modular permite:
+- Adicionar novas funcionalidades
+- Crescimento do número de usuários
+- Expansão futura para microsserviços
+- Integração com novos serviços externos
 
 ---
 
