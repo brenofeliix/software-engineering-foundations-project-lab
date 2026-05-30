@@ -1067,3 +1067,8 @@ Defina como validar os requisitos:
 - Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas. 
 
 ---
+
+# 14 - Observações Finais
+
+
+---
