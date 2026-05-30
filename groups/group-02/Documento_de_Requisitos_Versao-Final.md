@@ -1021,3 +1021,43 @@ Como o sistema será testado?
 - Usabilidade  
 
 ---
+
+##  11. Critérios de Aceitação
+
+Defina como validar os requisitos:
+- Métricas  
+- Testes  
+- Condições de sucesso  
+
+---
+
+##  12. Restrições
+
+- Tecnológicas  
+- Legais  
+- De prazo  
+
+---
+
+##  13. Premissas
+
+- Usuário terá acesso à internet  
+- Sistema será usado em dispositivos móveis  
+
+---
+
+##  14. Observações Finais
+
+Informações adicionais relevantes.
+
+---
+
+#  Orientações importantes
+
+- Requisitos devem ser claros, específicos e mensuráveis  
+- Evite termos vagos como “rápido” ou “bom”  
+- Requisitos não funcionais são obrigatórios  
+- A arquitetura deve responder aos requisitos  
+- Todo requisito deve ser testável  
+
+---
