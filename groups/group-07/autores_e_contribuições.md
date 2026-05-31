@@ -2,11 +2,11 @@
 
 | Nome | Função | Contribuições |
 |---|---|---|
-| Aluno 1 | Backend | APIs REST e banco |
-| Aluno 2 | Frontend | Interface e dashboard |
-| Aluno 3 | IA/Data Science | Modelos preditivos |
-| Aluno 4 | DevOps | Docker e deploy |
-| Aluno 5 | Documentação | Requisitos e testes |
+| Gustavo | Backend | APIs REST e banco |
+| Tassio | Frontend | Interface e dashboard |
+|Lucas | IA/Data Science | Modelos preditivos |
+| João Vitor | DevOps | Docker e deploy |
+| Acenor | Documentação | Requisitos e testes |
 
 ---
 
