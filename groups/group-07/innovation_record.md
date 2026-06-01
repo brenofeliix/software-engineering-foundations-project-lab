@@ -26,7 +26,7 @@ O **Fireseeker** é um sistema inteligente e proativo voltado para a detecção 
 ## Diferencial Inovador
 Enquanto as ferramentas de mercado atuam no modelo reativo (registrando o fogo que já aconteceu), o Fireseeker destaca-se pela transição para um modelo **preditivo e proativo** por meio dos seguintes diferenciais:
 
-* **Anticipação Baseada em IA:** Em vez de apenas exibir imagens estáticas com atraso, a plataforma analisa variáveis históricas e geográficas para prever quais áreas estão sob maior ameaça antes mesmo do início da queima.
+* **Antecipação Baseada em IA:** Em vez de apenas exibir imagens estáticas com atraso, a plataforma analisa variáveis históricas e geográficas para prever quais áreas estão sob maior ameaça antes mesmo do início da queima.
 * **Foco em Usabilidade Extrema no Campo:** Interface desenvolvida sob a abordagem *Mobile-First*, garantindo facilidade de navegação com no máximo 3 cliques e esquema de cores de alto contraste (padrão semafórico WCAG AA) para leitura perfeita sob luz solar intensa.
 * **Acessibilidade Democrática:** Solução projetada para ser financeiramente viável ao utilizar exclusivamente infraestrutura em nuvem de baixo custo e dados públicos, atendendo desde pequenos agricultores familiares até grandes cooperativas e órgãos governamentais.
 
