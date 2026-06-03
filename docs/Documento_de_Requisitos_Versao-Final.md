@@ -164,13 +164,217 @@ Explique como a arquitetura atende aos requisitos não funcionais:
 
 ---
 
-##  9. Casos de Uso
+---
 
-### UC01 - Nome do caso de uso
-**Ator:**  
+## 9. Casos de Uso e Diagramas UML
+
+Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+
+Os diagramas ajudam na:
+- modelagem do sistema;
+- comunicação entre equipe;
+- entendimento da arquitetura e funcionalidades;
+- documentação técnica do projeto.
+
+---
+
+# 9.1 Casos de Uso
+
+Os casos de uso representam as interações entre usuários (atores) e o sistema.
+
+---
+
+### UC01 - Realizar Login
+
+**Ator:** Usuário  
+
 **Descrição:**  
-**Fluxo principal:**  
-**Fluxo alternativo:**  
+Permite que o usuário acesse o sistema utilizando credenciais válidas.
+
+---
+
+### Fluxo principal
+1. Usuário acessa a tela de login  
+2. Usuário informa e-mail e senha  
+3. Sistema valida credenciais  
+4. Sistema libera acesso  
+
+---
+
+### Fluxo alternativo
+- Credenciais inválidas  
+- Usuário esqueceu senha  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+## 9.2 Diagrama de Classes (UML)
+
+O diagrama de classes representa:
+
+- estrutura do sistema;
+- entidades;
+- atributos;
+- métodos;
+- relacionamentos.
+
+---
+
+### Exemplo
+
+```text
++------------------+
+|     Usuário      |
++------------------+
+| - id             |
+| - nome           |
+| - email          |
+| - senha          |
++------------------+
+| + login()        |
+| + logout()       |
++------------------+
+```
+
+---
+
+### Exemplo com relacionamento
+
+```text
++------------------+        +------------------+
+|     Usuário      | 1    * |      Pedido      |
++------------------+--------+------------------+
+| id               |        | id               |
+| nome             |        | valor            |
++------------------+        +------------------+
+```
+
+---
+
+## 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos no sistema.
+
+---
+
+### Exemplo
+
+```text
+[Início]
+   |
+[Acessar sistema]
+   |
+[Inserir login]
+   |
+{Credenciais válidas?}
+   | Sim
+[Acessa sistema]
+   |
+[Fim]
+
+   | Não
+[Mensagem de erro]
+```
+
+---
+
+## 9.4 Diagrama de Sequência (UML)
+
+Representa a comunicação entre objetos ao longo do tempo.
+
+---
+
+### Exemplo
+
+```text
+Usuário -> Sistema: realizar login
+Sistema -> Banco: validar usuário
+Banco -> Sistema: usuário válido
+Sistema -> Usuário: acesso liberado
+```
+
+---
+
+## 9.5 Diagrama de Componentes
+
+Representa os módulos e componentes principais do sistema.
+
+---
+
+### Exemplo
+
+```text
+[Frontend]
+     |
+     v
+[API Backend]
+     |
+     v
+[Banco de Dados]
+```
+
+---
+
+## 9.6 Diagrama de Implantação (Deployment)
+
+Representa onde o sistema será executado.
+
+---
+
+### Exemplo
+
+```text
+[Usuário]
+     |
+Internet
+     |
+[Servidor Web]
+     |
+[Servidor Banco de Dados]
+```
+
+---
+
+## 9.7 Ferramentas Recomendadas
+
+Os diagramas podem ser feitos utilizando:
+
+- Draw.io
+- Lucidchart
+- StarUML
+- Visual Paradigm
+- PlantUML
+- Mermaid
+- Figma
+
+---
+
+## 9.8 Observações Importantes
+
+- Os diagramas devem representar o sistema REAL do grupo;
+- Evitem diagramas genéricos;
+- Mantenham consistência entre requisitos e diagramas;
+- Diagramas devem possuir nomes claros;
+- Atualizem os diagramas conforme o sistema evoluir.
+
+---
+
+# Regra importante
+
+> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
 
 ---
 
