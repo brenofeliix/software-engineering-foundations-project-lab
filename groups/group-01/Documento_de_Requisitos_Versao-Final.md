@@ -224,6 +224,8 @@ Enviar comprovante digital após a compra.
 - Padrões de Código: O desenvolvimento deve priorizar a leveza do software para se adaptar a limitação de processamento no tablet. O código deve ter integrações com sistemas como o da SEFAZ para emissão de cupons fiscais, além de integração com o banco de dados da universidade.
 - Testes Automatizados: Serão implementados testes automatizados para validar funcionalidades como autenticação de usuários, registro de compras, pagamentos digitais e atualização de estoque, garantindo maior confiabilidade ao sistema e identificando “Bugs” para as devidas correções
 
+---
+
 ## 7. Requisitos Externos
 
 ### 7.1 Reguladores
@@ -260,3 +262,41 @@ segurança.
 realizados no minimercado, permitindo rastreamento completo das movimentações financeiras.
 - Relatórios: O sistema deve gerar relatórios financeiros e operacionais para auxiliar o controle administrativo do
 estoque, faturamento e fluxo de vendas, facilitando análises e tomadas de decisão pela gestão do minimercado.
+
+---
+
+##  8. Arquitetura do Sistema
+
+### 8.1 Visão Geral
+A arquitetura do sistema será baseada em um modelo cliente-servidor monolítico, composto por uma aplicação de front-end para interação dos usuários, um back-end responsável pelas regras de negócio e integração com serviços externos, e um banco de dados para armazenamento das informações.
+
+### 8.2 Componentes
+- Front-end: A Interface do Aluno
+ * Finalidade: Exibir o catálogo de produtos, gerar o QR Code de pagamento e dar o feedback de "compra finalizada". 
+- Backend
+ * Servidor: Node.js ou Python, que processa os pedidos e valida as transações financeiras.
+ * Integração: API de Pagamento para confirmar o recebimento do dinheiro em tempo real.
+- Banco de dados
+ * Banco de Dados: PostgreSQL ou MongoDB, para registrar as vendas e controlar o que ainda tem na prateleira (estoque).
+- APIs externas  
+ * API de pagamento (PIX e cartão);
+ * Sistema de emissão de comprovantes fiscais;
+ * Banco de dados institucional para validação de e-mails acadêmicos.
+  
+### 8.3 Tecnologias
+- Linguagem
+ * JavaScript/TypeScript (Front-end e Back-end com Node.js)
+ * Python (alternativa para Back-end)  
+- Framework
+ * React ou Flutter, para criar uma tela rápida e visual que funcione tanto em totens quanto no celular.  
+  
+### 8.4 Decisões Arquiteturais
+Explique como a arquitetura atende aos requisitos não funcionais:
+- Desempenho
+ A arquitetura cliente-servidor reduz o processamento no tablet e garante respostas rápidas para consultas, estoque e pagamentos.  
+- Segurança
+ O sistema utilizará HTTPS, criptografia de dados e autenticação de usuários, seguindo as diretrizes da LGPD.
+- Escalabilidade  
+ A solução permite futuras expansões, como novos pontos de venda, aplicativo móvel e integrações com outros sistemas.
+
+---
