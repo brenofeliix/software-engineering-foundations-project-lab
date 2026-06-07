@@ -890,7 +890,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 1.1 Navegação, Personalização e Montagem do Carrinho
 
-![Diagrama de Atividade]()
+
 ---
 
 ## 9.4 Diagrama de Sequência (UML)
