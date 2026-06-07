@@ -890,6 +890,35 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 1.1 Navegação, Personalização e Montagem do Carrinho
 
+![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/f5cc90efdeda1be6b862e142b61343b9648a2dfc/groups/group-02/Fluxo%20Do%20Cliente%20-%20Navega%C3%A7%C3%A3o%2C%20Personaliza%C3%A7%C3%A3o%20e%20Montagem%20do%20Carrinho%20(Com%20Fundo).png)
+
+### 1.2 Envio e Fechamento de Pedido
+
+![Diagrama]()
+
+### 1.3 Acompanhamento e Pagamento 
+
+![Diagrama]()
+
+---
+
+### Fluxo Operacional
+
+### 2.1 Ciclo de Vida do Pedido na Cozinha/Salão
+
+![Diagrama]()
+
+---
+
+### Fluxos Administrativos (Gestor) 
+
+### 3.1 Gestão de Cardápio e Disponibilidade de Estoque
+
+![Diagrama]()
+
+
+### 3.2 Geração de Relatório Gerencial Mensal
+
 ![Diagrama]()
 
 ---
