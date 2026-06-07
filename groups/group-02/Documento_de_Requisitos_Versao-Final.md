@@ -888,10 +888,9 @@ Representa o fluxo de execução de processos no sistema.
 
 ### Fluxo do Cliente
 
-# 1.1 Navegação, Personalização e Montagem do Carrinho
+### 1.1 Navegação, Personalização e Montagem do Carrinho
 
-![Diagrama de Atividade](<img width="8469" height="1367" alt="Fluxo Do Cliente - Navegação, Personalização e Montagem do Carrinho (2)" src="https://github.com/user-attachments/assets/b0ae1fb0-6fb5-4d76-a1ef-ea4102c4534d" />
-)
+![Diagrama de Atividade]()
 ---
 
 ## 9.4 Diagrama de Sequência (UML)
