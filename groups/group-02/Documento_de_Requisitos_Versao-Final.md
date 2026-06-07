@@ -886,25 +886,12 @@ Representa o fluxo de execução de processos no sistema.
 
 ---
 
-### Exemplo
+### Fluxo do Cliente
 
-```text
-[Início]
-   |
-[Acessar sistema]
-   |
-[Inserir login]
-   |
-{Credenciais válidas?}
-   | Sim
-[Acessa sistema]
-   |
-[Fim]
+# 1.1 Navegação, Personalização e Montagem do Carrinho
 
-   | Não
-[Mensagem de erro]
-```
-
+![Diagrama de Atividade](<img width="8469" height="1367" alt="Fluxo Do Cliente - Navegação, Personalização e Montagem do Carrinho (2)" src="https://github.com/user-attachments/assets/b0ae1fb0-6fb5-4d76-a1ef-ea4102c4534d" />
+)
 ---
 
 ## 9.4 Diagrama de Sequência (UML)
