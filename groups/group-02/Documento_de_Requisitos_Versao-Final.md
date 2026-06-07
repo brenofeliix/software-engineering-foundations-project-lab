@@ -886,7 +886,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ---
 
-### Fluxo do Cliente
+### 1. Fluxo do Cliente
 
 ### 1.1 Navegação, Personalização e Montagem do Carrinho
 
@@ -902,7 +902,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ---
 
-### Fluxo Operacional
+### 2. Fluxo Operacional
 
 ### 2.1 Ciclo de Vida do Pedido na Cozinha/Salão
 
@@ -910,7 +910,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ---
 
-### Fluxos Administrativos (Gestor) 
+### 3. Fluxos Administrativos (Gestor) 
 
 ### 3.1 Gestão de Cardápio e Disponibilidade de Estoque
 
