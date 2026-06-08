@@ -914,7 +914,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 3.1 Gestão de Cardápio e Disponibilidade de Estoque
 
-![Diagrama]()
+![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/d728ce6948d8c36668d973d015180802e084c0d7/groups/group-02/Fluxos%20Administrativos%20(Gestor)%20-%20Gest%C3%A3o%20de%20Card%C3%A1pio%20e%20Disponibilidade%20de%20Estoque.png)
 
 
 ### 3.2 Geração de Relatório Gerencial Mensal
