@@ -906,7 +906,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 2.1 Ciclo de Vida do Pedido na Cozinha/Salão
 
-![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4ef46d59206acf66e1191a99438776d671614901/groups/group-02/Fluxo%20Operacional%20(Cozinha%20e%20Gar%C3%A7om).png)
+![Diagrama]()
 
 ---
 
