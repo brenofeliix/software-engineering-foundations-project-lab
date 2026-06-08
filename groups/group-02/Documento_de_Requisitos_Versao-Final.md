@@ -894,7 +894,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 1.2 Envio e Fechamento de Pedido
 
-![Diagrama]()
+![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/b2c4413e271b380fb2bad0f0bf75dacc3efcc8cd/groups/group-02/Fluxo%20Do%20Cliente%20-%20Envio%20e%20Fechamento%20de%20Pedido.png)
 
 ### 1.3 Acompanhamento e Pagamento 
 
