@@ -11,6 +11,7 @@ Fireseeker
 * João Vitor Andrade Almeida
 * Lucas de Moraes Bento da Silva
 * Tassio Medrado de Oliveira
+* Guilherme Willian Azevedo dos Santos
 
 ## Repository Structure
 
