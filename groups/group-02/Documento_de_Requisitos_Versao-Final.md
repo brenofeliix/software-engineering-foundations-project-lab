@@ -898,7 +898,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 1.3 Acompanhamento e Pagamento 
 
-![Diagrama]()
+![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/86404b65d6c7651ae88bc7353e7e441b997de39d/groups/group-02/Fluxo%20Do%20Cliente%20-%20Acompanhamento%20e%20Pagamento.png)
 
 ---
 
