@@ -884,8 +884,6 @@ O diagrama de classes representa:
 
 Representa o fluxo de execução de processos no sistema.
 
----
-
 ## 1. Fluxo do Cliente
 
 ### 1.1 Navegação, Personalização e Montagem do Carrinho
