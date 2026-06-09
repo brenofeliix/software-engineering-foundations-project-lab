@@ -484,42 +484,78 @@ Os diagramas ajudam na:
 Os casos de uso representam as interações entre usuários (atores) e o sistema.
 
 ---
+```mermaid
+flowchart LR
 
-### UC01 - Realizar Login
+    UC[Usuário Comum]
+    PF[Profissional]
+    AD[Administrador]
 
-**Ator:** Usuário  
+    subgraph Serpy
 
-**Descrição:**  
-Permite que o usuário acesse o sistema utilizando credenciais válidas.
+        subgraph Autenticação
+            LG(Realizar Login)
+            CA(Cadastrar-se)
+            RP(Recuperar Senha)
+        end
 
----
+        subgraph "Animal / Emergência"
+            IA(Identificar Animal)
+            VD(Ver Detalhes Animal)
+            ME(Modo Emergência)
+            TS(Triagem de Sintomas)
+        end
 
-### Fluxo principal
-1. Usuário acessa a tela de login  
-2. Usuário informa e-mail e senha  
-3. Sistema valida credenciais  
-4. Sistema libera acesso  
+        subgraph Mapeamento
+            RO(Registrar Ocorrência)
+            VM(Ver Mapa)
+            AR(Áreas de Risco)
+        end
 
----
+        subgraph "Educação e Gamificação"
+            ED(Módulo Educacional)
+            QZ(Realizar Quiz)
+            RK(Ranking / XP)
+        end
 
-### Fluxo alternativo
-- Credenciais inválidas  
-- Usuário esqueceu senha  
+        subgraph Administração
+            GU(Gerenciar Usuários)
+            GC(Gerenciar Conteúdos)
+            GO(Gerenciar Ocorrências)
+            GE(Ver Estatísticas)
+        end
 
----
+    end
 
-## Exemplo de Diagrama de Caso de Uso
+    UC --> LG
+    UC --> CA
+    UC --> RP
+    UC --> IA
+    UC --> VD
+    UC --> ME
+    UC --> TS
+    UC --> RO
+    UC --> VM
+    UC --> AR
+    UC --> ED
+    UC --> QZ
+    UC --> RK
 
-[Usuário]
+    PF -.-> LG
+    PF -.-> IA
+    PF -.-> VD
+    PF -.-> ME
+    PF -.-> TS
+    PF -.-> RO
+    PF -.-> VM
 
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
-
+    AD --> LG
+    AD --> GU
+    AD --> GC
+    AD --> GO
+    AD --> GE
+```
+O Usuário Comum pode acessar funcionalidades como identificação de animais, modo emergência, consulta ao mapa de ocorrências e módulos educacionais. O Profissional possui acesso às funcionalidades de apoio técnico, enquanto o Administrador é responsável pelo gerenciamento do sistema.
 ---
 
 ## 9.2 Diagrama de Classes (UML)
@@ -533,36 +569,73 @@ O diagrama de classes representa:
 - relacionamentos.
 
 ---
+```mermaid
+classDiagram
 
-### Exemplo
+class Usuario {
+    +int id
+    +String nome
+    +String email
+    +TipoUsuario tipo
+    +int xp
+    +int streak
+    +login()
+    +logout()
+}
 
-```text
-+------------------+
-|     Usuário      |
-+------------------+
-| - id             |
-| - nome           |
-| - email          |
-| - senha          |
-+------------------+
-| + login()        |
-| + logout()       |
-+------------------+
+class Animal {
+    +int id
+    +String nome
+    +TipoAnimal tipo
+    +NivelRisco nivelRisco
+    +String habitat
+}
+
+class Ocorrencia {
+    +int id
+    +String descricao
+    +float latitude
+    +float longitude
+    +DateTime dataHora
+}
+
+class PrimeirosSocorros {
+    +int id
+    +String[] instrucoes
+    +String[] sintomas
+}
+
+class ConteudoEducativo {
+    +int id
+    +String titulo
+    +TipoConteudo tipo
+}
+
+class Quiz {
+    +int id
+    +String titulo
+    +int xpRecompensa
+}
+
+class Badge {
+    +int id
+    +String nome
+    +String criterio
+}
+
+class Alerta {
+    +int id
+    +String tipo
+}
+
+Usuario "1" --> "*" Ocorrencia : registra
+Animal "1" --> "*" Ocorrencia : relacionado
+Animal "1" --> "1" PrimeirosSocorros : possui
+Usuario "*" --> "*" Badge : acumula
+ConteudoEducativo "1" --> "*" Quiz : contem
+Ocorrencia ..> Alerta : gera
 ```
-
----
-
-### Exemplo com relacionamento
-
-```text
-+------------------+        +------------------+
-|     Usuário      | 1    * |      Pedido      |
-+------------------+--------+------------------+
-| id               |        | id               |
-| nome             |        | valor            |
-+------------------+        +------------------+
-```
-
+As classes centrais do sistema são Usuario, Animal e Ocorrencia. O modelo também contempla recursos de primeiros socorros, conteúdos educativos, quizzes, sistema de conquistas e alertas.
 ---
 
 ## 9.3 Diagrama de Atividades (UML)
