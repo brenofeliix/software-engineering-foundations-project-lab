@@ -643,26 +643,51 @@ As classes centrais do sistema são Usuario, Animal e Ocorrencia. O modelo tamb�
 Representa o fluxo de execução de processos no sistema.
 
 ---
+```mermaid
+flowchart TD
 
-### Exemplo
+    A([Início])
 
-```text
-[Início]
-   |
-[Acessar sistema]
-   |
-[Inserir login]
-   |
-{Credenciais válidas?}
-   | Sim
-[Acessa sistema]
-   |
-[Fim]
+    B[Pressionar botão de emergência]
 
-   | Não
-[Mensagem de erro]
+    C[Selecionar ou identificar animal]
+
+    D{Animal identificado?}
+
+    E[Exibir informações do animal]
+
+    F[Exibir primeiros socorros]
+
+    G[Exibir o que não fazer]
+
+    H{Triagem de sintomas?}
+
+    I[Executar triagem]
+
+    J[Registrar ocorrência]
+
+    K([Fim])
+
+    A --> B
+    B --> C
+    C --> D
+
+    D -- Não --> C
+    D -- Sim --> E
+
+    E --> F
+    F --> G
+
+    G --> H
+
+    H -- Sim --> I
+    I --> J
+
+    H -- Não --> J
+
+    J --> K
 ```
-
+O fluxo inicia quando o usuário aciona o modo emergência. Após a identificação do animal, o sistema fornece orientações de primeiros socorros, permite a realização de triagem de sintomas e possibilita o registro da ocorrência.
 ---
 
 ## 9.4 Diagrama de Sequência (UML)
@@ -670,16 +695,29 @@ Representa o fluxo de execução de processos no sistema.
 Representa a comunicação entre objetos ao longo do tempo.
 
 ---
+```mermaid
+sequenceDiagram
 
-### Exemplo
+    actor U as Usuário
+    participant F as Frontend
+    participant B as Backend
+    participant DB as Banco de Dados
 
-```text
-Usuário -> Sistema: realizar login
-Sistema -> Banco: validar usuário
-Banco -> Sistema: usuário válido
-Sistema -> Usuário: acesso liberado
+    U->>F: Informa email e senha
+
+    F->>B: POST /auth/login
+
+    B->>DB: Consultar usuário
+
+    DB-->>B: Dados encontrados
+
+    B->>B: Validar senha
+
+    B-->>F: JWT + dados
+
+    F-->>U: Login realizado
 ```
-
+O usuário fornece suas credenciais ao frontend, que encaminha a solicitação ao backend. O backend consulta o banco de dados, valida as informações e retorna o token de autenticação.
 ---
 
 ## 9.5 Diagrama de Componentes
@@ -687,19 +725,40 @@ Sistema -> Usuário: acesso liberado
 Representa os módulos e componentes principais do sistema.
 
 ---
+```mermaid
+flowchart TD
 
-### Exemplo
+    subgraph UI["Interface de Usuário"]
+        WEB["Frontend Web (React)"]
+        APP["Aplicativo Mobile (Flutter)"]
+    end
 
-```text
-[Frontend]
-     |
-     v
-[API Backend]
-     |
-     v
-[Banco de Dados]
+    API["Backend API (Node.js)"]
+
+    subgraph DADOS["Dados e Inteligência"]
+        DB["MySQL"]
+        IA["Serviço de IA"]
+    end
+
+    subgraph EXT["Serviços Externos"]
+        MAP["Google Maps / OSM"]
+        PUB["APIs Públicas"]
+        NOT["Notificações"]
+        AUTH["JWT / Redis"]
+    end
+
+    WEB --> API
+    APP --> API
+
+    API --> DB
+    API --> IA
+
+    API --> MAP
+    API --> PUB
+    API --> NOT
+    API --> AUTH
 ```
-
+A solução é composta por aplicações web e mobile que se comunicam com uma API central. A API integra banco de dados, serviços de inteligência artificial e provedores externos.
 ---
 
 ## 9.6 Diagrama de Implantação (Deployment)
@@ -707,49 +766,58 @@ Representa os módulos e componentes principais do sistema.
 Representa onde o sistema será executado.
 
 ---
+```mermaid
+flowchart TD
 
-### Exemplo
+    subgraph CLIENTE["Dispositivo do Usuário"]
+        NAV["Navegador Web"]
+        REACT["React (SPA)"]
+        FLUTTER["Flutter (Mobile)"]
+        CACHE["Cache Offline (FR38)"]
+    end
 
-```text
-[Usuário]
-     |
-Internet
-     |
-[Servidor Web]
-     |
-[Servidor Banco de Dados]
+    CDN["Servidor Web / CDN
+    Nginx
+    Assets Estáticos
+    Cache de Conteúdo"]
+
+    APP["Servidor de Aplicação
+    Node.js + Express
+    API REST
+    JWT (Auth)
+    Serviço IA (Imagens)
+    WebSocket (Alertas)
+    Sincronização Offline"]
+
+    DB["Servidor de Banco de Dados
+    MySQL
+    Usuários / Ocorrências
+    Animais / Alertas
+    Conteúdo Educacional"]
+
+    CLIENTE -->|HTTPS| CDN
+    CDN -->|HTTP/REST| APP
+    APP -->|SQL/TCP| DB
+
+    subgraph EXT["Serviços Externos"]
+        MAPS["Google Maps API"]
+        OSM["OpenStreetMap"]
+        SINAN["SINAN / Ministério da Saúde"]
+        PUSH["Notificações Push"]
+        CLOUD["IA Cloud"]
+        BACKUP["Backup Storage"]
+        ASSETS["CDN Assets"]
+    end
+
+    APP --> MAPS
+    APP --> OSM
+    APP --> SINAN
+    APP --> PUSH
+    APP --> CLOUD
+    APP --> BACKUP
+    APP --> ASSETS
 ```
-
----
-
-## 9.7 Ferramentas Recomendadas
-
-Os diagramas podem ser feitos utilizando:
-
-- Draw.io
-- Lucidchart
-- StarUML
-- Visual Paradigm
-- PlantUML
-- Mermaid
-- Figma
-
----
-
-## 9.8 Observações Importantes
-
-- Os diagramas devem representar o sistema REAL do grupo;
-- Evitem diagramas genéricos;
-- Mantenham consistência entre requisitos e diagramas;
-- Diagramas devem possuir nomes claros;
-- Atualizem os diagramas conforme o sistema evoluir.
-
----
-
-# Regra importante
-
-> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
-
+O sistema é acessado por dispositivos web e móveis, distribuído por meio de um servidor web/CDN, executado em um servidor de aplicação Node.js e persistido em banco de dados MySQL. Também utiliza serviços externos para mapas, notificações e inteligência artificial.
 ---
 
 ##  10. Plano de Testes
