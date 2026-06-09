@@ -919,7 +919,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ### 3.2 Geração de Relatório Gerencial Mensal
 
-![Diagrama]()
+![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/5d87d29199ce8931646e497cec416170b3c7477b/groups/group-02/Fluxos%20Administrativos%20(Gestor)%20-%20Gera%C3%A7%C3%A3o%20de%20Relat%C3%B3rio%20Gerencial%20Mensal.png)
 
 ---
 
