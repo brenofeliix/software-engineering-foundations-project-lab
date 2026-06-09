@@ -820,30 +820,208 @@ flowchart TD
 O sistema é acessado por dispositivos web e móveis, distribuído por meio de um servidor web/CDN, executado em um servidor de aplicação Node.js e persistido em banco de dados MySQL. Também utiliza serviços externos para mapas, notificações e inteligência artificial.
 ---
 
-##  10. Plano de Testes
+# 10. Plano de Testes
 
-### 10.1 Estratégia de Teste
-Como o sistema será testado?
+## 10.1 Estratégia de Teste
 
-### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
+O sistema Serpy será testado de forma contínua durante todo o ciclo de desenvolvimento, garantindo que as funcionalidades implementadas atendam aos requisitos definidos e operem corretamente em diferentes cenários de uso.
 
-### 10.3 Casos de Teste
+A estratégia de testes inclui:
 
-#### CT01 - Nome
-**Requisito relacionado:** RF01  
-**Descrição:**  
-**Entrada:**  
-**Resultado esperado:**  
+- Testes unitários para validação de componentes individuais;
+- Testes de integração para verificar a comunicação entre módulos;
+- Testes de sistema para validação completa da aplicação;
+- Testes de aceitação para confirmar o atendimento aos requisitos do projeto;
+- Testes de usabilidade para avaliar a experiência do usuário;
+- Testes de desempenho para medir tempo de resposta e estabilidade.
 
 ---
 
-### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
-- Usabilidade  
+## 10.2 Tipos de Teste
 
+### Teste Unitário
+
+Verifica o funcionamento isolado de funções, métodos e componentes do sistema.
+
+### Teste de Integração
+
+Valida a comunicação entre frontend, backend, banco de dados e APIs externas.
+
+### Teste de Sistema
+
+Avalia o comportamento do sistema como um todo, simulando situações reais de uso.
+
+### Teste de Aceitação
+
+Confirma se o sistema atende às necessidades dos usuários e aos requisitos definidos.
+
+---
+
+## 10.3 Casos de Teste
+
+### CT01 - Realizar Login
+
+**Requisito relacionado:** RF01
+
+**Descrição:**  
+Validar a autenticação de usuários no sistema.
+
+**Entrada:**  
+E-mail e senha válidos.
+
+**Resultado esperado:**  
+Sistema valida as credenciais e libera o acesso ao usuário.
+
+---
+
+### CT02 - Registrar Ocorrência
+
+**Requisito relacionado:** RF04
+
+**Descrição:**  
+Validar o registro de ocorrências envolvendo animais peçonhentos.
+
+**Entrada:**  
+Descrição da ocorrência, localização e foto opcional.
+
+**Resultado esperado:**  
+Sistema registra a ocorrência e a disponibiliza no mapa.
+
+---
+
+### CT03 - Identificar Animal
+
+**Requisito relacionado:** RF07
+
+**Descrição:**  
+Validar o processo de identificação de animais por imagem.
+
+**Entrada:**  
+Imagem enviada pelo usuário.
+
+**Resultado esperado:**  
+Sistema analisa a imagem e apresenta uma sugestão de identificação.
+
+---
+
+### CT04 - Consultar Catálogo de Animais
+
+**Requisito relacionado:** RF03
+
+**Descrição:**  
+Validar a consulta de informações sobre animais peçonhentos.
+
+**Entrada:**  
+Seleção de um animal presente no catálogo.
+
+**Resultado esperado:**  
+Sistema exibe corretamente informações, imagens, nível de risco e orientações relacionadas ao animal selecionado.
+
+---
+
+### CT05 - Visualizar Mapa de Ocorrências
+
+**Requisito relacionado:** RF05
+
+**Descrição:**  
+Validar a exibição das ocorrências registradas no mapa.
+
+**Entrada:**  
+Acesso ao módulo de mapa.
+
+**Resultado esperado:**  
+Sistema apresenta corretamente as ocorrências cadastradas e suas respectivas localizações.
+
+---
+
+### CT06 - Realizar Quiz Educativo
+
+**Requisito relacionado:** RF08
+
+**Descrição:**  
+Validar o funcionamento do módulo de aprendizado.
+
+**Entrada:**  
+Respostas fornecidas pelo usuário durante um quiz.
+
+**Resultado esperado:**  
+Sistema calcula a pontuação corretamente e registra o progresso do usuário.
+
+---
+
+### CT07 - Receber Alerta de Área de Risco
+
+**Requisito relacionado:** RF11
+
+**Descrição:**  
+Validar o envio de alertas relacionados a áreas com incidência de animais peçonhentos.
+
+**Entrada:**  
+Usuário com localização ativada em uma região classificada como área de risco.
+
+**Resultado esperado:**  
+Sistema envia uma notificação informando sobre o risco na região.
+
+---
+
+### CT08 - Gerar Relatório Estatístico
+
+**Requisito relacionado:** RF10
+
+**Descrição:**  
+Validar a geração de relatórios administrativos.
+
+**Entrada:**  
+Solicitação de relatório por período ou região.
+
+**Resultado esperado:**  
+Sistema gera relatório contendo estatísticas, gráficos e dados das ocorrências registradas.
+
+---
+
+## 10.4 Testes de Requisitos Não Funcionais
+
+### Performance
+
+Objetivo:
+Garantir que o sistema responda adequadamente sob condições normais de uso.
+
+Testes:
+
+- Tempo de resposta inferior a 2 segundos para consultas comuns;
+- Carregamento do mapa em até 3 segundos;
+- Suporte a múltiplos usuários simultâneos;
+- Validação da estabilidade do sistema sob carga.
+
+---
+
+### Segurança
+
+Objetivo:
+Garantir proteção dos dados e acessos ao sistema.
+
+Testes:
+
+- Validação do processo de autenticação;
+- Testes de permissões por perfil de usuário;
+- Proteção contra SQL Injection;
+- Proteção contra ataques XSS;
+- Verificação da criptografia de senhas;
+- Testes de acesso não autorizado.
+
+---
+
+### Usabilidade
+
+Objetivo:
+Avaliar a facilidade de uso da plataforma.
+
+Testes:
+
+- Navegação intuitiva entre telas;
+- Clareza das informações apresentadas;
+- Compatibilidade com dispositivos móveis;
+- Verificação da responsividade da interface;
+- Facilidade de acesso ao modo emergência;
+- Avaliação da experiência do usuário durante o uso do sistema.
 ---
