@@ -351,6 +351,9 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 - Proteção contra ataques  
 - Auditorias
 
+### 7.5 Contábeis
+- Registro de transações  
+- Relatórios 
 
 # Software Architecture
 
@@ -385,8 +388,6 @@ Describe risks.
 
 - Criptografia
 
-### 7.5 Contábeis
-- Registro de transações  
-- Relatórios  
+ 
 
 ---
