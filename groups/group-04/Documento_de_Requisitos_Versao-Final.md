@@ -1,4 +1,4 @@
-<img width="1440" height="1640" alt="image" src="https://github.com/user-attachments/assets/ecc77e71-8743-43a6-910a-f74da029ec6d" />#  Documento de Requisitos e Projeto de Software
+Documento de Requisitos e Projeto de Software
 
 ---
 
