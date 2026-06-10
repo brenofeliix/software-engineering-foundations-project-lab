@@ -18,7 +18,16 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 
 ## Architectural Style
 
-Explain chosen style.
+O sistema adota um estilo arquitetural híbrido, combinando o padrão Cliente-Servidor com uma abordagem Baseada em Eventos (Event-Driven) e comunicação em tempo real.
+
+Justificativa:
+A escolha desse estilo justifica-se pelas duas dinâmicas principais da plataforma:
+
+Salas Interativas em Tempo Real: Para atender à necessidade dos professores de criarem salas e ensinarem de forma dinâmica, a arquitetura utiliza comunicação bidirecional (via WebSockets). Isso garante que as ações do professor e as respostas dos alunos sejam sincronizadas instantaneamente para todos os participantes da sala.
+
+Estudo Independente: Para os alunos que acessam a plataforma de forma autônoma para fixar a matéria, o sistema funciona de maneira assíncrona e isolada. Essa separação de contextos garante que picos de acessos em salas de aula grandes não impactem a experiência e a performance dos usuários que estão estudando sozinhos.
+
+A arquitetura foi desenhada para priorizar a baixa latência na gamificação e a escalabilidade independente de seus módulos principais.Explain chosen style.
 
 ## Components
 
