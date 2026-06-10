@@ -942,7 +942,7 @@ Sistema -> Usuário: acesso liberado
 
 Representa os módulos e componentes principais do sistema.
 
-[](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/3dd3ba98eacb328822de9d292a7d9a82502e22e1/groups/group-02/Diagrama%20de%20Componentes.png)
+![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/3dd3ba98eacb328822de9d292a7d9a82502e22e1/groups/group-02/Diagrama%20de%20Componentes.png)
 
 ---
 
