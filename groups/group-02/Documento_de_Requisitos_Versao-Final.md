@@ -1011,13 +1011,43 @@ Os diagramas podem ser feitos utilizando:
 ##  10. Plano de Testes
 
 ### 10.1 Estratégia de Teste
-Como o sistema será testado?
+A adoção de testes para este sistema será de forma automatizada e incremental, replicando as configurações do ambiente de produção e utilizando dados controlados no banco de dados, isto é, para assegurar a consistência e repetibilidade dos testes, enquanto busca-se cobrir as regras de negócio críticas e evitar-se falhas repetitivas no sistema.
 
 ### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
+- Unitário
+  
+  Nesta seção, o objetivo é validar isoladamente as funções lógicas do sistema tais quais:
+    * preenchimento de campos (nos casos em que se exige login de usuários);
+    * navegação por categorização de pratos;
+    * exibição dos detalhes do prato;
+    * cálculos do carrinho de compra;
+    * adição de novos pratos;
+    * edições no estoque e preços;
+    * seleção da forma de pagamento.
+  
+- Integração
+
+    Nesta operação, testa-se a comunicação entre os módulos do sistema e os serviços externos, validando:
+    * o envio do pedido do cliente para o painel da cozinha;
+    * a sincronização do estoque em tempo real;
+    * integração com a API de gateway de pagamento.
+
+- Sistema
+
+    Neste bloco, o sistema é testado de ponta a ponta sob o ponto de vista do usuário, validando o seguinte fluxo:
+     1. leitura do QR Code na mesa;
+     2. navegação pelo menu;
+     3. adição de itens;
+     4. fechamento do carrinho;
+     5. realização do pagamento;
+     6. verificação do envio do pedido à cozinha.
+
+- Aceitação
+
+   Neste momento, ocorre a validação final sob o prisma operacional do negócio, considerando a aprovação dos:
+    * garçons e colaboradores da cozinha;
+    * gerentes e/ou proprietários do negócio.
+  
 
 ### 10.3 Casos de Teste
 
