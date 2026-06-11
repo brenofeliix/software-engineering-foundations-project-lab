@@ -328,23 +328,6 @@ Fluxo Principal
 Fluxo Alternativo
 - Produto não encontrado.
 - Falha de conexão.
-  Diagrama de Caso de Uso
-[Usuário]
-|
-|---- (Cadastrar Usuário)
-|---- (Realizar Login)
-|---- (Realizar Compra)
-|---- (Realizar Pagamento)
-|---- (Receber Comprovante)
-[Repositor]
-|
-|---- (Gerenciar Estoque)
-[Administrador]
-|
-|---- (Visualizar Relatórios)
-|---- (Gerenciar Usuários)
-
-
-
+ 
 
 
