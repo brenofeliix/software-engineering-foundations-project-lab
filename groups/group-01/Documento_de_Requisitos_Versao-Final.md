@@ -285,5 +285,66 @@ Fluxo Principal
 Fluxo Alternativo
 - E-mail institucional inválido.
 - Usuário já cadastrado.
+### UC03 – Realizar Compra
+- Ator: Usuário
+- Descrição: Permite selecionar produtos e efetuar a compra.
+Fluxo Principal
+  - 1º Usuário realiza login.
+  - 2º Escaneia os produtos desejados.
+  - 3º O sistema adiciona os produtos ao carrinho.
+  - 4º O sistema exibe o valor total.
+  - 5º Usuário confirma a compra.
+  - 6º Sistema direciona para pagamento.
+Fluxo Alternativo
+- Produto indisponível.
+- Falha na leitura do código de barras
+### UC04 – Realizar Pagamento
+- Ator: Usuário
+- Descrição: Permite efetuar pagamento via PIX ou cartão.
+Fluxo Principal
+  - 1º Usuário escolhe a forma de pagamento.
+  - 2º O sistema processa a transação.
+  - 3º O pagamento é aprovado.
+  - 4º Compra é finalizada.
+Fluxo Alternativo
+- Pagamento recusado.
+- Falha na comunicação com a operadora.
+### UC05 – Receber Comprovante
+- Ator: Usuário
+- Descrição: Envia comprovante digital após a compra.
+Fluxo Principal
+  - 1º Compra é concluída.
+  - 2º Sistema gera comprovante.
+  - 3º Sistema envia comprovante por e-mail.
+  - 4º Usuário recebe confirmação.
+### UC06 – Gerenciar Estoque
+- Ator: Repositor
+- Descrição: Permite acompanhar e atualizar o estoque.
+Fluxo Principal
+  - 1º Repositor acessa o sistema.
+  - 2º Visualizar produtos disponíveis.
+  - 3º Atualizar quantidades.
+  - 4º Sistema registra alterações.
+Fluxo Alternativo
+- Produto não encontrado.
+- Falha de conexão.
+  Diagrama de Caso de Uso
+[Usuário]
+|
+|---- (Cadastrar Usuário)
+|---- (Realizar Login)
+|---- (Realizar Compra)
+|---- (Realizar Pagamento)
+|---- (Receber Comprovante)
+[Repositor]
+|
+|---- (Gerenciar Estoque)
+[Administrador]
+|
+|---- (Visualizar Relatórios)
+|---- (Gerenciar Usuários)
+
+
+
 
 
