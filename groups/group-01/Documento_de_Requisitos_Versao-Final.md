@@ -260,3 +260,17 @@ segurança.
 realizados no minimercado, permitindo rastreamento completo das movimentações financeiras.
 - Relatórios: O sistema deve gerar relatórios financeiros e operacionais para auxiliar o controle administrativo do
 estoque, faturamento e fluxo de vendas, facilitando análises e tomadas de decisão pela gestão do minimercado.
+
+### 9.1 Casos de Uso
+UC01 – Realizar Login
+- Ator: Usuário
+- Descrição: Permite que o usuário acesse o sistema utilizando seu e-mail institucional e senha.
+- Fluxo Principal 
+- Usuário acessa a tela de login.
+- Informa e-mail institucional e senha.
+- Sistema valida as credenciais.
+- Sistema concede acesso ao sistema.
+- Fluxo Alternativo
+- Credenciais inválidas.
+- O usuário esqueceu a senha
+
