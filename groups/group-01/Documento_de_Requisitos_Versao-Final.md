@@ -312,7 +312,7 @@ Fluxo Alternativo
 ### UC05 – Receber Comprovante
 - Ator: Usuário
 - Descrição: Envia comprovante digital após a compra.
-Fluxo Principal
+--Fluxo Principal
   - 1º Compra é concluída.
   - 2º Sistema gera comprovante.
   - 3º Sistema envia comprovante por e-mail.
@@ -320,12 +320,12 @@ Fluxo Principal
 ### UC06 – Gerenciar Estoque
 - Ator: Repositor
 - Descrição: Permite acompanhar e atualizar o estoque.
-Fluxo Principal
+--Fluxo Principal
   - 1º Repositor acessa o sistema.
   - 2º Visualizar produtos disponíveis.
   - 3º Atualizar quantidades.
   - 4º Sistema registra alterações.
-Fluxo Alternativo
+--Fluxo Alternativo
 - Produto não encontrado.
 - Falha de conexão.
  
