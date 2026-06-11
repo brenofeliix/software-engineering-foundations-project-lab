@@ -265,12 +265,25 @@ estoque, faturamento e fluxo de vendas, facilitando análises e tomadas de decis
 UC01 – Realizar Login
 - Ator: Usuário
 - Descrição: Permite que o usuário acesse o sistema utilizando seu e-mail institucional e senha.
-- Fluxo Principal 
-- Usuário acessa a tela de login.
-- Informa e-mail institucional e senha.
-- Sistema valida as credenciais.
-- Sistema concede acesso ao sistema.
-- Fluxo Alternativo
+ Fluxo Principal 
+  1º Usuário acessa a tela de login.
+  2º Informa e-mail institucional e senha.
+  3º Sistema valida as credenciais.
+  4º Sistema concede acesso ao sistema.
+ Fluxo Alternativo
 - Credenciais inválidas.
 - O usuário esqueceu a senha
+### UC02 – Cadastrar Usuário
+- Ator: Usuário
+- Descrição: Permite o cadastro de novos usuários no sistema.
+Fluxo Principal
+  1º Usuário seleciona "Cadastrar".
+  2º Informar nome, e-mail institucional e senha.
+  3º Sistema valida os dados.
+  4º O sistema realiza o cadastro.
+  5º Usuário recebe confirmação.
+Fluxo Alternativo
+- E-mail institucional inválido.
+- Usuário já cadastrado.
+
 
