@@ -1025,3 +1025,101 @@ Testes:
 - Facilidade de acesso ao modo emergência;
 - Avaliação da experiência do usuário durante o uso do sistema.
 ---
+
+# 11. Critérios de Aceitação
+
+Os critérios de aceitação definem as condições necessárias para que os requisitos do sistema sejam considerados atendidos.
+
+## 11.1 Métricas
+
+- Tempo médio de resposta inferior a 2 segundos para operações comuns;
+- Disponibilidade mínima de 99% durante o período de operação;
+- Taxa de sucesso superior a 95% nos testes funcionais;
+- Compatibilidade com os principais navegadores modernos;
+- Compatibilidade com dispositivos Android e iOS.
+
+---
+
+## 11.2 Testes
+
+A validação será realizada através de:
+
+- Testes unitários;
+- Testes de integração;
+- Testes de sistema;
+- Testes de aceitação;
+- Testes de desempenho;
+- Testes de segurança;
+- Testes de usabilidade.
+
+---
+
+## 11.3 Condições de Sucesso
+
+O sistema será considerado aprovado quando:
+
+- Todos os requisitos funcionais estiverem implementados;
+- Os requisitos não funcionais forem atendidos;
+- Os casos de teste apresentarem resultados satisfatórios;
+- Não existirem falhas críticas que comprometam a utilização do sistema;
+- Os usuários conseguirem executar as funcionalidades principais sem dificuldades.
+
+---
+
+# 12. Restrições
+
+As restrições representam limitações que devem ser consideradas durante o desenvolvimento do sistema.
+
+## 12.1 Restrições Tecnológicas
+
+- O desenvolvimento deverá utilizar React para a interface web;
+- O aplicativo mobile deverá ser desenvolvido utilizando Flutter;
+- O backend deverá utilizar Node.js;
+- O banco de dados deverá utilizar MySQL;
+- O versionamento deverá ser realizado através do GitHub;
+- A infraestrutura deverá utilizar apenas tecnologias gratuitas ou de baixo custo durante o desenvolvimento acadêmico.
+
+---
+
+## 12.2 Restrições Legais
+
+- O sistema deverá respeitar a LGPD (Lei Geral de Proteção de Dados);
+- Dados pessoais dos usuários deverão ser armazenados de forma segura;
+- O uso de imagens e conteúdos deverá respeitar direitos autorais;
+- O sistema não poderá substituir diagnóstico ou orientação médica profissional.
+
+---
+
+## 12.3 Restrições de Prazo
+
+- O desenvolvimento deverá seguir o cronograma definido pela disciplina;
+- As entregas deverão respeitar os marcos estabelecidos pelo professor;
+- O escopo poderá ser adaptado caso existam limitações de tempo ou recursos.
+
+---
+
+# 13. Premissas
+
+As premissas representam condições consideradas verdadeiras para o planejamento e desenvolvimento do projeto.
+
+- Os usuários possuirão acesso à internet na maior parte do tempo;
+- Os usuários utilizarão dispositivos móveis ou computadores com acesso à web;
+- Os dados fornecidos pelos usuários serão verdadeiros e atualizados;
+- Os serviços de mapas e geolocalização estarão disponíveis durante o uso do sistema;
+- As APIs externas utilizadas estarão operacionais;
+- Os integrantes da equipe terão acesso ao GitHub para desenvolvimento colaborativo;
+- Os usuários concederão permissão para utilização da localização quando necessário;
+- O sistema será utilizado principalmente em território brasileiro;
+- As informações educativas cadastradas serão revisadas e validadas antes da publicação.
+
+---
+
+# 14. Observações Finais
+
+O Serpy foi concebido como uma plataforma voltada para educação, prevenção e monitoramento de acidentes envolvendo animais peçonhentos, especialmente serpentes, escorpiões e aranhas.
+
+A proposta busca combinar tecnologia, informação e conscientização, oferecendo ferramentas que auxiliem tanto a população em geral quanto profissionais que atuam em situações de risco.
+
+Além de seu caráter educacional, o sistema possui potencial para apoiar iniciativas de saúde pública, pesquisa e monitoramento ambiental por meio da coleta e organização de dados sobre ocorrências.
+
+A arquitetura, os requisitos e os diagramas apresentados neste documento servem como base para o desenvolvimento do projeto e poderão ser refinados conforme a evolução das necessidades identificadas pela equipe e pelos stakeholders.
