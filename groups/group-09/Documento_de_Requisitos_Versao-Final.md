@@ -435,72 +435,195 @@ Não aplicável para versão inicial.
 ##  8. Arquitetura do Sistema
 
 ### 8.1 Visão Geral
-Descreva a arquitetura (ex: monolito, microserviços).
+O sistema adota uma arquitetura **monolítica modular** com estilo **MVC (Model-View-Controller)**, voltada para aplicação gráfica desktop/mobile offline-first. A separação em módulos facilita a manutenção e testes, enquanto a ausência de servidor central reduz latência e dependências externas.
 
 ### 8.2 Componentes
-- Frontend  
-- Backend  
-- Banco de dados  
-- APIs externas  
+- **Frontend (View + Controller local):**  
+  Renderização OpenGL, interface de usuário (botões, menus, painéis) e gerenciamento de entradas (mouse, teclado, toque).
+
+- **Backend (Model + lógica de negócio):**  
+  Camada local que gerencia dados do mapa, POIs, categorias, grade horária, cache de serviços e persistência.
+
+- **Banco de dados:**  
+  Não há SGBD central. Utiliza-se **arquivos JSON** e **SQLite** embarcado para persistência local.
+
+- **APIs externas:**  
+  Conexão opcional para atualização de cardápio do RU, horários de ônibus e avisos via requisições HTTP (HTTPS).
 
 ### 8.3 Tecnologias
-- Linguagem  
-- Framework  
-- Banco de dados  
+| Componente | Tecnologia |
+|------------|------------|
+| **Linguagem principal** | C++17 (ou Python 3.10+ com PyOpenGL) |
+| **Renderização gráfica** | OpenGL 3.3+ |
+| **Janela e entrada** | GLFW / SDL2 |
+| **Interface gráfica (UI)** | Dear ImGui (prototipação) ou GUI nativa |
+| **Persistência local** | SQLite3 + nlohmann/json (C++) |
+| **Requisições HTTP** | libcurl (C++) / requests (Python) |
+| **Criptografia** | OpenSSL / Crypto++ (AES-256) |
+| **Testes** | Google Test (C++) / pytest (Python) |
+| **Build e dependências** | CMake, vcpkg / pip |
+ 
 
 ### 8.4 Decisões Arquiteturais
-Explique como a arquitetura atende aos requisitos não funcionais:
-- Desempenho  
-- Segurança  
-- Escalabilidade  
+A arquitetura foi definida para atender aos requisitos não funcionais:
+
+- **Desempenho:**  
+  - Renderização direta com OpenGL evita overhead de navegadores.  
+  - Cache local (JSON/SQLite) reduz latência de acesso a dados de serviços.  
+  - Níveis de detalhe (LOD) para POIs em zoom distante.
+
+- **Segurança:**  
+  - Dados sensíveis (login, grade horária) armazenados com criptografia AES local.  
+  - Comunicação externa sempre via HTTPS/TLS.  
+  - Sanitização de entradas (busca, login) para evitar injeção.
+
+- **Escalabilidade (horizontal):**  
+  - Não é necessária, pois o sistema é offline. No entanto, a estrutura modular permite adicionar novas fontes de dados ou migrar para arquitetura cliente-servidor no futuro.
+
+- **Manutenibilidade:**  
+  - Padrão MVC separa responsabilidades.  
+  - Componentes internos bem definidos (renderizador, navegação, busca, persistência).  
+  - Uso de injeção de dependência simplificada.
 
 ---
 
 ##  9. Casos de Uso
 
-### UC01 - Nome do caso de uso
-**Ator:**  
-**Descrição:**  
+### UC01 - Visualizar mapa e navegar
+
+**Ator:** Aluno (calouro/veterano), visitante, servidor  
+**Descrição:** O usuário abre o aplicativo e visualiza o mapa do campus, podendo movimentar a câmera e aplicar zoom.  
 **Fluxo principal:**  
+1. Usuário inicia o sistema.  
+2. O mapa é carregado na posição padrão (visão geral).  
+3. Usuário arrasta o mouse/toque para mover o viewport.  
+4. Usuário usa scroll/pinça para zoom.  
+5. O sistema atualiza a visualização em tempo real.  
 **Fluxo alternativo:**  
+- Caso o arquivo de mapa esteja corrompido, o sistema exibe mensagem de erro e permite reinstalação.
 
 ---
 
+### UC02 - Buscar e selecionar um local
+
+**Ator:** Aluno, visitante  
+**Descrição:** O usuário busca por um local pelo nome e centraliza o mapa nele.  
+**Fluxo principal:**  
+1. Usuário digita parte do nome no campo de busca.  
+2. Sistema exibe lista de resultados.  
+3. Usuário seleciona um item da lista.  
+4. O mapa centraliza o local e aplica zoom adequado.  
+5. O local é destacado visualmente e um painel com informações detalhadas é exibido.  
+**Fluxo alternativo:**  
+- Nenhum resultado encontrado: sistema exibe mensagem “Local não encontrado”.
+
+---
+
+### UC03 - Acessar cardápio do RU
+
+**Ator:** Aluno  
+**Descrição:** O usuário consulta o cardápio do Restaurante Universitário do dia.  
+**Fluxo principal:**  
+1. Usuário clica no ícone “RU” na Central de Serviços.  
+2. Se houver internet, sistema requisita o cardápio atualizado e exibe.  
+3. Se não houver internet, exibe último cardápio em cache com indicação “offline”.  
+**Fluxo alternativo:**  
+- Serviço externo indisponível: mensagem de erro amigável e opção de tentar novamente.
+
+---
+
+### UC04 - Ver roteiro entre salas (grade horária)
+
+**Ator:** Aluno (veterano)  
+**Descrição:** O usuário faz login, insere sua grade horária e o sistema sugere roteiro entre salas consecutivas.  
+**Fluxo principal:**  
+1. Usuário acessa “Minha Grade”.  
+2. Realiza autenticação.  
+3. Insere ou importa sua grade (disciplinas, salas, horários).  
+4. Sistema armazena dados criptografados localmente.  
+5. Usuário seleciona “Roteiro de hoje”.  
+6. Sistema destaca no mapa o trajeto entre a primeira e segunda sala, etc.  
+**Fluxo alternativo:**  
+- Credenciais incorretas: mensagem de erro sem armazenar dados.
+
+---
 ##  10. Plano de Testes
 
 ### 10.1 Estratégia de Teste
-Como o sistema será testado?
+Adota-se uma abordagem **híbrida**: testes automatizados (unidade e integração) e testes manuais (sistema, usabilidade, aceitação). A automação foca em componentes críticos (lógica de busca, picking, criptografia, persistência), enquanto os testes de interface e desempenho são conduzidos manualmente em diferentes dispositivos.
 
 ### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
-
+| Tipo | Descrição | Ferramenta / Método |
+|------|-----------|---------------------|
+| **Unitário** | Validação de funções e classes individuais | Google Test / pytest |
+| **Integração** | Comunicação entre módulos (Controller ↔ Model, View ↔ Controller) | Scripts manuais + Google Test |
+| **Sistema** | Execução de todos os requisitos funcionais no ambiente alvo | Manual (checklist) |
+| **Aceitação** | Usuários reais (calouros) realizam tarefas | Teste de usabilidade + questionário SUS |
 ### 10.3 Casos de Teste
 
-#### CT01 - Nome
+#### CT01 - Renderização inicial do mapa
 **Requisito relacionado:** RF01  
-**Descrição:**  
-**Entrada:**  
-**Resultado esperado:**  
+**Descrição:** Verificar se o mapa é exibido corretamente ao iniciar o aplicativo.  
+**Entrada:** Inicialização padrão.  
+**Resultado esperado:** Mapa visível, blocos identificáveis, FPS ≥ 30.
+
+#### CT02 - Navegação por arrasto
+**Requisito relacionado:** RF02  
+**Descrição:** Arrastar o mapa com mouse/toque.  
+**Entrada:** Movimento contínuo do ponteiro/toque.  
+**Resultado esperado:** Mapa desloca-se suavemente, sem solavancos ou atrasos > 1s.
+
+#### CT03 - Busca por nome parcial
+**Requisito relacionado:** RF10, RF11  
+**Descrição:** Digitar “Lab” na busca.  
+**Entrada:** Texto “Lab”.  
+**Resultado esperado:** Lista contendo “Laboratório de Informática”, “Laboratório de Química” etc. Ao selecionar, mapa centraliza e aplica zoom.
+
+#### CT04 - Persistência de login e grade
+**Requisito relacionado:** RNF09, RNF11 (segurança)  
+**Descrição:** Após login e inserção da grade, fechar e reabrir o app.  
+**Entrada:** Credenciais válidas, grade preenchida.  
+**Resultado esperado:** Dados recuperados e ainda criptografados (não legível em arquivo texto puro).
+
+#### CT05 - Comportamento offline da Central de Serviços
+**Requisito relacionado:** (Serviços complementares)  
+**Descrição:** Acessar cardápio do RU sem conexão de internet.  
+**Entrada:** Modo avião ativado.  
+**Resultado esperado:** Exibe último cardápio em cache com mensagem “dados offline”.
 
 ---
 
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
-- Usabilidade  
+- **Performance:**  
+  - Medir tempo de resposta das interações (busca, zoom, clique) – deve ser ≤ 1s.  
+  - Verificar FPS durante navegação intensa (mover rapidamente o mapa) – mínimo 30 FPS.
+
+- **Segurança:**  
+  - Tentar acessar arquivos de dados diretamente – credenciais e grade devem estar criptografadas.  
+  - Inserir entradas maliciosas na busca (SQL injection, script) – sistema deve sanitizar e não travar.
+
+- **Usabilidade:**  
+  - Recrutar 10 calouros, cronometrar tempo para realizar tarefas (navegar, buscar, reset).  
+  - Aplicar SUS (System Usability Scale) – meta: pontuação ≥ 70.
+
+--- 
 
 ---
 
 ##  11. Critérios de Aceitação
 
-Defina como validar os requisitos:
-- Métricas  
-- Testes  
-- Condições de sucesso  
+Para que o sistema seja aceito, os seguintes critérios devem ser cumpridos:
 
+| ID | Critério | Métrica / Validação | Condição de Sucesso |
+|----|----------|---------------------|----------------------|
+| CA01 | Todos os RFs implementados | Execução dos casos de teste CT01 a CT05 + demais RFs | 100% de RFs executados com sucesso |
+| CA02 | Desempenho mínimo | Medição de FPS e tempo de resposta | FPS médio ≥ 30 e tempo resposta ≤ 1s |
+| CA03 | Usabilidade | Teste com 10 usuários (calouros) | Todas as tarefas realizadas em < 5 min; SUS ≥ 70 |
+| CA04 | Confiabilidade | Execução contínua por 2h simulando uso | Zero crashes ou corrupção de dados |
+| CA05 | Segurança | Inspeção de código + testes de injeção | Dados sensíveis criptografados; entradas sanitizadas |
+| CA06 | Compatibilidade | Execução em pelo menos 1 dispositivo de cada família: Windows, Linux, Android, iOS/HyperOS | Sistema abre e funciona sem erros críticos |
+| CA07 | Documentação e versionamento | Repositório Git com histórico claro, código comentado, instruções de build | Aprovado pelo professor/orientador |
+| CA08 | Entrega no prazo | Todos os artefatos entregues até a data estipulada | Cumprimento do cronograma do laboratório |
 ---
 
 ##  12. Restrições
