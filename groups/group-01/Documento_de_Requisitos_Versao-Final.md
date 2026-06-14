@@ -581,11 +581,49 @@ E-mail do usuário.
 
 ##  11. Critérios de Aceitação
 
-Defina como validar os requisitos:
-- Métricas  
-- Testes  
-- Condições de sucesso  
+Esta seção define as condições obrigatórias que o sistema do minimercado autônomo deve atender para ser considerado concluído, validado e pronto para implantação no campus universitário.
 
+### 11.1 Critérios por Requisitos Funcionais (Condições de Sucesso)
+
+* **CA01 – Cadastro de Usuários:**
+  * O sistema só deve consolidar o cadastro se o e-mail inserido possuir o domínio institucional da universidade.
+  * As senhas cadastradas devem ser salvas de forma segura (com hash/criptografia) no banco de dados.
+  * **Condição de Sucesso:** Exibição imediata da mensagem "Cadastro realizado com sucesso" e liberação do primeiro login apenas para e-mails válidos.
+
+* **CA02 – Leitura de Produtos:**
+  * O leitor de código de barras deve ser capaz de bipar e identificar qualquer produto previamente cadastrado no banco de dados.
+  * **Condição de Sucesso:** O totem deve renderizar na tela o nome correto do produto, o valor unitário e a validação de que há estoque disponível em um tempo máximo de 2 segundos após o bipe.
+
+* **CA03 – Exibição e Atualização do Valor Total:**
+  * A cada produto bipado ou removido da lista atual, o carrinho de compras deve recalcular a soma dos itens imediatamente.
+  * **Condição de Sucesso:** O valor total da compra deve ser atualizado na interface de forma reativa, sem a necessidade de o usuário clicar em botões de atualizar ou recalcular.
+
+* **CA04 – Processamento de Pagamento Digital:**
+  * O sistema deve gerar um QR Code PIX dinâmico ou processar a API do cartão de crédito de forma segura.
+  * **Condição de Sucesso:** A compra só é considerada "Aprovada" e a tela de feedback liberada após o retorno positivo em tempo real da API de pagamento externa. Dados de cartão ou dados bancários sensíveis nunca devem ser armazenados localmente no totem.
+
+* **CA05 – Envio de Comprovante Digital:**
+  * O sistema deve disparar um e-mail contendo a lista de itens, quantidades, valores unitários, data, hora e o valor total pago.
+  * **Condição de Sucesso:** O e-mail deve ser entregue na caixa de entrada institucional do usuário que realizou a compra em até 5 minutos após a confirmação do pagamento.
+
+---
+
+### 11.2 Métricas de Desempenho e Eficiência
+
+Para que o software seja aceito no hardware limitado do tablet, ele deve respeitar rigorosamente as seguintes métricas técnicas estabelecidas:
+
+* **Tempo de Resposta da Leitura:** O tempo entre o bipe do código de barras e a exibição do produto na tela deve ser de no máximo 2 segundos. A validação será feita por meio de testes automatizados simulando a leitura.
+* **Consulta ao Banco de Dados:** O tempo máximo para o processamento de consultas e requisições na API do Backend deve ser de 1,5 segundos, verificado através do monitoramento de logs do servidor.
+* **Disponibilidade do Sistema:** O sistema deve permanecer operacional 24 horas por dia, 7 dias por semana. A validação ocorrerá através de testes de estresse e monitoramento de uptime em ambiente de homologação.
+* **Agilidade no Fluxo de Compra:** O usuário deve ser capaz de concluir o processo de compra em no máximo 3 etapas (bipar produtos, escolher pagamento e pagar/finalizar), validado por testes de usabilidade na interface touch.
+
+---
+
+### 11.3 Critérios de Homologação Geral (Segurança e Operação)
+
+* **Conformidade com a LGPD:** O sistema deve disponibilizar um termo de consentimento de uso de dados no primeiro login. Os logs gerados não devem expor dados pessoais ou financeiros abertamente no banco de dados.
+* **Interface e Usabilidade Touch:** A interface deve ser homologada diretamente no tablet de autoatendimento alvo. O sistema será recusado se houver elementos pequenos que exijam mouse ou que quebrem a resolução nativa do aparelho.
+* **Controle de Estoque e Sincronização:** Ao finalizar uma compra com sucesso, a quantidade do produto adquirida deve ser subtraída do banco de dados imediatamente, atualizando o painel do repositor em tempo real para evitar que um produto esgotado fisicamente continue listado como disponível.
 ---
 
 ##  12. Restrições
