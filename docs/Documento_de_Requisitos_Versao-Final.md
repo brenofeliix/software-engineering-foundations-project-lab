@@ -177,28 +177,63 @@ Explique como a arquitetura atende aos requisitos não funcionais:
 ##  10. Plano de Testes
 
 ### 10.1 Estratégia de Teste
-Como o sistema será testado?
+O sistema será testado em diferentes níveis para garantir o correto funcionamento das funcionalidades do minimercado. Inicialmente serão realizados testes unitários nos módulos individuais, como cadastro de usuários, leitura de produtos, cálculo do valor total e processamento de pagamento. Em seguida, serão realizados testes de integração para verificar a comunicação entre o sistema de self-checkout e o sistema administrador. Posteriormente, serão executados testes de sistema para validar o funcionamento completo da aplicação e, por fim, testes de aceitação com usuários finais para confirmar se o sistema atende às necessidades estabelecidas nos requisitos.
 
 ### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
+- Unitário: Testa individualmente cada funcionalidade do sistema, como validação de e-mail institucional, leitura de código de barras, cálculo do valor total e envio de comprovante.
+- Integração: Verifica a comunicação entre os módulos do sistema, como a sincronização dos produtos entre o self-checkout e o sistema administrador, atualização do estoque e confirmação de pagamentos.
+- Sistema: Avalia o sistema completo em ambiente de testes, garantindo que todas as funcionalidades funcionem em conjunto conforme os requisitos definidos.  
+- Aceitação: Realizado com usuários finais para validar a usabilidade do sistema e confirmar se o processo de compra ocorre corretamente, desde o cadastro até o recebimento do comprovante digital. 
 
 ### 10.3 Casos de Teste
-
-#### CT01 - Nome
+#### CT01 – Cadastro de usuário com e-mail institucional válido  
 **Requisito relacionado:** RF01  
-**Descrição:**  
+**Descrição:** Verificar se o sistema realiza o cadastro de usuários utilizando um e-mail institucional válido.  
 **Entrada:**  
-**Resultado esperado:**  
+Nome: João Silva  
+E-mail: joao@instituicao.edu.br  
+Senha: 123456  
+**Resultado esperado:** O sistema deve cadastrar o usuário com sucesso e exibir uma mensagem de confirmação.  
+
+#### CT02 – Leitura de produto por código de barras  
+**Requisito relacionado:** RF02  
+**Descrição:** Verificar se o sistema identifica corretamente um produto por meio do código de barras dentro do tempo máximo permitido.  
+**Entrada:**  
+Código de barras do produto cadastrado.  
+**Resultado esperado:** O sistema deve exibir o nome do produto, valor e quantidade disponível em até 2 segundos.  
+
+#### CT03 – Atualização automática do valor total da compra  
+**Requisito relacionado:** RF03  
+**Descrição:** Verificar se o valor total da compra é atualizado automaticamente conforme novos produtos são adicionados ao carrinho.  
+**Entrada:**  
+Adição de produtos ao carrinho de compras.  
+**Resultado esperado:** O sistema deve recalcular e exibir automaticamente o novo valor total da compra.  
+
+#### CT04 – Processamento de pagamento digital  
+**Requisito relacionado:** RF04  
+**Descrição:** Verificar se o sistema processa corretamente pagamentos via PIX ou cartão garantindo a segurança dos dados.  
+**Entrada:**  
+Dados da transação.  
+Método de pagamento selecionado (PIX ou cartão).  
+**Resultado esperado:** O pagamento deve ser processado com sucesso, retornando uma confirmação da transação e mantendo os dados financeiros protegidos por criptografia.  
+
+#### CT05 – Envio de comprovante digital  
+**Requisito relacionado:** RF05  
+**Descrição:** Verificar se o sistema envia corretamente o comprovante digital após a conclusão da compra.  
+**Entrada:**  
+Dados da compra realizada.  
+E-mail do usuário.  
+**Resultado esperado:** O usuário deve receber um comprovante digital contendo os produtos comprados, data da transação e valor total da compra.  
 
 ---
 
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
-- Usabilidade  
+- Usabilidade: Avaliar a facilidade de utilização da interface do self-checkout e do sistema administrador, verificando clareza dos comandos, tempo de aprendizado e recursos de acessibilidade.
+- Eficiência: Verificar se o sistema mantém um bom tempo de resposta e suporta diversos usuários realizando compras ao mesmo tempo.
+- Desempenho: Testar o funcionamento do sistema sob carga elevada, garantindo que não ocorram falhas ou travamentos durante períodos de maior utilização.
+- Espaço: Validar se o sistema utiliza os recursos de armazenamento e memória de forma eficiente, evitando consumo excessivo e garantindo o armazenamento adequado dos dados de usuários, produtos e transações.
+- Confiabilidade: Verificar a disponibilidade do sistema, a recuperação em caso de falhas e a integridade dos dados após interrupções ou erros inesperados.
+- Segurança (Proteção): Testar os mecanismos de autenticação de usuários, criptografia de dados financeiros, validação de acessos e permissões entre usuários e administradores do sistema.
 
 ---
 
