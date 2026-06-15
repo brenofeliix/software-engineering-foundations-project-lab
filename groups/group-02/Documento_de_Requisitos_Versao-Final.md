@@ -1202,15 +1202,21 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 **Resultado esperado:** Atualização do status da compra para “finalizado”.
 
 #### CT19 - Relatório Gerencial.
-**Requisito relacionado:** RF19  
-**Descrição:** O sistema categoriza os principais índices de vendas e receitas e gera um relatório com essas informações reunidas dos últimos trinta dias.
-**Entrada:** Selecionar botão para gerar relatório.
+**Requisito relacionado:** RF19    
+**Descrição:** O sistema categoriza os principais índices de vendas e receitas e gera um relatório com essas informações reunidas dos últimos trinta dias.  
+**Entrada:** Selecionar botão para gerar relatório.  
 **Resultado esperado:** Geração e download de um arquivo PDF.
 
 
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
+- Performance (tempo de resposta)
+  - Teste de carga estática: simulação no volume de pedidos para dias normais, 50 pedidos simultâneo.
+  - Teste de pico: simulação do horário de maior movimentação, 100 pedidos simultâneos.  
+  - Tempo de carregamento do menu não superior a 2 segundos.    
+  - Enivo imediato do pedido à cozinha.
+    
+- Segurança
+  -   
 - Usabilidade  
 
 ---
