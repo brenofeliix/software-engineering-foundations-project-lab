@@ -947,26 +947,86 @@ Os diagramas podem ser feitos utilizando:
 ### 10.1 Estratégia de Teste
 Como o sistema será testado?
 
+Os testes do CromStudy serão realizados durante todo o processo de desenvolvimento, com o objetivo de garantir que as funcionalidades implementadas atendam aos requisitos especificados. A estratégia adotada contempla testes unitários, de integração, de sistema e de aceitação, permitindo validar tanto os componentes individuais quanto o funcionamento completo da aplicação.
+
+Os testes serão executados nas versões web e mobile do sistema, verificando o correto funcionamento das funcionalidades de agenda, Pomodoro, flashcards, métricas de estudo, notificações e minijogo. Os resultados obtidos serão registrados para identificar possíveis falhas e realizar as correções necessárias antes da entrega do produto.
+
 ### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
+- Unitário:
+
+Verifica individualmente cada função ou componente do sistema, garantindo que execute corretamente sua responsabilidade.
+
+Exemplo:
+Registro de acertos e erros em flashcards.
+Cálculo do tempo total de estudo.
+
+- Integração
+
+Valida a comunicação entre diferentes módulos do sistema.
+
+Exemplo:
+Integração entre o Pomodoro e as métricas de estudo.
+Integração entre agenda e sistema de notificações.
+
+- Sistema
+
+Avalia o funcionamento completo da aplicação em um ambiente próximo ao de produção.
+
+Exemplo:
+Criação de tarefas, utilização do Pomodoro e geração de relatórios de desempenho.
+
+- Aceitação
+
+Realizado para verificar se o sistema atende às necessidades dos usuários finais.
+
+Exemplo:
+Usuário cria uma rotina de estudos e acompanha seu progresso utilizando as funcionalidades disponíveis.
 
 ### 10.3 Casos de Teste
 
 #### CT01 - Nome
 **Requisito relacionado:** RF01  
+Agenda e Cronograma
+
 **Descrição:**  
+Verificar se o usuário consegue cadastrar uma nova tarefa de estudo.
+
 **Entrada:**  
+Título da tarefa, data e horário.
+
 **Resultado esperado:**  
+A tarefa é salva e exibida corretamente na agenda.
 
 ---
 
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
-- Usabilidade  
+- Performance (tempo de resposta)
+  
+  Objetivo: garantir que o sistema apresente respostas rápidas ao usuário.
+
+  Critérios:
+  Carregamento das páginas em até 3 segundos.
+  Geração de relatórios em até 5 segundos.
+  Inicialização do temporizador Pomodoro de forma imediata.
+
+- Segurança
+  
+  Objetivo: proteger os dados e informações dos usuários.
+
+  Critérios:
+  Acesso permitido apenas para usuários autenticados.
+  Proteção das informações armazenadas.
+  Restrição de acesso aos dados de outros usuários.
+
+- Usabilidade
+  
+  Objetivo: verificar a facilidade de uso da aplicação.
+
+  Critérios:
+
+  Interface intuitiva para estudantes.
+  Facilidade de navegação entre as funcionalidades.
+  Clareza das informações exibidas em telas e relatórios.
 
 ---
 
