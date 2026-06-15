@@ -622,3 +622,388 @@ autorizados.
 - O sistema deve permitir a exportação de dados financeiros para softwares contábeis.
 - O sistema deve seguir as normas fiscais e tributárias brasileiras.
 ---
+
+##  8. Arquitetura do Sistema
+
+### 8.1 Visão Geral
+O CromStudy utilizará uma arquitetura monolítica modular, composta por um único backend responsável por gerenciar todas as funcionalidades do sistema, como autenticação, agenda, cronograma, flashcards, método Pomodoro, métricas de estudo, sistema de alertas e mini game. Essa arquitetura foi escolhida por apresentar menor complexidade de desenvolvimento e manutenção quando comparada a uma arquitetura de microsserviços, Além disso, permite uma implementação mais rápida, reduz custos de infraestrutura e facilita a comunicação entre os módulos do sistema. 
+
+As três camadas principais da arquitetura:
+
+- **Front End**: responsável pela interface do usuário nas versões mobile e web.
+- **Back End**: responsável pelas regras de negócio, autenticação, processamento de dados e comunicação com o banco de dados.
+- **Banco de Dados**: responsável pelo armazenamento persistente das informações do sistema.
+
+---
+
+### 8.2 Componentes
+**Frontend**
+
+Reponsável por:
+- Cadastro e login de usuários;
+- Gerenciamento da agenda e cronograma;
+- Criação e revisão de flashcards;
+- Controle do cronômetro Pomodoro;
+- Visualização das métricas de estudo;
+- Exibição de notificações e alertas;
+- Acesso ao mini game educativo;
+- Exibição de relatórios e estatísticas de desempenho.
+---
+**Backend**
+
+Responsável por:
+- Autenticação e autorização de usuários;
+- Gerenciamento de sessões;
+- Processamento das regras de agenda e cronograma;
+- Controle dos flashcards;
+- Registro das sessões de estudo;
+- Cálculo de métricas e estatísticas;
+- Gerenciamento das notificações;
+- Controle da pontuação e progressão do mini game;
+- Comunicação com o banco de dados.
+---
+**Banco de dados**
+
+Responsável por armazenar:
+- Usuários;
+- Perfis;
+- Cronogramas;
+- Eventos da agenda;
+- Flashcards;
+- Sessões Pomodoro;
+- Estatísticas de estudo;
+- Pontuações e conquistas;
+- Configurações de notificações.
+---
+**APIs externas**
+
+Integrações:
+- Google OAuth 2.0: Para realizar o login com conta google.
+- Firebase Cloud Messaging: Para envio de notificações push;
+- SendGrid / AWS SES: Para o envio de e-mails transacionais, como verificação de conta, recuperação de senha, relatórios semanais.
+
+---
+
+### 8.3 Tecnologias
+**Linguagem**
+- TypeScript: Para Frontend e Backend.
+
+**Framework**
+- React Native: Para desenvolver aplicativos Android e iOS utilizando uma única base de código;
+- React: Para criar partes visuais interativas e dinâmicas do site;
+- NestJs: Para o desenvolvimento do Backend;
+- Prisma ORM: Para facilitar a comunicação entre o Backend e o banco de dados.
+
+**Banco de dados**
+- PostgreSQL: Por ser gratuito, robusto e seguro;
+- SQlite: Para o banco de dados local no dispositivo do usuário.
+
+**Outras Tecnologias Relevantes**
+- Tailwind CSS: Para estilização Web.
+- Git e GitHub: Para o controle das versões e colaboração da equipe.
+
+---
+
+### 8.4 Decisões Arquiteturais
+
+**Desempenho**
+
+A arquitetura monolítica modular reduz a sobrecarga de comunicação entre serviços, permitindo respostas mais rápidas para as operações do sistema. O uso do PostgreSQL proporciona consultas eficientes e alta performance para armazenamento dos dados acadêmicos. Além disso, a utilização de React e React Native possibilita interfaces rápidas e responsivas.
+
+---
+**Segurança**
+
+A segurança será garantida através de:
+
+- Autenticação utilizando JWT;
+- Criptografia de senhas com algoritmos de hash seguros;
+- Controle de acesso baseado em usuários autenticados;
+- Comunicação protegida por HTTPS;
+- Validação de dados recebidos pela API;
+- Proteção contra ataques comuns, como SQL Injection e Cross-Site Scripting (XSS).
+---
+**Escalabilidade**
+
+Embora a arquitetura inicial seja monolítica, sua organização modular permitirá crescimento futuro sem necessidade de reestruturação completa.
+
+A aplicação poderá ser escalada verticalmente (aumento de recursos do servidor) ou horizontalmente (múltiplas instâncias da aplicação). Além disso, a separação clara entre frontend, backend e banco de dados facilita futuras migrações para arquiteturas mais complexas, caso o número de usuários aumente significativamente.
+
+---
+
+## 9. Casos de Uso e Diagramas UML
+
+Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+
+Os diagramas ajudam na:
+- modelagem do sistema;
+- comunicação entre equipe;
+- entendimento da arquitetura e funcionalidades;
+- documentação técnica do projeto.
+
+---
+
+# 9.1 Casos de Uso
+
+Os casos de uso representam as interações entre usuários (atores) e o sistema.
+
+---
+
+### UC01 - Realizar Login
+
+**Ator:** Usuário  
+
+**Descrição:**  
+Permite que o usuário acesse o sistema utilizando credenciais válidas.
+
+---
+
+### Fluxo principal
+1. Usuário acessa a tela de login  
+2. Usuário informa e-mail e senha  
+3. Sistema valida credenciais  
+4. Sistema libera acesso  
+
+---
+
+### Fluxo alternativo
+- Credenciais inválidas  
+- Usuário esqueceu senha  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+## 9.2 Diagrama de Classes (UML)
+
+O diagrama de classes representa:
+
+- estrutura do sistema;
+- entidades;
+- atributos;
+- métodos;
+- relacionamentos.
+
+---
+
+### Exemplo
+
+```text
++------------------+
+|     Usuário      |
++------------------+
+| - id             |
+| - nome           |
+| - email          |
+| - senha          |
++------------------+
+| + login()        |
+| + logout()       |
++------------------+
+```
+
+---
+
+### Exemplo com relacionamento
+
+```text
++------------------+        +------------------+
+|     Usuário      | 1    * |      Pedido      |
++------------------+--------+------------------+
+| id               |        | id               |
+| nome             |        | valor            |
++------------------+        +------------------+
+```
+
+---
+
+## 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos no sistema.
+
+---
+
+### Exemplo
+
+```text
+[Início]
+   |
+[Acessar sistema]
+   |
+[Inserir login]
+   |
+{Credenciais válidas?}
+   | Sim
+[Acessa sistema]
+   |
+[Fim]
+
+   | Não
+[Mensagem de erro]
+```
+
+---
+
+## 9.4 Diagrama de Sequência (UML)
+
+Representa a comunicação entre objetos ao longo do tempo.
+
+---
+
+### Exemplo
+
+```text
+Usuário -> Sistema: realizar login
+Sistema -> Banco: validar usuário
+Banco -> Sistema: usuário válido
+Sistema -> Usuário: acesso liberado
+```
+
+---
+
+## 9.5 Diagrama de Componentes
+
+Representa os módulos e componentes principais do sistema.
+
+---
+
+### Exemplo
+
+```text
+[Frontend]
+     |
+     v
+[API Backend]
+     |
+     v
+[Banco de Dados]
+```
+
+---
+
+## 9.6 Diagrama de Implantação (Deployment)
+
+Representa onde o sistema será executado.
+
+---
+
+### Exemplo
+
+```text
+[Usuário]
+     |
+Internet
+     |
+[Servidor Web]
+     |
+[Servidor Banco de Dados]
+```
+
+---
+
+## 9.7 Ferramentas Recomendadas
+
+Os diagramas podem ser feitos utilizando:
+
+- Draw.io
+- Lucidchart
+- StarUML
+- Visual Paradigm
+- PlantUML
+- Mermaid
+- Figma
+
+---
+
+## 9.8 Observações Importantes
+
+- Os diagramas devem representar o sistema REAL do grupo;
+- Evitem diagramas genéricos;
+- Mantenham consistência entre requisitos e diagramas;
+- Diagramas devem possuir nomes claros;
+- Atualizem os diagramas conforme o sistema evoluir.
+
+---
+
+# Regra importante
+
+> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
+
+---
+
+##  10. Plano de Testes
+
+### 10.1 Estratégia de Teste
+Como o sistema será testado?
+
+### 10.2 Tipos de Teste
+- Unitário  
+- Integração  
+- Sistema  
+- Aceitação  
+
+### 10.3 Casos de Teste
+
+#### CT01 - Nome
+**Requisito relacionado:** RF01  
+**Descrição:**  
+**Entrada:**  
+**Resultado esperado:**  
+
+---
+
+### 10.4 Testes de Requisitos Não Funcionais
+- Performance (tempo de resposta)  
+- Segurança  
+- Usabilidade  
+
+---
+
+##  11. Critérios de Aceitação
+
+Defina como validar os requisitos:
+- Métricas  
+- Testes  
+- Condições de sucesso  
+
+---
+
+##  12. Restrições
+
+- Tecnológicas  
+- Legais  
+- De prazo  
+
+---
+
+##  13. Premissas
+
+- Usuário terá acesso à internet  
+- Sistema será usado em dispositivos móveis  
+
+---
+
+##  14. Observações Finais
+
+Informações adicionais relevantes.
+
+---
+
+#  Orientações importantes
+
+- Requisitos devem ser claros, específicos e mensuráveis  
+- Evite termos vagos como “rápido” ou “bom”  
+- Requisitos não funcionais são obrigatórios  
+- A arquitetura deve responder aos requisitos  
+- Todo requisito deve ser testável
