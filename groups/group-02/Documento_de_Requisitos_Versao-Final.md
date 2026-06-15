@@ -1051,9 +1051,11 @@ Os diagramas podem ser feitos utilizando:
 
 ##  10. Plano de Testes
 
-### 10.1 Estratégia de Teste
+### 10.1 Estratégia de Teste  
+
 A adoção de testes para este sistema será de forma automatizada e incremental, replicando as configurações do ambiente de produção e utilizando dados controlados no banco de dados, isto é, para assegurar a consistência e repetibilidade dos testes, enquanto busca-se cobrir as regras de negócio críticas e evitar-se falhas repetitivas no sistema.
 
+---
 ### 10.2 Tipos de Teste
 - Unitário
   
@@ -1089,116 +1091,115 @@ A adoção de testes para este sistema será de forma automatizada e incremental
     * garçons e colaboradores da cozinha;
     * gerentes e/ou proprietários do negócio.
   
-
+---
 ### 10.3 Casos de Teste
 
 #### CT01 - Exibição do Cardápio
 **Requisito relacionado:** RF01  
-**Descrição:** O sistema fornece uma interface inicial (menu principal) onde o cliente pode iniciar o processo de compra.
-**Entrada:** Tocar no botão que abre o cardápio.
+**Descrição:** O sistema fornece uma interface inicial (menu principal) onde o cliente pode iniciar o processo de compra.  
+**Entrada:** Tocar no botão que abre o cardápio.  
 **Resultado esperado:** Exibição do Cardápio completo.  
 
 #### CT02 - Navegação por categoria.
 **Requisito relacionado:** RF02  
-**Descrição:** O sistema organiza os pratos nas categorias: Entradas, Bebidas, Sobremesas etc.
-**Entrada:** Tocar no botão correspondente à categoria preterida.
+**Descrição:** O sistema organiza os pratos nas categorias: Entradas, Bebidas, Sobremesas etc.  
+**Entrada:** Tocar no botão correspondente à categoria preterida.  
 **Resultado esperado:** Exibição somente dos pratos daquela categoria.
 
 #### CT03 - Detalhes do prato.
 **Requisito relacionado:** RF03  
-**Descrição:** O sistema armazena informações importantes sobre a receita, como ingredientes, preços, tempo de preparo e imagens do pedido.
-**Entrada:** Tocar em qualquer uma das opções de receitas disponíveis naquele momento.
+**Descrição:** O sistema armazena informações importantes sobre a receita, como ingredientes, preços, tempo de preparo e imagens do pedido.  
+**Entrada:** Tocar em qualquer uma das opções de receitas disponíveis naquele momento.  
 **Resultado esperado:** Exibição dos detalhes da receita selecionada.
 
 #### CT04 - Quantidade de porções.
 **Requisito relacionado:** RF04  
-**Descrição:** O sistema permite incrementar ou decrementar a quantidade de porções no pedido.
-**Entrada:** Tocar no ícone “+” ou “-”.
+**Descrição:** O sistema permite incrementar ou decrementar a quantidade de porções no pedido.  
+**Entrada:** Tocar no ícone “+” ou “-”.  
 **Resultado esperado:** Incremento ou decremento.
 
 #### CT05 - Alteração de acompanhamentos.
 **Requisito relacionado:** RF05  
-**Descrição:** O sistema permite acrescentar ou remover ingredientes especificados pela loja.
-**Entrada:** Tocar no botão que abre os acompanhamentos.
+**Descrição:** O sistema permite acrescentar ou remover ingredientes especificados pela loja.  
+**Entrada:** Tocar no botão que abre os acompanhamentos.  
 **Resultado esperado:** Exibição da lista de ingredientes permitidos para alteração.
 
 #### CT06 - Envio de pedido.
 **Requisito relacionado:** RF06  
-**Descrição:** O sistema permite o envio de pedido desde a primeira seleção de prato e antes de fechar o carrinho.
-**Entrada:** Tocar no botão para enviar pedido.
+**Descrição:** O sistema permite o envio de pedido desde a primeira seleção de prato e antes de fechar o carrinho.  
+**Entrada:** Tocar no botão para enviar pedido.  
 **Resultado esperado:** Exibição do resumo do pedido.
 
 #### CT07 - Resumo do pedido.
 **Requisito relacionado:** RF07  
-**Descrição:** O sistema exibe o resumo do pedido.
-**Entrada:** Tocar no botão para enviar pedido.
+**Descrição:** O sistema exibe o resumo do pedido.  
+**Entrada:** Tocar no botão para enviar pedido.  
 **Resultado esperado:** Exibição dos itens selecionados, subtotal financeiro, tempo estimado de preparo e botão para confirmar envio.
 
 #### CT08 - Confirmação de envio.
 **Requisito relacionado:** RF08  
-**Descrição:** O sistema exige confirmação do envio do pedido.
-**Entrada:** Tocar no botão para confirmar envio.
+**Descrição:** O sistema exige confirmação do envio do pedido.  
+**Entrada:** Tocar no botão para confirmar envio.  
 **Resultado esperado:** Envio do pedido à cozinha.
 
 #### CT09 - Sugestão de Cardápio.
 **Requisito relacionado:** RF09  
-**Descrição:** O sistema sugere receitas de acordo com datas comemorativas.
-**Entrada:** Tocar na tag de recomendações.
+**Descrição:** O sistema sugere receitas de acordo com datas comemorativas.  
+**Entrada:** Tocar na tag de recomendações.  
 **Resultado esperado:** Exibição das receitas sugeridas.
 
 #### CT10 - Busca por receita.
 **Requisito relacionado:** RF10  
-**Descrição:** O sistema permite a busca por receita através de uma barra de pesquisa.
-**Entrada:** Digitar na barra de pesquisa.
+**Descrição:** O sistema permite a busca por receita através de uma barra de pesquisa.  
+**Entrada:** Digitar na barra de pesquisa.  
 **Resultado esperado:** Exibição das receitas encontradas ou uma mensagem de “não encontrado” caso não haja retorno.
 
 #### CT11 - Novos pedidos .
 **Requisito relacionado:** RF11  
-**Descrição:** O sistema permite acompanhar o status dos pedidos bem como realizar outros.
-**Entrada:** Tocar no botão de pedidos enviados.
+**Descrição:** O sistema permite acompanhar o status dos pedidos bem como realizar outros.  
+**Entrada:** Tocar no botão de pedidos enviados.  
 **Resultado esperado:** Exibição dos status dos pedidos e do botão para novos envios.
 
 #### CT12 - Formas de pagamento.
 **Requisito relacionado:** RF12  
-**Descrição:** O sistema processa Pix, cartões físicos e digitais como formas de pagamento.
-**Entrada:** Tocar no botão correspondente a forma de pagamento desejada.
+**Descrição:** O sistema processa Pix, cartões físicos e digitais como formas de pagamento.  
+**Entrada:** Tocar no botão correspondente a forma de pagamento desejada.  
 **Resultado esperado:** Redirecionamento para a forma de pagamento escolhida.
 
 #### CT13 - Monitoramento em tempo real.
 **Requisito relacionado:** RF13  
-**Descrição:** O sistema permite que os gestores monitorem as vendas em tempo real.
-**Entrada:** Abrir o painel administrativo via usuário administrador.
+**Descrição:** O sistema permite que os gestores monitorem as vendas em tempo real.  
+**Entrada:** Abrir o painel administrativo via usuário administrador.  
 **Resultado esperado:** Exibição do painel administrativo contendo os status dos pedidos em tempo real.
 
 #### CT14 - Atualizações no status.
 **Requisito relacionado:** RF14  
-**Descrição:** O sistema permite alterações no status do pedido de acordo com o seu andamento.
-**Entrada:** Tocar no botão correspondente a situação do pedido.
+**Descrição:** O sistema permite alterações no status do pedido de acordo com o seu andamento.  
+**Entrada:** Tocar no botão correspondente a situação do pedido.  
 **Resultado esperado:** Atualização em tempo real do andamento do pedido para os usuários operacionais e para o cliente que o enviou.
 
 #### CT15 - Alteração de disponibilidade.
 **Requisito relacionado:** RF15  
-**Descrição:** O sistema permite que os gestores alterem a disponibilidade de receitas de acordo com o estoque.
-**Entrada:** Seleção binária (on/off) no painel administrativo.
+**Descrição:** O sistema permite que os gestores alterem a disponibilidade de receitas de acordo com o estoque.  
+**Entrada:** Seleção binária (on/off) no painel administrativo.  
 **Resultado esperado:** Atualização em tempo real da disponibilidade da receita.
-
 
 #### CT16 - Alterações nas descrições da receita.
 **Requisito relacionado:** RF16  
-**Descrição:** O sistema permite que o gestor edite informações sobre o prato, como novos ingredientes e valores.
-**Entrada:** Selecionar receita e botão de edição de pratos no painel administrativo.
+**Descrição:** O sistema permite que o gestor edite informações sobre o prato, como novos ingredientes e valores.  
+**Entrada:** Selecionar receita e botão de edição de pratos no painel administrativo.  
 **Resultado esperado:** Abertura dos campos descritivos para edição e atualização no menu.
 
 #### CT17 - Alterações no cardápio.
 **Requisito relacionado:** RF17  
-**Descrição:** O sistema permite que o gestor cadastre novas receitas ou exclua permanentemente quaisquer uma delas.
-**Entrada:** Selecionar botão para adicionar ou excluir receita no painel administrativo.
+**Descrição:** O sistema permite que o gestor cadastre novas receitas ou exclua permanentemente quaisquer uma delas.  
+**Entrada:** Selecionar botão para adicionar ou excluir receita no painel administrativo.  
 **Resultado esperado:** Atualização do status da compra para “finalizado” para todos os usuários.
 
 #### CT18 - Finalização automática da compra.
 **Requisito relacionado:** RF18  
-**Descrição:** O sistema atualiza automaticamente o status da compra para “finalizado” assim que o pagamento é efetuado.
-**Entrada:** Confirmação do API de pagamento ou baixa manual.
+**Descrição:** O sistema atualiza automaticamente o status da compra para “finalizado” assim que o pagamento é efetuado.  
+**Entrada:** Confirmação do API de pagamento ou baixa manual.  
 **Resultado esperado:** Atualização do status da compra para “finalizado”.
 
 #### CT19 - Relatório Gerencial.
@@ -1207,7 +1208,7 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 **Entrada:** Selecionar botão para gerar relatório.  
 **Resultado esperado:** Geração e download de um arquivo PDF.
 
-
+---
 ### 10.4 Testes de Requisitos Não Funcionais
 - Performance (tempo de resposta)
   - Teste de carga estática: simulação no volume de pedidos para dias normais, 50 pedidos simultâneo.
@@ -1216,8 +1217,14 @@ A adoção de testes para este sistema será de forma automatizada e incremental
   - Enivo imediato do pedido à cozinha.
     
 - Segurança
-  -   
-- Usabilidade  
+  - Garantir que nenhuma pessoa mal-intencionada consiga alterar os preços do prato.
+  - Garantir que um cliente não tenha acesso ao pedido de outra mesa.
+  - Garantir a conformidade com a LGPD impedindo que o sistema exponha o histórico de pedidos ou dados de pagamento de clientes anteriores que usaram o mesmo dispositivo ou QR Code.
+    
+- Usabilidade
+  - Validar o comportamento responsivo em múltiplos tamanhos de tela.
+  - Validar o comportamento do sistema em diferentes navegadores.
+  - Validar o funcionamento do sistema em diferentes conexões de rede dentro de um estabelecimento comercial.
 
 ---
 
