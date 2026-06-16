@@ -453,64 +453,133 @@ Permitir que usuários com permissões administrativas elevadas intervenham na m
 ##  6. Requisitos Organizacionais
 
 ### 6.1 Ambientais
+#### Sistema Operacional
+
+- RO01 – Ambiente de Servidor: O código do servidor (back-end) deve ser compilado e executado obrigatoriamente sobre sistemas operacionais baseados em distribuições Linux corporativas estáveis de longo suporte (LTS), como Ubuntu Server ou Alpine Linux.
+
+- RO02 – Ambiente de Cliente: O front-end da aplicação deve rodar de maneira uniforme nos sistemas operacionais móveis Android (versão 8.0 ou superior) e iOS (versão 14 ou superior), além de navegadores web modernos (Chrome, Safari, Firefox, Edge).
+
+#### Infraestrutura
+- RO03 – Conteinerização: Toda a solução de software deve ser estruturada e encapsulada em contêineres Docker, garantindo portabilidade entre os ambientes locais de desenvolvimento, homologação e o servidor final de produção.
+
+- RO04 – Hospedagem em Nuvem: A infraestrutura de hospedagem deve utilizar serviços gerenciados em nuvem (como AWS ou Google Cloud), fazendo uso de escalonamento vertical e horizontal parametrizado para responder a variações de tráfego.
+
 
 ### 6.2 Operacionais
-- Logs  
-- Monitoramento  
+#### Logs
+- RO05 – Auditoria Operacional: O sistema deve capturar logs estruturados detalhando erros de execução de rotas, tentativas de login malsucedidas e alterações críticas de exclusão lógica feitas por moderadores.
+
+- RO06 – Ofuscação de Dados Confidenciais: Fica estritamente proibido o registro de informações de identificação direta e sensível dos usuários (como senhas, números residenciais ou tokens de sessão) nos arquivos de texto de log de erro da aplicação.
+
+#### Monitoramento
+- RO07 – Painel de Telemetria: A infraestrutura de servidores deve integrar ferramentas de monitoramento de performance de hardware e software (como Prometheus, Grafana ou correlatos) para exibição em tempo real da saúde da aplicação.
+
+- RO08 – Alertas de Indisponibilidade: Disparar notificações de erro e avisos urgentes diretamente para as contas de comunicação interna da equipe de engenharia caso a taxa de erros HTTP 500 ultrapasse o limite de 5% em um intervalo de 10 minutos.
 
 ### 6.3 Desenvolvimento
-- Versionamento (Git)  
-- Padrões de código  
-- Testes automatizados  
+#### Versionamento (Git)
+- RO09 – Modelo de Ramificação: O repositório central de código-fonte deve ser gerenciado via Git adotando o fluxo de trabalho GitFlow. Alterações e correções de bugs devem passar obrigatoriamente por ramos de teste dedicados (feature/hotfix branches) e revisão por pares antes de serem mesclados na ramificação de produção (main).
+
+#### Padrões de Código
+- RO10 – Padronização de Sintaxe (Linting): O repositório deve conter ferramentas de análise estática de código (linters) configuradas e ativas. O código deve obedecer aos padrões internacionais recomendados pelas linguagens adotas (ex: PEP 8 para Python ou Airbnb Style Guide para JavaScript/TypeScript).
+
+#### Testes Automatizados
+- RO11 – Testes de Integração Contínua (CI): O processo de build na esteira de desenvolvimento integrado deve rodar automaticamente conjuntos de testes unitários e de integração a cada commit. A esteira bloqueará a integração de códigos que derrubem a taxa mínima estipulada de cobertura de testes do core de regras do sistema.
 
 ---
 
 ##  7. Requisitos Externos
 
 ### 7.1 Reguladores
-- LGPD  
-- Normas específicas  
+#### LGPD
+- RE01 – Governança e Privacidade de Dados: Em conformidade estrita com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), a plataforma deve disponibilizar canais nativos no painel do usuário para revogação de consentimentos de uso de cookies, exportação estruturada do histórico do perfil em formato legível e a exclusão automatizada completa da conta mediante solicitação direta.
+
+#### Normas Específicas
+- RE02 – Normas Governamentais de Acessibilidade: O projeto web deve aderir ao eMAG (Modelo de Acessibilidade em Governo Eletrônico), garantindo que portais públicos e associações ligadas a órgãos municipais consigam utilizar a plataforma sem infringir resoluções de acessibilidade digital.
 
 ### 7.2 Éticos
-- Não discriminação  
-- Transparência  
+#### Não Discriminação
+- RE03 – Equidade em Algoritmos de Distribuição: Os algoritmos responsáveis pela ordenação do mapa, feed de ajuda mútua e busca de doações devem se basear estritamente em critérios cronológicos e de proximidade de CEP. É terminantemente vedada a aplicação de vieses ou pesos de relevância baseados em raça, gênero, orientação sexual, credos ou nível socioeconômico dos moradores cadastrados.
+
+#### Transparência
+- RE04 – Termos de Uso em Linguagem Simples: Os Termos de Uso e Políticas de Privacidade aceitos no ato de cadastro devem ser redigidos utilizando técnicas de Visual Law ou linguagem simples, explicando de forma totalmente clara e didática como as coordenadas geográficas de bairro do morador são tratadas e protegidas internamente.
 
 ### 7.3 Legais
-- Leis aplicáveis  
+#### Leis Aplicáveis
+- RE05 – Marco Civil da Internet: O back-end da aplicação deve cumprir rigorosamente as determinações da Lei nº 12.965/2014 (Marco Civil da Internet), estruturando rotinas que realizem a guarda protegida e sigilosa dos logs de registros de acesso de conexões sob sigilo absoluto pelo prazo mínimo legal de 6 meses.
 
 ### 7.4 Segurança Externa
-- Proteção contra ataques  
-- Auditorias  
+#### Proteção Contra Ataques
+- RE06 – Mitigação de Vetores de Injeção e Negação: A infraestrutura de rede externa de borda deve contar com camadas de proteção WAF ativas para interceptar e mitigar tentativas de ataques maliciosos mapeados no OWASP Top 10, como Cross-Site Scripting (XSS), SQL Injection e requisições massivas de ataques coordenados de negação de serviço (DDoS).
+
+#### Auditorias
+- RE07 – Varredura Automatizada de Dependências: A esteira de pacotes de software do projeto deve rodar ferramentas automatizadas periódicas de verificação de vulnerabilidades (ex: Snyk ou GitHub Dependabot) para identificar e forçar a atualização de brechas conhecidas de segurança em bibliotecas de terceiros (CVEs).
 
 ### 7.5 Contábeis
-- Registro de transações  
-- Relatórios  
+#### Registro de Transações
+- RE08 – Imutabilidade de Histórico de Doações: Todas as transações concluídas de desapego de itens ou encerramento de mutirões beneficentes devem gerar registros criptográficos imutáveis na base de dados, salvaguardando carimbos de data/hora, categorias envolvidas e IDs anônimos para auditorias contábeis internas anti-fraude.
 
+#### Relatórios
+- RE09 – Consolidado Estatístico de Impacto: O painel administrativo de líderes comunitários deve ser capaz de extrair relatórios contábeis de balanço social agregados (ex: volume acumulado de quilos de alimentos distribuídos no bairro ou número de chamados de serviços públicos resolvidos) sem expor identidades individuais, viabilizando prestações de contas transparentes junto a ONGs e órgãos de fomento.
+  
 ---
 
 ##  8. Arquitetura do Sistema
 
 ### 8.1 Visão Geral
-Descreva a arquitetura (ex: monolito, microserviços).
+O sistema Conexão Comunitária adota uma Arquitetura de Monolito Modular baseada em camadas (Layered Architecture). Essa abordagem foi escolhida para acelerar o desenvolvimento inicial (MVP), manter o custo de infraestrutura baixo e mitigar a latência de rede entre serviços, garantindo fácil transição para microserviços no futuro devido ao forte desacoplamento interno dos módulos funcionais (Doações, Alertas, Eventos).
+
+```
+[ Aplicação Web / Mobile ]
+               |  (HTTPS / REST)
+               v
+   [ Gateway de Borda / Cloudflare / WAF ]
+               |  
+               v
+   [ Monolito Modular (API Node.js / Express) ]
+     ├── Módulo de Autenticação & Usuários
+     ├── Módulo de Doações
+     ├── Módulo de Alertas Comunitários
+     └── Módulo de Eventos & Calendário
+               |
+        ┌──────┴──────┐
+        v             v
+ [ Banco MongoDB ] [ Cache Redis ]
+```
 
 ### 8.2 Componentes
-- Frontend  
-- Backend  
-- Banco de dados  
-- APIs externas  
+- Frontend: Aplicação híbrida unificada. No ecossistema web, renderiza uma interface SPA (Single Page Application) reativa e responsiva. No ambiente mobile, o componente se comunica com os sensores nativos do aparelho (como câmera para fotos de doações e módulo de GPS para captura controlada de geolocalização).
+
+- Backend: Servidor centralizado em NodeJS estruturado de forma assíncrona. Ele expõe uma API RESTful protegida que recebe as requisições do front-end, valida tokens de autenticação, processa as regras de negócio dos módulos e distribui tarefas pesadas em background.
+
+- Banco de Dados: Banco principal Não-Relacional (NoSQL) orientado a documentos, ideal para lidar com a flexibilidade de dados do perfil, tags dinâmicas de habilidades e armazenamento nativo de coordenadas geográficas de pontos de ajuda. Conta com uma camada de banco em memória para armazenamento de cache.
+
+- APIs Externas:
+
+  - Serviço de Mapas (OpenStreetMap / Leaflet): Utilizado para renderizar as camadas de mapas visuais interativos sem custos elevados de licenciamento proprietário.
+
+  - Serviço de Busca de CEP (ViaCEP): Consumido no momento do cadastro para traduzir o CEP inserido em nome de bairro e cidade de forma automática.
+
+  - Serviço de Push Notifications (Firebase Cloud Messaging - FCM): Utilizado para orquestrar o disparo de notificações push em massa em dispositivos móveis na ocorrência de alertas urgentes no bairro
 
 ### 8.3 Tecnologias
-- Linguagem  
-- Framework  
-- Banco de dados  
+- Linguagem Principal: TypeScript (adotado tanto no desenvolvimento do front-end quanto do back-end para assegurar tipagem estática e reduzir erros em tempo de execução).
+
+- Framework Backend: Node.js com Express (componente leve e focado em alta performance para tratamento de requisições I/O assíncronas concorrentes).
+
+- Framework Frontend: React / React Native (para viabilizar o reaproveitamento máximo de código de componentes de interface entre as plataformas web e mobile).
+
+- Banco de Dados: MongoDB (devido ao suporte maduro a índices geoespaciais críticos para o Mapa de Solidariedade), apoiado por Redis para gerenciamento de sessões de cache e controle de Rate Limiting.
 
 ### 8.4 Decisões Arquiteturais
-Explique como a arquitetura atende aos requisitos não funcionais:
-- Desempenho  
-- Segurança  
-- Escalabilidade  
+#### Desempenho
+Para cumprir o tempo de resposta inferior a 2 segundos (RNF03) e manter a estabilidade sob carga (RNF05), a arquitetura delega a renderização complexa de dados inteiramente para o cliente (Client-Side Rendering). O banco MongoDB possui índices geoespaciais criados sobre os documentos de Alertas e Pontos de Ajuda, permitindo que consultas por proximidade geográfica baseadas no CEP do morador sejam resolvidas em milissegundos pelo motor do banco. Consultas recorrentes e estáticas são cacheadas em memória com Redis.
 
----
+#### Segurança
+Em conformidade com os requisitos RNF07 e RNF08, a segurança é aplicada em camadas. Na borda externa da arquitetura, um proxy reverso gerencia as regras de Rate Limiting em memória com Redis, derrubando requisições abusivas que excedam 5 tentativas por minuto por IP antes mesmo de tocarem o servidor Node.js. Internamente, o Monolito possui middlewares de barreira que interceptam rotas privadas, decodificam os tokens JWT assinados de forma assimétrica e validam o nível de acesso do perfil antes de dar provimento à requisição de banco de dados.
+
+#### Escalabilidade
+A escolha do Monolito Modular garante escalabilidade horizontal simples nesta fase do projeto Conexão Comunitária. O servidor back-end foi desenvolvido sob o princípio de ser completamente stateless (sem estado guardado em memória local); todas as sessões ativas de usuários e dados voláteis de controle de tráfego são gerenciados centralizadamente no Redis. Dessa forma, caso ocorra um pico massivo de acessos motivado por um alerta de emergência climática regional, a infraestrutura em nuvem pode instanciar cópias idênticas do contêiner Docker do back-end atrás de um balanceador de carga elétrico de forma transparente, distribuindo o tráfego concorrente sem corromper a integridade das operações do sistema.
 
 ---
 
@@ -532,109 +601,559 @@ Os casos de uso representam as interações entre usuários (atores) e o sistema
 
 ---
 
-### UC01 - Realizar Login
+### UC01 - Cadastro, Perfil e Reputação
 
 **Ator:** Usuário  
 
 **Descrição:**  
-Permite que o usuário acesse o sistema utilizando credenciais válidas.
+Neste primeiro diagrama, mapeamos as ações de entrada na plataforma e o sistema de confiança (gamificação/avaliação).
 
 ---
 
 ### Fluxo principal
-1. Usuário acessa a tela de login  
-2. Usuário informa e-mail e senha  
+1. Usuário acessa a tela de cadastro
+2. Usuário informa e-mail, senha e cep
 3. Sistema valida credenciais  
-4. Sistema libera acesso  
+4. Sistema libera acesso
+5. Usuário pode editar perfil e habilidades
+6. Sistema calcula reputação de acordo com as interaçoes do usuário
 
 ---
 
 ### Fluxo alternativo
-- Credenciais inválidas  
-- Usuário esqueceu senha  
+- Credenciais inválidas
+- CEP invalido
 
 ---
 
-## Exemplo de Diagrama de Caso de Uso
+## Diagrama de Caso de Uso 1
 
-[Usuário]
+```mermaid
+flowchart LR
+    %% Atores
+    User(("👤 Usuário\n(Morador)"))
+    CEP(("🌐 Sistema\n(API ViaCEP)"))
 
-    |
+    %% Casos de Uso
+    UC_Cadastrar(["Cadastrar Conta (RF01)"])
+    UC_ValidarCEP(["Validar Bairro via CEP (RF02)"])
+    UC_EditarPerfil(["Editar Perfil e Habilidades (RF04)"])
+    UC_VerPerfil(["Visualizar Perfil Público (RF05)"])
+    UC_Avaliar(["Avaliar Pós-Interação (RF07)"])
+    UC_AtualizarReput(["Calcular Reputação (RF06)"])
+
+    %% Relações Ator -> Casos de Uso
+    User --> UC_Cadastrar
+    User --> UC_EditarPerfil
+    User --> UC_VerPerfil
+    User --> UC_Avaliar
+
+    %% Relacionamentos Include / Extend / APIs
+    UC_Cadastrar -. "<<include>>" .-> UC_ValidarCEP
+    CEP --- UC_ValidarCEP
     
-    | ---- (Realizar Login)
+    UC_Avaliar -. "<<include>>" .-> UC_AtualizarReput
     
-    | ---- (Cadastrar Conta)
+    style User fill:#e1f5fe,stroke:#0288d1
+    style CEP fill:#eceff1,stroke:#607d8b
+    style UC_Cadastrar fill:#fff3e0,stroke:#f57c00
+    style UC_Avaliar fill:#fff3e0,stroke:#f57c00
+
+```
+
+### UC02 - Mapa e Ciclo de Doações
+
+**Ator:** Usuário  
+
+**Descrição:**  
+Neste segundo diagrama ilustramos o diferencial operacional do sistema: o mapa interativo e o desapego de itens.
+
+---
+
+### Fluxo principal
+1. Usuário acessa o mapa
+2. Usuário publica ponto de ajuda e doações
+3. Usuários manifestam interesse e o doador recebe notificação
+5. Usuário pode cancelar ou alterar status  da Doação
+6. Usuários são notificados sobre as alterações 
+
+---
+
+## Diagrama de Caso de Uso 2
+
+```mermaid
+flowchart LR
+    %% Atores
+    User(("👤 Usuário\n(Morador)"))
+
+    %% Casos de Uso - Mapa
+    UC_VerMapa(["Visualizar/Filtrar Mapa (RF08, RF12)"])
+    UC_PontoAjuda(["Publicar Ponto de Ajuda (RF10)"])
     
-    | ---- (Recuperar Senha) 
+    %% Casos de Uso - Doações
+    UC_PubDoacao(["Publicar Doação (RF13)"])
+    UC_Interesse(["Manifestar Interesse (RF14)"])
+    UC_AltStatus(["Alterar Status da Doação (RF15)"])
+    UC_Cancelar(["Cancelar Doação (RF17)"])
+    UC_NotificarInt(["Notificar Interessados (RF18, RF19)"])
+
+    %% Relações Ator -> Casos de Uso
+    User --> UC_VerMapa
+    User --> UC_PontoAjuda
+    User --> UC_PubDoacao
+    User --> UC_Interesse
+    User --> UC_AltStatus
+    User --> UC_Cancelar
+
+    %% Relacionamentos
+    UC_Interesse -. "<<include>>" .-> UC_NotificarInt
+    UC_AltStatus -. "<<include>>" .-> UC_NotificarInt
+    UC_Cancelar -. "<<include>>" .-> UC_NotificarInt
+
+    style User fill:#e1f5fe,stroke:#0288d1
+    style UC_PubDoacao fill:#e8f5e9,stroke:#388e3c
+    style UC_AltStatus fill:#e8f5e9,stroke:#388e3c
+```
+
+### UC03 - Eventos, Alertas e Moderação
+
+**Ator:** Usuário  
+**Ator:** Moderador
+
+**Descrição:**  
+Este diagrama mapeia a parte de utilidade pública, demonstrando as ações de calendário, urgência e o papel do Administrador/Moderador.
+
+---
+
+### Fluxo principal
+1. Moderador herda todas as capacidades de um usuario comum
+2. Usuário comum pode criar, editar ou confirmar presença em eventos e criar, constestar/validar alertas 
+3. Sistema dispara alertas em massa e envia notificação de eventos 
+5. Moderador remove/arquiva alerta 
+
+---
+
+## Diagrama de Caso de Uso 3
+
+```mermaid
+flowchart LR
+    %% Atores
+    User(("👤 Usuário\n(Morador)"))
+    Mod(("🛡️ Moderador\n(Líder Local)"))
+    Sys(("⚙️ Sistema\n(Jobs/Notificações)"))
+
+    %% Casos de Uso - Eventos
+    UC_Evento(["Criar/Editar Evento (RF20)"])
+    UC_Presenca(["Confirmar Presença (RF22)"])
+    
+    %% Casos de Uso - Alertas
+    UC_PubAlerta(["Publicar Alerta Comunitário (RF25)"])
+    UC_Validar(["Contestar/Validar Alerta (RF29)"])
+    UC_Moderar(["Arquivar/Remover Alerta (RF30)"])
+    
+    %% Notificações
+    UC_NotifMassa(["Disparar Alerta em Massa (RF28)"])
+    UC_Lembrete(["Enviar Lembrete de Evento (RF23)"])
+
+    %% Relações Usuário
+    User --> UC_Evento
+    User --> UC_Presenca
+    User --> UC_PubAlerta
+    User --> UC_Validar
+
+    %% Relações Moderador (Herança + Uso)
+    Mod -. "Herda funções de" .-> User
+    Mod ---> UC_Moderar
+
+    %% Relacionamentos do Sistema
+    UC_PubAlerta -. "<<include>>" .-> UC_NotifMassa
+    Sys --- UC_NotifMassa
+    Sys --- UC_Lembrete
+
+    style User fill:#e1f5fe,stroke:#0288d1
+    style Mod fill:#f3e5f5,stroke:#8e24aa
+    style Sys fill:#eceff1,stroke:#607d8b
+    style UC_PubAlerta fill:#ffebee,stroke:#d32f2f
+    style UC_Moderar fill:#ffebee,stroke:#d32f2f
+```
 
 ---
 
 ## 9.2 Diagrama de Classes (UML)
 
-O diagrama de classes representa:
+### Classes
 
-- estrutura do sistema;
-- entidades;
-- atributos;
-- métodos;
-- relacionamentos.
+```mermaid
+classDiagram
+    %% -------------------------------------
+    %% ENUMERAÇÕES (Regras de Negócio)
+    %% -------------------------------------
+    class PerfilAcesso {
+        <<enumeration>>
+        COMUM
+        MODERADOR
+    }
 
----
+    class StatusDoacao {
+        <<enumeration>>
+        DISPONIVEL
+        RESERVADO
+        CONCLUIDO
+        CANCELADO
+    }
 
-### Exemplo
+    class CondicaoItem {
+        <<enumeration>>
+        NOVO
+        USADO
+        PRECISA_REPARO
+    }
 
-```text
-+------------------+
-|     Usuário      |
-+------------------+
-| - id             |
-| - nome           |
-| - email          |
-| - senha          |
-+------------------+
-| + login()        |
-| + logout()       |
-+------------------+
+    class CategoriaAlerta {
+        <<enumeration>>
+        SEGURANCA
+        EMERGENCIA_CLIMATICA
+        SERVICOS_PUBLICOS
+        ANIMAL_PERDIDO
+        OUTROS
+    }
+
+    %% -------------------------------------
+    %% CLASSES PRINCIPAIS
+    %% -------------------------------------
+    class Usuario {
+        +UUID id
+        +String nome
+        +String email
+        -String senhaHash
+        +String cep
+        +String bairro
+        +String telefone
+        +String fotoUrl
+        +List~String~ habilidades
+        +Date dataIngresso
+        +float reputacaoMedia
+        +PerfilAcesso perfil
+        +cadastrar()
+        +editarPerfil()
+        +calcularReputacao()
+    }
+
+    class Avaliacao {
+        +UUID id
+        +int nota
+        +String comentario
+        +Date dataCriacao
+        +registrarAvaliacao()
+    }
+
+    %% CLASSE ABSTRATA DE MAPA (Herança)
+    class PublicacaoGeolocalizada {
+        <<abstract>>
+        +UUID id
+        +Date dataPublicacao
+        +double latitude
+        +double longitude
+        +String enderecoRef
+        +boolean ativo
+        +desativar()
+    }
+
+    class Doacao {
+        +String titulo
+        +String descricao
+        +int quantidade
+        +CondicaoItem condicao
+        +StatusDoacao status
+        +List~String~ fotosUrls
+        +manifestarInteresse(Usuario)
+        +alterarStatus(StatusDoacao)
+        +cancelar()
+    }
+
+    class Evento {
+        +String titulo
+        +String descricao
+        +Date dataHoraInicio
+        +Date dataHoraFim
+        +String categoria
+        +confirmarPresenca(Usuario)
+        +cancelarPresenca(Usuario)
+        +cancelarEvento()
+    }
+
+    class Alerta {
+        +String descricao
+        +CategoriaAlerta categoria
+        +List~String~ fotosUrls
+        +int votosVerdadeiro
+        +int votosFalso
+        +contestarVeracidade()
+        +confirmarVeracidade()
+        +arquivarAlerta()
+    }
+
 ```
 
 ---
 
-### Exemplo com relacionamento
+### Diagrama de classes com relacionamento
 
-```text
-+------------------+        +------------------+
-|     Usuário      | 1    * |      Pedido      |
-+------------------+--------+------------------+
-| id               |        | id               |
-| nome             |        | valor            |
-+------------------+        +------------------+
+```mermaid
+classDiagram
+    %% -------------------------------------
+    %% ENUMERAÇÕES (Regras de Negócio)
+    %% -------------------------------------
+    class PerfilAcesso {
+        <<enumeration>>
+        COMUM
+        MODERADOR
+    }
+
+    class StatusDoacao {
+        <<enumeration>>
+        DISPONIVEL
+        RESERVADO
+        CONCLUIDO
+        CANCELADO
+    }
+
+    class CondicaoItem {
+        <<enumeration>>
+        NOVO
+        USADO
+        PRECISA_REPARO
+    }
+
+    class CategoriaAlerta {
+        <<enumeration>>
+        SEGURANCA
+        EMERGENCIA_CLIMATICA
+        SERVICOS_PUBLICOS
+        ANIMAL_PERDIDO
+        OUTROS
+    }
+
+    %% -------------------------------------
+    %% CLASSES PRINCIPAIS
+    %% -------------------------------------
+    class Usuario {
+        +UUID id
+        +String nome
+        +String email
+        -String senhaHash
+        +String cep
+        +String bairro
+        +String telefone
+        +String fotoUrl
+        +List~String~ habilidades
+        +Date dataIngresso
+        +float reputacaoMedia
+        +PerfilAcesso perfil
+        +cadastrar()
+        +editarPerfil()
+        +calcularReputacao()
+    }
+
+    class Avaliacao {
+        +UUID id
+        +int nota
+        +String comentario
+        +Date dataCriacao
+        +registrarAvaliacao()
+    }
+
+    %% CLASSE ABSTRATA DE MAPA (Herança)
+    class PublicacaoGeolocalizada {
+        <<abstract>>
+        +UUID id
+        +Date dataPublicacao
+        +double latitude
+        +double longitude
+        +String enderecoRef
+        +boolean ativo
+        +desativar()
+    }
+
+    class Doacao {
+        +String titulo
+        +String descricao
+        +int quantidade
+        +CondicaoItem condicao
+        +StatusDoacao status
+        +List~String~ fotosUrls
+        +manifestarInteresse(Usuario)
+        +alterarStatus(StatusDoacao)
+        +cancelar()
+    }
+
+    class Evento {
+        +String titulo
+        +String descricao
+        +Date dataHoraInicio
+        +Date dataHoraFim
+        +String categoria
+        +confirmarPresenca(Usuario)
+        +cancelarPresenca(Usuario)
+        +cancelarEvento()
+    }
+
+    class Alerta {
+        +String descricao
+        +CategoriaAlerta categoria
+        +List~String~ fotosUrls
+        +int votosVerdadeiro
+        +int votosFalso
+        +contestarVeracidade()
+        +confirmarVeracidade()
+        +arquivarAlerta()
+    }
+
+    %% -------------------------------------
+    %% RELACIONAMENTOS (Associações e Heranças)
+    %% -------------------------------------
+    
+    %% Herança (Eventos, Alertas e Doações são "marcadores no mapa")
+    PublicacaoGeolocalizada <|-- Doacao
+    PublicacaoGeolocalizada <|-- Evento
+    PublicacaoGeolocalizada <|-- Alerta
+
+    %% Relacionamento: Usuário e Reputação
+    Usuario "1" --> "*" Avaliacao : recebe
+    Usuario "1" --> "*" Avaliacao : faz (avalia outro)
+
+    %% Relacionamento: Usuário e Doação
+    Usuario "1" --> "*" Doacao : publica (Doador)
+    Usuario "*" --> "*" Doacao : interessa (Fila)
+
+    %% Relacionamento: Usuário e Eventos
+    Usuario "1" --> "*" Evento : organiza
+    Usuario "*" --> "*" Evento : participa (Confirmados)
+
+    %% Relacionamento: Usuário e Alertas
+    Usuario "1" --> "*" Alerta : reporta
 ```
 
 ---
 
 ## 9.3 Diagrama de Atividades (UML)
 
-Representa o fluxo de execução de processos no sistema.
-
----
-
-### Exemplo
+### Diagrama de Atividades: Cadastro e Associação de Bairro
 
 ```text
 [Início]
    |
-[Acessar sistema]
+[Acessar tela de cadastro]
    |
-[Inserir login]
+[Inserir e-mail, criar senha e inserir CEP]
    |
-{Credenciais válidas?}
+[Sistema consulta API externa de CEP]
+   |
+{CEP é válido e encontrado?}
    | Sim
-[Acessa sistema]
+[Preencher nome do bairro automaticamente]
+   |
+[Complementar perfil (nome, foto, habilidades)]
+   |
+[Salvar usuário no banco de dados]
+   |
+[Redirecionar para o feed da comunidade]
    |
 [Fim]
 
    | Não
-[Mensagem de erro]
+[Exibir mensagem de erro: "CEP inválido ou não encontrado"]
+   |
+[Bloquear avanço do cadastro]
+   |
+[Solicitar preenchimento de um CEP válido]
+```
+
+### Diagrama de Atividades: Ciclo de Vida de uma Doação
+
+```text
+[Início]
+   |
+[Acessar módulo de doações]
+   |
+[Inserir foto obrigatória, descrição e condição do item]
+   |
+[Publicar anúncio no sistema]
+   |
+[Status inicial definido como "Disponível"]
+   |
+[Anúncio exibido no Mapa e Feed do bairro]
+   |
+[Outro usuário clica em "Tenho Interesse"]
+   |
+[Sistema dispara notificação para o Doador]
+   |
+{Doador aceita o interessado?}
+   | Sim
+[Status alterado para "Reservado"]
+   |
+[Bloquear botão de interesse para outros usuários]
+   |
+[Usuários combinam a entrega pelo chat interno]
+   |
+[Doador marca o item como "Concluído"]
+   |
+[Remover item do mapa e das buscas públicas]
+   |
+[Liberar formulário de avaliação (Estrelas) para ambos]
+   |
+[Fim]
+
+   | Não
+[Ignorar pedido atual]
+   |
+[Manter status como "Disponível"]
+   |
+[Aguardar novos manifestos de interesse]
+```
+
+### Diagrama de Atividades: Alerta Comunitário e Moderação
+
+```text
+[Início]
+   |
+[Acessar módulo de Novo Alerta]
+   |
+[Selecionar Categoria (ex: Alagamento) e descrever o problema]
+   |
+[Publicar Alerta]
+   |
+[Sistema dispara notificação Push para todos do bairro]
+   |
+[Alerta exibido com destaque vermelho no Feed e Mapa]
+   |
+[Moradores interagem: Votam "Confirmo" ou "É Falso"]
+   |
+{Taxa de votos "É Falso" atinge 70%?}
+   | Sim
+[Ocultar alerta automaticamente do Feed público]
+   |
+[Enviar alerta suspeito para o Painel do Moderador]
+   |
+{Moderador valida como conteúdo abusivo/falso?}
+   | Sim
+[Remover alerta permanentemente]
+   |
+[Gravar log de infração do usuário autor]
+   |
+[Fim]
+
+   | Não (Moderador acha que o alerta é real)
+[Restaurar o alerta no Feed público]
+
+   | Não (A taxa de "É Falso" ficou abaixo de 70%)
+[Manter o alerta visível e ativo para a comunidade]
+   |
+[Aguardar 48 horas]
+   |
+[Arquivar o alerta automaticamente no histórico (limpeza de mapa)]
+   |
+[Fim]
 ```
 
 ---
@@ -645,33 +1164,129 @@ Representa a comunicação entre objetos ao longo do tempo.
 
 ---
 
-### Exemplo
+### 1. Fluxo de Cadastro e Associação Territorial via CEP
+Este fluxo mostra a interação desde o preenchimento dos dados pelo morador, passando pelo consumo da API externa, até a persistência segura no banco de dados.
 
 ```text
-Usuário -> Sistema: realizar login
-Sistema -> Banco: validar usuário
-Banco -> Sistema: usuário válido
-Sistema -> Usuário: acesso liberado
+Usuário -> Frontend: Preenche dados de cadastro (E-mail, Senha, CEP)
+Frontend -> Backend: Envia requisição de cadastro (POST /usuarios)
+Backend -> API ViaCEP: Consulta metadados do CEP informado
+API ViaCEP -> Backend: Retorna informações do endereço (Bairro e Cidade)
+Backend -> Backend: Executa o hash criptográfico da senha
+Backend -> Banco de Dados: Salva registro do Usuário vinculado ao Bairro
+Banco de Dados -> Backend: Confirma gravação dos dados
+Backend -> Frontend: Retorna Sucesso (Token JWT + Dados do Perfil)
+Frontend -> Usuário: Exibe feed customizado do bairro
+```
+
+### 2. Fluxo de Manifesto de Interesse em Doação
+Este fluxo descreve o momento em que um morador demonstra interesse em um item físico, ativando a máquina de estados da doação e disparando as notificações em tempo real.
+
+```text
+Interessado -> Frontend: Clica no botão "Tenho Interesse" no anúncio
+Frontend -> Backend: Envia requisição de interesse (POST /doacoes/{id}/interesse)
+Backend -> Banco de Dados: Verifica se o status do item ainda é "Disponível"
+Banco de Dados -> Backend: Retorna confirmação de status válido
+Backend -> Banco de Dados: Altera status da doação para "Reservado"
+Backend -> Firebase FCM: Solicita envio de notificação push para o doador
+Firebase FCM -> Doador: Entrega notificação ("Novo morador interessado no seu item")
+Backend -> Frontend: Retorna confirmação de interesse registrado
+Frontend -> Interessado: Altera o botão para "Aguardando contato / Reservado"
+```
+
+### 3. Fluxo de Publicação e Notificação de Alerta Crítico
+Este fluxo ilustra o processamento assíncrono de um alerta urgente (como uma emergência climática), demonstrando a busca de moradores da região e o disparo massivo em lote.
+
+```text
+Usuário -> Frontend: Insere dados do incidente e clica em "Publicar Alerta"
+Frontend -> Backend: Envia dados do alerta e coordenadas (POST /alertas)
+Backend -> Banco de Dados: Salva o novo Alerta com status "Ativo"
+Banco de Dados -> Backend: Alerta persistido com sucesso
+Backend -> Banco de Dados: Busca tokens de notificação de todos os moradores do bairro
+Banco de Dados -> Backend: Retorna lista de tokens dos moradores afetados
+Backend -> Firebase FCM: Encaminha lote de notificações push em background
+Firebase FCM -> Moradores do Bairro: Entrega o Alerta de Urgência na tela do celular
+Backend -> Frontend: Retorna sucesso da publicação
+Frontend -> Usuário: Renderiza o alerta em vermelho no mapa e no feed
+```
+
+### 4. Fluxo de Criação e Confirmação de Presença em Evento Comunitário
+Este fluxo ilustra o agendamento de uma ação coletiva (como um mutirão) por um organizador e a posterior adesão de um voluntário da comunidade.
+
+```text
+Organizador -> Frontend: Preenche dados do evento (Título, Data, Categoria) e publica
+Frontend -> Backend: Envia requisição de criação (POST /eventos)
+Backend -> Banco de Dados: Salva o evento atrelado à agenda regional do bairro
+Banco de Dados -> Backend: Confirma a persistência do evento
+Backend -> Frontend: Retorna sucesso e dados do evento cadastrado
+Frontend -> Organizador: Exibe o evento fixado no Calendário Comunitário
+Voluntário -> Frontend: Visualiza o evento no calendário e clica em "Confirmar Presença"
+Frontend -> Backend: Envia requisição de presença (POST /eventos/{id}/confirmar)
+Backend -> Banco de Dados: Adiciona o ID do voluntário à lista e incrementa o contador
+Banco de Dados -> Backend: Confirma atualização dos participantes
+Backend -> Frontend: Retorna sucesso do registro de presença
+Frontend -> Voluntário: Altera o status visual para "Presença Confirmada"
+```
+
+### 5. Fluxo de Avaliação Pós-Interação e Recálculo de Reputação
+Este fluxo demonstra o encerramento de um ciclo de ajuda mútua, onde um usuário avalia o outro, forçando o sistema a recalcular e atualizar o índice de estrelas do perfil público.
+
+```text
+Usuário -> Frontend: Seleciona a nota (1 a 5), insere o comentário e envia
+Frontend -> Backend: Envia os dados da avaliação (POST /doacoes/{id}/avaliar)
+Backend -> Banco de Dados: Salva o registro da Avaliação vinculado ao Usuário avaliado
+Banco de Dados -> Backend: Confirma a gravação da nova nota
+Backend -> Banco de Dados: Solicita todas as notas históricas daquele usuário avaliado
+Banco de Dados -> Backend: Retorna a lista com o histórico de notas do perfil
+Backend -> Backend: Executa o processamento da nova média aritmética (Estrelas)
+Backend -> Banco de Dados: Atualiza o campo "reputacaoMedia" no cadastro do usuário
+Banco de Dados -> Backend: Confirma a atualização do perfil do usuário
+Backend -> Frontend: Retorna sucesso da operação de avaliação
+Frontend -> Usuário: Exibe a mensagem "Avaliação registrada com sucesso!"
+```
+
+### 6. Fluxo de Contestação de Alerta e Ocultação Automática por Fake News
+Este fluxo detalha o mecanismo de segurança descentralizado, onde a própria vizinhança modera boatos ou informações incorretas até que o card seja suspenso para análise.
+
+```text
+Morador -> Frontend: Identifica um alerta suspeito e clica em "É Falso / Fake News"
+Frontend -> Backend: Envia o voto de contestação do morador (POST /alertas/{id}/contestar)
+Backend -> Banco de Dados: Incrementa o contador "votosFalso" no documento do alerta
+Banco de Dados -> Backend: Retorna o total consolidado de votos (Verdadeiros vs Falsos)
+Backend -> Backend: Avalia se os votos "É Falso" ultrapassaram o limite de 70%
+Backend -> Banco de Dados: Altera o status do Alerta para "Suspenso" e desativa a visibilidade
+Banco de Dados -> Backend: Confirma a alteração lógica do status de exibição
+Backend -> Frontend: Retorna resposta de processamento concluído
+Frontend -> Morador: Oculta o card do alerta da timeline e atualiza o feed local do bairro
 ```
 
 ---
 
 ## 9.5 Diagrama de Componentes
 
-Representa os módulos e componentes principais do sistema.
-
----
-
-### Exemplo
+### Diagrama de Componentes: Conexão Comunitária
 
 ```text
-[Frontend]
-     |
-     v
-[API Backend]
-     |
-     v
-[Banco de Dados]
+[Aplicação Web (React SPA)]       [Aplicativo Móvel (React Native)]
+            \                                    /
+             \__________________________________/
+                              |
+                              v
+            [Gateway de Borda / Cloudflare / WAF]
+                              | (HTTPS / REST)
+                              v
+               [API Backend (Node.js + Express)]
+                ├── Módulo de Autenticação & Usuários
+                ├── Módulo de Doações
+                ├── Módulo de Alertas Comunitários
+                └── Módulo de Eventos & Calendário
+                    /         |          \
+                   /          |           \
+                  v           v            v
+          [Cache / Redis]  [MongoDB]   [APIs Externas]
+                 |                     ├── ViaCEP API
+                 v                     └── OpenStreetMap
+          [Firebase FCM]      
 ```
 
 ---
@@ -693,37 +1308,6 @@ Internet
      |
 [Servidor Banco de Dados]
 ```
-
----
-
-## 9.7 Ferramentas Recomendadas
-
-Os diagramas podem ser feitos utilizando:
-
-- Draw.io
-- Lucidchart
-- StarUML
-- Visual Paradigm
-- PlantUML
-- Mermaid
-- Figma
-
----
-
-## 9.8 Observações Importantes
-
-- Os diagramas devem representar o sistema REAL do grupo;
-- Evitem diagramas genéricos;
-- Mantenham consistência entre requisitos e diagramas;
-- Diagramas devem possuir nomes claros;
-- Atualizem os diagramas conforme o sistema evoluir.
-
----
-
-# Regra importante
-
-> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
-
 ---
 
 ##  10. Plano de Testes
