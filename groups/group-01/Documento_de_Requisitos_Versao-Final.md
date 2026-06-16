@@ -404,46 +404,55 @@ O diagrama de classes representa:
 
 ## 9.3 Diagrama de Atividades (UML)
 
-Representa o fluxo de execução de processos no sistema.
+Representa o fluxo de execução do processo de venda no sistema.
 
 ---
 
 ### Exemplo
 
-```text
-[Início]
-   |
-[Acessar sistema]
-   |
-[Inserir login]
-   |
-{Credenciais válidas?}
-   | Sim
-[Acessa sistema]
-   |
-[Fim]
+```mermaid
+flowchart TD
+    A([Início]) --> B[Selecionar Produtos]
+    B --> C[Calcular Total]
+    C --> D[Receber Pagamento]
+    D --> E{Pagamento aprovado?}
 
-   | Não
-[Mensagem de erro]
+    E -->|Sim| F[Registrar Venda]
+    F --> G[Atualizar Estoque]
+    G --> H([Fim])
+
+    E -->|Não| I[Cancelar Venda]
+    I --> H
 ```
-
 ---
 
 ## 9.4 Diagrama de Sequência (UML)
 
-Representa a comunicação entre objetos ao longo do tempo.
+Representa a comunicação entre os objetos ao longo do tempo durante o processo de venda.
 
 ---
 
 ### Exemplo
 
-```text
-Usuário -> Sistema: realizar login
-Sistema -> Banco: validar usuário
-Banco -> Sistema: usuário válido
-Sistema -> Usuário: acesso liberado
-```
+```mermaid
+sequenceDiagram
+    participant Caixa
+    participant Sistema
+    participant Produto
+    participant Banco as Banco de Dados
+    participant Venda
 
+    Caixa->>Sistema: iniciar venda
+    Sistema->>Produto: consultar estoque
+    Produto-->>Sistema: estoque disponível
+    Caixa->>Sistema: adicionar produto
+    Sistema->>Venda: calcular total
+    Caixa->>Sistema: confirmar pagamento
+    Sistema->>Banco: salvar venda
+    Banco-->>Sistema: venda registrada
+    Sistema->>Produto: atualizar estoque
+    Sistema-->>Caixa: venda concluída
+```
 ---
 
 ## 9.5 Diagrama de Componentes
