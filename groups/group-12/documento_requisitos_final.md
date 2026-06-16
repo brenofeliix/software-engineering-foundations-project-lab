@@ -1293,91 +1293,178 @@ Frontend -> Morador: Oculta o card do alerta da timeline e atualiza o feed local
 
 ## 9.6 Diagrama de Implantação (Deployment)
 
-Representa onde o sistema será executado.
-
----
-
-### Exemplo
+### Diagrama de Implantação: Conexão Comunitária
 
 ```text
-[Usuário]
+[Dispositivos dos Usuários (Smartphones / Desktops)]
      |
-Internet
+  Internet (HTTPS)
      |
-[Servidor Web]
+[Serviço de Borda (Cloudflare / WAF)]
      |
-[Servidor Banco de Dados]
+  Rede Privada Virtual (VPC na Nuvem AWS/GCP)
+     |
+[Balanceador de Carga (Load Balancer)]
+     |
+[Servidor de Aplicação (Instância Linux LTS / Docker Containers)]
+     |
+     +--- (Conexão Interna) --- [Servidor de Cache em Memória (Redis)]
+     |
+     +--- (Conexão Interna) --- [Servidor de Banco de Dados NoSQL (MongoDB)]
+     |
+     +--- Internet (APIs de Terceiros)
+              |
+              +--- [Serviço de Notificações Cloud (Firebase FCM)]
+              +--- [Serviço de Endereços (ViaCEP)]
+              +--- [Serviço de Cartografia (OpenStreetMap)]
 ```
 ---
 
 ##  10. Plano de Testes
 
 ### 10.1 Estratégia de Teste
-Como o sistema será testado?
+O sistema será testado adotando uma abordagem piramidal e contínua. Os testes automatizados serão integrados diretamente à esteira de Integração Contínua (CI/CD) via GitHub Actions, impedindo que códigos que quebrem funcionalidades existentes cheguem ao ambiente de produção.
+
+Os testes manuais serão reservados para a validação de usabilidade e homologação de cenários complexos (como a navegação no mapa em campo) junto a um grupo de moradores e líderes comunitários do bairro-piloto.
 
 ### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
+- Unitário: Validação isolada de funções críticas do back-end, como o algoritmo de hash criptográfico de senhas, validações de formato de e-mail e regras de cálculo de média aritmética da reputação do usuário.
+
+- Integração: Validação da comunicação entre os módulos do sistema e componentes adjacentes, incluindo rotas de API que salvam dados no MongoDB, persistência de sessões e travas de segurança no Redis, e chamadas de resposta da API do ViaCEP.
+
+- Sistema: Testes de ponta a ponta (End-to-End - E2E) simulando a jornada completa de processos do usuário na aplicação, avaliando o comportamento integrado das interfaces Web e Mobile.
+
+- Aceitação: Testes formais conduzidos por usuários reais (moradores e diretores de associações de bairro) em ambiente de homologação para certificar se o software atende aos critérios práticos de facilidade de uso e utilidade pública.
 
 ### 10.3 Casos de Teste
 
-#### CT01 - Nome
-**Requisito relacionado:** RF01  
-**Descrição:**  
-**Entrada:**  
-**Resultado esperado:**  
+#### CT01 - Cadastro com Associação de Bairro via CEP
+**Requisito relacionado:** RF01 e RF02  
+**Descrição:** Validar se o sistema realiza o cadastro de um novo morador de forma correta, atrelando-o ao bairro correspondente a partir de um CEP válido.  
+**Entrada:** E-mail: vizinho.teste@email.com, Senha: Senha@Segura123, CEP: 01001-000.  
+**Resultado esperado:** Sistema consome a API externa, identifica o bairro "Sé", efetua o hash da senha, salva o usuário com sucesso e redireciona para a timeline com foco no bairro correto.
+
+---
+
+#### CT02 - Ciclo de Alteração de Status de Doação
+**Requisito relacionado:** RF13, RF14 e RF15  
+**Descrição:** Verificar se o status de uma doação transiciona corretamente de "Disponível" para "Reservado" após a manifestação de interesse e se bloqueia novas requisições.  
+**Entrada:** Usuário B clica em "Tenho Interesse" no item "Cadeira de Rodas" (Status: Disponível) publicado pelo Usuário A.  
+**Resultado esperado:** O doador (Usuário A) recebe uma notificação push, o status do item muda automaticamente para "Reservado" no banco de dados e o botão fica indisponível para cliques de outros usuários.
+
+---
+
+#### CT03 - Ocultação de Alerta por Contestação Comunitária (Fake News)
+**Requisito relacionado:** RF25, RF29 e RF30  
+**Descrição:** Garantir que o sistema oculte alertas falsos automaticamente quando o volume de contestações atingir o limite estipulado pelas regras de negócio.  
+**Entrada:** Um alerta ativo recebe 3 votos de "Confirmo Ocorrência" e 8 votos de "É Falso / Fake News" (Atingindo 72,7% de rejeição).  
+**Resultado esperado:** O card do alerta é retirado imediatamente do feed público geral e enviado de forma exclusiva para a mesa de auditoria do painel de moderadores.
+
+---
+
+#### CT04 - Complementação de Perfil com Habilidades e Interesses
+**Requisito relacionado:** RF03 e RF04  
+**Descrição:** Validar se o utilizador consegue adicionar com sucesso uma foto, telefone e etiquetas (tags) de competências ao seu perfil, e se essas informações são guardadas corretamente.  
+**Entrada:** Upload de ficheiro de imagem foto_perfil.jpg, Telefone: 912345678, Habilidades: ["Eletricidade", "Pintura"].  
+**Resultado esperado:** O sistema processa o upload, atualiza o registo na base de dados, exibe a mensagem "Perfil atualizado com sucesso" e reflete as novas informações e tags na visualização pública do perfil.
+
+---
+
+#### CT05 - Filtragem de Categorias no Mapa da Solidariedade
+**Requisito relacionado:** RF12  
+**Descrição:** Verificar se o mapa interativo oculta e exibe corretamente os marcadores (pins) de acordo com as categorias de ajuda selecionadas pelo utilizador.  
+**Entrada:** Seleção exclusiva da caixa de verificação (checkbox) "Ajuda com Pets" no menu de filtros do mapa.  
+**Resultado esperado:** O mapa atualiza-se dinamicamente, ocultando todos os marcadores de "Doação de Alimentos" e "Reparos Domésticos", mantendo visíveis no quadrante apenas os marcadores pertencentes à categoria filtrada.
+
+---
+
+#### CT06 - Tentativa de Criação de Evento com Data Retroativa (Teste Negativo)
+**Requisito relacionado:** RF20  
+**Descrição:** Garantir que o sistema bloqueie a criação de eventos comunitários com datas e horários anteriores à data e hora atuais do servidor.  
+**Entrada:** Título: "Mutirão de Limpeza da Praça", Data: 15/04/2022 (data passada), Categoria: "Mutirão".  
+**Resultado esperado:** O sistema impede a submissão do formulário, exibe uma mensagem de validação em falta ("A data do evento não pode ser inferior à data atual") e não realiza a persistência do registo no banco de dados.
+
+---
+
+#### CT07 - Confirmação de Presença e Agendamento de Lembrete
+**Requisito relacionado:** RF22 e RF23  
+**Descrição:** Validar se um utilizador consegue confirmar presença num evento e se o sistema o inclui corretamente na fila de disparos de lembretes automáticos.  
+**Entrada:** Utilizador autenticado clica no botão "Confirmar Presença" num evento agendado para acontecer dali a exatamente 24 horas.  
+**Resultado esperado:** O contador público de participantes do evento é incrementado, o identificador do utilizador é adicionado à lista de presenças e o sistema agenda o disparo automático da notificação push de lembrete em background.
+
+---
+
+#### CT08 - Moderação Avançada e Remoção de Alerta por Líder Comunitário
+**Requisito relacionado:** RF30  
+**Descrição:** Verificar se um utilizador com perfil administrativo de "Moderador" consegue remover um alerta reportado e se a ação gera os devidos registos de auditoria.  
+**Entrada:** Utilizador com a flag PerfilAcesso: MODERADOR acede ao Painel de Moderação e clica em "Remover Alerta" num incidente denunciado por falsidade.  
+**Resultado esperado:** O alerta é excluído logicamente do feed público e do mapa de forma imediata, e um registo de log contendo o ID do moderador, carimbo de data/hora e o motivo da remoção é gravado na base de dados de auditoria operacional.
+
+---
+
+#### CT09 - Exclusão de Conta e Direito ao Esquecimento (Teste de Privacidade)
+**Requisito relacionado:** RE01 (LGPD) e RNF09  
+**Descrição:** Garantir que o processo de exclusão de conta apague os dados pessoais identificáveis do utilizador, mantendo apenas dados anónimos para histórico contábil.  
+**Entrada:** Utilizador acede às configurações de privacidade e clica em "Eliminar Minha Conta Definitivamente", confirmando a sua palavra-passe.  
+**Resultado esperado:** O sistema apaga o nome, e-mail, telefone e foto do banco de dados (cumprindo a conformidade da LGPD), invalida o token JWT de sessão atual e mantém apenas os IDs anónimos nos registos históricos de doações antigas para fins estatísticos.
 
 ---
 
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
-- Usabilidade  
+- Performance (tempo de resposta): Utilização da ferramenta K6 para simular injeções de carga de até 1.000 usuários simultâneos executando requisições na rota de alertas, aferindo se o tempo médio de resposta se mantém abaixo do teto de 2 segundos (RNF04).
+
+- Segurança: Execução de scripts de varredura automatizada (OWASP ZAP) nas rotas de autenticação para validar o bloqueio por IP (Rate Limiting) após a 5ª tentativa consecutiva de login inválido (RNF08), além de testes de penetração básicos de SQL Injection.
+
+- Usabilidade: Avaliação manual da interface com usuários da terceira idade para monitorar se o tempo de aprendizado da plataforma é inferior a 5 minutos (RNF02), em conjunto com ferramentas de validação de código HTML/CSS para garantir conformidade com leitores de tela e padrões WCAG 2.1 de acessibilidade.
 
 ---
 
 ##  11. Critérios de Aceitação
 
-Defina como validar os requisitos:
-- Métricas  
-- Testes  
-- Condições de sucesso  
+Para que uma funcionalidade ou ciclo de desenvolvimento do Conexão Comunitária seja considerado concluído e elegível para publicação, ele deve satisfazer as seguintes condições estruturais:
+
+- Métricas Técnicas:
+
+  - Cobertura de testes unitários igual ou superior a 80% das linhas de código do back-end.
+
+  - Índice de disponibilidade mensal verificado (Uptime) de, no mínimo, 99,5%.
+
+  - Taxa de compressão automática de imagens de doações/alertas que resulte em arquivos finais menores que 5 MB.
+
+  - Testes Homologados: Passagem com 100% de sucesso por todos os Casos de Teste (CTs) planejados para a respectiva Sprint, sem a ocorrência de defeitos impeditivos ou de severidade crítica ativos em ambiente de testes.
+
+- Condições de Sucesso Operacional:
+
+  - O aplicativo deve rodar em celulares iOS e Android sem travamentos abruptos de interface.
+
+  - O tempo total de entrega de uma notificação push de alerta em massa para o lote de moradores do bairro não pode exceder 30 segundos após a publicação.
+
+  - O fluxo de exclusão de conta deve apagar os dados sensíveis de perfil do banco de dados de maneira definitiva, cumprindo a conformidade regulatória.
 
 ---
 
 ##  12. Restrições
 
-- Tecnológicas  
-- Legais  
-- De prazo  
+As restrições impõem barreiras externas de design e gerenciamento que limitam as escolhas da equipe técnica:
+
+- Tecnológicas: O sistema back-end está atrelado ao ecossistema Node.js/Express e ao banco MongoDB, não sendo permitida a alteração da stack principal durante o desenvolvimento do MVP. Além disso, a aplicação depende da estabilidade operacional de serviços de terceiros sem custos impeditivos (ViaCEP e OpenStreetMap).
+
+- Legais: Toda a coleta, armazenamento e exibição de dados territoriais devem obedecer de forma intransigente aos ditames da Lei Geral de Proteção de Dados (LGPD) e do Marco Civil da Internet, incluindo a guarda obrigatória de logs de conexão por 6 meses e a proibição de rastreamento de GPS persistente em background.
+
+- De prazo: A primeira versão funcional e estável do sistema (MVP), contemplando o core de Cadastro por CEP, Mapa da Solidariedade e Doações, deve estar integralmente desenvolvida, testada e implantada no bairro-piloto dentro do prazo limite e improrrogável de 4 meses.
 
 ---
 
 ##  13. Premissas
 
-- Usuário terá acesso à internet  
-- Sistema será usado em dispositivos móveis  
+As premissas representam fatores considerados como verdadeiros para que o planejamento do projeto faça sentido e tenha viabilidade de execução:
+
+- Usuário terá acesso à internet: Assume-se que os moradores possuem pacotes mínimos de dados móveis (3G/4G) ou conexões Wi-Fi residenciais ativas para enviar publicações e receber os alertas push urgentes da vizinhança.
+
+- Sistema será usado em dispositivos móveis: Assume-se que a maior parte das interações práticas (como tirar foto de um item para doar na rua ou reportar um alagamento em tempo real) ocorrerá via smartphones, exigindo priorização absoluta da responsabilidade mobile.
+
+- Engajamento Comunitário: Assume-se que as associações de moradores apoiarão a divulgação da plataforma e fornecerão uma listagem inicial de líderes regionais idôneos para assumir os papéis de moderadores do sistema.
+
+- Perenidade das APIs: Assume-se que as APIs públicas gratuitas integradas ao projeto (como a ViaCEP para consulta de endereços) manterão suas políticas de uso vigentes e sem cobranças financeiras impeditivas durante o ciclo de vida do MVP.
 
 ---
-
-##  14. Observações Finais
-
-Informações adicionais relevantes.
-
----
-
-#  Orientações importantes
-
-- Requisitos devem ser claros, específicos e mensuráveis  
-- Evite termos vagos como “rápido” ou “bom”  
-- Requisitos não funcionais são obrigatórios  
-- A arquitetura deve responder aos requisitos  
-- Todo requisito deve ser testável  
-
----
-
-# Regra de ouro
-
-> Se não pode ser testado, não é um bom requisito.
