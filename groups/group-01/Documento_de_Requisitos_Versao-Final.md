@@ -300,10 +300,15 @@ Explique como a arquitetura atende aos requisitos não funcionais:
   - A solução permite futuras expansões, como novos pontos de venda, aplicativo móvel e integrações com outros sistemas.
 ---
 
-## 9. Casos de Uso e Diagramas UML
-Esta seção representa visualmente e descritivamente o funcionamento do sistema Mini Mercado. 
+# 9. Casos de Uso e Diagramas UML
+Esta seção representa visualmente e descritivamente o funcionamento do sistema Mini Mercado Autônomo. Os diagramas UML auxiliam na compreensão das funcionalidades do sistema, dos atores envolvidos, dos fluxos de operação e da estrutura principal da aplicação.
 
-O sistema possui três atores principais: Administrador, Funcionário e Caixa. Cada ator possui permissões específicas dentro do sistema, conforme sua função no processo de controle de produtos, vendas, estoque e relatórios.
+Os principais atores do sistema são:
+
+**Usuário:** pessoa que realiza compras no Mini Mercado Autônomo;
+**Administrador:** responsável pelo cadastro de produtos, consulta de relatórios e gerenciamento geral do sistema;
+**Funcionário/Repositor:** responsável por atualizar e repor o estoque;
+**Sistema de Pagamento:** serviço externo responsável por validar pagamentos digitais.
 
 ---
 
@@ -312,12 +317,12 @@ O sistema possui três atores principais: Administrador, Funcionário e Caixa. C
 Os casos de uso representam as principais interações entre os usuários e o sistema Mini Mercado.
 
 ---
-### UC01 - Realizar Login
+## UC01 - Realizar Login
 
-**Ator:** Funcionário / Administrador / Caixa
+**Ator:** Usuário / Administrador / Funcionário
 
 **Descrição:**
-Permite que o usuário autenticado acesse o sistema do Mini Mercado utilizando usuário e senha válidos.
+Permite que o usuário autenticado acesse o sistema do Mini Mercado Autônomo utilizando usuário e senha válidos.
 
 ---
 
@@ -326,7 +331,7 @@ Permite que o usuário autenticado acesse o sistema do Mini Mercado utilizando u
 1. Usuário acessa a tela de login
 2. Usuário informa usuário e senha
 3. Sistema valida os dados informados
-4. Sistema concede acesso ao painel principal
+4. O sistema concede acesso ao painel correspondente ao perfil do usuário
 
 ---
 
@@ -338,7 +343,7 @@ Permite que o usuário autenticado acesse o sistema do Mini Mercado utilizando u
 
 ---
 
-### UC02 - Cadastrar Produto
+## UC02 - Cadastrar Produto
 
 **Ator:** Administrador
 
@@ -366,9 +371,9 @@ Permite que o administrador cadastre novos produtos no sistema do Mini Mercado, 
 
 ---
 
-### UC03 - Atualizar Estoque
+## UC03 - Atualizar Estoque
 
-**Ator:** Funcionário
+**Ator:** Funcionário / Repositor
 
 **Descrição:**
 Permite que o funcionário atualize a quantidade de produtos disponíveis no estoque, adicionando ou removendo unidades conforme a necessidade.
@@ -395,25 +400,27 @@ Permite que o funcionário atualize a quantidade de produtos disponíveis no est
 
 ---
 
-### UC04 - Registrar Venda
+## UC04 - Registrar Venda
 
-**Ator:** Caixa
+**Ator:** Usuário
 
 **Descrição:**
-Permite que o caixa registre uma venda, calcule o valor total dos produtos e atualize automaticamente o estoque após a conclusão da venda.
+Permite que o usuário realize uma compra de forma autônoma, sem a necessidade de um caixa, utilizando o sistema de autoatendimento do Mini Mercado.
 
 ---
 
 ### Fluxo principal
 
-1. Caixa inicia uma nova venda
-2. Caixa seleciona ou registra os produtos comprados
+1. Usuário inicia uma nova compra no sistema
+2. Usuário seleciona ou registra os produtos desejados
 3. Sistema consulta a disponibilidade dos produtos no estoque
-4. Sistema calcula o valor total da venda
-5. Caixa confirma o pagamento
-6. Sistema registra a venda no banco de dados
-7. Sistema atualiza automaticamente o estoque
-8. Sistema informa que a venda foi concluída com sucesso
+4. Sistema calcula o valor total da compra
+5. Usuário escolhe a forma de pagamento
+6. Sistema envia os dados para validação do pagamento
+7. Sistema confirma o pagamento aprovado
+8. Sistema registra a venda no banco de dados
+9. Sistema atualiza o estoque automaticamente
+10. O sistema informa que a compra foi concluída
 
 ---
 
@@ -422,12 +429,10 @@ Permite que o caixa registre uma venda, calcule o valor total dos produtos e atu
 - Produto sem estoque
 - Produto não encontrado
 - Pagamento não aprovado
-- Venda cancelada
-- Erro ao registrar a venda no banco de dados
-
+- Compra cancelada pelo usuário
 ---
 
-### UC05 - Consultar Relatórios
+## UC05 - Consultar Relatórios
 
 **Ator:** Administrador
 
@@ -453,19 +458,48 @@ Permite que o administrador consulte relatórios de vendas e estoque para acompa
 - Usuário sem permissão para acessar os relatórios
 
 ---
-### Diagrama de Caso de Uso 
+## UC06 - Validar Pagamento
+
+**Ator:** Sistema de Pagamento
+
+**Descrição:**
+Permite que o sistema externo de pagamento valide a transação realizada pelo usuário durante a compra.
+
+---
+
+## Fluxo principal
+1. Sistema envia os dados da transação para o sistema de pagamento
+2. Sistema de pagamento analisa a transação
+3. Sistema de pagamento retorna a confirmação do pagamento
+4. Sistema libera a finalização da compra
+   
+---
+
+## Fluxo alternativo
+- Pagamento recusado
+- Falha de comunicação com o sistema de pagamento
+- Tempo de resposta excedido
+  
+---
+
+## Diagrama de Caso de Uso
 
 ```mermaid
 flowchart LR
+    Usuario[Usuário]
     Administrador[Administrador]
-    Funcionario[Funcionário]
-    Caixa[Caixa]
+    Funcionario[Funcionário / Repositor]
+    Pagamento[Sistema de Pagamento]
 
     UC01((Realizar Login))
     UC02((Cadastrar Produto))
     UC03((Atualizar Estoque))
-    UC04((Registrar Venda))
+    UC04((Realizar Compra))
     UC05((Consultar Relatórios))
+    UC06((Validar Pagamento))
+
+    Usuario --> UC01
+    Usuario --> UC04
 
     Administrador --> UC01
     Administrador --> UC02
@@ -474,21 +508,24 @@ flowchart LR
     Funcionario --> UC01
     Funcionario --> UC03
 
-    Caixa --> UC01
-    Caixa --> UC04
+    UC04 --> UC06
+    Pagamento --> UC06
 ```
 ---
-## 9.2 Diagrama de Classes (UML)
+### 9.2 Diagrama de Classes (UML)
 
 O diagrama de classes representa a estrutura principal do sistema, mostrando as entidades, seus atributos e os relacionamentos entre elas.
 
 O sistema possui as seguintes classes principais:
-Usuario: representa os usuários que acessam o sistema;
-Venda: representa uma venda realizada;
-ItemVenda: representa os produtos inseridos em uma venda;
-Produto: representa os produtos cadastrados no estoque.
+**Usuario:** representa os usuários que acessam o sistema;
+**Venda:** representa uma venda realizada;
+**ItemVenda:** representa os produtos inseridos em uma venda;
+**Produto:** representa os produtos cadastrados no estoque;
+**Pagamento:** representa o pagamento digital realizado pelo usuário.
 
-### Diagrama de Classes
+---
+
+### Diagrama de Classes UML
 
 ```mermaid
 classDiagram
@@ -498,17 +535,7 @@ classDiagram
         +string email
         +string senha
         +string perfil
-    }
-
-    class Venda {
-        +int idVenda
-        +date data
-        +float valorTotal
-    }
-
-    class ItemVenda {
-        +int quantidade
-        +float subtotal
+        +login()
     }
 
     class Produto {
@@ -517,11 +544,36 @@ classDiagram
         +float preco
         +int quantidadeEstoque
         +string categoria
+        +atualizarEstoque()
+    }
+
+    class Venda {
+        +int idVenda
+        +date data
+        +float valorTotal
+        +string status
+        +calcularTotal()
+        +finalizarVenda()
+    }
+
+    class ItemVenda {
+        +int quantidade
+        +float subtotal
+        +calcularSubtotal()
+    }
+
+    class Pagamento {
+        +int idPagamento
+        +string formaPagamento
+        +float valorPago
+        +string statusPagamento
+        +validarPagamento()
     }
 
     Usuario "1" --> "*" Venda : realiza
     Venda "1" --> "*" ItemVenda : possui
     Produto "1" --> "*" ItemVenda : compõe
+    Venda "1" --> "1" Pagamento : gera
 ```
 ---
 
