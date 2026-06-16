@@ -298,108 +298,231 @@ Explique como a arquitetura atende aos requisitos não funcionais:
   - O sistema utilizará HTTPS, criptografia de dados e autenticação de usuários, seguindo as diretrizes da LGPD.
 - Escalabilidade  
   - A solução permite futuras expansões, como novos pontos de venda, aplicativo móvel e integrações com outros sistemas.
-
----
----
-
 ---
 
 ## 9. Casos de Uso e Diagramas UML
+Esta seção representa visualmente e descritivamente o funcionamento do sistema Mini Mercado. 
 
-Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
-
-Os diagramas ajudam na:
-- modelagem do sistema;
-- comunicação entre equipe;
-- entendimento da arquitetura e funcionalidades;
-- documentação técnica do projeto.
+O sistema possui três atores principais: Administrador, Funcionário e Caixa. Cada ator possui permissões específicas dentro do sistema, conforme sua função no processo de controle de produtos, vendas, estoque e relatórios.
 
 ---
 
-# 9.1 Casos de Uso
+## 9.1 Casos de Uso
 
-Os casos de uso representam as interações entre usuários (atores) e o sistema.
+Os casos de uso representam as principais interações entre os usuários e o sistema Mini Mercado.
 
 ---
-
 ### UC01 - Realizar Login
 
-**Ator:** Usuário  
+**Ator:** Funcionário / Administrador / Caixa
 
-**Descrição:**  
-Permite que o usuário acesse o sistema utilizando credenciais válidas.
+**Descrição:**
+Permite que o usuário autenticado acesse o sistema do Mini Mercado utilizando usuário e senha válidos.
 
 ---
 
 ### Fluxo principal
-1. Usuário acessa a tela de login  
-2. Usuário informa e-mail e senha  
-3. Sistema valida credenciais  
-4. Sistema libera acesso  
+
+1. Usuário acessa a tela de login
+2. Usuário informa usuário e senha
+3. Sistema valida os dados informados
+4. Sistema concede acesso ao painel principal
 
 ---
 
 ### Fluxo alternativo
-- Credenciais inválidas  
-- Usuário esqueceu senha  
+
+- Usuário ou senha inválidos
+- Conta bloqueada
+- Usuário sem permissão de acesso
 
 ---
 
-## Exemplo de Diagrama de Caso de Uso
+### UC02 - Cadastrar Produto
 
-[Usuário]
+**Ator:** Administrador
 
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+**Descrição:**
+Permite que o administrador cadastre novos produtos no sistema do Mini Mercado, informando os dados necessários para controle de estoque e vendas.
 
 ---
 
+### Fluxo principal
+
+1. Administrador acessa o painel de produtos
+2. Administrador seleciona a opção de cadastrar novo produto
+3. Administrador informa nome, preço, categoria e quantidade em estoque
+4. Sistema valida os dados informados
+5. Sistema cadastra o produto no banco de dados
+6. Sistema confirma que o produto foi cadastrado com sucesso
+
+---
+
+### Fluxo alternativo
+
+- Dados obrigatórios não preenchidos
+- Produto já cadastrado
+- Erro ao salvar as informações no banco de dados
+
+---
+
+### UC03 - Atualizar Estoque
+
+**Ator:** Funcionário
+
+**Descrição:**
+Permite que o funcionário atualize a quantidade de produtos disponíveis no estoque, adicionando ou removendo unidades conforme a necessidade.
+
+---
+
+### Fluxo principal
+
+1. Funcionário acessa o módulo de estoque
+2. Funcionário seleciona o produto desejado
+3. Funcionário informa a quantidade a ser adicionada ou removida
+4. Sistema verifica os dados informados
+5. Sistema atualiza a quantidade do produto no estoque
+6. Sistema confirma a atualização do estoque
+
+---
+
+### Fluxo alternativo
+
+- Produto não encontrado
+- Quantidade inválida
+- Estoque insuficiente para remoção
+- Erro ao atualizar as informações no sistema
+
+---
+
+### UC04 - Registrar Venda
+
+**Ator:** Caixa
+
+**Descrição:**
+Permite que o caixa registre uma venda, calcule o valor total dos produtos e atualize automaticamente o estoque após a conclusão da venda.
+
+---
+
+### Fluxo principal
+
+1. Caixa inicia uma nova venda
+2. Caixa seleciona ou registra os produtos comprados
+3. Sistema consulta a disponibilidade dos produtos no estoque
+4. Sistema calcula o valor total da venda
+5. Caixa confirma o pagamento
+6. Sistema registra a venda no banco de dados
+7. Sistema atualiza automaticamente o estoque
+8. Sistema informa que a venda foi concluída com sucesso
+
+---
+
+### Fluxo alternativo
+
+- Produto sem estoque
+- Produto não encontrado
+- Pagamento não aprovado
+- Venda cancelada
+- Erro ao registrar a venda no banco de dados
+
+---
+
+### UC05 - Consultar Relatórios
+
+**Ator:** Administrador
+
+**Descrição:**
+Permite que o administrador consulte relatórios de vendas e estoque para acompanhar o funcionamento e o desempenho do Mini Mercado.
+
+---
+
+### Fluxo principal
+
+1. Administrador acessa o módulo de relatórios
+2. Administrador seleciona o tipo de relatório desejado
+3. Sistema consulta os dados no banco de dados
+4. Sistema organiza as informações de vendas e estoque
+5. Sistema exibe o relatório na tela
+
+---
+
+### Fluxo alternativo
+
+- Nenhum dado encontrado
+- Erro na geração do relatório
+- Usuário sem permissão para acessar os relatórios
+
+---
+### Diagrama de Caso de Uso 
+
+```mermaid
+flowchart LR
+    Administrador[Administrador]
+    Funcionario[Funcionário]
+    Caixa[Caixa]
+
+    UC01((Realizar Login))
+    UC02((Cadastrar Produto))
+    UC03((Atualizar Estoque))
+    UC04((Registrar Venda))
+    UC05((Consultar Relatórios))
+
+    Administrador --> UC01
+    Administrador --> UC02
+    Administrador --> UC05
+
+    Funcionario --> UC01
+    Funcionario --> UC03
+
+    Caixa --> UC01
+    Caixa --> UC04
+```
+---
 ## 9.2 Diagrama de Classes (UML)
 
-O diagrama de classes representa:
+O diagrama de classes representa a estrutura principal do sistema, mostrando as entidades, seus atributos e os relacionamentos entre elas.
 
-- estrutura do sistema;
-- entidades;
-- atributos;
-- métodos;
-- relacionamentos.
+O sistema possui as seguintes classes principais:
+Usuario: representa os usuários que acessam o sistema;
+Venda: representa uma venda realizada;
+ItemVenda: representa os produtos inseridos em uma venda;
+Produto: representa os produtos cadastrados no estoque.
 
----
+### Diagrama de Classes
 
-### Exemplo
+```mermaid
+classDiagram
+    class Usuario {
+        +int id
+        +string nome
+        +string email
+        +string senha
+        +string perfil
+    }
 
-```text
-+------------------+
-|     Usuário      |
-+------------------+
-| - id             |
-| - nome           |
-| - email          |
-| - senha          |
-+------------------+
-| + login()        |
-| + logout()       |
-+------------------+
+    class Venda {
+        +int idVenda
+        +date data
+        +float valorTotal
+    }
+
+    class ItemVenda {
+        +int quantidade
+        +float subtotal
+    }
+
+    class Produto {
+        +int idProduto
+        +string nome
+        +float preco
+        +int quantidadeEstoque
+        +string categoria
+    }
+
+    Usuario "1" --> "*" Venda : realiza
+    Venda "1" --> "*" ItemVenda : possui
+    Produto "1" --> "*" ItemVenda : compõe
 ```
-
----
-
-### Exemplo com relacionamento
-
-```text
-+------------------+        +------------------+
-|     Usuário      | 1    * |      Pedido      |
-+------------------+--------+------------------+
-| id               |        | id               |
-| nome             |        | valor            |
-+------------------+        +------------------+
-```
-
 ---
 
 ## 9.3 Diagrama de Atividades (UML)
@@ -501,40 +624,6 @@ flowchart TD
     Internet --> Servidor
     Servidor --> Banco
 ```
-
-
-
-
----
-
-## 9.7 Ferramentas Recomendadas
-
-Os diagramas podem ser feitos utilizando:
-
-- Draw.io
-- Lucidchart
-- StarUML
-- Visual Paradigm
-- PlantUML
-- Mermaid
-- Figma
-
----
-
-## 9.8 Observações Importantes
-
-- Os diagramas devem representar o sistema REAL do grupo;
-- Evitem diagramas genéricos;
-- Mantenham consistência entre requisitos e diagramas;
-- Diagramas devem possuir nomes claros;
-- Atualizem os diagramas conforme o sistema evoluir.
-
----
-
-# Regra importante
-
-> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
-
 ---
 
 ##  10. Plano de Testes
