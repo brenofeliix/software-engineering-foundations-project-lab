@@ -454,44 +454,56 @@ sequenceDiagram
     Sistema-->>Caixa: venda concluída
 ```
 ---
-
 ## 9.5 Diagrama de Componentes
 
-Representa os módulos e componentes principais do sistema.
+O diagrama de componentes apresenta os módulos principais do sistema Mini Mercado e como eles se relacionam.
 
----
+O sistema é composto por:
 
-### Exemplo
+- **Frontend:** interface utilizada pelos usuários;
+- **API Backend:** responsável pelo processamento das regras de negócio;
+- **Banco de Dados:** armazena usuários, produtos, vendas e estoque;
+- **Módulo Estoque:** gerencia entrada e saída de produtos;
+- **Módulo Vendas:** registra vendas e calcula valores.
 
-```text
-[Frontend]
-     |
-     v
-[API Backend]
-     |
-     v
-[Banco de Dados]
+```mermaid
+flowchart TD
+    Frontend[Frontend]
+    Backend[API Backend]
+    Banco[(Banco de Dados)]
+    ModuloEstoque[Módulo Estoque]
+    ModuloVendas[Módulo Vendas]
+
+    Frontend --> Backend
+    Backend --> Banco
+    Backend --> ModuloEstoque
+    Backend --> ModuloVendas
+    ModuloEstoque --> Banco
+    ModuloVendas --> Banco
 ```
 
 ---
 
-## 9.6 Diagrama de Implantação (Deployment)
+## 9.6 Diagrama de Implantação Deployment
 
-Representa onde o sistema será executado.
+O diagrama de implantação representa onde o sistema será executado e como os elementos se comunicam.
 
----
+Neste sistema, o usuário acessa a aplicação pela internet, que se comunica com o servidor web/API. O servidor, por sua vez, acessa o banco de dados para consultar e armazenar informações de usuários, produtos, vendas e estoque.
 
-### Exemplo
+```mermaid
+flowchart TD
+    Usuario[Usuário]
+    Internet[[Internet]]
+    Servidor[Servidor Web / API]
+    Banco[(Banco de Dados)]
 
-```text
-[Usuário]
-     |
-Internet
-     |
-[Servidor Web]
-     |
-[Servidor Banco de Dados]
+    Usuario --> Internet
+    Internet --> Servidor
+    Servidor --> Banco
 ```
+
+
+
 
 ---
 
