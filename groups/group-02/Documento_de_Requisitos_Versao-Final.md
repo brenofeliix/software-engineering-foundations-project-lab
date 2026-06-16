@@ -848,36 +848,7 @@ O diagrama de classes representa:
 - relacionamentos.
 
 ---
-
-### Exemplo
-
-```text
-+------------------+
-|     Usuário      |
-+------------------+
-| - id             |
-| - nome           |
-| - email          |
-| - senha          |
-+------------------+
-| + login()        |
-| + logout()       |
-+------------------+
-```
-
----
-
-### Exemplo com relacionamento
-
-```text
-+------------------+        +------------------+
-|     Usuário      | 1    * |      Pedido      |
-+------------------+--------+------------------+
-| id               |        | id               |
-| nome             |        | valor            |
-+------------------+        +------------------+
-```
-
+![Diagrama de Classes](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/91c4e22f046ff2c25bc7a06c1b0b1564d8aa205b/groups/group-02/Diagrama%20de%20Classes%20(1).jpg)
 ---
 
 ## 9.3 Diagrama de Atividades (UML)
