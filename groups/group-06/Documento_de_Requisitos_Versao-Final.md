@@ -729,8 +729,7 @@ Embora a arquitetura inicial seja monolítica, sua organização modular permiti
 A aplicação poderá ser escalada verticalmente (aumento de recursos do servidor) ou horizontalmente (múltiplas instâncias da aplicação). Além disso, a separação clara entre frontend, backend e banco de dados facilita futuras migrações para arquiteturas mais complexas, caso o número de usuários aumente significativamente.
 
 ---
-# 9.1 Casos de Uso — CromStudy
----
+# 9.1 Casos de Uso 
 
 ## Diagrama
 ```text
@@ -778,17 +777,17 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC01 - Realizar Login
 
-*Usuário:Maria* 
+**Usuário: Maria** 
 
-*Descrição:* Permite que o usuário acesse o sistema utilizando credenciais válidas.
+**Descrição:** Permite que o usuário acesse o sistema utilizando credenciais válidas.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário acessa a tela de login.
 2. Usuário informa e-mail e senha.
 3. Sistema valida credenciais.
 4. Sistema libera acesso e redireciona para a Dashboard.
 
-*Fluxo alternativo:*
+**Fluxo alternativo:**
 - Credenciais inválidas: Sistema exibe mensagem de erro e solicita os dados novamente.
 - Usuário esqueceu a senha: Redireciona para o fluxo de recuperação de senha.
 
@@ -796,11 +795,11 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC02 - Cadastrar Conta
 
-*Usuário:Maria* 
+**Usuário: Maria**
 
-*Descrição:* Permite que um novo usuário crie uma conta no sistema informando seus dados básicos.
+**Descrição:** Permite que um novo usuário crie uma conta no sistema informando seus dados básicos.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário acessa a tela de cadastro.
 2. Usuário informa nome, e-mail e define uma senha.
 3. Sistema valida se o e-mail já existe e se a senha cumpre os requisitos mínimos.
@@ -810,11 +809,11 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC03 - Gerenciar Cronograma
 
-*Usuário:Maria* 
+**Usuário: Maria**
 
-*Descrição:* Permite ao usuário organizar a sua rotina criando, editando ou excluindo tarefas de estudo semanais.
+**Descrição:** Permite ao usuário organizar a sua rotina criando, editando ou excluindo tarefas de estudo semanais.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário acessa o módulo de cronograma/agenda.
 2. Usuário seleciona a opção de adicionar nova atividade.
 3. Usuário informa a matéria, dia da semana e horários de início e fim.
@@ -824,11 +823,11 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC04 - Usar Método Pomodoro
 
-*Usuário:Maria* 
+**Usuário: Maria** 
 
-*Descrição:* Controla os ciclos de estudo focado e intervalos de descanso do estudante através de um cronômetro regressivo.
+**Descrição:** Controla os ciclos de estudo focado e intervalos de descanso do estudante através de um cronômetro regressivo.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário inicia a sessão do método Pomodoro.
 2. Sistema inicia a contagem regressiva de foco (25 minutos).
 3. Ao finalizar o tempo, o sistema emite um alerta sonoro e inicia o intervalo automático (5 minutos).
@@ -838,27 +837,27 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC05 - Gerenciar Flashcards
 
-*Usuário:Maria* 
+**Usuário: Maria**
 
-*Descrição:* Permite criar e revisar cartões de memorização contendo uma pergunta na frente e uma resposta no verso.
+**Descrição:** Permite criar e revisar cartões de memorização contendo uma pergunta na frente e uma resposta no verso.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário cria um flashcard inserindo pergunta, resposta e categoria.
 2. Durante a revisão, o usuário responde mentalmente e vira o card para checar a resposta.
 3. Usuário indica se acertou ou errou.
 4. Sistema registra o histórico de desempenho.
 
-*Relacionamento:* «include» UC06 (Visualizar Métricas) e «include» UC07 (Jogar Minijogo/Quiz).
+**Relacionamento:** «include» UC06 (Visualizar Métricas) e «include» UC07 (Jogar Minijogo/Quiz).
 
 ---
 
 ## UC06 - Visualizar Métricas
 
-*Usuário:Maria* 
+**Usuário: Maria** 
 
-*Descrição:* Exibe relatórios estatísticos sobre o tempo de estudo consumido e a taxa de rendimento nos flashcards.
+**Descrição:** Exibe relatórios estatísticos sobre o tempo de estudo consumido e a taxa de rendimento nos flashcards.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário acessa o painel de métricas.
 2. Sistema faz a leitura do histórico de sessões e acertos/erros.
 3. Sistema renderiza relatórios e gráficos apontando pontos de foco e matérias prioritárias para revisão.
@@ -867,11 +866,11 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC07 - Jogar Minijogo/Quiz
 
-*Usuário:Maria* 
+**Usuário: Maria**
 
-*Descrição:* O usuário participa de um quiz baseado nos flashcards cadastrados para obter pontuações e construir o mundo virtual do seu avatar.
+**Descrição:** O usuário participa de um quiz baseado nos flashcards cadastrados para obter pontuações e construir o mundo virtual do seu avatar.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário inicializa o modo de jogo.
 2. Sistema seleciona perguntas aleatórias baseadas nos flashcards já cadastrados pelo usuário.
 3. Usuário responde às questões e o sistema atualiza o saldo de pontuação acumulada.
@@ -880,18 +879,18 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## UC08 - Editar Perfil
 
-*Usuário:Maria* 
+**Usuário: Maria** 
 
-*Descrição:* Permite a customização de dados do usuário e alteração de parâmetros da conta.
+**Descrição:** Permite a customização de dados do usuário e alteração de parâmetros da conta.
 
-*Fluxo principal:*
+**Fluxo principal:**
 1. Usuário acessa as configurações de perfil.
 2. Altera as informações desejadas (como nome ou foto de perfil).
 3. Sistema processa a atualização e salva os novos dados imediatamente.
 
-# 9.2 Diagrama de Classes (UML) — CromStudy
-
 ---
+
+# 9.2 Diagrama de Classes (UML)
 
 ## Diagrama
 
@@ -961,17 +960,17 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 O diagrama de classes do CromStudy é organizado ao redor da classe *Usuário, que representa o ator central do sistema. Ela armazena os dados de identificação (id, nome, e-mail e senha) e provê o método de autenticação login(). A partir do Usuário, emanam relacionamentos de multiplicidade 1 para muitos (1..) com as principais entidades de planejamento e execução do sistema.
 
-A classe *Cronograma* representa a grade horária semanal do estudante, armazenando matéria, dia da semana e os horários de início e fim de cada bloco de estudo. O método salvar() persiste as configurações realizadas pelo usuário.
+A classe **Cronograma** representa a grade horária semanal do estudante, armazenando matéria, dia da semana e os horários de início e fim de cada bloco de estudo. O método salvar() persiste as configurações realizadas pelo usuário.
 
-A classe *Tarefa* controla os checklists de atividades do estudante, com atributos de título, descrição, data e um status booleano que indica se a tarefa foi concluída. O método concluir() aciona uma associação que gera instâncias na classe *Pontuação*, recompensando o estudante pela conclusão.
+A classe **Tarefa** controla os checklists de atividades do estudante, com atributos de título, descrição, data e um status booleano que indica se a tarefa foi concluída. O método concluir() aciona uma associação que gera instâncias na classe *Pontuação*, recompensando o estudante pela conclusão.
 
-A classe *SessaoEstudo* gerencia o estado de execução do método Pomodoro, registrando a duração, a quantidade de ciclos e o status da sessão. Por meio da associação "gera", cada sessão concluída produz registros na classe *Notificação*, que encapsula os alertas sonoros e visuais disparados ao usuário durante e após os ciclos.
+A classe **SessaoEstudo** gerencia o estado de execução do método Pomodoro, registrando a duração, a quantidade de ciclos e o status da sessão. Por meio da associação "gera", cada sessão concluída produz registros na classe *Notificação*, que encapsula os alertas sonoros e visuais disparados ao usuário durante e após os ciclos.
 
-A classe *Flashcard* armazena os cartões de memorização, com pergunta, resposta, categoria e o histórico de acertos e erros. Ela possui um relacionamento de dependência comportamental do tipo «use» direcionado à classe *Minijogo*, pois os flashcards são a fonte de perguntas do quiz.
+A classe **Flashcard** armazena os cartões de memorização, com pergunta, resposta, categoria e o histórico de acertos e erros. Ela possui um relacionamento de dependência comportamental do tipo «use» direcionado à classe *Minijogo*, pois os flashcards são a fonte de perguntas do quiz.
 
-A classe *Pontuação* controla o saldo de pontos do estudante, acumulados por meio de tarefas concluídas e quizzes realizados. Ela possui uma associação direta com o *Minijogo*, fornecendo os pontos necessários para desbloquear itens do mini mundo.
+A classe **Pontuação** controla o saldo de pontos do estudante, acumulados por meio de tarefas concluídas e quizzes realizados. Ela possui uma associação direta com o *Minijogo*, fornecendo os pontos necessários para desbloquear itens do mini mundo.
 
-O *Minijogo* encapsula o quiz e a gamificação do avatar, com uma lista de questões geradas dinamicamente e a pontuação total obtida pelo usuário.
+O **Minijogo** encapsula o quiz e a gamificação do avatar, com uma lista de questões geradas dinamicamente e a pontuação total obtida pelo usuário.
 
 # 9.3 Diagrama de Atividades (UML)
 
@@ -1046,17 +1045,17 @@ Representa o fluxo de execução de processos no sistema desde a entrada do usu�
 
 O diagrama de atividades representa o fluxo completo de execução do CromStudy, desde o primeiro acesso do usuário até o uso das funcionalidades principais.
 
-O fluxo inicia no nó de partida com a atividade *Acessar o aplicativo. Em seguida, uma estrutura de decisão condicional verifica se o usuário já possui registro no sistema. Caso **não* tenha conta, o sistema direciona o fluxo para a atividade de *Cadastro, onde o usuário preenche nome, e-mail e senha. Após a validação e criação da conta, o fluxo retorna ao passo de login. Caso o usuário **já tenha conta, avança diretamente para a atividade de **login*.
+O fluxo inicia no nó de partida com a atividade *Acessar o aplicativo. Em seguida, uma estrutura de decisão condicional verifica se o usuário já possui registro no sistema. Caso **não** tenha conta, o sistema direciona o fluxo para a atividade de *Cadastro, onde o usuário preenche nome, e-mail e senha. Após a validação e criação da conta, o fluxo retorna ao passo de login. Caso o usuário **já tenha conta, avança diretamente para a atividade de **login**.
 
-Na etapa de login, o sistema verifica a condição *Credenciais válidas?. Caso sejam inválidas, o fluxo aciona a atividade **Exibir erro* e retorna ao preenchimento dos dados. Caso sejam válidas, o usuário é direcionado para a *Dashboard*.
+Na etapa de login, o sistema verifica a condição *Credenciais válidas ?. Caso sejam inválidas, o fluxo aciona a atividade **Exibir erro** e retorna ao preenchimento dos dados. Caso sejam válidas, o usuário é direcionado para a **Dashboard**.
 
-No painel principal, ocorre a decisão *Escolher funcionalidade*, que chaveia o usuário para três caminhos possíveis:
+No painel principal, ocorre a decisão **Escolher funcionalidade**, que chaveia o usuário para três caminhos possíveis:
 
-No caminho do *Cronograma*, o usuário adiciona ou edita tarefas de estudo, que são salvas e exibidas no checklist diário.
+No caminho do **Cronograma**, o usuário adiciona ou edita tarefas de estudo, que são salvas e exibidas no checklist diário.
 
-No caminho do *Minijogo*, o sistema gera automaticamente um quiz com base nos flashcards cadastrados. O usuário responde as questões e o sistema atualiza o saldo de pontuação acumulada.
+No caminho do **Minijogo**, o sistema gera automaticamente um quiz com base nos flashcards cadastrados. O usuário responde as questões e o sistema atualiza o saldo de pontuação acumulada.
 
-No caminho do *Pomodoro, o sistema avalia constantemente a condição **Ciclo finalizado?. Enquanto o timer estiver ativo, o fluxo repete o loop de foco de 25 minutos. Assim que o ciclo se encerra, o sistema emite um alerta sonoro e inicia o intervalo de 5 minutos. Após o intervalo, o fluxo força a execução da atividade **Revisar flashcards* antes de atingir o nó de fim.
+No caminho do *Pomodoro, o sistema avalia constantemente a condição Ciclo finalizado ?. Enquanto o timer estiver ativo, o fluxo repete o loop de foco de 25 minutos. Assim que o ciclo se encerra, o sistema emite um alerta sonoro e inicia o intervalo de 5 minutos. Após o intervalo, o fluxo força a execução da atividade **Revisar flashcards** antes de atingir o nó de fim.
 
 ---
 
@@ -1124,13 +1123,13 @@ Frontend  ->   Usuário:   exibir resultado e pontuação
 
 O diagrama de sequência ilustra a troca de mensagens entre os objetos do sistema ao longo do tempo, evidenciando a ordem das comunicações em cada cenário de uso do CromStudy.
 
-*Cenário 1 — Autenticação de Usuário:* o Usuário insere e-mail e senha no Frontend, que realiza uma chamada HTTP via POST /auth/login ao Backend. O Backend consulta o Banco de dados para validar as credenciais com verificação de hash criptográfico. Confirmada a identidade, o Backend gera internamente um token JWT e retorna uma resposta 200 OK ao Frontend. Por fim, o Frontend exibe a dashboard ao usuário.
+**Cenário 1 — Autenticação de Usuário:** o Usuário insere e-mail e senha no Frontend, que realiza uma chamada HTTP via POST /auth/login ao Backend. O Backend consulta o Banco de dados para validar as credenciais com verificação de hash criptográfico. Confirmada a identidade, o Backend gera internamente um token JWT e retorna uma resposta 200 OK ao Frontend. Por fim, o Frontend exibe a dashboard ao usuário.
 
-*Cenário 2 — Inicialização de Ciclo Pomodoro:* o Usuário aciona o botão de início no Frontend, que despacha uma requisição POST /sessao ao Backend. O Backend registra os metadados da sessão no Banco de dados e recebe a confirmação de persistência. Em seguida, responde ao Frontend com a confirmação de que o timer foi iniciado, e o Frontend passa a exibir o contador regressivo de 25:00 na interface do usuário.
+**Cenário 2 — Inicialização de Ciclo Pomodoro:** o Usuário aciona o botão de início no Frontend, que despacha uma requisição POST /sessao ao Backend. O Backend registra os metadados da sessão no Banco de dados e recebe a confirmação de persistência. Em seguida, responde ao Frontend com a confirmação de que o timer foi iniciado, e o Frontend passa a exibir o contador regressivo de 25:00 na interface do usuário.
 
-*Cenário 3 — Criação de Flashcard:* o Usuário preenche pergunta, resposta e categoria no Frontend, que envia os dados via POST /flashcards ao Backend. O Backend persiste o flashcard no Banco e retorna 201 Created. O Frontend então exibe o novo card na listagem do usuário.
+**Cenário 3 — Criação de Flashcard:** o Usuário preenche pergunta, resposta e categoria no Frontend, que envia os dados via POST /flashcards ao Backend. O Backend persiste o flashcard no Banco e retorna 201 Created. O Frontend então exibe o novo card na listagem do usuário.
 
-*Cenário 4 — Geração de Quiz no Minijogo:* o Usuário inicializa o modo de jogo e o Frontend solicita ao Backend via GET /minijogo/quiz as questões. O Backend busca os flashcards do usuário no Banco, seleciona perguntas aleatoriamente e retorna a lista ao Frontend. O usuário responde cada questão e o Frontend envia cada resposta via POST /minijogo/resposta. O Backend atualiza a pontuação acumulada no Banco e retorna o placar atualizado, que é exibido ao usuário ao final do quiz.
+**Cenário 4 — Geração de Quiz no Minijogo:** o Usuário inicializa o modo de jogo e o Frontend solicita ao Backend via GET /minijogo/quiz as questões. O Backend busca os flashcards do usuário no Banco, seleciona perguntas aleatoriamente e retorna a lista ao Frontend. O usuário responde cada questão e o Frontend envia cada resposta via POST /minijogo/resposta. O Backend atualiza a pontuação acumulada no Banco e retorna o placar atualizado, que é exibido ao usuário ao final do quiz.
 
 ---
 
@@ -1211,13 +1210,13 @@ Representa os módulos e componentes principais do sistema e como se acoplam.
 
 O diagrama de componentes apresenta a estrutura modular do CromStudy, organizada em duas grandes camadas de processamento — Frontend e Backend — além das integrações externas e da infraestrutura de hospedagem.
 
-O *Frontend* é desenvolvido em ecossistema híbrido unificado, utilizando React Native para as versões mobile (Android e iOS) e React.js para a versão web. Ele é composto por componentes isolados e modulares de interface, cada um responsável por uma funcionalidade específica: Autenticação, Agenda e Cronograma, Pomodoro, Flashcards, Métricas, Minijogo e Perfil. A comunicação entre o Frontend e os serviços do Backend ocorre exclusivamente por meio de uma interface unificada de *API REST (HTTP/JSON)*.
+O **Frontend** é desenvolvido em ecossistema híbrido unificado, utilizando React Native para as versões mobile (Android e iOS) e React.js para a versão web. Ele é composto por componentes isolados e modulares de interface, cada um responsável por uma funcionalidade específica: Autenticação, Agenda e Cronograma, Pomodoro, Flashcards, Métricas, Minijogo e Perfil. A comunicação entre o Frontend e os serviços do Backend ocorre exclusivamente por meio de uma interface unificada de *API REST (HTTP/JSON)*.
 
-O *Backend* é construído sobre o runtime Node.js com o framework Express, e divide o processamento das regras de negócio em módulos servidores especializados e independentes: Módulo Usuários, Módulo Agenda, Módulo Flashcards, Módulo Métricas, Módulo Gamificação e Módulo Notificações. Essa camada possui acoplamento exclusivo de leitura e gravação com o componente de banco de dados *PostgreSQL*.
+O *Backend* é construído sobre o runtime Node.js com o framework Express, e divide o processamento das regras de negócio em módulos servidores especializados e independentes: Módulo Usuários, Módulo Agenda, Módulo Flashcards, Módulo Métricas, Módulo Gamificação e Módulo Notificações. Essa camada possui acoplamento exclusivo de leitura e gravação com o componente de banco de dados **PostgreSQL**.
 
-As *dependências e APIs externas* ampliam as capacidades técnicas do sistema. O *Firebase* é utilizado pelo módulo de notificações para entrega de alertas via push notifications (FCM). A *Google Calendar API* é consumida pelo módulo de agenda para sincronização integrada de eventos. O *JWT* garante a criptografia e segurança das sessões autenticadas, e o *Swagger* provê a documentação automática das rotas da API.
+As **dependências e APIs externas** ampliam as capacidades técnicas do sistema. O **Firebase** é utilizado pelo módulo de notificações para entrega de alertas via push notifications (FCM). A **Google Calendar API** é consumida pelo módulo de agenda para sincronização integrada de eventos. O **JWT** garante a criptografia e segurança das sessões autenticadas, e o **Swagger** provê a documentação automática das rotas da API.
 
-A *infraestrutura de hospedagem* é gerenciada via Git e GitHub. O Frontend React.js é distribuído na plataforma *Vercel, aproveitando sua rede CDN global. O Backend Node.js + Express é hospedado na plataforma **Render*, que executa as rotas e regras de negócio da aplicação.
+A **infraestrutura de hospedagem** é gerenciada via Git e GitHub. O Frontend React.js é distribuído na plataforma Vercel, aproveitando sua rede CDN global. O Backend Node.js + Express é hospedado na plataforma **Render**, que executa as rotas e regras de negócio da aplicação.
 
 ---
 
@@ -1281,15 +1280,15 @@ Internet
 
 O diagrama de implantação descreve a infraestrutura física e em nuvem sobre a qual o CromStudy é executado em ambiente de produção, identificando cada nó de computação e os protocolos de rede utilizados.
 
-O ponto de partida são os *dispositivos do usuário, que se dividem em dois tipos. O primeiro é o **dispositivo mobile* («device»), composto por smartphones com Android 8+ ou iOS 13+, que executam nativamente o artefato *App React Native. Esse aplicativo conta com um subsistema interno de **Cache Local (offline), armazenado em disco no próprio dispositivo, que garante o funcionamento de funcionalidades como agenda, flashcards e Pomodoro mesmo sem conexão com a internet. O segundo é o **navegador web* («browser»), executado em computadores desktop ou notebooks, que carrega dinamicamente na memória o artefato *App React.js (SPA)*.
+O ponto de partida são os *dispositivos do usuário, que se dividem em dois tipos. O primeiro é o **dispositivo mobile** («device»), composto por smartphones com Android 8+ ou iOS 13+, que executam nativamente o artefato *App React Native. Esse aplicativo conta com um subsistema interno de Cache Local (offline), armazenado em disco no próprio dispositivo, que garante o funcionamento de funcionalidades como agenda, flashcards e Pomodoro mesmo sem conexão com a internet. O segundo é o **navegador web** («browser»), executado em computadores desktop ou notebooks, que carrega dinamicamente na memória o artefato *App React.js (SPA)*.
 
-Todos os dispositivos do usuário se comunicam com a infraestrutura em nuvem por meio da *Internet via protocolo HTTPS*, garantindo a criptografia e a segurança dos dados em trânsito.
+Todos os dispositivos do usuário se comunicam com a infraestrutura em nuvem por meio da **Internet via protocolo HTTPS**, garantindo a criptografia e a segurança dos dados em trânsito.
 
-O primeiro servidor em nuvem é o *Vercel* («server»), responsável pelo provisionamento escalável dos arquivos estáticos do Frontend. Os pacotes compilados do React.js (build) são protegidos e distribuídos globalmente por meio de uma topologia de *CDN com SSL*.
+O primeiro servidor em nuvem é o **Vercel** («server»), responsável pelo provisionamento escalável dos arquivos estáticos do Frontend. Os pacotes compilados do React.js (build) são protegidos e distribuídos globalmente por meio de uma topologia de **CDN com SSL**.
 
-O segundo servidor é o *Render* («server»), que executa a aplicação Backend em Node.js + Express. Esse nó gerencia o roteamento da *API REST, a autenticação por **JWT, e realiza chamadas externas para o **Firebase FCM* (envio de push notifications) e para a *Google Calendar API* (sincronização de agenda).
+O segundo servidor é o **Render** («server»), que executa a aplicação Backend em Node.js + Express. Esse nó gerencia o roteamento da *API REST, a autenticação por JWT, e realiza chamadas externas para o **Firebase FCM** (envio de push notifications) e para a **Google Calendar API** (sincronização de agenda).
 
-Por fim, o nó de banco de dados é o *Supabase* («database»), um serviço gerenciado em nuvem de alta disponibilidade que executa o motor relacional *PostgreSQL. Ele é responsável pela persistência de todos os dados do sistema — usuários, flashcards, tarefas, sessões, métricas e pontuações — e mantém rotinas automatizadas de **backup*.
+Por fim, o nó de banco de dados é o **Supabase** («database»), um serviço gerenciado em nuvem de alta disponibilidade que executa o motor relacional PostgreSQL. Ele é responsável pela persistência de todos os dados do sistema — usuários, flashcards, tarefas, sessões, métricas e pontuações — e mantém rotinas automatizadas de backup.
 
 ---
 
@@ -1302,36 +1301,40 @@ Os testes do CromStudy serão realizados durante todo o processo de desenvolvime
 
 Os testes serão executados nas versões web e mobile do sistema, verificando o correto funcionamento das funcionalidades de agenda, Pomodoro, flashcards, métricas de estudo, notificações e minijogo. Os resultados obtidos serão registrados para identificar possíveis falhas e realizar as correções necessárias antes da entrega do produto.
 
+---
+
 ### 10.2 Tipos de Teste
-- Unitário:
+### Teste Unitário:
 
 Verifica individualmente cada função ou componente do sistema, garantindo que execute corretamente sua responsabilidade.
 
 Exemplo:
-Registro de acertos e erros em flashcards.
-Cálculo do tempo total de estudo.
-
-- Integração
+- Registro de acertos e erros em flashcards.
+- Cálculo do tempo total de estudo.
+---
+### Teste de Integração
 
 Valida a comunicação entre diferentes módulos do sistema.
 
 Exemplo:
-Integração entre o Pomodoro e as métricas de estudo.
-Integração entre agenda e sistema de notificações.
-
-- Sistema
+- Integração entre o Pomodoro e as métricas de estudo.
+- Integração entre agenda e sistema de notificações.
+---
+### Teste de Sistema
 
 Avalia o funcionamento completo da aplicação em um ambiente próximo ao de produção.
 
 Exemplo:
-Criação de tarefas, utilização do Pomodoro e geração de relatórios de desempenho.
-
-- Aceitação
+- Criação de tarefas, utilização do Pomodoro e geração de relatórios de desempenho.
+---
+### Teste de Aceitação
 
 Realizado para verificar se o sistema atende às necessidades dos usuários finais.
 
 Exemplo:
-Usuário cria uma rotina de estudos e acompanha seu progresso utilizando as funcionalidades disponíveis.
+- Usuário cria uma rotina de estudos e acompanha seu progresso utilizando as funcionalidades disponíveis.
+
+---
 
 ### 10.3 Casos de Teste
 
@@ -1351,33 +1354,33 @@ A tarefa é salva e exibida corretamente na agenda.
 ---
 
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)
+
+### Teste de Performance (tempo de resposta)
   
-  Objetivo: garantir que o sistema apresente respostas rápidas ao usuário.
+**Objetivo:** garantir que o sistema apresente respostas rápidas ao usuário.
 
-  Critérios:
-  Carregamento das páginas em até 3 segundos.
-  Geração de relatórios em até 5 segundos.
-  Inicialização do temporizador Pomodoro de forma imediata.
-
-- Segurança
+**Critérios:**
+- Carregamento das páginas em até 3 segundos.
+- Geração de relatórios em até 5 segundos.
+- Inicialização do temporizador Pomodoro de forma imediata.
+---
+### Teste de Segurança
   
-  Objetivo: proteger os dados e informações dos usuários.
+**Objetivo:** proteger os dados e informações dos usuários.
 
-  Critérios:
-  Acesso permitido apenas para usuários autenticados.
-  Proteção das informações armazenadas.
-  Restrição de acesso aos dados de outros usuários.
-
-- Usabilidade
+**Critérios:**
+- Acesso permitido apenas para usuários autenticados.
+- Proteção das informações armazenadas.
+- Restrição de acesso aos dados de outros usuários.
+---
+### Teste de Usabilidade
   
-  Objetivo: verificar a facilidade de uso da aplicação.
+**Objetivo:** verificar a facilidade de uso da aplicação.
 
-  Critérios:
-
-  Interface intuitiva para estudantes.
-  Facilidade de navegação entre as funcionalidades.
-  Clareza das informações exibidas em telas e relatórios.
+**Critérios:**
+- Interface intuitiva para estudantes.
+- Facilidade de navegação entre as funcionalidades.
+- Clareza das informações exibidas em telas e relatórios.
 
 ---
 
@@ -1415,17 +1418,17 @@ Defina como validar os requisitos:
 
 ##  13. Premissas
 
-- P01. Os usuários terão acesso à internet para sincronização de dados, autenticação e utilização das funcionalidades online da plataforma.
+- **P01:** Os usuários terão acesso à internet para sincronização de dados, autenticação e utilização das funcionalidades online da plataforma.
 
-- P02. O sistema será utilizado em dispositivos móveis (Android e iOS) e em computadores por meio de navegadores web modernos.
+- **P02:** O sistema será utilizado em dispositivos móveis (Android e iOS) e em computadores por meio de navegadores web modernos.
 
-- P03. Os dispositivos utilizados pelos usuários atenderão aos requisitos mínimos de hardware e software necessários para executar a aplicação.
+- **P03:** Os dispositivos utilizados pelos usuários atenderão aos requisitos mínimos de hardware e software necessários para executar a aplicação.
 
-- P04. Os usuários fornecerão informações verdadeiras e válidas durante o processo de cadastro e utilização do sistema.
+- **P04:** Os usuários fornecerão informações verdadeiras e válidas durante o processo de cadastro e utilização do sistema.
 
-- P05. Os estudantes utilizarão regularmente as funcionalidades de estudo (Pomodoro, flashcards, quizzes e trilhas de aprendizagem), possibilitando o funcionamento adequado do sistema de gamificação.
+- **P05:** Os estudantes utilizarão regularmente as funcionalidades de estudo (Pomodoro, flashcards, quizzes e trilhas de aprendizagem), possibilitando o funcionamento adequado do sistema de gamificação.
   
-- P06. O sistema será utilizado principalmente por estudantes do ensino médio e vestibulandos interessados em organizar e acompanhar sua rotina de estudos.
+- **P06:** O sistema será utilizado principalmente por estudantes do ensino médio e vestibulandos interessados em organizar e acompanhar sua rotina de estudos.
   
 ---
 
