@@ -1385,11 +1385,22 @@ A tarefa é salva e exibida corretamente na agenda.
 ---
 
 ##  11. Critérios de Aceitação
+**Métricas**          
+- Taxa de sucesso das operações (cadastro, edição, exclusão): ≥ 95%.
+- Entrega de notificações programadas: ≥ 95%.
+- Disponibilidade das funcionalidades principais: ≥ 99% durante os testes.
 
-Defina como validar os requisitos:
-- Métricas  
-- Testes  
-- Condições de sucesso  
+**Testes**
+- Testes de Integração entre agenda, cronograma, métricas e gamificação.
+- Testes de Segurança para autenticação e proteção das informações do usuário.
+- Testes de Usabilidade com usuários simulando rotinas de estudo.
+- Testes de Performace para verificar tempos de resposta.
+
+**Condições de sucesso**
+- Todas as funcionalidades descritas nos requisitos funcionam sem erros críticos.
+- O sistema fornece feedback visual adequado para as ações realizadas.
+- Os elementos de gamificação incentivam a continuidade dos estudos e registram corretamente o progresso do usuário.
+- O usuário consegue planejar, executar e acompanhar seus estudos utilizando apenas o CromStudy.
 
 ---
 
@@ -1434,14 +1445,4 @@ Defina como validar os requisitos:
 
 ##  14. Observações Finais
 
-Informações adicionais relevantes.
-
----
-
-#  Orientações importantes
-
-- Requisitos devem ser claros, específicos e mensuráveis  
-- Evite termos vagos como “rápido” ou “bom”  
-- Requisitos não funcionais são obrigatórios  
-- A arquitetura deve responder aos requisitos  
-- Todo requisito deve ser testável
+O CromStudy é um projeto desenvolvido para auxiliar estudantes do ensino médio e vestibulandos na organização, foco e produtividade durante os estudos. Seu principal diferencial é a integração de funcionalidades como agenda, cronograma, flashcards, método Pomodoro, métricas de desempenho, alertas e gamificação em uma única plataforma. O sistema será desenvolvido seguindo boas práticas de usabilidade, segurança e qualidade de software, buscando oferecer uma experiência simples e eficiente para os usuários. Os requisitos apresentados servem como base inicial para o desenvolvimento e poderão ser ajustados conforme a evolução do projeto e os resultados dos testes. Além disso, futuras versões poderão incorporar novas funcionalidades para ampliar o suporte ao processo de aprendizagem e ao acompanhamento do desempenho dos estudantes.
