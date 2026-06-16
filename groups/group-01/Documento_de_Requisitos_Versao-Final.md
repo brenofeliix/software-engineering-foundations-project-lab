@@ -224,8 +224,6 @@ Enviar comprovante digital após a compra.
 - Padrões de Código: O desenvolvimento deve priorizar a leveza do software para se adaptar a limitação de processamento no tablet. O código deve ter integrações com sistemas como o da SEFAZ para emissão de cupons fiscais, além de integração com o banco de dados da universidade.
 - Testes Automatizados: Serão implementados testes automatizados para validar funcionalidades como autenticação de usuários, registro de compras, pagamentos digitais e atualização de estoque, garantindo maior confiabilidade ao sistema e identificando “Bugs” para as devidas correções
 
----
-
 ## 7. Requisitos Externos
 
 ### 7.1 Reguladores
@@ -263,7 +261,6 @@ realizados no minimercado, permitindo rastreamento completo das movimentações 
 - Relatórios: O sistema deve gerar relatórios financeiros e operacionais para auxiliar o controle administrativo do
 estoque, faturamento e fluxo de vendas, facilitando análises e tomadas de decisão pela gestão do minimercado.
 
----
 
 ##  8. Arquitetura do Sistema
 
@@ -817,4 +814,3 @@ Para que o software seja aceito no hardware limitado do tablet, ele deve respeit
 O desenvolvimento deste minimercado autônomo busca oferecer uma solução prática para atender as necessidades da comunidade acadêmica, disponibilizando produtos de convêniencia de forma rápida e segura dentro do campus. O projeot reduz a necessidade de deslocamentos, especialmente durante o período noturno, aumentando a comodidade e a segurança dos usuários.
 
 O sistema foi planejado para ser simples de utilizar, permitindo que qualquer pessoa realize compras pelo processo de autoatendimento. Recursos como controle de estoque, pagamentos digitais e emissão de comprovantes contribuem para uma gestão mais eficiente do negócio. Concluindo, este projeto utiliza dos fundamentos de Engenharia de Software para entregar uma solução prática para uma questão real da comunidade, de forma autônoma, segura e prática.
-

@@ -1,18 +1,23 @@
-# Product Vision - Sistema de Prevenção de Incêndios
+# Product Vision: Fireseeker
 
-## Problem
-Incêndios no agronegócio causam grandes prejuízos financeiros, ambientais e operacionais. Muitas vezes,
-a detecção ocorre de forma tardia, dificultando o controle rápido e aumentando os danos.
+## 1. O Problema
+Incêndios no agronegócio causam grandes prejuízos financeiros, ambientais e operacionais. Atualmente, a detecção muitas vezes ocorre de forma tardia, o que dificulta o controle rápido e maximiza os danos às plantações e infraestruturas rurais.
 
-## Target Audience
-Produtores rurais, fazendeiros, empresas do agronegócio, cooperativas agrícolas e órgãos ambientais responsáveis pelo monitoramento de áreas rurais.
+## 2. Público-Alvo
+* Produtores rurais e fazendeiros.
+* Empresas e cooperativas do agronegócio.
+* Órgãos ambientais e de monitoramento.
 
-## Solution
-Desenvolver um sistema inteligente que utiliza dados de satélites e inteligência artificial para detectar e prever princípios de incêndio em áreas rurais. 
-O sistema irá monitorar continuamente as regiões, identificar padrões de risco e enviar alertas em tempo real para os usuários, permitindo uma resposta rápida e eficiente.
+## 3. A Solução
+O **Fireseeker** é um sistema inteligente focado na detecção e previsão de princípios de incêndio em áreas rurais. Através da integração de dados de satélite e algoritmos de Inteligência Artificial, o sistema:
+* Monitora continuamente regiões de interesse.
+* Identifica padrões de risco.
+* Envia alertas em tempo real, permitindo uma resposta imediata antes que o fogo se propague.
 
-## Competitors
--Sistemas tradicionais de monitoramento ambiental
--Ferramentas de sensoriamento remoto (ex: imagens de satélite convencionais)
--Soluções governamentais de detecção de queimadas
--Plataformas de monitoramento climático
+## 4. Diferenciais e Competidores
+Enquanto sistemas tradicionais focam apenas no monitoramento climático ou em imagens de satélite convencionais (muitas vezes com atraso), o **Fireseeker** busca a proatividade através da IA para prever riscos.
+
+**Principais Competidores:**
+* Sistemas governamentais de detecção de queimadas.
+* Ferramentas genéricas de sensoriamento remoto.
+* Plataformas de monitoramento climático tradicional.
