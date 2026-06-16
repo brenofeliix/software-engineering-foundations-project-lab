@@ -729,200 +729,357 @@ Embora a arquitetura inicial seja monolítica, sua organização modular permiti
 A aplicação poderá ser escalada verticalmente (aumento de recursos do servidor) ou horizontalmente (múltiplas instâncias da aplicação). Além disso, a separação clara entre frontend, backend e banco de dados facilita futuras migrações para arquiteturas mais complexas, caso o número de usuários aumente significativamente.
 
 ---
-
-## 9. Casos de Uso e Diagramas UML
-
-Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
-
-Os diagramas ajudam na:
-- modelagem do sistema;
-- comunicação entre equipe;
-- entendimento da arquitetura e funcionalidades;
-- documentação técnica do projeto.
-
+# 9.1 Casos de Uso — CromStudy
 ---
 
-# 9.1 Casos de Uso
+## Diagrama
+```text
 
-Os casos de uso representam as interações entre usuários (atores) e o sistema.
-
----
-
-### UC01 - Realizar Login
-
-**Ator:** Usuário  
-
-**Descrição:**  
-Permite que o usuário acesse o sistema utilizando credenciais válidas.
-
----
-
-### Fluxo principal
-1. Usuário acessa a tela de login  
-2. Usuário informa e-mail e senha  
-3. Sistema valida credenciais  
-4. Sistema libera acesso  
-
----
-
-### Fluxo alternativo
-- Credenciais inválidas  
-- Usuário esqueceu senha  
-
----
-
-## Exemplo de Diagrama de Caso de Uso
-
-[Usuário]
-
+[Maria]
     |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+    | ---- (UC01 - Realizar Login)
+    |           |
+    |           | ---- (Recuperar Senha)
+    |
+    | ---- (UC02 - Cadastrar Conta)
+    |
+    | ---- (UC03 - Gerenciar Cronograma)
+    |           |
+    |           | ---- (Adicionar Atividade)
+    |           |
+    |           | ---- (Editar Atividade)
+    |           |
+    |           | ---- (Excluir Atividade)
+    |           |
+    |           | ---- (Marcar Tarefa como Concluída)
+    |
+    | ---- (UC04 - Usar Método Pomodoro)
+    |           |
+    |           | ---- (Iniciar Ciclo de Foco - 25 min)
+    |           |
+    |           | ---- (Iniciar Intervalo - 5 min)
+    |           |
+    |           | ---- (Pausar / Encerrar Sessão)
+    |
+    | ---- (UC05 - Gerenciar Flashcards)
+    |           |
+    |           | ---- «include» (UC06 - Visualizar Métricas)
+    |           |
+    |           | ---- «include» (UC07 - Jogar Minijogo/Quiz)
+    |
+    | ---- (UC06 - Visualizar Métricas)
+    |
+    | ---- (UC07 - Jogar Minijogo/Quiz)
+    |
+    | ---- (UC08 - Editar Perfil)
+
+```
+---
+
+## UC01 - Realizar Login
+
+*Usuário:Maria* 
+
+*Descrição:* Permite que o usuário acesse o sistema utilizando credenciais válidas.
+
+*Fluxo principal:*
+1. Usuário acessa a tela de login.
+2. Usuário informa e-mail e senha.
+3. Sistema valida credenciais.
+4. Sistema libera acesso e redireciona para a Dashboard.
+
+*Fluxo alternativo:*
+- Credenciais inválidas: Sistema exibe mensagem de erro e solicita os dados novamente.
+- Usuário esqueceu a senha: Redireciona para o fluxo de recuperação de senha.
 
 ---
 
-## 9.2 Diagrama de Classes (UML)
+## UC02 - Cadastrar Conta
 
-O diagrama de classes representa:
+*Usuário:Maria* 
 
-- estrutura do sistema;
-- entidades;
-- atributos;
-- métodos;
-- relacionamentos.
+*Descrição:* Permite que um novo usuário crie uma conta no sistema informando seus dados básicos.
+
+*Fluxo principal:*
+1. Usuário acessa a tela de cadastro.
+2. Usuário informa nome, e-mail e define uma senha.
+3. Sistema valida se o e-mail já existe e se a senha cumpre os requisitos mínimos.
+4. Sistema armazena os dados com segurança e confirma a criação da conta.
 
 ---
 
-### Exemplo
+## UC03 - Gerenciar Cronograma
+
+*Usuário:Maria* 
+
+*Descrição:* Permite ao usuário organizar a sua rotina criando, editando ou excluindo tarefas de estudo semanais.
+
+*Fluxo principal:*
+1. Usuário acessa o módulo de cronograma/agenda.
+2. Usuário seleciona a opção de adicionar nova atividade.
+3. Usuário informa a matéria, dia da semana e horários de início e fim.
+4. Sistema salva as configurações e exibe a tarefa atualizada no checklist diário.
+
+---
+
+## UC04 - Usar Método Pomodoro
+
+*Usuário:Maria* 
+
+*Descrição:* Controla os ciclos de estudo focado e intervalos de descanso do estudante através de um cronômetro regressivo.
+
+*Fluxo principal:*
+1. Usuário inicia a sessão do método Pomodoro.
+2. Sistema inicia a contagem regressiva de foco (25 minutos).
+3. Ao finalizar o tempo, o sistema emite um alerta sonoro e inicia o intervalo automático (5 minutos).
+4. O ciclo se repete até o limite configurado pelo usuário.
+
+---
+
+## UC05 - Gerenciar Flashcards
+
+*Usuário:Maria* 
+
+*Descrição:* Permite criar e revisar cartões de memorização contendo uma pergunta na frente e uma resposta no verso.
+
+*Fluxo principal:*
+1. Usuário cria um flashcard inserindo pergunta, resposta e categoria.
+2. Durante a revisão, o usuário responde mentalmente e vira o card para checar a resposta.
+3. Usuário indica se acertou ou errou.
+4. Sistema registra o histórico de desempenho.
+
+*Relacionamento:* «include» UC06 (Visualizar Métricas) e «include» UC07 (Jogar Minijogo/Quiz).
+
+---
+
+## UC06 - Visualizar Métricas
+
+*Usuário:Maria* 
+
+*Descrição:* Exibe relatórios estatísticos sobre o tempo de estudo consumido e a taxa de rendimento nos flashcards.
+
+*Fluxo principal:*
+1. Usuário acessa o painel de métricas.
+2. Sistema faz a leitura do histórico de sessões e acertos/erros.
+3. Sistema renderiza relatórios e gráficos apontando pontos de foco e matérias prioritárias para revisão.
+
+---
+
+## UC07 - Jogar Minijogo/Quiz
+
+*Usuário:Maria* 
+
+*Descrição:* O usuário participa de um quiz baseado nos flashcards cadastrados para obter pontuações e construir o mundo virtual do seu avatar.
+
+*Fluxo principal:*
+1. Usuário inicializa o modo de jogo.
+2. Sistema seleciona perguntas aleatórias baseadas nos flashcards já cadastrados pelo usuário.
+3. Usuário responde às questões e o sistema atualiza o saldo de pontuação acumulada.
+
+---
+
+## UC08 - Editar Perfil
+
+*Usuário:Maria* 
+
+*Descrição:* Permite a customização de dados do usuário e alteração de parâmetros da conta.
+
+*Fluxo principal:*
+1. Usuário acessa as configurações de perfil.
+2. Altera as informações desejadas (como nome ou foto de perfil).
+3. Sistema processa a atualização e salva os novos dados imediatamente.
+
+# 9.2 Diagrama de Classes (UML) — CromStudy
+
+---
+
+## Diagrama
 
 ```text
-+------------------+
-|     Usuário      |
-+------------------+
-| - id             |
-| - nome           |
-| - email          |
-| - senha          |
-+------------------+
-| + login()        |
-| + logout()       |
-+------------------+
++----------------------+          1..*     +----------------------+
+|       Usuário        |------------------>|     Cronograma       |
++----------------------+                   +----------------------+
+| - id                 |                   | - diaSemana          |
+| - nome               |                   | - horarioInicio      |
+| - email              |                   | - horarioFim         |
+| - senha              |                   | - materia            |
++----------------------+                   +----------------------+
+| + login()            |                   | + salvar()           |
++----------------------+                   +----------------------+
+         |
+         | 1..*
+         v
++----------------------+       (gera)      +----------------------+
+|       Tarefa         |------------------>|     Pontuação        |
++----------------------+                   +----------------------+
+| - titulo             |                   | - pontos             |
+| - descricao          |                   | - dataObtida         |
+| - data               |                   +----------------------+
+| - status: Boolean    |                   | + acumular()         |
++----------------------+                   | + gastar()           |
+| + concluir()         |                   +----------------------+
++----------------------+                            |
+         |                                          | (gera)
+         | 1..*                                     v
+         v                                +----------------------+
++----------------------+    «use»         |      Minijogo        |
+|    SessaoEstudo      |         +------->+----------------------+
++----------------------+         |        | - idQuiz             |
+| - duracao            |         |        | - questoes: List     |
+| - ciclosPomodoro     |         |        | - pontuacaoTotal     |
+| - status             |         |        +----------------------+
++----------------------+         |        | + iniciarQuiz()      |
+| + iniciar()          |         |        +----------------------+
++----------------------+         |
+         |                       |
+         | (gera)                |
+         v                       |
++----------------------+         |
+|     Notificação      |         |
++----------------------+         |
+| - mensagem           |         |
+| - horario            |         |
+| - tipo               |         |
++----------------------+         |
+                                 |
++----------------------+         |
+|      Flashcard       |---------+
++----------------------+
+| - pergunta           |
+| - resposta           |
+| - categoria          |
+| - acertos            |
+| - erros              |
++----------------------+
+| + registrarResposta()|
++----------------------+
+
 ```
-
 ---
 
-### Exemplo com relacionamento
+## Explicação
 
-```text
-+------------------+        +------------------+
-|     Usuário      | 1    * |      Pedido      |
-+------------------+--------+------------------+
-| id               |        | id               |
-| nome             |        | valor            |
-+------------------+        +------------------+
-```
+O diagrama de classes do CromStudy é organizado ao redor da classe *Usuário, que representa o ator central do sistema. Ela armazena os dados de identificação (id, nome, e-mail e senha) e provê o método de autenticação login(). A partir do Usuário, emanam relacionamentos de multiplicidade 1 para muitos (1..) com as principais entidades de planejamento e execução do sistema.
 
----
+A classe *Cronograma* representa a grade horária semanal do estudante, armazenando matéria, dia da semana e os horários de início e fim de cada bloco de estudo. O método salvar() persiste as configurações realizadas pelo usuário.
 
-## 9.3 Diagrama de Atividades (UML)
+A classe *Tarefa* controla os checklists de atividades do estudante, com atributos de título, descrição, data e um status booleano que indica se a tarefa foi concluída. O método concluir() aciona uma associação que gera instâncias na classe *Pontuação*, recompensando o estudante pela conclusão.
 
-Representa o fluxo de execução de processos no sistema.
+A classe *SessaoEstudo* gerencia o estado de execução do método Pomodoro, registrando a duração, a quantidade de ciclos e o status da sessão. Por meio da associação "gera", cada sessão concluída produz registros na classe *Notificação*, que encapsula os alertas sonoros e visuais disparados ao usuário durante e após os ciclos.
 
----
+A classe *Flashcard* armazena os cartões de memorização, com pergunta, resposta, categoria e o histórico de acertos e erros. Ela possui um relacionamento de dependência comportamental do tipo «use» direcionado à classe *Minijogo*, pois os flashcards são a fonte de perguntas do quiz.
 
-### Exemplo
+A classe *Pontuação* controla o saldo de pontos do estudante, acumulados por meio de tarefas concluídas e quizzes realizados. Ela possui uma associação direta com o *Minijogo*, fornecendo os pontos necessários para desbloquear itens do mini mundo.
+
+O *Minijogo* encapsula o quiz e a gamificação do avatar, com uma lista de questões geradas dinamicamente e a pontuação total obtida pelo usuário.
+
+# 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos dentro do sistema.
+
+## Exemplo
 
 ```text
 [Início]
-   |
-[Acessar sistema]
-   |
-[Inserir login]
-   |
-{Credenciais válidas?}
-   | Sim
-[Acessa sistema]
-   |
-[Fim]
+    |
+[Acessar Sistema]
+    |
+[Inserir Login]
+    |
+[Validar Credenciais]
+    |
+<Credenciais válidas?>
 
-   | Não
-[Mensagem de erro]
+   Sim ------------------> [Acessar Dashboard]
+    |                               |
+    |                               |
+    +---------------------------->[Fim]
+
+   Não
+    |
+[Exibir Erro]
+    |
+[Retornar ao Login]
 ```
 
 ---
 
-## 9.4 Diagrama de Sequência (UML)
+# 9.4 Diagrama de Sequência (UML)
 
-Representa a comunicação entre objetos ao longo do tempo.
+Representa a troca de mensagens entre objetos ao longo do tempo.
 
----
-
-### Exemplo
+## Exemplo
 
 ```text
-Usuário -> Sistema: realizar login
-Sistema -> Banco: validar usuário
-Banco -> Sistema: usuário válido
+Usuário -> Sistema: realizarLogin()
+Sistema -> BancoDeDados: validarUsuario()
+BancoDeDados -> Sistema: usuário válido
 Sistema -> Usuário: acesso liberado
 ```
 
 ---
 
-## 9.5 Diagrama de Componentes
+# 9.5 Diagrama de Componentes
 
-Representa os módulos e componentes principais do sistema.
+Representa os principais módulos do sistema.
 
----
-
-### Exemplo
+## Exemplo
 
 ```text
-[Frontend]
-     |
-     v
-[API Backend]
-     |
-     v
-[Banco de Dados]
++-------------------+
+|     Frontend      |
++-------------------+
+          |
+          v
++-------------------+
+|   API Backend     |
++-------------------+
+          |
+          v
++-------------------+
+| Banco de Dados    |
++-------------------+
 ```
 
 ---
 
-## 9.6 Diagrama de Implantação (Deployment)
+# 9.6 Diagrama de Implantação (Deployment)
 
-Representa onde o sistema será executado.
+Representa a infraestrutura onde o sistema será executado.
 
----
-
-### Exemplo
+## Exemplo
 
 ```text
-[Usuário]
-     |
-Internet
-     |
-[Servidor Web]
-     |
-[Servidor Banco de Dados]
++-------------+
+|   Usuário   |
++-------------+
+       |
+    Internet
+       |
+       v
++------------------+
+|  Servidor Web    |
++------------------+
+       |
+       v
++------------------+
+| Banco de Dados   |
++------------------+
 ```
 
 ---
 
-## 9.7 Ferramentas Recomendadas
+# 9.7 Ferramentas Recomendadas
 
-Os diagramas podem ser feitos utilizando:
+* Figma (Protótipos e Interface)
+* Draw.io (Diagramas UML)
+* Lucidchart (Diagramas UML)
+* Visual Paradigm (Modelagem UML)
+* GitHub (Versionamento)
+* Firebase (Autenticação e Banco de Dados)
+* VS Code (Desenvolvimento)
+* Flutter (Aplicativo Mobile)
 
-- Draw.io
-- Lucidchart
-- StarUML
-- Visual Paradigm
-- PlantUML
-- Mermaid
-- Figma
 
 ---
 
@@ -1041,17 +1198,41 @@ Defina como validar os requisitos:
 
 ##  12. Restrições
 
-- Tecnológicas  
-- Legais  
-- De prazo  
+## 12.1 Restrições Tecnológicas
+- O sistema deverá utilizar tecnologias gratuitas ou de baixo custo, considerando o caráter do projeto e a limitação de recursos financeiros disponíveis;
+- O banco de dados deverá ser compatível com hospedagens amplamente disponíveis e possuir boa documentação, garantindo facilidade de implementação e manutenção;
+- A infraestrutura utilizada deverá ser simples o suficiente para ser gerenciada por uma equipe com conhecimentos intermediários de desenvolvimento de software, evitando arquiteturas excessivamente complexas.
+- O sistema deverá funcionar nos principais navegadores modernos e em dispositivos móveis Android, garantindo acessibilidade para a maior parte do público-alvo.
 
----
+## 12.2 Restrições Legais
+- O sistema deverá estar em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD).
+- Os dados dos usuários deverão ser coletados apenas para fins relacionados ao funcionamento da plataforma, sendo armazenados e processados de forma segura.
+ O sistema deverá solicitar consentimento do usuário para coleta e utilização de informações pessoais quando necessário.
+
+## 12.3 Restrições de Prazo
+- Inicialmente serão priorizadas as funcionalidades essenciais do sistema, como:
+- Cadastro e autenticação de usuários;
+- Agenda e cronograma de estudos;
+- Método Pomodoro;
+- Flashcards;
+- Sistema de métricas;
+- Sistema básico de gamificação.
+- Funcionalidades mais avançadas, como expansões do Mini Mundo, novos elementos de personalização e recursos adicionais de gamificação, serão implementadas em etapas futuras.
 
 ##  13. Premissas
 
-- Usuário terá acesso à internet  
-- Sistema será usado em dispositivos móveis  
+- P01. Os usuários terão acesso à internet para sincronização de dados, autenticação e utilização das funcionalidades online da plataforma.
 
+- P02. O sistema será utilizado em dispositivos móveis (Android e iOS) e em computadores por meio de navegadores web modernos.
+
+- P03. Os dispositivos utilizados pelos usuários atenderão aos requisitos mínimos de hardware e software necessários para executar a aplicação.
+
+- P04. Os usuários fornecerão informações verdadeiras e válidas durante o processo de cadastro e utilização do sistema.
+
+- P05. Os estudantes utilizarão regularmente as funcionalidades de estudo (Pomodoro, flashcards, quizzes e trilhas de aprendizagem), possibilitando o funcionamento adequado do sistema de gamificação.
+  
+- P06. O sistema será utilizado principalmente por estudantes do ensino médio e vestibulandos interessados em organizar e acompanhar sua rotina de estudos.
+  
 ---
 
 ##  14. Observações Finais
