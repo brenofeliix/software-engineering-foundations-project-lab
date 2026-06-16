@@ -327,3 +327,799 @@ O sistema deverá manter controle das funcionalidades financeiras e registros ad
 - Controle de assinaturas e funcionalidades premium.
 - Armazenamento seguro de comprovantes e registros administrativos.
 ---
+# 8. Arquitetura do Sistema
+
+## 8.1 Visão Geral
+
+O sistema Serpy seguirá uma arquitetura baseada em API REST, organizada em camadas, separando frontend, backend e banco de dados.
+
+A arquitetura adotada será do tipo monolítica modular, adequada ao contexto acadêmico do projeto, permitindo desenvolvimento mais simples, manutenção organizada e futura expansão para microsserviços, caso necessário.
+
+O sistema será dividido em:
+
+- Frontend Web
+- Aplicativo Mobile
+- Backend/API
+- Banco de Dados
+- Serviços externos
+
+Essa separação melhora organização, reutilização de código e manutenção.
+
+---
+
+## 8.2 Componentes
+
+### Frontend
+
+Responsável pela interface visual do sistema.
+
+Funções:
+- Login e cadastro
+- Catálogo de animais
+- Mapa de ocorrências
+- Dashboard
+- Módulo educativo
+- Área administrativa
+
+Tecnologias:
+- React
+- Flutter (mobile)
+
+---
+
+### Backend
+
+Responsável pelas regras de negócio do sistema.
+
+Funções:
+- Autenticação
+- Processamento de dados
+- Integração com IA
+- Registro de ocorrências
+- Comunicação com banco
+
+Tecnologias:
+- Node.js
+- API REST
+
+---
+
+### Banco de Dados
+
+Responsável pelo armazenamento das informações.
+
+Dados armazenados:
+- Usuários
+- Animais
+- Ocorrências
+- Alertas
+- Estatísticas
+- Cursos
+
+Tecnologia:
+- MySQL
+
+---
+
+### APIs Externas
+
+Serviços utilizados:
+- APIs de mapas/geolocalização
+- APIs de dados públicos
+- Serviços de IA para reconhecimento de imagem
+
+---
+
+## 8.3 Tecnologias
+
+### Linguagens
+- JavaScript
+- Dart
+- SQL
+
+### Frameworks
+- React
+- Flutter
+- Node.js
+
+### Banco de Dados
+- MySQL
+
+### Ferramentas
+- GitHub
+- Figma
+- Draw.io
+
+---
+
+## 8.4 Decisões Arquiteturais
+
+### Desempenho
+
+A arquitetura separada entre frontend e backend melhora desempenho e organização.
+
+O sistema utilizará:
+- APIs otimizadas
+- Consultas eficientes no banco
+- Carregamento modular
+- Processamento assíncrono
+
+---
+
+### Segurança
+
+O sistema implementará:
+- Criptografia de senhas
+- Autenticação segura
+- Controle de permissões
+- HTTPS
+- Proteção contra SQL Injection e XSS
+
+---
+
+### Escalabilidade
+
+A arquitetura modular permite:
+- Adicionar novas funcionalidades
+- Crescimento do número de usuários
+- Expansão futura para microsserviços
+- Integração com novos serviços externos
+
+---
+
+## 9. Casos de Uso e Diagramas UML
+
+Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+
+Os diagramas ajudam na:
+- modelagem do sistema;
+- comunicação entre equipe;
+- entendimento da arquitetura e funcionalidades;
+- documentação técnica do projeto.
+
+---
+
+# 9.1 Casos de Uso
+
+Os casos de uso representam as interações entre usuários (atores) e o sistema.
+
+---
+```mermaid
+flowchart LR
+
+    UC[Usuário Comum]
+    PF[Profissional]
+    AD[Administrador]
+
+    subgraph Serpy
+
+        subgraph Autenticação
+            LG(Realizar Login)
+            CA(Cadastrar-se)
+            RP(Recuperar Senha)
+        end
+
+        subgraph "Animal / Emergência"
+            IA(Identificar Animal)
+            VD(Ver Detalhes Animal)
+            ME(Modo Emergência)
+            TS(Triagem de Sintomas)
+        end
+
+        subgraph Mapeamento
+            RO(Registrar Ocorrência)
+            VM(Ver Mapa)
+            AR(Áreas de Risco)
+        end
+
+        subgraph "Educação e Gamificação"
+            ED(Módulo Educacional)
+            QZ(Realizar Quiz)
+            RK(Ranking / XP)
+        end
+
+        subgraph Administração
+            GU(Gerenciar Usuários)
+            GC(Gerenciar Conteúdos)
+            GO(Gerenciar Ocorrências)
+            GE(Ver Estatísticas)
+        end
+
+    end
+
+    UC --> LG
+    UC --> CA
+    UC --> RP
+    UC --> IA
+    UC --> VD
+    UC --> ME
+    UC --> TS
+    UC --> RO
+    UC --> VM
+    UC --> AR
+    UC --> ED
+    UC --> QZ
+    UC --> RK
+
+    PF -.-> LG
+    PF -.-> IA
+    PF -.-> VD
+    PF -.-> ME
+    PF -.-> TS
+    PF -.-> RO
+    PF -.-> VM
+
+    AD --> LG
+    AD --> GU
+    AD --> GC
+    AD --> GO
+    AD --> GE
+```
+O Usuário Comum pode acessar funcionalidades como identificação de animais, modo emergência, consulta ao mapa de ocorrências e módulos educacionais. O Profissional possui acesso às funcionalidades de apoio técnico, enquanto o Administrador é responsável pelo gerenciamento do sistema.
+---
+
+## 9.2 Diagrama de Classes (UML)
+
+O diagrama de classes representa:
+
+- estrutura do sistema;
+- entidades;
+- atributos;
+- métodos;
+- relacionamentos.
+
+---
+```mermaid
+classDiagram
+
+class Usuario {
+    +int id
+    +String nome
+    +String email
+    +TipoUsuario tipo
+    +int xp
+    +int streak
+    +login()
+    +logout()
+}
+
+class Animal {
+    +int id
+    +String nome
+    +TipoAnimal tipo
+    +NivelRisco nivelRisco
+    +String habitat
+}
+
+class Ocorrencia {
+    +int id
+    +String descricao
+    +float latitude
+    +float longitude
+    +DateTime dataHora
+}
+
+class PrimeirosSocorros {
+    +int id
+    +String[] instrucoes
+    +String[] sintomas
+}
+
+class ConteudoEducativo {
+    +int id
+    +String titulo
+    +TipoConteudo tipo
+}
+
+class Quiz {
+    +int id
+    +String titulo
+    +int xpRecompensa
+}
+
+class Badge {
+    +int id
+    +String nome
+    +String criterio
+}
+
+class Alerta {
+    +int id
+    +String tipo
+}
+
+Usuario "1" --> "*" Ocorrencia : registra
+Animal "1" --> "*" Ocorrencia : relacionado
+Animal "1" --> "1" PrimeirosSocorros : possui
+Usuario "*" --> "*" Badge : acumula
+ConteudoEducativo "1" --> "*" Quiz : contem
+Ocorrencia ..> Alerta : gera
+```
+As classes centrais do sistema são Usuario, Animal e Ocorrencia. O modelo também contempla recursos de primeiros socorros, conteúdos educativos, quizzes, sistema de conquistas e alertas.
+---
+
+## 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos no sistema.
+
+---
+```mermaid
+flowchart TD
+
+    A([Início])
+
+    B[Pressionar botão de emergência]
+
+    C[Selecionar ou identificar animal]
+
+    D{Animal identificado?}
+
+    E[Exibir informações do animal]
+
+    F[Exibir primeiros socorros]
+
+    G[Exibir o que não fazer]
+
+    H{Triagem de sintomas?}
+
+    I[Executar triagem]
+
+    J[Registrar ocorrência]
+
+    K([Fim])
+
+    A --> B
+    B --> C
+    C --> D
+
+    D -- Não --> C
+    D -- Sim --> E
+
+    E --> F
+    F --> G
+
+    G --> H
+
+    H -- Sim --> I
+    I --> J
+
+    H -- Não --> J
+
+    J --> K
+```
+O fluxo inicia quando o usuário aciona o modo emergência. Após a identificação do animal, o sistema fornece orientações de primeiros socorros, permite a realização de triagem de sintomas e possibilita o registro da ocorrência.
+---
+
+## 9.4 Diagrama de Sequência (UML)
+
+Representa a comunicação entre objetos ao longo do tempo.
+
+---
+```mermaid
+sequenceDiagram
+
+    actor U as Usuário
+    participant F as Frontend
+    participant B as Backend
+    participant DB as Banco de Dados
+
+    U->>F: Informa email e senha
+
+    F->>B: POST /auth/login
+
+    B->>DB: Consultar usuário
+
+    DB-->>B: Dados encontrados
+
+    B->>B: Validar senha
+
+    B-->>F: JWT + dados
+
+    F-->>U: Login realizado
+```
+O usuário fornece suas credenciais ao frontend, que encaminha a solicitação ao backend. O backend consulta o banco de dados, valida as informações e retorna o token de autenticação.
+---
+
+## 9.5 Diagrama de Componentes
+
+Representa os módulos e componentes principais do sistema.
+
+---
+```mermaid
+flowchart TD
+
+    subgraph UI["Interface de Usuário"]
+        WEB["Frontend Web (React)"]
+        APP["Aplicativo Mobile (Flutter)"]
+    end
+
+    API["Backend API (Node.js)"]
+
+    subgraph DADOS["Dados e Inteligência"]
+        DB["MySQL"]
+        IA["Serviço de IA"]
+    end
+
+    subgraph EXT["Serviços Externos"]
+        MAP["Google Maps / OSM"]
+        PUB["APIs Públicas"]
+        NOT["Notificações"]
+        AUTH["JWT / Redis"]
+    end
+
+    WEB --> API
+    APP --> API
+
+    API --> DB
+    API --> IA
+
+    API --> MAP
+    API --> PUB
+    API --> NOT
+    API --> AUTH
+```
+A solução é composta por aplicações web e mobile que se comunicam com uma API central. A API integra banco de dados, serviços de inteligência artificial e provedores externos.
+---
+
+## 9.6 Diagrama de Implantação (Deployment)
+
+Representa onde o sistema será executado.
+
+---
+```mermaid
+flowchart TD
+
+    subgraph CLIENTE["Dispositivo do Usuário"]
+        NAV["Navegador Web"]
+        REACT["React (SPA)"]
+        FLUTTER["Flutter (Mobile)"]
+        CACHE["Cache Offline (FR38)"]
+    end
+
+    CDN["Servidor Web / CDN
+    Nginx
+    Assets Estáticos
+    Cache de Conteúdo"]
+
+    APP["Servidor de Aplicação
+    Node.js + Express
+    API REST
+    JWT (Auth)
+    Serviço IA (Imagens)
+    WebSocket (Alertas)
+    Sincronização Offline"]
+
+    DB["Servidor de Banco de Dados
+    MySQL
+    Usuários / Ocorrências
+    Animais / Alertas
+    Conteúdo Educacional"]
+
+    CLIENTE -->|HTTPS| CDN
+    CDN -->|HTTP/REST| APP
+    APP -->|SQL/TCP| DB
+
+    subgraph EXT["Serviços Externos"]
+        MAPS["Google Maps API"]
+        OSM["OpenStreetMap"]
+        SINAN["SINAN / Ministério da Saúde"]
+        PUSH["Notificações Push"]
+        CLOUD["IA Cloud"]
+        BACKUP["Backup Storage"]
+        ASSETS["CDN Assets"]
+    end
+
+    APP --> MAPS
+    APP --> OSM
+    APP --> SINAN
+    APP --> PUSH
+    APP --> CLOUD
+    APP --> BACKUP
+    APP --> ASSETS
+```
+O sistema é acessado por dispositivos web e móveis, distribuído por meio de um servidor web/CDN, executado em um servidor de aplicação Node.js e persistido em banco de dados MySQL. Também utiliza serviços externos para mapas, notificações e inteligência artificial.
+---
+
+# 10. Plano de Testes
+
+## 10.1 Estratégia de Teste
+
+O sistema Serpy será testado de forma contínua durante todo o ciclo de desenvolvimento, garantindo que as funcionalidades implementadas atendam aos requisitos definidos e operem corretamente em diferentes cenários de uso.
+
+A estratégia de testes inclui:
+
+- Testes unitários para validação de componentes individuais;
+- Testes de integração para verificar a comunicação entre módulos;
+- Testes de sistema para validação completa da aplicação;
+- Testes de aceitação para confirmar o atendimento aos requisitos do projeto;
+- Testes de usabilidade para avaliar a experiência do usuário;
+- Testes de desempenho para medir tempo de resposta e estabilidade.
+
+---
+
+## 10.2 Tipos de Teste
+
+### Teste Unitário
+
+Verifica o funcionamento isolado de funções, métodos e componentes do sistema.
+
+### Teste de Integração
+
+Valida a comunicação entre frontend, backend, banco de dados e APIs externas.
+
+### Teste de Sistema
+
+Avalia o comportamento do sistema como um todo, simulando situações reais de uso.
+
+### Teste de Aceitação
+
+Confirma se o sistema atende às necessidades dos usuários e aos requisitos definidos.
+
+---
+
+## 10.3 Casos de Teste
+
+### CT01 - Realizar Login
+
+**Requisito relacionado:** RF01
+
+**Descrição:**  
+Validar a autenticação de usuários no sistema.
+
+**Entrada:**  
+E-mail e senha válidos.
+
+**Resultado esperado:**  
+Sistema valida as credenciais e libera o acesso ao usuário.
+
+---
+
+### CT02 - Registrar Ocorrência
+
+**Requisito relacionado:** RF04
+
+**Descrição:**  
+Validar o registro de ocorrências envolvendo animais peçonhentos.
+
+**Entrada:**  
+Descrição da ocorrência, localização e foto opcional.
+
+**Resultado esperado:**  
+Sistema registra a ocorrência e a disponibiliza no mapa.
+
+---
+
+### CT03 - Identificar Animal
+
+**Requisito relacionado:** RF07
+
+**Descrição:**  
+Validar o processo de identificação de animais por imagem.
+
+**Entrada:**  
+Imagem enviada pelo usuário.
+
+**Resultado esperado:**  
+Sistema analisa a imagem e apresenta uma sugestão de identificação.
+
+---
+
+### CT04 - Consultar Catálogo de Animais
+
+**Requisito relacionado:** RF03
+
+**Descrição:**  
+Validar a consulta de informações sobre animais peçonhentos.
+
+**Entrada:**  
+Seleção de um animal presente no catálogo.
+
+**Resultado esperado:**  
+Sistema exibe corretamente informações, imagens, nível de risco e orientações relacionadas ao animal selecionado.
+
+---
+
+### CT05 - Visualizar Mapa de Ocorrências
+
+**Requisito relacionado:** RF05
+
+**Descrição:**  
+Validar a exibição das ocorrências registradas no mapa.
+
+**Entrada:**  
+Acesso ao módulo de mapa.
+
+**Resultado esperado:**  
+Sistema apresenta corretamente as ocorrências cadastradas e suas respectivas localizações.
+
+---
+
+### CT06 - Realizar Quiz Educativo
+
+**Requisito relacionado:** RF08
+
+**Descrição:**  
+Validar o funcionamento do módulo de aprendizado.
+
+**Entrada:**  
+Respostas fornecidas pelo usuário durante um quiz.
+
+**Resultado esperado:**  
+Sistema calcula a pontuação corretamente e registra o progresso do usuário.
+
+---
+
+### CT07 - Receber Alerta de Área de Risco
+
+**Requisito relacionado:** RF11
+
+**Descrição:**  
+Validar o envio de alertas relacionados a áreas com incidência de animais peçonhentos.
+
+**Entrada:**  
+Usuário com localização ativada em uma região classificada como área de risco.
+
+**Resultado esperado:**  
+Sistema envia uma notificação informando sobre o risco na região.
+
+---
+
+### CT08 - Gerar Relatório Estatístico
+
+**Requisito relacionado:** RF10
+
+**Descrição:**  
+Validar a geração de relatórios administrativos.
+
+**Entrada:**  
+Solicitação de relatório por período ou região.
+
+**Resultado esperado:**  
+Sistema gera relatório contendo estatísticas, gráficos e dados das ocorrências registradas.
+
+---
+
+## 10.4 Testes de Requisitos Não Funcionais
+
+### Performance
+
+Objetivo:
+Garantir que o sistema responda adequadamente sob condições normais de uso.
+
+Testes:
+
+- Tempo de resposta inferior a 2 segundos para consultas comuns;
+- Carregamento do mapa em até 3 segundos;
+- Suporte a múltiplos usuários simultâneos;
+- Validação da estabilidade do sistema sob carga.
+
+---
+
+### Segurança
+
+Objetivo:
+Garantir proteção dos dados e acessos ao sistema.
+
+Testes:
+
+- Validação do processo de autenticação;
+- Testes de permissões por perfil de usuário;
+- Proteção contra SQL Injection;
+- Proteção contra ataques XSS;
+- Verificação da criptografia de senhas;
+- Testes de acesso não autorizado.
+
+---
+
+### Usabilidade
+
+Objetivo:
+Avaliar a facilidade de uso da plataforma.
+
+Testes:
+
+- Navegação intuitiva entre telas;
+- Clareza das informações apresentadas;
+- Compatibilidade com dispositivos móveis;
+- Verificação da responsividade da interface;
+- Facilidade de acesso ao modo emergência;
+- Avaliação da experiência do usuário durante o uso do sistema.
+---
+
+# 11. Critérios de Aceitação
+
+Os critérios de aceitação definem as condições necessárias para que os requisitos do sistema sejam considerados atendidos.
+
+## 11.1 Métricas
+
+- Tempo médio de resposta inferior a 2 segundos para operações comuns;
+- Disponibilidade mínima de 99% durante o período de operação;
+- Taxa de sucesso superior a 95% nos testes funcionais;
+- Compatibilidade com os principais navegadores modernos;
+- Compatibilidade com dispositivos Android e iOS.
+
+---
+
+## 11.2 Testes
+
+A validação será realizada através de:
+
+- Testes unitários;
+- Testes de integração;
+- Testes de sistema;
+- Testes de aceitação;
+- Testes de desempenho;
+- Testes de segurança;
+- Testes de usabilidade.
+
+---
+
+## 11.3 Condições de Sucesso
+
+O sistema será considerado aprovado quando:
+
+- Todos os requisitos funcionais estiverem implementados;
+- Os requisitos não funcionais forem atendidos;
+- Os casos de teste apresentarem resultados satisfatórios;
+- Não existirem falhas críticas que comprometam a utilização do sistema;
+- Os usuários conseguirem executar as funcionalidades principais sem dificuldades.
+
+---
+
+# 12. Restrições
+
+As restrições representam limitações que devem ser consideradas durante o desenvolvimento do sistema.
+
+## 12.1 Restrições Tecnológicas
+
+- O desenvolvimento deverá utilizar React para a interface web;
+- O aplicativo mobile deverá ser desenvolvido utilizando Flutter;
+- O backend deverá utilizar Node.js;
+- O banco de dados deverá utilizar MySQL;
+- O versionamento deverá ser realizado através do GitHub;
+- A infraestrutura deverá utilizar apenas tecnologias gratuitas ou de baixo custo durante o desenvolvimento acadêmico.
+
+---
+
+## 12.2 Restrições Legais
+
+- O sistema deverá respeitar a LGPD (Lei Geral de Proteção de Dados);
+- Dados pessoais dos usuários deverão ser armazenados de forma segura;
+- O uso de imagens e conteúdos deverá respeitar direitos autorais;
+- O sistema não poderá substituir diagnóstico ou orientação médica profissional.
+
+---
+
+## 12.3 Restrições de Prazo
+
+- O desenvolvimento deverá seguir o cronograma definido pela disciplina;
+- As entregas deverão respeitar os marcos estabelecidos pelo professor;
+- O escopo poderá ser adaptado caso existam limitações de tempo ou recursos.
+
+---
+
+# 13. Premissas
+
+As premissas representam condições consideradas verdadeiras para o planejamento e desenvolvimento do projeto.
+
+- Os usuários possuirão acesso à internet na maior parte do tempo;
+- Os usuários utilizarão dispositivos móveis ou computadores com acesso à web;
+- Os dados fornecidos pelos usuários serão verdadeiros e atualizados;
+- Os serviços de mapas e geolocalização estarão disponíveis durante o uso do sistema;
+- As APIs externas utilizadas estarão operacionais;
+- Os integrantes da equipe terão acesso ao GitHub para desenvolvimento colaborativo;
+- Os usuários concederão permissão para utilização da localização quando necessário;
+- O sistema será utilizado principalmente em território brasileiro;
+- As informações educativas cadastradas serão revisadas e validadas antes da publicação.
+
+---
+
+# 14. Observações Finais
+
+O Serpy foi concebido como uma plataforma voltada para educação, prevenção e monitoramento de acidentes envolvendo animais peçonhentos, especialmente serpentes, escorpiões e aranhas.
+
+A proposta busca combinar tecnologia, informação e conscientização, oferecendo ferramentas que auxiliem tanto a população em geral quanto profissionais que atuam em situações de risco.
+
+Além de seu caráter educacional, o sistema possui potencial para apoiar iniciativas de saúde pública, pesquisa e monitoramento ambiental por meio da coleta e organização de dados sobre ocorrências.
+
+A arquitetura, os requisitos e os diagramas apresentados neste documento servem como base para o desenvolvimento do projeto e poderão ser refinados conforme a evolução das necessidades identificadas pela equipe e pelos stakeholders.
