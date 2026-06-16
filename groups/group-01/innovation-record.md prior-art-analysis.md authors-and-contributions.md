@@ -3,7 +3,7 @@
 | Nome | Função | Contribuições |
 |---|---|---|
 | Pedro Léo | Backend | API e banco |
-| Ruan | Frontend | Interface  |
+| Juan | Frontend | Interface  |
 | Lara | Documentação | Requisitos |
 | Fernanda | Database | criação do banco de dados|
 | Paula | Desingner | identidade visual|
