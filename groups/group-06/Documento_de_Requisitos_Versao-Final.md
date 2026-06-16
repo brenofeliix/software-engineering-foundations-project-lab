@@ -958,19 +958,19 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 
 ## Explicação
 
-O diagrama de classes do CromStudy é organizado ao redor da classe *Usuário, que representa o ator central do sistema. Ela armazena os dados de identificação (id, nome, e-mail e senha) e provê o método de autenticação login(). A partir do Usuário, emanam relacionamentos de multiplicidade 1 para muitos (1..) com as principais entidades de planejamento e execução do sistema.
+- O diagrama de classes do CromStudy é organizado ao redor da classe **Usuário**, que representa o ator central do sistema. Ela armazena os dados de identificação (id, nome, e-mail e senha) e provê o método de autenticação login(). A partir do usuário, emanam relacionamentos de multiplicidade 1 para n, com as principais entidades de planejamento e execução do sistema.
 
-A classe **Cronograma** representa a grade horária semanal do estudante, armazenando matéria, dia da semana e os horários de início e fim de cada bloco de estudo. O método salvar() persiste as configurações realizadas pelo usuário.
+- A classe **Cronograma** representa a grade horária semanal do estudante, armazenando matéria, dia da semana e os horários de início e fim de cada bloco de estudo. O método salvar() persiste as configurações realizadas pelo usuário.
 
-A classe **Tarefa** controla os checklists de atividades do estudante, com atributos de título, descrição, data e um status booleano que indica se a tarefa foi concluída. O método concluir() aciona uma associação que gera instâncias na classe *Pontuação*, recompensando o estudante pela conclusão.
+- A classe **Tarefa** controla os checklists de atividades do estudante, com atributos de título, descrição, data e um status booleano que indica se a tarefa foi concluída. O método concluir() aciona uma associação que gera instâncias na classe **Pontuação**, recompensando o estudante pela conclusão.
+  
+- A classe **SessaoEstudo** gerencia o estado de execução do método Pomodoro, registrando a duração, a quantidade de ciclos e o status da sessão. Por meio da associação "gera", cada sessão concluída produz registros na classe **Notificação**, que encapsula os alertas sonoros e visuais disparados ao usuário durante e após os ciclos.
 
-A classe **SessaoEstudo** gerencia o estado de execução do método Pomodoro, registrando a duração, a quantidade de ciclos e o status da sessão. Por meio da associação "gera", cada sessão concluída produz registros na classe *Notificação*, que encapsula os alertas sonoros e visuais disparados ao usuário durante e após os ciclos.
+- A classe **Flashcard** armazena os cartões de memorização, com pergunta, resposta, categoria e o histórico de acertos e erros. Ela possui um relacionamento de dependência comportamental do tipo «use» direcionado à classe **Minijogo**, pois os flashcards são a fonte de perguntas do quiz.
 
-A classe **Flashcard** armazena os cartões de memorização, com pergunta, resposta, categoria e o histórico de acertos e erros. Ela possui um relacionamento de dependência comportamental do tipo «use» direcionado à classe *Minijogo*, pois os flashcards são a fonte de perguntas do quiz.
+- A classe **Pontuação** controla o saldo de pontos do estudante, acumulados por meio de tarefas concluídas e quizzes realizados. Ela possui uma associação direta com o **Minijogo**, fornecendo os pontos necessários para desbloquear itens do mini mundo.
 
-A classe **Pontuação** controla o saldo de pontos do estudante, acumulados por meio de tarefas concluídas e quizzes realizados. Ela possui uma associação direta com o *Minijogo*, fornecendo os pontos necessários para desbloquear itens do mini mundo.
-
-O **Minijogo** encapsula o quiz e a gamificação do avatar, com uma lista de questões geradas dinamicamente e a pontuação total obtida pelo usuário.
+- O **Minijogo** encapsula o quiz e a gamificação do avatar, com uma lista de questões geradas dinamicamente e a pontuação total obtida pelo usuário.
 
 # 9.3 Diagrama de Atividades (UML)
 
@@ -1043,19 +1043,17 @@ Representa o fluxo de execução de processos no sistema desde a entrada do usu�
 
 ## Explicação
 
-O diagrama de atividades representa o fluxo completo de execução do CromStudy, desde o primeiro acesso do usuário até o uso das funcionalidades principais.
+- O fluxo inicia no nó de partida com a atividade **Acessar** o aplicativo. Em seguida, uma estrutura de decisão condicional verifica se o usuário já possui registro no sistema. Caso **não** tenha conta, o sistema direciona o fluxo para a atividade de **Cadastro**, onde o usuário preenche nome, e-mail e senha. Após a validação e criação da conta, o fluxo retorna ao passo de login. Caso o usuário já tenha conta, avança diretamente para a atividade de **login**.
 
-O fluxo inicia no nó de partida com a atividade *Acessar o aplicativo. Em seguida, uma estrutura de decisão condicional verifica se o usuário já possui registro no sistema. Caso **não** tenha conta, o sistema direciona o fluxo para a atividade de *Cadastro, onde o usuário preenche nome, e-mail e senha. Após a validação e criação da conta, o fluxo retorna ao passo de login. Caso o usuário **já tenha conta, avança diretamente para a atividade de **login**.
+- Na etapa de login, o sistema verifica a condição **Credenciais válidas?**. Caso sejam inválidas, o fluxo aciona a atividade **Exibir erro** e retorna ao preenchimento dos dados. Caso sejam válidas, o usuário é direcionado para a **Dashboard**.
 
-Na etapa de login, o sistema verifica a condição *Credenciais válidas ?. Caso sejam inválidas, o fluxo aciona a atividade **Exibir erro** e retorna ao preenchimento dos dados. Caso sejam válidas, o usuário é direcionado para a **Dashboard**.
-
-No painel principal, ocorre a decisão **Escolher funcionalidade**, que chaveia o usuário para três caminhos possíveis:
+- No painel principal, ocorre a decisão **Escolher funcionalidade**, que chaveia o usuário para três caminhos possíveis:
 
 No caminho do **Cronograma**, o usuário adiciona ou edita tarefas de estudo, que são salvas e exibidas no checklist diário.
 
 No caminho do **Minijogo**, o sistema gera automaticamente um quiz com base nos flashcards cadastrados. O usuário responde as questões e o sistema atualiza o saldo de pontuação acumulada.
 
-No caminho do *Pomodoro, o sistema avalia constantemente a condição Ciclo finalizado ?. Enquanto o timer estiver ativo, o fluxo repete o loop de foco de 25 minutos. Assim que o ciclo se encerra, o sistema emite um alerta sonoro e inicia o intervalo de 5 minutos. Após o intervalo, o fluxo força a execução da atividade **Revisar flashcards** antes de atingir o nó de fim.
+No caminho do **Pomodoro**, o sistema avalia constantemente a condição **Ciclo finalizado?**. Enquanto o timer estiver ativo, o fluxo repete o loop de foco de 25 minutos. Assim que o ciclo se encerra, o sistema emite um alerta sonoro e inicia o intervalo de 5 minutos. Após o intervalo, o fluxo força a execução da atividade **Revisar flashcards** antes de atingir o nó de fim.
 
 ---
 
