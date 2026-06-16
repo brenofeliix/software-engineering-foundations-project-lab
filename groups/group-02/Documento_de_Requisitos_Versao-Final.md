@@ -976,47 +976,7 @@ Representa onde o sistema será executado.
 
 ---
 
-### Exemplo
-
-```text
-[Usuário]
-     |
-Internet
-     |
-[Servidor Web]
-     |
-[Servidor Banco de Dados]
-```
-
----
-
-## 9.7 Ferramentas Recomendadas
-
-Os diagramas podem ser feitos utilizando:
-
-- Draw.io
-- Lucidchart
-- StarUML
-- Visual Paradigm
-- PlantUML
-- Mermaid
-- Figma
-
----
-
-## 9.8 Observações Importantes
-
-- Os diagramas devem representar o sistema REAL do grupo;
-- Evitem diagramas genéricos;
-- Mantenham consistência entre requisitos e diagramas;
-- Diagramas devem possuir nomes claros;
-- Atualizem os diagramas conforme o sistema evoluir.
-
----
-
-# Regra importante
-
-> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
+![Diagrama de Implantação](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/7b46a6df2df7cc2dd66f3d238e8dd624bfac6e5b/groups/group-02/Diagrama%20em%20implantacao.png)
 
 ---
 
