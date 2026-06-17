@@ -389,9 +389,9 @@ A arquitetura escolhida para o sistema será em microserviços, permitindo que c
 
 ### 8.2 Componentes
 - Frontend: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem.   
-- Backend: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem. 
-- Banco de dados: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem.  
-- APIs externas: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem. 
+- Backend: Responsável pelo processamento das informações, gerenciamento das funcionalidades do sistema, autenticação de usuários, regras de negócio e controle das atividades educacionais. . 
+- Banco de dados: Armazena informações dos usuários, conteúdos das aulas, desempenho dos alunos, frequência, histórico de atividades e dados necessários para o funcionamento da plataforma.   
+- APIs externas: Utilizadas para integração com serviços complementares, como envio de notificações, autenticação, recursos multimídia e ferramentas que auxiliem na experiência interativa do aprendizado. 
 
 ### 8.3 Tecnologias
 - Linguagem: JavaScript será utilizada no desenvolvimento do sistema, por ser uma linguagem versátil e amplamente utilizada tanto no frontend quanto no backend.
