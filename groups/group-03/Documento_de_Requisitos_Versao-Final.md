@@ -385,26 +385,25 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 ##  8. Arquitetura do Sistema
 
 ### 8.1 Visão Geral
-Descreva a arquitetura (ex: monolito, microserviços).
+A arquitetura escolhida para o sistema será em microserviços, permitindo que cada funcionalidade da plataforma funcione de maneira independente e organizada. A escolha dessa arquitetura garante maior escalabilidade, facilidade de manutenção e melhor desempenho do sistema, tornando possível criar uma plataforma educacional moderna, dinâmica e mais atrativa para reduzir a evasão escolar e aumentar o engajamento dos estudantes.
 
 ### 8.2 Componentes
-- Frontend  
-- Backend  
-- Banco de dados  
-- APIs externas  
+- Frontend: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem.   
+- Backend: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem. 
+- Banco de dados: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem.  
+- APIs externas: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem. 
 
 ### 8.3 Tecnologias
-- Linguagem  
-- Framework  
-- Banco de dados  
+- Linguagem: JavaScript será utilizada no desenvolvimento do sistema, por ser uma linguagem versátil e amplamente utilizada tanto no frontend quanto no backend.
+- Framework: React será utilizado no frontend para criar uma interface interativa e dinâmica, enquanto Node.js será utilizado no backend para processar dados e gerenciar as funcionalidades do sistema.
+- Banco de dados: MySQL será utilizado para armazenar informações como cadastro de usuários, desempenho escolar, atividades realizadas, frequência e demais dados necessários para o funcionamento da plataforma.  
 
 ### 8.4 Decisões Arquiteturais
-Explique como a arquitetura atende aos requisitos não funcionais:
-- Desempenho  
-- Segurança  
-- Escalabilidade  
+A arquitetura foi planejada para atender aos principais requisitos não funcionais do sistema, garantindo qualidade, estabilidade e capacidade de crescimento da plataforma.
 
----
+- Desempenho: A utilização de microserviços permite que diferentes funções do sistema operem de forma independente, reduzindo sobrecarga e melhorando o tempo de resposta durante o acesso simultâneo de vários usuários  
+- Segurança: A utilização de microserviços permite que diferentes funções do sistema operem de forma independente, reduzindo sobrecarga e melhorando o tempo de resposta durante o acesso simultâneo de vários usuários.
+- Escalabilidade: A arquitetura escolhida permite expandir o sistema de maneira gradual, adicionando novos serviços e funcionalidades sem comprometer o funcionamento geral da plataforma, suportando o aumento de usuários ao longo do tempo.
 
 ---
 
