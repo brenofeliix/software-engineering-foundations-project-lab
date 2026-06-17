@@ -379,3 +379,269 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 - Histórico financeiro: O sistema deve manter histórico de movimentações financeiras para rastreabilidade e conferência de informações.
 
 - Conformidade fiscal: O sistema deve garantir conformidade com normas contábeis e fiscais aplicáveis à instituição.
+  
+---
+
+##  8. Arquitetura do Sistema
+
+### 8.1 Visão Geral
+Descreva a arquitetura (ex: monolito, microserviços).
+
+### 8.2 Componentes
+- Frontend  
+- Backend  
+- Banco de dados  
+- APIs externas  
+
+### 8.3 Tecnologias
+- Linguagem  
+- Framework  
+- Banco de dados  
+
+### 8.4 Decisões Arquiteturais
+Explique como a arquitetura atende aos requisitos não funcionais:
+- Desempenho  
+- Segurança  
+- Escalabilidade  
+
+---
+
+---
+
+## 9. Casos de Uso e Diagramas UML
+
+Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+
+Os diagramas ajudam na:
+- modelagem do sistema;
+- comunicação entre equipe;
+- entendimento da arquitetura e funcionalidades;
+- documentação técnica do projeto.
+
+---
+
+# 9.1 Casos de Uso
+
+Os casos de uso representam as interações entre usuários (atores) e o sistema.
+
+---
+
+### UC01 - Realizar Login
+
+**Ator:** Usuário  
+
+**Descrição:**  
+Permite que o usuário acesse o sistema utilizando credenciais válidas.
+
+---
+
+### Fluxo principal
+1. Usuário acessa a tela de login  
+2. Usuário informa e-mail e senha  
+3. Sistema valida credenciais  
+4. Sistema libera acesso  
+
+---
+
+### Fluxo alternativo
+- Credenciais inválidas  
+- Usuário esqueceu senha  
+
+---
+
+## Exemplo de Diagrama de Caso de Uso
+
+[Usuário]
+
+    |
+    
+    | ---- (Realizar Login)
+    
+    | ---- (Cadastrar Conta)
+    
+    | ---- (Recuperar Senha) 
+
+---
+
+## 9.2 Diagrama de Classes (UML)
+
+O diagrama de classes representa:
+
+- estrutura do sistema;
+- entidades;
+- atributos;
+- métodos;
+- relacionamentos.
+
+---
+
+### Exemplo
+
+```text
++------------------+
+|     Usuário      |
++------------------+
+| - id             |
+| - nome           |
+| - email          |
+| - senha          |
++------------------+
+| + login()        |
+| + logout()       |
++------------------+
+```
+
+---
+
+### Exemplo com relacionamento
+
+```text
++------------------+        +------------------+
+|     Usuário      | 1    * |      Pedido      |
++------------------+--------+------------------+
+| id               |        | id               |
+| nome             |        | valor            |
++------------------+        +------------------+
+```
+
+---
+
+## 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos no sistema.
+
+---
+
+### Exemplo
+
+```text
+[Início]
+   |
+[Acessar sistema]
+   |
+[Inserir login]
+   |
+{Credenciais válidas?}
+   | Sim
+[Acessa sistema]
+   |
+[Fim]
+
+   | Não
+[Mensagem de erro]
+```
+
+---
+
+## 9.4 Diagrama de Sequência (UML)
+
+Representa a comunicação entre objetos ao longo do tempo.
+
+---
+
+### Exemplo
+
+```text
+Usuário -> Sistema: realizar login
+Sistema -> Banco: validar usuário
+Banco -> Sistema: usuário válido
+Sistema -> Usuário: acesso liberado
+```
+
+---
+
+## 9.5 Diagrama de Componentes
+
+Representa os módulos e componentes principais do sistema.
+
+---
+
+### Exemplo
+
+```text
+[Frontend]
+     |
+     v
+[API Backend]
+     |
+     v
+[Banco de Dados]
+```
+
+---
+
+## 9.6 Diagrama de Implantação (Deployment)
+
+Representa onde o sistema será executado.
+
+---
+
+### Exemplo
+
+```text
+[Usuário]
+     |
+Internet
+     |
+[Servidor Web]
+     |
+[Servidor Banco de Dados]
+```
+
+---
+
+## 9.7 Ferramentas Recomendadas
+
+Os diagramas podem ser feitos utilizando:
+
+- Draw.io
+- Lucidchart
+- StarUML
+- Visual Paradigm
+- PlantUML
+- Mermaid
+- Figma
+
+---
+
+## 9.8 Observações Importantes
+
+- Os diagramas devem representar o sistema REAL do grupo;
+- Evitem diagramas genéricos;
+- Mantenham consistência entre requisitos e diagramas;
+- Diagramas devem possuir nomes claros;
+- Atualizem os diagramas conforme o sistema evoluir.
+
+---
+
+# Regra importante
+
+> “Diagramas não são apenas desenhos: eles representam decisões arquiteturais e técnicas do sistema.”
+
+---
+
+##  10. Plano de Testes
+
+### 10.1 Estratégia de Teste
+Como o sistema será testado?
+
+### 10.2 Tipos de Teste
+- Unitário  
+- Integração  
+- Sistema  
+- Aceitação  
+
+### 10.3 Casos de Teste
+
+#### CT01 - Nome
+**Requisito relacionado:** RF01  
+**Descrição:**  
+**Entrada:**  
+**Resultado esperado:**  
+
+---
+
+### 10.4 Testes de Requisitos Não Funcionais
+- Performance (tempo de resposta)  
+- Segurança  
+- Usabilidade
