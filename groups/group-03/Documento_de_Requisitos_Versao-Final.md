@@ -385,7 +385,7 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 ##  8. Arquitetura do Sistema
 
 ### 8.1 Visão Geral
-A arquitetura escolhida para o sistema será em microserviços, permitindo que cada funcionalidade da plataforma funcione de maneira independente e organizada. A escolha dessa arquitetura garante maior escalabilidade, facilidade de manutenção e melhor desempenho do sistema, tornando possível criar uma plataforma educacional moderna, dinâmica e mais atrativa para reduzir a evasão escolar e aumentar o engajamento dos estudantes.
+A arquitetura escolhida para o sistema será em microserviços, permitindo que cada funcionalidade da plataforma funcione de maneira independente e organizada. A escolha dessa arquitetura garante maior escalabilidade, facilidade de manutenção e melhor desempenho do sistema, tornando possível criar uma plataforma educacional moderna, dinâmica e mais atrativa para reduzir a evasão escolar e aumentar o desempenho dos estudantes.
 
 ### 8.2 Componentes
 - Frontend: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem.   
