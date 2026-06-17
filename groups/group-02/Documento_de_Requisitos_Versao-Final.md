@@ -1142,8 +1142,8 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 ---
 ### 10.4 Testes de Requisitos Não Funcionais
 - Performance (tempo de resposta)
-  - Teste de carga estática: simulação no volume de pedidos para dias normais, 50 pedidos simultâneo.
-  - Teste de pico: simulação do horário de maior movimentação, 100 pedidos simultâneos.  
+  - Teste de carga estática: simulação no volume de pedidos para dias normais, 100 pedidos simultâneos.
+  - Teste de pico: simulação do horário de maior movimentação, 200 pedidos simultâneos.  
   - Tempo de carregamento do menu não superior a 2 segundos.    
   - Enivo imediato do pedido à cozinha.
     
@@ -1161,9 +1161,26 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 
 ##  11. Critérios de Aceitação
 
-Defina como validar os requisitos:
-- Métricas  
-- Testes  
+Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue abaixo os critérios de aprovação:  
+
+- Métricas
+    - Tempo de carregamento de tela igual ou inferior a 2 segundos.
+    - Concluir o pedido em até 4 clicks.
+    - Retorno de busca por prato em até 1 segundo
+    - Atualização em tempo real dos status dos pedidos.
+    - Envio imediato do pedido à cozinha.
+    - Finalizar o status do pedido imediatamente após o processamento da compra.
+      
+- Testes
+  - Operar perfeitamente todos os módulos lógicos do programa.
+  - Funcionar de forma integrada, atendendo a todas as regras de negócio.
+  - Operar perfeitamente o fluxo de pedido executado pelo cliente da loja.
+  - Manter estabilidade de funcionamento para a carga máxima de clientes previstos na loja.
+  - Impedir ataques simulados e o vazamento de dados.
+  - Comportar-se responsivamente e funcionar perfeitamente nos principais navegadores.
+  - Operar dentro do esperado em diferentes qualidades de conexão de rede.
+  - Adquirir a aprovação dos stakeholders.
+    
 - Condições de sucesso  
 
 ---
