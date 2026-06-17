@@ -1205,7 +1205,12 @@ Defina como validar os requisitos:
 
 ---
 
-# 14. Observações Finais
+# 14. Observações Finais  
+---  
+- Esta versão precede a prototipagem e a aprovação do cliente.
+- Este documento está sujeito a atualizações com base nas mudanças das regras de negócio.
+- A arquitetura projetada e os testes apresentados cobrem os requisitos descritos para esta versão.
+- As ferramentas tecnológicas listadas para esta versão estão sujeitas a substituições para adequação às mudanças de requisitos.
 
 
 ---
