@@ -402,7 +402,7 @@ A arquitetura escolhida para o sistema será em microserviços, permitindo que c
 A arquitetura foi planejada para atender aos principais requisitos não funcionais do sistema, garantindo qualidade, estabilidade e capacidade de crescimento da plataforma.
 
 - Desempenho: A utilização de microserviços permite que diferentes funções do sistema operem de forma independente, reduzindo sobrecarga e melhorando o tempo de resposta durante o acesso simultâneo de vários usuários  
-- Segurança: A utilização de microserviços permite que diferentes funções do sistema operem de forma independente, reduzindo sobrecarga e melhorando o tempo de resposta durante o acesso simultâneo de vários usuários.
+- Segurança: O sistema contará com autenticação de usuários, controle de acesso por níveis (aluno e professor), criptografia de dados sensíveis e proteção das informações armazenadas no banco de dados. 
 - Escalabilidade: A arquitetura escolhida permite expandir o sistema de maneira gradual, adicionando novos serviços e funcionalidades sem comprometer o funcionamento geral da plataforma, suportando o aumento de usuários ao longo do tempo.
 
 ---
