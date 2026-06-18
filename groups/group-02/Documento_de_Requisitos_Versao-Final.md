@@ -1187,38 +1187,41 @@ Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue a
 
 ##  12. Restrições
 
-- O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.  
-- O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).  
-- O projeto deve ser entregue em até 6 meses.  
-- O sistema deve realizar integrações com Payment Service Providers (PSPs) exclusivamente via APIs RESTful sobre HTTPS com TLS 1.2 ou superior.  
-- O projeto deve implementar uma camada de abstração agnóstica para hardware, permitindo a comunicação com diferentes adquirentes e modelos de Smart POS via TEF ou SDKs.  
-- O sistema deve utilizar obrigatoriamente comunicação via HTTP Local ou WebSockets para o envio de valores aos terminais, vedando a digitação manual.  
-- O sistema deve processar pagamentos via Pix, cartões e carteiras digitais utilizando obrigatoriamente tokenização, sendo proibido o armazenamento de dados sensíveis de pagamento em servidores próprios.  
-- O sistema deve garantir que o tempo de carregamento de qualquer página web seja inferior a 2 segundos.  
-- O projeto deve assegurar que o motor de busca de pratos retorne resultados em menos de 1 segundo.  
-- O sistema deve suportar a carga simultânea de até 1.000 usuários ativos sem perda de fluidez.
-- O projeto deve manter uma disponibilidade mínima de 99,9% (Uptime).  
-- O sistema deve criptografar toda a comunicação cliente-servidor através do protocolo HTTPS.  
-- O projeto deve estar em conformidade estrita com a LGPD, informando a finalidade da coleta de dados e permitindo a exclusão dos mesmos mediante solicitação do usuário.    
+### Tecnológicas
+- Interface: Desenvolvimento obrigatoriamente em tecnologia web responsiva, compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).  
+- Comunicação e Hardware: Implementação de camada de abstração agnóstica para hardware (comunicação com diferentes Smart POS via TEF ou SDKs). O envio de valores aos terminais deve ser via HTTP Local ou WebSockets, sendo proibida a digitação manual.  
+- Integrações: Conexão com PSPs exclusivamente via APIs RESTful sobre HTTPS (TLS 1.2 ou superior).
+
+### Legais e de Segurança
+- Dados de Pagamento: Uso obrigatório de tokenização para Pix, cartões e carteiras digitais. É terminantemente proibido o armazenamento de dados sensíveis de pagamento em servidores próprios.   
+- Criptografia: Toda a comunicação cliente-servidor deve utilizar HTTPS.  
+- Privacidade (LGPD): Conformidade estrita com a LGPD, exigindo transparência na finalidade da coleta de dados e garantia do direito de exclusão pelo usuário.  
+
+### De prazo
+- Entrega: O projeto completo deve ser entregue em até 6 meses.
+
+### Desempenho e Escalabilidade
+- Disponibilidade: O sistema deve garantir um uptime mínimo de 99,9%.  
+- Velocidade: Tempo de carregamento de páginas inferior a 2 segundos e motor de busca de pratos com resposta em menos de 1 segundo.  
+- Capacidade: Suporte para até 1.000 usuários ativos simultâneos sem perda de fluidez.  
 
 ---
 
 ##  13. Premissas
 
-- Pressupõe-se que os usuários possuam seus smartphones.
-- Pressupõe-se que os funcionários e gestores do estabelecimento tenham acesso ao sistema via smartphone, tablet, notebook ou desktop.
-- Assume-se que funcionários e gestores possuam cadastro no banco de dados do sistema para realizar-se às autenticações.
-- Exige-se que o estabelecimento tenha acesso a internet.
-- Exige-se que os usuários tenham acesso à internet.
-- Exige-se que todos os dispositivos eletrônicos/digitais do estabelecimento estejam conectados à internet.
-- Assume-se que todas as mesas possuam QR Code do endereço da aplicação web e estejam devidamente sinalizadas.
-- Assume-se que o estabelecimento possua maquininha de pagamentos.
-- Assume-se que o usuário final possui um dispositivo com acesso estável à internet e um navegador moderno (Chrome, Safari, Edge ou Firefox) para garantir a performance de carregamento prevista.
-- Pressupõe-se que os estabelecimentos utilizem terminais Smart POS ou hardware de rede compatíveis com os protocolos HTTP Local ou WebSockets para a automação física.
-- Exige-se que o provedor de infraestrutura (Cloud/Servidor) suporte escalabilidade horizontal para absorver picos de 50% de demanda sem degradação de performance.
-- Considera-se que o gateway de pagamento (PSP) escolhido ofereça suporte nativo a Webhooks e APIs baseadas em REST com certificação PCI DSS.  
-- Assume-se que os gestores e a equipe da cozinha possuam treinamento básico para operar a interface administrativa e atualizar o status dos pedidos em tempo real.  
-- Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas. 
+### Conectividade e Dispositivos
+- Acesso à Internet: Conexão obrigatória e estável para os usuários e para todos os dispositivos eletrônicos do estabelecimento.  
+- Hardware dos Usuários: Clientes utilizam smartphones próprios com navegadores modernos (Chrome, Safari, Edge ou Firefox).  
+- Hardware do Estabelecimento: Funcionários e gestores acessam o sistema via smartphone, tablet ou computador, e o local dispõe de maquininhas de pagamento (Smart POS) compatíveis com HTTP Local ou WebSockets.
+
+### Operação e Infraestrutura do Local
+- Sinalização: Todas as mesas devidamente identificadas com QR Codes direcionando para a aplicação web.  
+- Processos e Pessoas: Equipe e gestores cadastrados no sistema e com treinamento básico para operar a interface e atualizar os pedidos em tempo real.
+
+### Infraestrutura Técnica e Integrações
+- Dados Otimizados: Banco de dados de pratos pré-configurado com imagens e descrições leves para garantir a velocidade das buscas.  
+- Servidores (Cloud): Capacidade de escalabilidade horizontal para absorver picos de até 50% na demanda sem perder desempenho.  
+- Gateway de Pagamento (PSP): Provedor com certificação PCI DSS e suporte nativo a APIs REST e Webhooks.  
 
 ---
 
