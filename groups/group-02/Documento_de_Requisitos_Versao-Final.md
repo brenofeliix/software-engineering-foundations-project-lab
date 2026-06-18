@@ -456,13 +456,13 @@ ESCALABILIDADE
 
 ## 9. Casos de Uso e Diagramas UML
 
-Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+Esta seção representa visualmente e descritivamente o funcionamento do Sistema de Auto Atendimento para restaurantes. Os diagramas UML auxiliam na compreensão das funcionalidades do sistema, dos atores envolvidos, dos fluxos de operação e da estrutura principal da aplicação.
 
-Os diagramas ajudam na:
-- modelagem do sistema;
-- comunicação entre equipe;
-- entendimento da arquitetura e funcionalidades;
-- documentação técnica do projeto.
+Seus principais atores são:
+- Cliente: Usa o próprio celular para ver o cardápio, fazer pedidos e pagar via Pix ou cartão.  
+- Cozinheiro: Monitora a tela da cozinha para saber o que preparar e avisa o sistema quando o prato está pronto.  
+- Garçom: Recebe alertas no celular e leva os pratos prontos até a mesa correspondente.  
+- Gestor: Acessa o painel web para ligar/desligar pratos do cardápio e analisar os relatórios financeiros mensais de vendas.  
 
 ---
 
@@ -894,7 +894,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ## 9.4 Diagrama de Sequência (UML)
 
-Representa a comunicação entre objetos ao longo do tempo.
+Mostra a dinâmica do sistema no tempo. Ele detalha o passo a passo cronológico de como as mensagens e os dados viajam entre o usuário, as telas e o backend durante tarefas críticas (como enviar um pedido ou processar um pagamento).
 
 ---
 
@@ -964,7 +964,7 @@ Painel Admin -> Gestor: Visualizar ou baixar PDF
 
 ## 9.5 Diagrama de Componentes
 
-Representa os módulos e componentes principais do sistema.
+Este diagrama representa a visão estática e estrutural do software, mapeando como o sistema é dividido logicamente em módulos independentes e interconectados. Ele ilustra a separação física e de responsabilidades entre as interfaces visuais (Frontend), as regras de negócio e processamento (Backend Server), os serviços de segurança e gateways de terceiros (Integrações Externas), e as estruturas de armazenamento (Persistência). As conexões detalham as dependências lógicas de funcionamento, garantindo que o acoplamento do sistema seja modular, seguro e escalável.
 
 ![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/3dd3ba98eacb328822de9d292a7d9a82502e22e1/groups/group-02/Diagrama%20de%20Componentes.png)
 
@@ -972,7 +972,7 @@ Representa os módulos e componentes principais do sistema.
 
 ## 9.6 Diagrama de Implantação (Deployment)
 
-Representa onde o sistema será executado.
+Este diagrama representa a topologia de infraestrutura física e de rede necessária para a execução do sistema em ambiente real. Ele mapeia os dispositivos de hardware utilizados no salão e na cozinha (dispositivos locais como smartphones, tablets e terminais de pagamento) e a infraestrutura hospedada em nuvem pública (servidores virtuais de aplicação e bancos de dados gerenciados). Além de definir as conexões físicas através de caminhos de comunicação e seus respectivos protocolos de rede (como HTTPS, TLS 1.2 e TCP/IP), o diagrama especifica formalmente quais artefatos de software residem e são executados dentro de cada nó de hardware.
 
 ---
 
