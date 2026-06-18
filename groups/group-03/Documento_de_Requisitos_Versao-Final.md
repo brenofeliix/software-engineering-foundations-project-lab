@@ -73,10 +73,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 ### 3.2 Stakeholders
 - Alunos (usuários finais): utilizam a plataforma para estudar por meio de jogos educativos.
 - Professores: acompanham o desempenho dos alunos, criam ou gerenciam turmas e utilizam a plataforma como apoio pedagógico.
-- Escolas/Instituições de Ensino: adotam o sistema para uso educacional e acompanham resultados gerais.
 - Pais ou Responsáveis: acompanham o progresso e engajamento dos alunos.
-- Desenvolvedores: responsáveis pela criação, manutenção e evolução do sistema.
-- Equipe de suporte: presta auxílio técnico aos usuários e resolve problemas.
 - Administradores do sistema: gerenciam usuários, conteúdos e funcionamento geral da plataforma.
 - Equipe pedagógica: define conteúdos e valida os jogos educativos.
 - Gestores escolares: analisam relatórios e resultados.
@@ -619,28 +616,135 @@ Os diagramas podem ser feitos utilizando:
 
 ---
 
-##  10. Plano de Testes
+## 10. Plano de Testes
 
 ### 10.1 Estratégia de Teste
-Como o sistema será testado?
+
+A validação do sistema será realizada de forma incremental ao longo do ciclo de desenvolvimento, visando garantir a conformidade com os requisitos funcionais e não funcionais especificados. Serão aplicadas diferentes técnicas de teste, abrangendo desde a verificação individual dos componentes até a validação do sistema em ambiente integrado. Os testes de aceitação serão conduzidos com usuários representativos do público-alvo, a fim de avaliar a aderência da solução às necessidades identificadas.
 
 ### 10.2 Tipos de Teste
-- Unitário  
-- Integração  
-- Sistema  
-- Aceitação  
+
+- **Teste Unitário: Verificação individual de métodos, funções e componentes do sistema.
+- **Teste de Integração: Validação da comunicação e interoperabilidade entre módulos.
+- **Teste de Sistema: Avaliação do comportamento do sistema como um todo em ambiente controlado.
+- **Teste de Aceitação: Validação dos requisitos junto aos usuários e demais partes interessadas.
 
 ### 10.3 Casos de Teste
 
-#### CT01 - Nome
-**Requisito relacionado:** RF01  
-**Descrição:**  
-**Entrada:**  
-**Resultado esperado:**  
+#### CT01 – Cadastro de Aluno
+
+**Requisito Relacionado: RF01
+
+**Descrição:** Verificar a capacidade do sistema de realizar o cadastro de novos alunos.
+
+**Dados de Entrada:
+- Nome completo;
+- E-mail válido;
+- Senha válida;
+- Idade;
+- Ano escolar.
+
+**Resultado Esperado:  
+O sistema deve registrar os dados informados e criar a conta do usuário com sucesso.
 
 ---
 
+#### CT02 – Autenticação de Usuário
+
+**Requisito Relacionado: RF04
+
+**Descrição:** Verificar a autenticação de usuários previamente cadastrados.
+
+**Dados de Entrada:
+- E-mail válido;
+- Senha correspondente.
+
+**Resultado Esperado: 
+O sistema deve permitir o acesso do usuário às funcionalidades autorizadas.
+
+---
+
+#### CT03 – Registro de Sequência de Estudos (Streak)
+
+**Requisito Relacionado: RF11
+
+**Descrição: Verificar o registro e a atualização da sequência diária de estudos.
+
+**Dados de Entrada:
+- Acessos consecutivos realizados em dias subsequentes.
+
+**Resultado Esperado: 
+O sistema deve atualizar corretamente o contador de sequência de estudos.
+
 ### 10.4 Testes de Requisitos Não Funcionais
-- Performance (tempo de resposta)  
-- Segurança  
-- Usabilidade
+
+#### Desempenho
+
+- Avaliar o tempo de resposta das funcionalidades críticas.
+- Verificar a capacidade do sistema sob condições de carga previstas.
+- Validar a escalabilidade da solução.
+
+#### Segurança
+
+- Verificar mecanismos de autenticação e autorização.
+- Avaliar a proteção de dados dos usuários.
+- Testar a resistência a vulnerabilidades comuns, como SQL Injection e XSS.
+
+#### Usabilidade
+
+- Avaliar a facilidade de utilização da interface.
+- Verificar a navegabilidade do sistema.
+- Validar a adequação da solução ao público-alvo.
+
+---
+
+## 11. Critérios de Aceitação
+
+Os requisitos serão considerados aceitos quando atenderem aos seguintes critérios:
+
+- Todos os casos de teste previstos forem executados com sucesso;
+- Os requisitos funcionais forem implementados conforme especificado;
+- O tempo de resposta permanecer dentro dos limites estabelecidos;
+- Não forem identificadas falhas críticas que comprometam a utilização do sistema;
+- Os mecanismos de segurança estiverem operando conforme os requisitos definidos;
+- Os usuários participantes dos testes de aceitação validarem o funcionamento adequado da solução.
+
+---
+
+## 12. Restrições
+
+### Restrições Tecnológicas
+
+- O sistema deverá operar por meio de conexão com a internet.
+- A solução deverá ser compatível com dispositivos móveis e computadores.
+- A infraestrutura utilizada deverá suportar múltiplos acessos simultâneos.
+- O sistema deverá manter tempo de resposta inferior a três segundos em condições normais de operação.
+
+### Restrições Legais
+
+- O sistema deverá realizar o tratamento dos dados pessoais dos usuários em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018).
+- O armazenamento e processamento das informações dos usuários deverão respeitar os princípios de privacidade, finalidade, necessidade e segurança previstos na legislação vigente.
+- O conteúdo educacional disponibilizado na plataforma deverá respeitar a legislação relacionada à propriedade intelectual e aos direitos autorais.
+
+### Restrições de Prazo
+
+- O desenvolvimento do sistema deverá ser concluído dentro do período estabelecido pelo cronograma do projeto.
+- As atividades de análise, implementação, testes e validação deverão ser realizadas dentro dos prazos definidos para cada etapa do desenvolvimento.
+- A versão final do sistema deverá estar disponível para avaliação e entrega até a data prevista pela instituição ou disciplina responsável pelo projeto.
+- Eventuais alterações de escopo após a aprovação dos requisitos poderão impactar os prazos inicialmente estabelecidos..
+
+---
+
+## 13. Premissas
+
+- Os usuários possuirão acesso à internet para utilização da plataforma.
+- Os dispositivos utilizados atenderão aos requisitos mínimos para execução do sistema.
+- Os alunos fornecerão informações corretas durante o processo de cadastro.
+- Os professores utilizarão a plataforma para gerenciamento de grupos e acompanhamento do desempenho dos alunos.
+- A infraestrutura tecnológica necessária para hospedagem e operação do sistema estará disponível durante todo o período de utilização.
+
+---
+
+## 14. Observações Finais
+
+Este documento estabelece os requisitos e critérios necessários para o desenvolvimento do sistema educacional gamificado proposto. As especificações apresentadas servirão como referência para as atividades de análise, desenvolvimento, testes e validação, contribuindo para a construção de uma solução alinhada aos objetivos pedagógicos e tecnológicos definidos para o projeto.
