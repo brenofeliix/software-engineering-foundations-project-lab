@@ -459,10 +459,10 @@ ESCALABILIDADE
 Esta seção representa visualmente e descritivamente o funcionamento do Sistema de Auto Atendimento para restaurantes. Os diagramas UML auxiliam na compreensão das funcionalidades do sistema, dos atores envolvidos, dos fluxos de operação e da estrutura principal da aplicação.
 
 Seus principais atores são:
-- Cliente: Usa o próprio celular para ver o cardápio, fazer pedidos e pagar via Pix ou cartão.  
-- Cozinheiro: Monitora a tela da cozinha para saber o que preparar e avisa o sistema quando o prato está pronto.  
-- Garçom: Recebe alertas no celular e leva os pratos prontos até a mesa correspondente.  
-- Gestor: Acessa o painel web para ligar/desligar pratos do cardápio e analisar os relatórios financeiros mensais de vendas.  
+- **Cliente**: Usa o próprio celular para ver o cardápio, fazer pedidos e pagar via Pix ou cartão.  
+- **Cozinheiro**: Monitora a tela da cozinha para saber o que preparar e avisa o sistema quando o prato está pronto.  
+- **Garçom**: Recebe alertas no celular e leva os pratos prontos até a mesa correspondente.  
+- **Gestor**: Acessa o painel web para ligar/desligar pratos do cardápio e analisar os relatórios financeiros mensais de vendas.  
 
 ---
 
