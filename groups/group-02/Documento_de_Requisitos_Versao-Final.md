@@ -1181,7 +1181,70 @@ Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue a
   - Operar dentro do esperado em diferentes qualidades de conexão de rede.
   - Adquirir a aprovação dos stakeholders.
     
-- Condições de sucesso  
+- Condições de sucesso
+
+  **Critério 01 - Menu Principal**  
+  **Dado** que o cliente esteje na mesa do estabelecimento.  
+  **Quando** escanear o QR Code na mesa.  
+  **Então** é redirecionado ao menu principal contendo o cardápio.
+
+  **Critério 02 - Filtro**  
+  **Dado** que o cliente abra o menu principal.  
+  **Quando** selecionar a tag de categoria de prato.  
+  **Então** o sistema exibe os pratos naquela categoria.
+
+  **Critério 03 - Porções**  
+  **Dado** que o cliente selecione o prato.  
+  **Quando** tocar no ícone "+" ou "-".  
+  **Então** o sistema adiciona ou decrementa as porções.
+
+  **Critéiro 04 - Acompanhamentos**  
+  **Dado** que o cliente abra as opções de acompanhamento.  
+  **Quando** marcar ou desmarcar os campos para os mesmos.  
+  **Então** o sistema adiciona e/ou a remove os itens escolhidos.
+
+  **Critéio 05 - Resumo**  
+  **Dado** que o cliene selecione o prato.  
+  **Quando** tocar para enviar o pedido.  
+  **Então** o sistema exibe o resumo do pedido a ser enviado.
+
+  **Critério 06 - Busca**  
+  **Dado** que o cliente toque na barra de pesquisa.  
+  **Quando** enviar um nome de receita.  
+  **Então** o sistema carrega a respectiva receita se encontrada.  
+  **Caso contrário** retorna uma mensagem de não encontrado.
+
+  **Critério 07 - Pagamentos**  
+  **Dado** que o cliente conclua o pedido.  
+  **Quando** selecionar a forma de pagamento.  
+  **Então** o sistema o redireciona para a API correspondente.
+
+  **Critério 08 - Status**  
+  **Dado** que o usuário tenha executado login de colaborador/gestor.  
+  **Quando** tocar para alterar o status.  
+  **Então** o sistema atualiza o andamento do pedido para todas as telas operacionais e do cliente solicitante.
+
+  **Critério 09 - Disponibilidade**  
+  **Dado** que o gestor selecione uma receita no dashboard.  
+  **Quando** clicar no botão on/off.  
+  **Então** o sistema altera a disponibilidade do prato para venda.
+
+  **Critério 10 - Cardápio**  
+  **Dado** que o gestor esteja na tela principal de administrador.  
+  **Quando** clicar para adicionar ou remover pratos.  
+  **Então** o sistema atualiza a estrutura do cardápio.
+
+  **Critério 11 - Finalização automática**  
+  **Dado** que o cliente efetue o pagamento.  
+  **Quando** a API confirmar o pagamento.  
+  **Então** o sistema finaliza o histórico da compra.
+
+  **Critério 12 - Relatórios**  
+  **Dado** que o gestor esteja na tela principal de administrador.  
+  **Quando** clicar para gerar relaório de vendas/estoque/desempenho.  
+  **Então** o sistema gerará um arquivo PDF e efetuará download.
+  
+  
 
 ---
 
