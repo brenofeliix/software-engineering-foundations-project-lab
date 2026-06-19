@@ -535,14 +535,8 @@ Representa a comunicação entre objetos ao longo do tempo.
 
 ---
 
-### Exemplo
+<img width="1440" height="900" alt="diagrama-sequencia drawio" src="https://github.com/user-attachments/assets/74b1d436-715d-4194-bafe-d4b6bb32e639" />
 
-```text
-Usuário -> Sistema: realizar login
-Sistema -> Banco: validar usuário
-Banco -> Sistema: usuário válido
-Sistema -> Usuário: acesso liberado
-```
 
 ---
 
