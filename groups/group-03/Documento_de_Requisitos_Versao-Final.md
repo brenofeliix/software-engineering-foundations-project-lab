@@ -559,15 +559,7 @@ Representa onde o sistema será executado.
 
 ### Exemplo
 
-```text
-[Usuário]
-     |
-Internet
-     |
-[Servidor Web]
-     |
-[Servidor Banco de Dados]
-```
+<img width="1158" height="804" alt="diagrama-implantacao drawio" src="https://github.com/user-attachments/assets/df39b044-f11f-4a62-86d4-ff36b7f06f75" />
 
 ---
 
