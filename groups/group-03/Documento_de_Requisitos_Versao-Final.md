@@ -423,7 +423,7 @@ Ator: Usuário (Aluno, Professor ou Administrador)
 
 Descrição: Permite que o usuário realize o cadastro inicial no sistema, acesse a plataforma por meio de credenciais validadas, solicite a recuperação de senhas e gerencie os dados informados em seu perfil.
 
----
+
 
 Fluxo principal
 Usuário acessa a interface inicial e escolhe realizar o cadastro ou autenticação.
@@ -434,7 +434,7 @@ Sistema criptografa a senha de forma automática e realiza a validação do logi
 
 Sistema autentica o usuário e libera o acesso às funções mapeadas ao seu respectivo perfil.
 
----
+
 
 Fluxo alternativo
 Credenciais inválidas ou falha na validação de permissões pelo sistema.
@@ -445,14 +445,14 @@ Usuário edita informações ou realiza a visualização do perfil após o login
 
 Usuário realiza o encerramento da sessão ativa utilizando a opção Sair.
 
----
+
 
 ### UC02 - Execução de Atividades Pedagógicas e Jogos
 Ator: Aluno
 
 Descrição: Permite ao aluno acessar as trilhas de aprendizado da plataforma, selecionar a disciplina desejada e responder a questões e atividades práticas utilizando os jogos educativos.
 
----
+
 
 Fluxo principal
 Aluno acessa o ambiente de trilhas de aprendizagem da plataforma.
@@ -465,19 +465,18 @@ Aluno inicia o jogo didático e responde às atividades integradas.
 
 Sistema registra o desempenho do aluno e armazena os dados no histórico de maneira automática.
 
----
+
 
 Fluxo alternativo
 Aluno decide praticar ativando o Modo Sortido para responder atividades aleatórias.
 
----
 
 ### UC03 - Evolução e Recompensas (Gamificação)
 Ator: Aluno
 
 Descrição: Mapeia os recursos internos de engajamento do aluno baseados no acúmulo de experiência (XP), recebimento de conquistas por metas batidas, controle de sequência de estudos (streak) e compras na loja virtual.
 
----
+
 
 Fluxo principal
 Aluno interage no sistema e conclui as tarefas pedagógicas propostas.
@@ -488,7 +487,7 @@ Aluno é condecorado e recebe conquistas associadas à evolução demonstrada.
 
 Aluno realiza a consulta ao ranking geral para verificar seu posicionamento.
 
----
+
 
 Fluxo alternativo
 Aluno acessa a loja interna da plataforma para comprar recompensas utilizando os pontos coletados.
@@ -498,7 +497,7 @@ Ator: Aluno
 
 Descrição: Permite que o estudante faça parte de turmas escolares ou grupos de estudo virtuais, acompanhe os comunicados enviados e cumpra missões designadas.
 
----
+
 
 Fluxo principal
 Aluno insere o código ou convite recebido para entrar no grupo.
@@ -509,19 +508,19 @@ Aluno realiza e conclui as missões que foram publicadas para a sua turma.
 
 Sistema envia notificações automáticas e expõe avisos emitidos para o aluno.
 
----
+
 
 Fluxo alternativo
 Aluno realiza apenas a leitura de notificações e avisos sem iniciar missões pendentes.
 
----
+
 
 ### UC05 - Organização de Grupos e Avisos (Professor)
 Ator: Professor
 
 Descrição: Engloba as funções concedidas ao professor para coordenar suas turmas de alunos na plataforma, engajando a criação de novas salas, controle de membros e emissão de avisos informativos.
 
----
+
 
 Fluxo principal
 Professor solicita a criação de um novo grupo no sistema.
@@ -532,38 +531,38 @@ Professor gerencia o grupo realizando a adição ou a remoção manual de alunos
 
 Professor digita e realiza o envio de avisos gerais direcionados aos estudantes vinculados.
 
----
+
 
 Fluxo alternativo
 Professor seleciona e executa a exclusão permanente de um grupo ou turma existente.
 
----
+
 
 ### UC06 - Controle e Gestão de Missões (Professor)
 Ator: Professor
 
 Descrição: Responsável pela manutenção pedagógica e publicação de tarefas e missões voltadas aos grupos moderados pelo educador.
 
----
+
 
 Fluxo principal
 Professor acessa a área operacional da turma e aciona a opção para criar uma nova missão.
 
 Professor preenche os requisitos e publica a missão oficial para que fique visível ao grupo de alunos.
 
----
+
 
 Fluxo alternativo
 Professor localiza uma missão em aberto para realizar edições ou excluí-la de circulação.
 
----
+
 
 ### UC07 - Monitoramento de Evolução Acadêmica
 Ator: Professor ou Aluno
 
 Descrição: Provê relatórios visuais e históricos do progresso, permitindo ao aluno monitorar seu avanço e ao professor obter indicadores pedagógicos unificados das turmas.
 
----
+
 
 Fluxo principal
 Usuário acessa o painel de monitoramento (o Aluno visualiza seu progresso pessoal; o Professor seleciona a opção de visualizar seus alunos).
@@ -572,19 +571,19 @@ Sistema recupera as informações do banco e realiza a montagem do histórico e 
 
 Professor acompanha o rendimento da turma e emite relatórios consolidados sobre o desempenho dos estudantes.
 
----
+
 
 Fluxo alternativo
 Professor ou aluno executa uma consulta rápida nos rankings da disciplina para verificação do progresso contextual.
 
----
+
 
 ## UC08 - Administração Geral e Infraestrutura do Sistema
 Ator: Administrador
 
 Descrição: Concede total autoridade técnica ao administrador para operar e manter a integridade operacional e pedagógica do sistema educacional.
 
----
+
 
 Fluxo principal
 Administrador realiza o login e o sistema executa a validação automática das permissões administrativas.
@@ -597,7 +596,7 @@ Administrador gerencia as regras e itens da loja, parâmetros de rankings e a en
 
 Sistema gera de forma contínua o registro de logs de auditoria e executa rotinas de backup automático para preservação dos dados.
 
----
+
 
 Fluxo alternativo
 Administrador acessa a aba gerencial para visualizar estatísticas de uso gerais da plataforma.
