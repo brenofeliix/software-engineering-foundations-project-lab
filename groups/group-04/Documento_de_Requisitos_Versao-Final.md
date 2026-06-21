@@ -1123,24 +1123,8 @@ Representa o fluxo de execução de processos no sistema.
 
 ---
 
-### Exemplo
+<img width="10608" height="5664" alt="pode_papar_activity_diagram" src="https://github.com/user-attachments/assets/51cb0ce2-2535-4818-a422-8102f0764cac" />
 
-```text
-[Início]
-   |
-[Acessar sistema]
-   |
-[Inserir login]
-   |
-{Credenciais válidas?}
-   | Sim
-[Acessa sistema]
-   |
-[Fim]
-
-   | Não
-[Mensagem de erro]
-```
 
 ---
 
@@ -1150,14 +1134,8 @@ Representa a comunicação entre objetos ao longo do tempo.
 
 ---
 
-### Exemplo
+<img width="2712" height="3552" alt="pode_papar_sequencia(1)" src="https://github.com/user-attachments/assets/85d273b1-c015-4f46-be9c-db6749f564f0" />
 
-```text
-Usuário -> Sistema: realizar login
-Sistema -> Banco: validar usuário
-Banco -> Sistema: usuário válido
-Sistema -> Usuário: acesso liberado
-```
 
 ---
 
