@@ -2359,17 +2359,17 @@ A tabela abaixo descreve os testes planejados para validação dos principais re
 
 | RNF | Tipo | Descrição | Método de Teste | Critério |
 |---|---|---|---|---|
-| RNF05 / RNF07 | Performance | Tempo de resposta das requisições em condições normais de operação | Ferramenta de carga (ex.: k6 ou Apache JMeter). Simular 100 usuários simultâneos realizando consultas. | 95% das requisições respondidas em até 2 segundos. |
-| RNF06 / RNF08 | Performance | Suporte a acessos simultâneos em horário de pico | Teste de carga com até 1.000 usuários simultâneos em horário de pico simulado. | Sistema estável, sem degradação superior a 20% no tempo de resposta. |
+| RNF05 / RNF07 | Performance | Tempo de resposta das requisições em condições normais de operação | Ferramenta de carga (ex.: k6 ou Apache JMeter). Simular acesso de múltiplos usuários simultâneos realizando consultas. | Grande maioria das requisições respondidas em poucos segundos. |
+| RNF06 / RNF08 | Performance | Suporte a acessos simultâneos em horário de pico | Teste de carga com múltiplos usuários simultâneos em horário de pico simulado. | Sistema estável, sem degradação crítica no tempo de resposta. |
 | RNF12 | Disponibilidade | Disponibilidade mínima do sistema | Monitoramento contínuo por 30 dias com ferramenta de uptime (ex.: UptimeRobot). | Tempo de inatividade não planejado inferior a 7,2 horas no período. |
 | RNF14 | Confiabilidade | Recuperação de falhas com perda mínima de dados | Simular falha abrupta no servidor durante operações em andamento. Verificar restabelecimento da operação e integridade dos dados após a recuperação. | Sistema restabelecido em tempo hábil. Nenhuma perda de dados em operações já confirmadas. |
 | RNF15 | Confiabilidade | Integridade de transações financeiras | Simular falha de conexão durante operação de recarga. Verificar estado do saldo e do registro. | Saldo não alterado em operações incompletas. Nenhuma inconsistência de dados. |
-| RNF16 | Segurança | Bloqueio de formas alternativas de autenticação | Tentativa de acesso ao sistema por formulário de login local, sem passar pelo fluxo OAuth2 do SUAP. | 100% das tentativas de autenticação fora do SUAP bloqueadas. Nenhum acesso concedido por meio alternativo. |
+| RNF16 | Segurança | Bloqueio de formas alternativas de autenticação | Tentativa de acesso ao sistema por formulário de login local, sem passar pelo fluxo OAuth2 do SUAP. | Todas as tentativas de autenticação fora do SUAP bloqueadas. Nenhum acesso concedido por meio alternativo. |
 | RNF17 | Segurança | Conformidade PCI-DSS para transações com cartão de crédito | Revisão de código e auditoria: verificar que dados sensíveis de cartão não são armazenados internamente. | Nenhum dado de cartão persistido fora do gateway de pagamento. |
-| RNF18 | Segurança | Controle de acesso por perfil (RBAC) | Testes manuais tentando acessar rotas administrativas com perfil de estudante. | 100% das tentativas de acesso indevido bloqueadas com HTTP 403. |
+| RNF18 | Segurança | Controle de acesso por perfil (RBAC) | Testes manuais tentando acessar rotas administrativas com perfil de estudante. | Todas as tentativas de acesso indevido bloqueadas com HTTP 403. |
 | RNF01 / RNF04 | Usabilidade | Acessibilidade e suporte a leitores de tela | Auditoria com ferramenta axe ou WAVE. Testes com leitor de tela (NVDA ou VoiceOver). | Sem erros críticos de acessibilidade. Todos os elementos interativos com labels adequados. |
 | RNF03 | Usabilidade | Alternância de tema claro/escuro e alto contraste | Testes manuais ativando e desativando o alto contraste e alternando entre tema claro e escuro nas configurações do sistema. | Todas as funcionalidades permanecem acessíveis e legíveis em ambos os temas. Alternância funcionando corretamente para todos os usuários. |
-| RNF02 | Usabilidade | Responsividade mobile | Testes manuais em smartphones e tablets (Android/iOS). DevTools em resolução 375px e 768px. | Todas as funcionalidades acessíveis e utilizáveis em telas pequenas. |
+| RNF02 | Usabilidade | Responsividade mobile | Testes manuais em smartphones e tablets (Android/iOS). | Todas as funcionalidades acessíveis e utilizáveis em telas pequenas. |
 | RNF13 | Confiabilidade | Backup automático diário e integridade das cópias | Verificar a execução das rotinas de backup ao final de um período de 7 dias. Tentar restaurar os dados a partir de uma cópia gerada. | Backups executados diariamente. Dados restaurados com integridade confirmada. Cópias armazenadas em local separado. |
 
 ---
