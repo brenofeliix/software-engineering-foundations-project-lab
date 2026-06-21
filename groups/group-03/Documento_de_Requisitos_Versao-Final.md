@@ -418,12 +418,6 @@ Os diagramas ajudam na:
 
 # 9.1 Casos de Uso
 
-Os casos de uso representam as interações entre usuários (atores) e o sistema.
-
----
-
-### UC01 - Realizar Login
-
 ### UC01 - Autenticação e Gerenciamento de Conta
 Ator: Usuário (Aluno, Professor ou Administrador)
 
@@ -612,35 +606,156 @@ Administrador dispara comandos manuais pontuais para forçar a realização de u
 
 ---
 
----
 
-### Fluxo principal
-1. Usuário acessa a tela de login  
-2. Usuário informa e-mail e senha  
-3. Sistema valida credenciais  
-4. Sistema libera acesso  
 
----
+# Casos de Uso do Sistema
 
-### Fluxo alternativo
-- Credenciais inválidas  
-- Usuário esqueceu senha  
+## Usuário
 
----
-
-## Exemplo de Diagrama de Caso de Uso
-
+```text
 [Usuário]
-
-    |
-    
-    | ---- (Realizar Login)
-    
-    | ---- (Cadastrar Conta)
-    
-    | ---- (Recuperar Senha) 
+│
+├── (Cadastrar Conta)
+├── (Realizar Login)
+├── (Recuperar Senha)
+├── (Gerenciar Perfil)
+└── (Encerrar Sessão)
+```
 
 ---
+
+## Aluno
+
+```text
+[Aluno]
+│
+├── (Acessar Trilhas de Aprendizagem)
+├── (Selecionar Disciplina)
+├── (Responder Atividades)
+├── (Jogar Jogos Educativos)
+├── (Utilizar Modo Sortido)
+├── (Ganhar XP)
+├── (Receber Conquistas)
+├── (Visualizar Streak)
+├── (Consultar Ranking)
+├── (Comprar Recompensas na Loja)
+├── (Entrar em Grupo)
+├── (Visualizar Missões)
+├── (Realizar Missões)
+├── (Visualizar Avisos)
+└── (Receber Notificações)
+```
+
+---
+
+## Professor
+
+```text
+[Professor]
+│
+├── (Criar Grupo)
+├── (Gerenciar Grupo)
+│   ├── (Adicionar Alunos)
+│   └── (Remover Alunos)
+├── (Enviar Avisos)
+├── (Excluir Grupo)
+├── (Criar Missão)
+├── (Publicar Missão)
+├── (Editar Missão)
+├── (Excluir Missão)
+├── (Visualizar Progresso dos Alunos)
+├── (Emitir Relatórios)
+└── (Consultar Ranking)
+```
+
+---
+
+## Administrador
+
+```text
+[Administrador]
+│
+├── (Realizar Login)
+├── (Gerenciar Usuários)
+├── (Gerenciar Conteúdos)
+├── (Gerenciar Disciplinas)
+├── (Gerenciar Jogos)
+├── (Gerenciar Loja)
+├── (Gerenciar Recompensas)
+├── (Gerenciar Rankings)
+├── (Visualizar Estatísticas)
+├── (Visualizar Logs)
+└── (Executar Backup)
+```
+
+---
+
+# Visão Geral
+
+```text
+                              [Usuário]
+                                  │
+          ┌───────────────────────┼────────────────────────┐
+          │                       │                        │
+  (Cadastrar Conta)      (Realizar Login)      (Recuperar Senha)
+          │
+  (Gerenciar Perfil)
+          │
+  (Encerrar Sessão)
+
+
+                              [Aluno]
+                                  │
+ ┌──────────────┬─────────────────┬────────────────┬─────────────────┐
+ │              │                 │                │                 │
+(Acessar) (Selecionar) (Responder Atividades) (Jogar) (Modo Sortido)
+                                                │
+                                                ▼
+                                         (Ganhar XP)
+                                                │
+                                         (Receber Conquistas)
+                                                │
+                                        (Visualizar Streak)
+                                                │
+                                        (Consultar Ranking)
+                                                │
+                                   (Comprar Recompensas)
+                                                │
+                                         (Entrar em Grupo)
+                                                │
+                        ┌───────────────────────┼─────────────────────┐
+                        │                       │                     │
+               (Visualizar Missões)   (Realizar Missões)   (Visualizar Avisos)
+                                                │
+                                       (Receber Notificações)
+
+
+                            [Professor]
+                                 │
+ ┌───────────────┬─────────────────────┬────────────────────┐
+ │               │                     │                    │
+(Criar Grupo) (Gerenciar Grupo) (Criar Missão) (Visualizar Progresso)
+      │               │                    │                    │
+      │         ┌─────┴─────┐        ┌─────┴─────┐              │
+      │         │           │        │           │              │
+(Enviar Avisos) (Adicionar) (Remover) (Editar) (Excluir) (Emitir Relatórios)
+                                                   │
+                                          (Consultar Ranking)
+
+
+                          [Administrador]
+                                │
+ ┌───────────────┬────────────────┬────────────────┬────────────────┐
+ │               │                │                │                │
+(Gerenciar   (Gerenciar      (Gerenciar      (Gerenciar      (Gerenciar
+ Usuários)    Conteúdos)        Jogos)           Loja)         Rankings)
+        │
+(Visualizar Estatísticas)
+        │
+(Visualizar Logs)
+        │
+(Executar Backup)
+```
 
 ## 9.2 Diagrama de Classes (UML)
 
