@@ -900,65 +900,19 @@ Mostra a dinâmica do sistema no tempo. Ele detalha o passo a passo cronológico
 
 ### Envio de Pedido (Parcial vs. Carrinho Completo)
 
-```text
-Cliente -> App Cliente: Selecionar "Enviar para Cozinha" (ou "Fechar Carrinho")
-App Cliente -> API Gateway: POST /pedido (dados do item/carrinho)
-API Gateway -> Módulo de Pedidos: encaminhaRequisição()
-Módulo de Pedidos -> Módulo de Pedidos: calcularMaiorTempoPreparo()
-Módulo de Pedidos -> Banco Transacional: salvarPedido(Status: "Recebido")
-Banco Transacional -> Módulo de Pedidos: Confirmação de salvamento
-Módulo de Pedidos -> Painel Cozinha: notificarNovoPedidoInstantaneo()
-Módulo de Pedidos -> API Gateway: Retorna Sucesso (HTTP 201)
-API Gateway -> App Cliente: Exibir mensagem de sucesso + Pop-up
-```
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Sequencia%20-%20Envio%20de%20Pedido.png)
 
 ### Processamento de Pagamento Integrado
 
-```text
-Cliente -> App Cliente: Clicar em "Efetuar Pagamento" (Pix ou Cartão)
-App Cliente -> API Gateway: POST /pagamento (dados criptografados TLS 1.2)
-API Gateway -> Módulo de Pedidos: processarPagamento()
-Módulo de Pedidos -> Módulo Tokenização (PCI): tokenizarDadosSensiveis()
-Módulo Tokenização (PCI) -> Camada Agnóstica Smart POS: dispararIntencaoPagamento()
-Camada Agnóstica Smart POS -> Terminal Smart POS (Físico): popularEAtivarTerminal()
-Terminal Smart POS (Físico) -> API Pix / Gateway Externo: processarTransacaoFinanceira()
-API Pix / Gateway Externo -> Terminal Smart POS (Físico): Retorna "Aprovado" (alt: "Erro")
-Terminal Smart POS (Físico) -> Módulo de Pedidos: notificarSucessoPagamento()
-Módulo de Pedidos -> Banco Transacional: atualizarStatusPedido("Finalizado")
-Módulo de Pedidos -> App Cliente: renderizarComprovanteNaTela()
-```
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Sequencia%20-%20Processamento%20de%20Pagamento.png)
 
 ### Ciclo de Vida do Pedido (Operacional)
 
-```text
-Cozinha -> Painel Cozinha: Alterar status para "Em Andamento"
-Painel Cozinha -> API Gateway: PATCH /pedido/{id}/status (novoStatus: "EM_PREPARO")
-API Gateway -> Módulo de Pedidos: atualizarStatus()
-Módulo de Pedidos -> App Cliente: atualizarTelaProgressoCliente() (via Loop/Sincronização)
-
-Cozinha -> Painel Cozinha: Alterar status para "Pronto para Servir"
-Painel Cozinha -> Módulo de Pedidos: notificarPronto()
-Módulo de Pedidos -> App Garçom: dispararNotificacaoVisualSonora()
-
-Garçom -> App Garçom: Alterar status para "Servido" (após levar à mesa)
-App Garçom -> Módulo de Pedidos: PATCH /pedido/{id}/status (novoStatus: "SERVIDO")
-Módulo de Pedidos -> App Cliente: habilitarBotaoEfetuarPagamento()
-```
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Sequencia%20-%20Ciclo%20de%20Vida%20do%20Pedido.png)
 
 ### Autenticação do Gestor e Geração de Relatório Mensal
 
-```text
-Gestor -> Painel Admin: Digitar credenciais e clicar em "Gerar Relatório"
-Painel Admin -> API Gateway: POST /relatorios/mensal (com token de acesso)
-API Gateway -> Módulo Auth: validarPerfilUsuario(Token)
-Módulo Auth -> API Gateway: Perfil Confirmado ("Gestor") (alt: "Acesso Negado")
-API Gateway -> Módulo de Relatórios e BI: processarFechamentoMensal()
-Módulo de Relatórios e BI -> Banco de Históricos e Logs: buscarDadosVendasEFinancas()
-Banco de Históricos e Logs -> Módulo de Relatórios e BI: retornarMassaDeDados()
-Módulo de Relatórios e BI -> Módulo de Relatórios e BI: compilarGraficosETabelas()
-Módulo de Relatórios e BI -> Painel Admin: exportarPDFEConcluirPainel()
-Painel Admin -> Gestor: Visualizar ou baixar PDF
-```
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Squencia%20-%20Autenticacao%20dp%20Gestor%20e%20Geracao%20de%20Relatorios.png)
 
 ---
 
