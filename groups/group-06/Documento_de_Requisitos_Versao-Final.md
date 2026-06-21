@@ -732,46 +732,37 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 # 9.1 Casos de Uso 
 
 ## Diagrama
-```text
+```mermaid
+flowchart LR
 
-[Maria]
-    |
-    | ---- (UC01 - Realizar Login)
-    |           |
-    |           | ---- (Recuperar Senha)
-    |
-    | ---- (UC02 - Cadastrar Conta)
-    |
-    | ---- (UC03 - Gerenciar Cronograma)
-    |           |
-    |           | ---- (Adicionar Atividade)
-    |           |
-    |           | ---- (Editar Atividade)
-    |           |
-    |           | ---- (Excluir Atividade)
-    |           |
-    |           | ---- (Marcar Tarefa como Concluída)
-    |
-    | ---- (UC04 - Usar Método Pomodoro)
-    |           |
-    |           | ---- (Iniciar Ciclo de Foco - 25 min)
-    |           |
-    |           | ---- (Iniciar Intervalo - 5 min)
-    |           |
-    |           | ---- (Pausar / Encerrar Sessão)
-    |
-    | ---- (UC05 - Gerenciar Flashcards)
-    |           |
-    |           | ---- «include» (UC06 - Visualizar Métricas)
-    |           |
-    |           | ---- «include» (UC07 - Jogar Minijogo/Quiz)
-    |
-    | ---- (UC06 - Visualizar Métricas)
-    |
-    | ---- (UC07 - Jogar Minijogo/Quiz)
-    |
-    | ---- (UC08 - Editar Perfil)
+Actor["
+O
+/|\
+/ \
+Usuário"]
 
+UC01((Realizar login))
+UC02((Cadastrar conta))
+UC03((Gerenciar cronograma))
+UC04((Usar método Pomodoro))
+UC05((Gerenciar flashcards))
+UC06((Visualizar métricas))
+UC07((Jogar minijogo/quiz))
+UC08((Editar perfil))
+
+Actor --> UC01
+Actor --> UC02
+Actor --> UC03
+Actor --> UC04
+Actor --> UC05
+Actor --> UC06
+Actor --> UC07
+Actor --> UC08
+
+UC05 -.->|include| UC06
+UC05 -.->|include| UC07
+
+style Actor fill:#fff,stroke:#000,stroke-width:2px
 ```
 ---
 
@@ -893,66 +884,92 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 # 9.2 Diagrama de Classes (UML)
 
 ## Diagrama
+```mermaid
+classDiagram
+direction LR
 
-```text
-+----------------------+          1..*     +----------------------+
-|       Usuário        |------------------>|     Cronograma       |
-+----------------------+                   +----------------------+
-| - id                 |                   | - diaSemana          |
-| - nome               |                   | - horarioInicio      |
-| - email              |                   | - horarioFim         |
-| - senha              |                   | - materia            |
-+----------------------+                   +----------------------+
-| + login()            |                   | + salvar()           |
-+----------------------+                   +----------------------+
-         |
-         | 1..*
-         v
-+----------------------+       (gera)      +----------------------+
-|       Tarefa         |------------------>|     Pontuação        |
-+----------------------+                   +----------------------+
-| - titulo             |                   | - pontos             |
-| - descricao          |                   | - dataObtida         |
-| - data               |                   +----------------------+
-| - status: Boolean    |                   | + acumular()         |
-+----------------------+                   | + gastar()           |
-| + concluir()         |                   +----------------------+
-+----------------------+                            |
-         |                                          | (gera)
-         | 1..*                                     v
-         v                                +----------------------+
-+----------------------+    «use»         |      Minijogo        |
-|    SessaoEstudo      |         +------->+----------------------+
-+----------------------+         |        | - idQuiz             |
-| - duracao            |         |        | - questoes: List     |
-| - ciclosPomodoro     |         |        | - pontuacaoTotal     |
-| - status             |         |        +----------------------+
-+----------------------+         |        | + iniciarQuiz()      |
-| + iniciar()          |         |        +----------------------+
-+----------------------+         |
-         |                       |
-         | (gera)                |
-         v                       |
-+----------------------+         |
-|     Notificação      |         |
-+----------------------+         |
-| - mensagem           |         |
-| - horario            |         |
-| - tipo               |         |
-+----------------------+         |
-                                 |
-+----------------------+         |
-|      Flashcard       |---------+
-+----------------------+
-| - pergunta           |
-| - resposta           |
-| - categoria          |
-| - acertos            |
-| - erros              |
-+----------------------+
-| + registrarResposta()|
-+----------------------+
+class Usuario {
+    +UUID id
+    +String nome
+    +String email
+    +String senha
+    +login()
+    +editarPerfil()
+}
 
+class Cronograma {
+    +UUID id
+    +String diaSemana
+    +Time horarioInicio
+    +Time horarioFim
+    +String materia
+    +salvar()
+}
+
+class Tarefa {
+    +UUID id
+    +String titulo
+    +String descricao
+    +Date data
+    +Boolean status
+    +concluir()
+}
+
+class SessaoEstudo {
+    +UUID id
+    +Integer duracao
+    +Integer ciclosPomodoro
+    +String status
+    +iniciar()
+    +encerrar()
+}
+
+class Flashcard {
+    +UUID id
+    +String pergunta
+    +String resposta
+    +String categoria
+    +Integer acertos
+    +Integer erros
+    +registrarResposta()
+}
+
+class Pontuacao {
+    +UUID id
+    +Integer pontos
+    +String origem
+    +acumular()
+}
+
+class Notificacao {
+    +UUID id
+    +String mensagem
+    +DateTime dataHora
+    +Boolean lida
+    +disparar()
+}
+
+class Minijogo {
+    +UUID idQuiz
+    +Integer pontuacaoTotal
+    +String avatar
+    +iniciarQuiz()
+}
+
+Usuario "1" *-- "1..*" Cronograma : possui
+Usuario "1" *-- "1..*" Tarefa : gerencia
+Usuario "1" *-- "1..*" SessaoEstudo : realiza
+Usuario "1" *-- "1..*" Flashcard : cria
+
+Cronograma "1" o-- "*" Tarefa : organiza
+
+SessaoEstudo --> Notificacao : gera
+
+Flashcard --> Pontuacao : recompensa
+
+Pontuacao --> Minijogo : desbloqueia
+
+Minijogo ..> Flashcard : utiliza
 ```
 ---
 
@@ -978,67 +995,70 @@ Representa o fluxo de execução de processos no sistema desde a entrada do usu�
 
 ## Diagrama
 
-```text
-[Início]
-    |
-[Acessar o aplicativo]
-    |
-{Tem conta?}
-    | Não
-[Cadastrar]
-    |
-[Preencher nome, e-mail e senha]
-    |
-[Sistema valida e cria a conta]
-    |
-[Retornar ao login]
+```mermaid
+flowchart TD
 
-    | Sim
-[Fazer login]
-    |
-{Credenciais válidas?}
-    | Não
-[Exibir erro]
-    |
-[Retornar ao preenchimento]
+A([Início])
 
-    | Sim
-[Acessar dashboard]
-    |
-{Escolher funcionalidade}
-    |
-    | ---- [Cronograma]
-    |           |
-    |       [Adicionar/Editar tarefa]
-    |           |
-    |       [Salvar no checklist]
-    |
-    | ---- [Minijogo]
-    |           |
-    |       [Sistema gera quiz dos flashcards]
-    |           |
-    |       [Usuário responde questões]
-    |           |
-    |       [Sistema atualiza pontuação]
-    |
-    | ---- [Iniciar Pomodoro]
-                |
-            [Sistema inicia contagem de 25 minutos]
-                |
-            {Ciclo finalizado?}
-                | Não
-            [Continuar loop de foco]
+B[Acessar aplicativo]
 
-                | Sim
-            [Emitir alerta sonoro]
-                |
-            [Iniciar intervalo de 5 minutos]
-                |
-            [Revisar flashcards]
-                |
-[Fim]
+C{Tem conta?}
+
+D[Cadastrar]
+
+E[Fazer login]
+
+F{Credenciais válidas?}
+
+G[Exibir erro]
+
+H[Acessar dashboard]
+
+I{Escolher funcionalidade}
+
+J[Cronograma]
+
+K[Minijogo]
+
+L[Iniciar Pomodoro]
+
+M{Ciclo finalizado?}
+
+N[Revisar flashcards]
+
+O([Fim])
+
+A --> B
+B --> C
+
+C -- Não --> D
+D --> E
+
+C -- Sim --> E
+
+E --> F
+
+F -- Não --> G
+G --> F
+
+F -- Sim --> H
+
+H --> I
+
+I --> J
+
+I --> K
+
+I --> L
+
+L --> M
+
+M -- Não --> L
+
+M -- Sim --> N
+
+N --> O
 ```
-
 ---
 
 ## Explicação
