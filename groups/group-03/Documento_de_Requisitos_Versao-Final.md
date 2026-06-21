@@ -805,24 +805,7 @@ Representa o fluxo de execução de processos no sistema.
 
 ---
 
-### Exemplo
-
-```text
-[Início]
-   |
-[Acessar sistema]
-   |
-[Inserir login]
-   |
-{Credenciais válidas?}
-   | Sim
-[Acessa sistema]
-   |
-[Fim]
-
-   | Não
-[Mensagem de erro]
-```
+<img width="669" height="2074" alt="diagrama-atividades drawio" src="https://github.com/user-attachments/assets/a20935cf-df53-4a23-8a12-3d86392bcb6e" />
 
 ---
 
