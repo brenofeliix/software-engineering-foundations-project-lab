@@ -1257,6 +1257,7 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 - Sessão iniciada com sucesso.
 - Usuário redirecionado para a tela inicial com saldo visível.
+- Perfil de acesso carregado conforme o vínculo institucional do usuário (estudante, servidor ou administrador).
 
 ### Pós-condições
 
@@ -1299,11 +1300,78 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT03 – Consulta de saldo em tempo real
+## CT03 – Login com SUAP indisponível
 
 | Campo | Valor |
 |---|---|
 | ID | CT03 |
+| Nome | Login com SUAP indisponível |
+| Requisito | RF01 – Autenticação Institucional / RF09 – Integração com APIs Externas |
+| Tipo | Integração |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Sistema disponível.
+- SUAP simulado como indisponível (ex.: timeout ou erro de conexão).
+
+### Passos
+
+1. Acessar a tela inicial do sistema.
+2. Clicar em "Entrar com SUAP".
+3. Informar credenciais institucionais válidas.
+4. Confirmar o login.
+
+### Resultado Esperado
+
+- Acesso negado.
+- Mensagem informativa exibida ao usuário indicando falha temporária na autenticação, sem exposição de detalhes técnicos.
+- Nenhuma sessão criada.
+
+### Pós-condições
+
+- Sistema permanece na tela de login.
+- Tentativa de acesso registrada no log com indicação de falha de integração.
+
+---
+
+## CT04 – Bloqueio por excesso de tentativas de login
+
+| Campo | Valor |
+|---|---|
+| ID | CT04 |
+| Nome | Bloqueio por excesso de tentativas de login |
+| Requisito | RF01 – Autenticação Institucional |
+| Tipo | Sistema |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Sistema disponível.
+- SUAP disponível.
+
+### Passos
+
+1. Acessar a tela inicial do sistema.
+2. Realizar múltiplas tentativas consecutivas de login com credenciais inválidas, até atingir o limite definido pelo sistema.
+
+### Resultado Esperado
+
+- Após atingir o limite de tentativas, o sistema bloqueia temporariamente novas tentativas de acesso.
+- Mensagem informativa exibida ao usuário sobre o bloqueio temporário.
+
+### Pós-condições
+
+- Todas as tentativas registradas no log.
+- Sistema permanece na tela de login.
+
+---
+
+## CT05 – Consulta de saldo em tempo real
+
+| Campo | Valor |
+|---|---|
+| ID | CT05 |
 | Nome | Consulta de saldo em tempo real |
 | Requisito | RF02 – Consulta de Saldo |
 | Tipo | Integração |
@@ -1331,11 +1399,73 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT04 – Recarga via Pix com valor válido
+## CT06 – Consulta de saldo com usuário sem saldo cadastrado
 
 | Campo | Valor |
 |---|---|
-| ID | CT04 |
+| ID | CT06 |
+| Nome | Consulta de saldo com usuário sem saldo cadastrado |
+| Requisito | RF02 – Consulta de Saldo |
+| Tipo | Sistema |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Usuário autenticado sem nenhum saldo registrado ou com saldo zerado.
+
+### Passos
+
+1. Efetuar login no sistema.
+2. Verificar o saldo exibido na tela inicial.
+
+### Resultado Esperado
+
+- Saldo exibido com valor zero.
+- Nenhuma mensagem de erro técnico exibida.
+
+### Pós-condições
+
+- Interface mantém navegação normal.
+
+---
+
+## CT07 – Consulta de saldo com falha de comunicação com o servidor
+
+| Campo | Valor |
+|---|---|
+| ID | CT07 |
+| Nome | Consulta de saldo com falha de comunicação com o servidor |
+| Requisito | RF02 – Consulta de Saldo / RF09 – Integração com APIs Externas |
+| Tipo | Integração |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Usuário autenticado.
+- Servidor backend simulado como indisponível no momento da consulta.
+
+### Passos
+
+1. Efetuar login no sistema.
+2. Simular falha de comunicação com o servidor.
+3. Verificar o comportamento da tela inicial ao tentar exibir o saldo.
+
+### Resultado Esperado
+
+- Sistema exibe mensagem informativa ao usuário indicando que não foi possível atualizar o saldo, sem exposição de detalhes técnicos.
+
+### Pós-condições
+
+- Nenhuma sessão encerrada de forma inesperada.
+- Interface mantém navegação normal.
+
+---
+
+## CT08 – Recarga via Pix com valor válido
+
+| Campo | Valor |
+|---|---|
+| ID | CT08 |
 | Nome | Recarga via Pix com valor válido |
 | Requisito | RF03 – Recarga de Saldo |
 | Tipo | Integração |
@@ -1367,11 +1497,11 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT05 – Tentativa de recarga com valor abaixo do mínimo
+## CT09 – Tentativa de recarga com valor abaixo do mínimo
 
 | Campo | Valor |
 |---|---|
-| ID | CT05 |
+| ID | CT09 |
 | Nome | Tentativa de recarga com valor abaixo do mínimo |
 | Requisito | RF03 – Recarga de Saldo |
 | Tipo | Unitário |
@@ -1399,11 +1529,79 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT06 – Visualização do cardápio semanal publicado
+## CT10 – Tentativa de recarga com pagamento não confirmado pelo gateway
 
 | Campo | Valor |
 |---|---|
-| ID | CT06 |
+| ID | CT10 |
+| Nome | Tentativa de recarga com pagamento não confirmado pelo gateway |
+| Requisito | RF03 – Recarga de Saldo / RF09 – Integração com APIs Externas |
+| Tipo | Integração |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Usuário autenticado.
+- Gateway de pagamento simulado para retornar falha na confirmação da transação.
+
+### Passos
+
+1. Acessar a área de recarga.
+2. Informar valor válido.
+3. Selecionar método Pix.
+4. Simular não confirmação do pagamento pelo gateway.
+
+### Resultado Esperado
+
+- Saldo do usuário não alterado.
+- Mensagem de erro amigável exibida ao usuário, sem exposição de detalhes técnicos.
+- Nenhum registro de recarga criado no histórico.
+
+### Pós-condições
+
+- Saldo inalterado confirmado no banco de dados.
+- Nenhuma cobrança registrada de forma inconsistente.
+
+---
+
+## CT11 – QR Code Pix expirado durante recarga
+
+| Campo | Valor |
+|---|---|
+| ID | CT11 |
+| Nome | QR Code Pix expirado durante recarga |
+| Requisito | RF03 – Recarga de Saldo |
+| Tipo | Sistema |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Usuário autenticado.
+- Gateway de pagamento Pix disponível.
+
+### Passos
+
+1. Acessar a área de recarga.
+2. Informar valor válido e selecionar método Pix.
+3. Aguardar o QR Code expirar sem realizar o pagamento.
+
+### Resultado Esperado
+
+- Sistema exibe mensagem informando que o QR Code expirou.
+- Sistema permite que o usuário gere uma nova cobrança.
+
+### Pós-condições
+
+- Saldo do usuário não alterado.
+- Nenhuma cobrança registrada de forma inconsistente.
+
+---
+
+## CT12 – Visualização do cardápio semanal publicado
+
+| Campo | Valor |
+|---|---|
+| ID | CT12 |
 | Nome | Visualização do cardápio semanal publicado |
 | Requisito | RF04 – Cardápio Semanal |
 | Tipo | Sistema |
@@ -1429,11 +1627,11 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT07 – Cardápio não publicado para a semana atual
+## CT13 – Cardápio não publicado para a semana atual
 
 | Campo | Valor |
 |---|---|
-| ID | CT07 |
+| ID | CT13 |
 | Nome | Cardápio não publicado para a semana atual |
 | Requisito | RF04 – Cardápio Semanal |
 | Tipo | Sistema |
@@ -1458,11 +1656,12 @@ Os seguintes tipos de teste serão aplicados no projeto:
 - Interface mantém navegação normal.
 
 ---
-## CT08 – Consulta ao histórico de recargas
+
+## CT14 – Consulta ao histórico de recargas
 
 | Campo | Valor |
 |---|---|
-| ID | CT08 |
+| ID | CT14 |
 | Nome | Consulta ao histórico de recargas |
 | Requisito | RF05 – Histórico de Recargas |
 | Tipo | Sistema |
@@ -1476,11 +1675,13 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 1. Acessar a área de histórico.
 2. Verificar a listagem exibida.
-3. Aplicar filtro por período.
+3. Verificar o saldo exibido ao final de cada dia com movimentação.
+4. Aplicar filtro por período.
 
 ### Resultado Esperado
 
 - Recargas exibidas em ordem decrescente de data.
+- Saldo ao final de cada dia com movimentação exibido corretamente.
 - Filtro aplicado corretamente.
 
 ### Pós-condições
@@ -1489,20 +1690,49 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT09 – Recebimento de notificação de saldo baixo
+## CT15 – Consulta ao histórico sem recargas registradas
 
 | Campo | Valor |
 |---|---|
-| ID | CT09 |
+| ID | CT15 |
+| Nome | Consulta ao histórico sem recargas registradas |
+| Requisito | RF05 – Histórico de Recargas |
+| Tipo | Sistema |
+| Prioridade | Média |
+
+### Pré-condições
+
+- Usuário autenticado sem nenhuma recarga registrada.
+
+### Passos
+
+1. Acessar a área de histórico.
+
+### Resultado Esperado
+
+- Sistema exibe mensagem informativa indicando que não há recargas registradas.
+
+### Pós-condições
+
+- Nenhum erro técnico exibido.
+- Interface mantém navegação normal.
+
+---
+
+## CT16 – Recebimento de notificação de saldo baixo
+
+| Campo | Valor |
+|---|---|
+| ID | CT16 |
 | Nome | Recebimento de notificação de saldo baixo |
-| Requisito | RF06 – Notificações |
+| Requisito | RF06 – Envio de Notificações |
 | Tipo | Integração |
 | Prioridade | Média |
 
 ### Pré-condições
 
 - Usuário autenticado com notificação de saldo baixo ativa.
-- Limite configurado.
+- Limite de saldo baixo configurado.
 
 ### Passos
 
@@ -1519,11 +1749,72 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT10 – Registro de check-in com saldo suficiente
+## CT17 – Envio de notificação crítica independente das preferências do usuário
 
 | Campo | Valor |
 |---|---|
-| ID | CT10 |
+| ID | CT17 |
+| Nome | Envio de notificação crítica independente das preferências do usuário |
+| Requisito | RF06 – Envio de Notificações |
+| Tipo | Sistema |
+| Prioridade | Média |
+
+### Pré-condições
+
+- Usuário autenticado com todas as notificações opcionais desativadas nas configurações.
+- Administrador autenticado com permissão para publicar comunicados de manutenção.
+
+### Passos
+
+1. Administrador registra uma manutenção programada no sistema.
+2. Sistema dispara a notificação crítica correspondente.
+3. Verificar se o usuário recebe a notificação mesmo com preferências desativadas.
+
+### Resultado Esperado
+
+- Notificação de manutenção programada entregue ao usuário, independentemente das preferências configuradas.
+
+### Pós-condições
+
+- Registro de envio de notificação gerado no sistema.
+
+---
+
+## CT18 – Envio de notificação de novo cardápio publicado
+
+| Campo | Valor |
+|---|---|
+| ID | CT18 |
+| Nome | Envio de notificação de novo cardápio publicado |
+| Requisito | RF06 – Envio de Notificações |
+| Tipo | Integração |
+| Prioridade | Média |
+
+### Pré-condições
+
+- Usuário autenticado com notificação de novo cardápio ativa.
+- Administrador autenticado com permissão para publicar cardápio.
+
+### Passos
+
+1. Administrador publica o cardápio da semana.
+2. Verificar os canais de notificação do usuário.
+
+### Resultado Esperado
+
+- Notificação de novo cardápio enviada ao usuário pelo canal configurado.
+
+### Pós-condições
+
+- Registro de envio de notificação gerado no sistema.
+
+---
+
+## CT19 – Registro de check-in com saldo suficiente
+
+| Campo | Valor |
+|---|---|
+| ID | CT19 |
 | Nome | Registro de check-in com saldo suficiente |
 | Requisito | RF07 – Registro de Check-in |
 | Tipo | Integração |
@@ -1551,11 +1842,11 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT11 – Tentativa de check-in com saldo insuficiente
+## CT20 – Tentativa de check-in com saldo insuficiente
 
 | Campo | Valor |
 |---|---|
-| ID | CT11 |
+| ID | CT20 |
 | Nome | Tentativa de check-in com saldo insuficiente |
 | Requisito | RF07 – Registro de Check-in |
 | Tipo | Sistema |
@@ -1582,11 +1873,11 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT12 – Envio de feedback após check-in
+## CT21 – Envio de feedback após check-in
 
 | Campo | Valor |
 |---|---|
-| ID | CT12 |
+| ID | CT21 |
 | Nome | Envio de feedback após check-in |
 | Requisito | RF08 – Feedback sobre Refeições |
 | Tipo | Sistema |
@@ -1615,11 +1906,11 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT13 – Tentativa de feedback duplicado
+## CT22 – Tentativa de feedback duplicado
 
 | Campo | Valor |
 |---|---|
-| ID | CT13 |
+| ID | CT22 |
 | Nome | Tentativa de feedback duplicado |
 | Requisito | RF08 – Feedback sobre Refeições |
 | Tipo | Unitário |
@@ -1627,7 +1918,7 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ### Pré-condições
 
-- Usuário  enviou feedback para a refeição do dia.
+- Usuário já enviou feedback para a refeição do dia.
 
 ### Passos
 
@@ -1636,7 +1927,7 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ### Resultado Esperado
 
-- Sistema bloqueia o envio e exibe mensagem informando que  foi avaliado.
+- Sistema bloqueia o envio e exibe mensagem informando que a refeição já foi avaliada.
 
 ### Pós-condições
 
@@ -1644,13 +1935,75 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT14 – Cadastro de usuário pelo administrador
+## CT23 – Tentativa de feedback sem check-in realizado
 
 | Campo | Valor |
 |---|---|
-| ID | CT14 |
+| ID | CT23 |
+| Nome | Tentativa de feedback sem check-in realizado |
+| Requisito | RF08 – Feedback sobre Refeições |
+| Tipo | Unitário |
+| Prioridade | Baixa |
+
+### Pré-condições
+
+- Usuário autenticado sem check-in registrado para a refeição do dia.
+
+### Passos
+
+1. Acessar a área de feedback.
+2. Tentar enviar avaliação para uma refeição sem check-in correspondente.
+
+### Resultado Esperado
+
+- Sistema bloqueia o envio e exibe mensagem informativa indicando que o feedback só é permitido após a realização de check-in.
+
+### Pós-condições
+
+- Nenhum registro de feedback criado.
+
+---
+
+## CT24 – Falha de integração com API externa com exibição de mensagem amigável
+
+| Campo | Valor |
+|---|---|
+| ID | CT24 |
+| Nome | Falha de integração com API externa com exibição de mensagem amigável |
+| Requisito | RF09 – Integração com APIs Externas |
+| Tipo | Integração |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Usuário autenticado.
+- Gateway de pagamento simulado como indisponível.
+
+### Passos
+
+1. Acessar a área de recarga.
+2. Informar valor válido e selecionar método de pagamento.
+3. Confirmar a operação durante a indisponibilidade simulada do gateway.
+
+### Resultado Esperado
+
+- Operação não concluída.
+- Mensagem de erro amigável exibida ao usuário, sem exposição de detalhes técnicos internos.
+- Saldo do usuário não alterado.
+
+### Pós-condições
+
+- Nenhum registro inconsistente criado.
+
+---
+
+## CT25 – Cadastro de usuário pelo administrador
+
+| Campo | Valor |
+|---|---|
+| ID | CT25 |
 | Nome | Cadastro de usuário pelo administrador |
-| Requisito | RF10 – Cadastro de Usuários |
+| Requisito | RF10 – Cadastro de Usuários pelo Administrador |
 | Tipo | Sistema |
 | Prioridade | Alta |
 
@@ -1678,23 +2031,23 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT15 – Cadastro com matrícula  existente
+## CT26 – Cadastro com matrícula já existente
 
 | Campo | Valor |
 |---|---|
-| ID | CT15 |
-| Nome | Cadastro com matrícula  existente |
-| Requisito | RF10 – Cadastro de Usuários |
+| ID | CT26 |
+| Nome | Cadastro com matrícula já existente |
+| Requisito | RF10 – Cadastro de Usuários pelo Administrador |
 | Tipo | Unitário |
 | Prioridade | Alta |
 
 ### Pré-condições
 
-- Matrícula  registrada no sistema.
+- Matrícula já registrada no sistema.
 
 ### Passos
 
-1. Tentar cadastrar usuário com a mesma matrícula  existente.
+1. Tentar cadastrar usuário com a mesma matrícula já existente.
 
 ### Resultado Esperado
 
@@ -1706,13 +2059,14 @@ Os seguintes tipos de teste serão aplicados no projeto:
 - Dado original preservado.
 
 ---
-## CT16 – Ajuste manual de crédito pelo administrador
+
+## CT27 – Ajuste manual de crédito pelo administrador
 
 | Campo | Valor |
 |---|---|
-| ID | CT16 |
+| ID | CT27 |
 | Nome | Ajuste manual de crédito pelo administrador |
-| Requisito | RF11 – Gerenciamento de Créditos |
+| Requisito | RF11 – Gerenciamento de Créditos pelo Administrador |
 | Tipo | Sistema |
 | Prioridade | Alta |
 
@@ -1740,13 +2094,79 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT17 – Publicação do cardápio pelo administrador
+## CT28 – Tentativa de ajuste de crédito resultando em saldo negativo
 
 | Campo | Valor |
 |---|---|
-| ID | CT17 |
+| ID | CT28 |
+| Nome | Tentativa de ajuste de crédito resultando em saldo negativo |
+| Requisito | RF11 – Gerenciamento de Créditos pelo Administrador |
+| Tipo | Unitário |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Administrador com permissão de ajuste autenticado.
+- Usuário-alvo com saldo registrado.
+
+### Passos
+
+1. Acessar o painel administrativo.
+2. Localizar o usuário.
+3. Informar operação de remoção de crédito com valor superior ao saldo disponível.
+4. Registrar justificativa.
+5. Tentar confirmar operação.
+
+### Resultado Esperado
+
+- Sistema bloqueia a operação.
+- Mensagem informativa exibida indicando que não é possível definir saldo negativo.
+
+### Pós-condições
+
+- Saldo do usuário não alterado.
+- Nenhum registro de ajuste criado.
+
+---
+
+## CT29 – Tentativa de ajuste de crédito por administrador sem permissão específica
+
+| Campo | Valor |
+|---|---|
+| ID | CT29 |
+| Nome | Tentativa de ajuste de crédito por administrador sem permissão específica |
+| Requisito | RF11 – Gerenciamento de Créditos pelo Administrador |
+| Tipo | Sistema |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Usuário autenticado com perfil de administrador sem permissão específica para ajuste manual de créditos.
+
+### Passos
+
+1. Acessar o painel administrativo.
+2. Tentar acessar a funcionalidade de ajuste manual de créditos.
+
+### Resultado Esperado
+
+- Sistema nega o acesso à funcionalidade.
+- Mensagem informativa exibida sobre permissão insuficiente.
+
+### Pós-condições
+
+- Nenhum ajuste realizado.
+- Nenhum registro de ajuste criado.
+
+---
+
+## CT30 – Publicação do cardápio pelo administrador
+
+| Campo | Valor |
+|---|---|
+| ID | CT30 |
 | Nome | Publicação do cardápio pelo administrador |
-| Requisito | RF12 – Gerenciamento do Cardápio |
+| Requisito | RF12 – Gerenciamento do Cardápio pelo Administrador |
 | Tipo | Sistema |
 | Prioridade | Alta |
 
@@ -1773,13 +2193,80 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
-## CT18 – Geração de relatório por período
+## CT31 – Tentativa de publicação de cardápio fora do prazo mínimo de 24 horas
 
 | Campo | Valor |
 |---|---|
-| ID | CT18 |
+| ID | CT31 |
+| Nome | Tentativa de publicação de cardápio fora do prazo mínimo de 24 horas |
+| Requisito | RF12 – Gerenciamento do Cardápio pelo Administrador |
+| Tipo | Sistema |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Administrador autenticado.
+- Data e horário da refeição a ser cadastrada com menos de 24 horas de antecedência.
+
+### Passos
+
+1. Acessar o painel administrativo.
+2. Selecionar data e tipo de refeição com menos de 24 horas de antecedência.
+3. Inserir itens do cardápio.
+4. Tentar confirmar publicação.
+
+### Resultado Esperado
+
+- Sistema bloqueia a operação e exibe alerta informando que o prazo mínimo de 24 horas não foi respeitado.
+
+### Pós-condições
+
+- Cardápio não publicado.
+- Nenhuma notificação enviada aos usuários.
+
+---
+
+## CT32 – Edição de cardápio já publicado
+
+| Campo | Valor |
+|---|---|
+| ID | CT32 |
+| Nome | Edição de cardápio já publicado |
+| Requisito | RF12 – Gerenciamento do Cardápio pelo Administrador |
+| Tipo | Sistema |
+| Prioridade | Alta |
+
+### Pré-condições
+
+- Administrador autenticado.
+- Cardápio já publicado disponível no sistema.
+
+### Passos
+
+1. Acessar o painel administrativo.
+2. Acessar a área de cardápio.
+3. Selecionar o cardápio já publicado.
+4. Realizar alterações nos itens.
+5. Confirmar a atualização.
+
+### Resultado Esperado
+
+- Cardápio atualizado com sucesso.
+- Notificação automática de alteração enviada aos usuários.
+
+### Pós-condições
+
+- Cardápio atualizado disponível na área de consulta dos usuários.
+
+---
+
+## CT33 – Geração de relatório por período
+
+| Campo | Valor |
+|---|---|
+| ID | CT33 |
 | Nome | Geração de relatório por período |
-| Requisito | RF13 – Geração de Relatórios |
+| Requisito | RF13 – Geração de Relatórios pelo Administrador |
 | Tipo | Sistema |
 | Prioridade | Média |
 
@@ -1807,20 +2294,83 @@ Os seguintes tipos de teste serão aplicados no projeto:
 
 ---
 
+## CT34 – Tentativa de geração de relatório com período inválido
+
+| Campo | Valor |
+|---|---|
+| ID | CT34 |
+| Nome | Tentativa de geração de relatório com período inválido |
+| Requisito | RF13 – Geração de Relatórios pelo Administrador |
+| Tipo | Sistema |
+| Prioridade | Média |
+
+### Pré-condições
+
+- Administrador autenticado.
+
+### Passos
+
+1. Acessar a área de relatórios.
+2. Informar período inválido (ex.: data final anterior à data inicial).
+3. Tentar gerar o relatório.
+
+### Resultado Esperado
+
+- Sistema bloqueia a geração e exibe mensagem solicitando correção do período informado.
+
+### Pós-condições
+
+- Nenhum relatório gerado.
+
+---
+
+## CT35 – Tentativa de acesso à área de relatórios por perfil não administrador
+
+| Campo | Valor |
+|---|---|
+| ID | CT35 |
+| Nome | Tentativa de acesso à área de relatórios por perfil não administrador |
+| Requisito | RF13 – Geração de Relatórios pelo Administrador |
+| Tipo | Sistema |
+| Prioridade | Média |
+
+### Pré-condições
+
+- Usuário autenticado com perfil de estudante ou servidor.
+
+### Passos
+
+1. Tentar acessar diretamente a área de relatórios do painel administrativo.
+
+### Resultado Esperado
+
+- Sistema nega o acesso.
+- Mensagem informativa de permissão insuficiente exibida.
+
+### Pós-condições
+
+- Nenhum dado de relatório exibido ou exportado.
+
+---
+
 # 10.4 Testes de Requisitos Não Funcionais
 
 A tabela abaixo descreve os testes planejados para validação dos principais requisitos não funcionais, abrangendo performance, disponibilidade, segurança, usabilidade e confiabilidade.
 
 | RNF | Tipo | Descrição | Método de Teste | Critério |
 |---|---|---|---|---|
-| RNF05 / RNF07 | Performance | Tempo de resposta das requisições | Ferramenta de carga (ex.: k6 ou Apache JMeter). Simular 100 usuários simultâneos realizando consultas. | 95% das requisições respondidas em até 2 segundos. |
-| RNF06 / RNF08 | Performance | Suporte a acessos simultâneos | Teste de carga com até 1.000 usuários simultâneos em horário de pico simulado. | Sistema estável, sem degradação superior a 20% no tempo de resposta. |
-| RNF09 / RNF14 | Disponibilidade | Disponibilidade mínima de 99% | Monitoramento contínuo por 30 dias com ferramenta de uptime (ex.: UptimeRobot). | Tempo de inatividade não planejado inferior a 7,2 horas no período. |
-| RNF18 / RNF20 | Segurança | Controle de acesso por perfil (RBAC) | Testes manuais tentando acessar rotas administrativas com perfil de estudante. | 100% das tentativas de acesso indevido bloqueadas com HTTP 403. |
-| RNF19 | Segurança | Conformidade PCI-DSS para transações | Revisão de código e auditoria: verificar que dados sensíveis de cartão não são armazenados internamente. | Nenhum dado de cartão persistido fora do gateway de pagamento. |
+| RNF05 / RNF07 | Performance | Tempo de resposta das requisições em condições normais de operação | Ferramenta de carga (ex.: k6 ou Apache JMeter). Simular 100 usuários simultâneos realizando consultas. | 95% das requisições respondidas em até 2 segundos. |
+| RNF06 / RNF08 | Performance | Suporte a acessos simultâneos em horário de pico | Teste de carga com até 1.000 usuários simultâneos em horário de pico simulado. | Sistema estável, sem degradação superior a 20% no tempo de resposta. |
+| RNF12 | Disponibilidade | Disponibilidade mínima do sistema | Monitoramento contínuo por 30 dias com ferramenta de uptime (ex.: UptimeRobot). | Tempo de inatividade não planejado inferior a 7,2 horas no período. |
+| RNF14 | Confiabilidade | Recuperação de falhas com perda mínima de dados | Simular falha abrupta no servidor durante operações em andamento. Verificar restabelecimento da operação e integridade dos dados após a recuperação. | Sistema restabelecido em tempo hábil. Nenhuma perda de dados em operações já confirmadas. |
+| RNF15 | Confiabilidade | Integridade de transações financeiras | Simular falha de conexão durante operação de recarga. Verificar estado do saldo e do registro. | Saldo não alterado em operações incompletas. Nenhuma inconsistência de dados. |
+| RNF16 | Segurança | Bloqueio de formas alternativas de autenticação | Tentativa de acesso ao sistema por formulário de login local, sem passar pelo fluxo OAuth2 do SUAP. | 100% das tentativas de autenticação fora do SUAP bloqueadas. Nenhum acesso concedido por meio alternativo. |
+| RNF17 | Segurança | Conformidade PCI-DSS para transações com cartão de crédito | Revisão de código e auditoria: verificar que dados sensíveis de cartão não são armazenados internamente. | Nenhum dado de cartão persistido fora do gateway de pagamento. |
+| RNF18 | Segurança | Controle de acesso por perfil (RBAC) | Testes manuais tentando acessar rotas administrativas com perfil de estudante. | 100% das tentativas de acesso indevido bloqueadas com HTTP 403. |
 | RNF01 / RNF04 | Usabilidade | Acessibilidade e suporte a leitores de tela | Auditoria com ferramenta axe ou WAVE. Testes com leitor de tela (NVDA ou VoiceOver). | Sem erros críticos de acessibilidade. Todos os elementos interativos com labels adequados. |
+| RNF03 | Usabilidade | Alternância de tema claro/escuro e alto contraste | Testes manuais ativando e desativando o alto contraste e alternando entre tema claro e escuro nas configurações do sistema. | Todas as funcionalidades permanecem acessíveis e legíveis em ambos os temas. Alternância funcionando corretamente para todos os usuários. |
 | RNF02 | Usabilidade | Responsividade mobile | Testes manuais em smartphones e tablets (Android/iOS). DevTools em resolução 375px e 768px. | Todas as funcionalidades acessíveis e utilizáveis em telas pequenas. |
-| RNF17 | Confiabilidade | Integridade de transações financeiras | Simular falha de conexão durante operação de recarga. Verificar estado do saldo e do registro. | Saldo não alterado em operações incompletas. Nenhuma inconsistência de dados. |
+| RNF13 | Confiabilidade | Backup automático diário e integridade das cópias | Verificar a execução das rotinas de backup ao final de um período de 7 dias. Tentar restaurar os dados a partir de uma cópia gerada. | Backups executados diariamente. Dados restaurados com integridade confirmada. Cópias armazenadas em local separado. |
 
 ---
 
@@ -1834,13 +2384,14 @@ Cada critério é composto por:
 - a condição de sucesso esperada.
 
 ---
+
 ## RF01 – Autenticação Institucional
 
 | Campo | Descrição |
 |---|---|
 | Métrica | 100% dos logins devem usar exclusivamente o SUAP. Sessões inativas por mais de 30 minutos devem ser encerradas automaticamente. |
-| Casos de Teste | CT01, CT02 |
-| Condição de Sucesso | Login bem-sucedido com credenciais válidas. Bloqueio com credenciais inválidas. Perfis diferenciados por tipo de usuário. |
+| Casos de Teste | CT01, CT02, CT03, CT04 |
+| Condição de Sucesso | Login bem-sucedido com credenciais válidas. Bloqueio com credenciais inválidas. Perfis diferenciados por tipo de usuário. Mensagem amigável exibida em caso de indisponibilidade do SUAP. Bloqueio temporário após excesso de tentativas. |
 
 ---
 
@@ -1849,8 +2400,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Saldo atualizado em até 2 segundos após qualquer movimentação. Nenhum usuário pode visualizar saldo de outro. |
-| Casos de Teste | CT03 |
-| Condição de Sucesso | Saldo exibido na tela inicial após login. Valor consistente com o banco de dados. |
+| Casos de Teste | CT05, CT06, CT07 |
+| Condição de Sucesso | Saldo exibido na tela inicial após login. Valor consistente com o banco de dados. Exibição de saldo zero para usuários sem créditos. Mensagem amigável exibida em caso de falha de comunicação com o servidor. |
 
 ---
 
@@ -1859,8 +2410,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Crédito creditado somente após confirmação do gateway. 0 recargas com falha devem alterar saldo. |
-| Casos de Teste | CT04, CT05 |
-| Condição de Sucesso | Recarga bem-sucedida via Pix. Bloqueio de valores abaixo do mínimo. Saldo inalterado em caso de falha. |
+| Casos de Teste | CT08, CT09, CT10, CT11 |
+| Condição de Sucesso | Recarga bem-sucedida via Pix. Bloqueio de valores abaixo do mínimo. Saldo inalterado em caso de falha ou não confirmação do gateway. Mensagem informativa exibida em caso de QR Code expirado, com possibilidade de nova geração. |
 
 ---
 
@@ -1869,7 +2420,7 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Cardápio publicado com ao menos 24h de antecedência. Atualizado semanalmente. |
-| Casos de Teste | CT06, CT07 |
+| Casos de Teste | CT12, CT13 |
 | Condição de Sucesso | Cardápio exibido com data de vigência. Mensagem informativa quando não publicado. |
 
 ---
@@ -1878,9 +2429,9 @@ Cada critério é composto por:
 
 | Campo | Descrição |
 |---|---|
-| Métrica | Histórico disponível por no mínimo 12 meses. Paginação funcional. Filtros por período e método. |
-| Casos de Teste | CT08 |
-| Condição de Sucesso | Listagem em ordem decrescente. Apenas dados do usuário autenticado exibidos. |
+| Métrica | Histórico disponível por no mínimo 12 meses. Paginação funcional. Filtros por período e método. Saldo ao final de cada dia com movimentação exibido corretamente. |
+| Casos de Teste | CT14, CT15 |
+| Condição de Sucesso | Listagem em ordem decrescente. Apenas dados do usuário autenticado exibidos. Saldo diário exibido ao final de cada dia com movimentação. Mensagem informativa quando não há recargas registradas. |
 
 ---
 
@@ -1889,8 +2440,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Notificações entregues em até 1 minuto após o evento disparador. 100% das notificações críticas enviadas independentemente das preferências. |
-| Casos de Teste | CT09 |
-| Condição de Sucesso | Notificação de saldo baixo disparada no limite configurado. Notificações críticas não bloqueáveis. |
+| Casos de Teste | CT16, CT17, CT18 |
+| Condição de Sucesso | Notificação de saldo baixo disparada no limite configurado. Notificação de novo cardápio enviada após publicação. Notificações críticas enviadas independentemente das preferências do usuário. |
 
 ---
 
@@ -1899,7 +2450,7 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Débito automático realizado em 100% dos check-ins aprovados. 0 check-ins liberados com saldo insuficiente. |
-| Casos de Teste | CT10, CT11 |
+| Casos de Teste | CT19, CT20 |
 | Condição de Sucesso | Check-in registrado com data e hora. Saldo debitado corretamente. Bloqueio funcional por saldo insuficiente. |
 
 ---
@@ -1909,8 +2460,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Limite de 1 feedback por usuário por refeição aplicado. 100% dos feedbacks anonimizados para outros usuários. |
-| Casos de Teste | CT12, CT13 |
-| Condição de Sucesso | Feedback aceito apenas após check-in. Segundo envio bloqueado para mesma refeição. |
+| Casos de Teste | CT21, CT22, CT23 |
+| Condição de Sucesso | Feedback aceito apenas após check-in. Segundo envio bloqueado para mesma refeição. Tentativa sem check-in bloqueada com mensagem informativa. |
 
 ---
 
@@ -1919,8 +2470,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Falhas de API externas tratadas em 100% dos casos sem expor detalhes técnicos ao usuário. |
-| Casos de Teste | CT01, CT04 |
-| Condição de Sucesso | Autenticação SUAP funcional. Gateway de pagamento integrado. Mensagens de erro amigáveis em caso de falha. |
+| Casos de Teste | CT03, CT07, CT10, CT24 |
+| Condição de Sucesso | Autenticação SUAP funcional. Gateway de pagamento integrado. Mensagens de erro amigáveis em caso de falha, sem exposição de detalhes técnicos internos. |
 
 ---
 
@@ -1929,7 +2480,7 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | 0 registros duplicados por matrícula. Validação de vínculo institucional via SUAP em 100% dos cadastros. |
-| Casos de Teste | CT14, CT15 |
+| Casos de Teste | CT25, CT26 |
 | Condição de Sucesso | Cadastro realizado com sucesso para dados válidos. Bloqueio e mensagem para matrícula duplicada. |
 
 ---
@@ -1939,8 +2490,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | 100% dos ajustes manuais com registro de responsável e justificativa. Nenhum saldo negativo permitido. |
-| Casos de Teste | CT16 |
-| Condição de Sucesso | Saldo atualizado corretamente. Rastreabilidade completa no histórico administrativo. |
+| Casos de Teste | CT27, CT28, CT29 |
+| Condição de Sucesso | Saldo atualizado corretamente. Rastreabilidade completa no histórico administrativo. Bloqueio de operações que resultem em saldo negativo. Bloqueio de acesso para administradores sem permissão específica. |
 
 ---
 
@@ -1949,8 +2500,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Prazo mínimo de 24h para publicação respeitado. Notificação automática enviada a cada alteração publicada. |
-| Casos de Teste | CT17 |
-| Condição de Sucesso | Cardápio publicado e visível aos usuários. Notificação disparada. Edições registradas. |
+| Casos de Teste | CT30, CT31, CT32 |
+| Condição de Sucesso | Cardápio publicado e visível aos usuários. Notificação disparada. Bloqueio de publicação fora do prazo mínimo de 24 horas. Notificação automática enviada em caso de edição de cardápio já publicado. |
 
 ---
 
@@ -1959,12 +2510,8 @@ Cada critério é composto por:
 | Campo | Descrição |
 |---|---|
 | Métrica | Relatórios gerados em até 5 segundos para períodos de até 1 ano. Exportação funcional em PDF e CSV. |
-| Casos de Teste | CT18 |
-| Condição de Sucesso | Dados corretos para o período selecionado. Anonimização em exportações estatísticas. Acesso restrito ao perfil administrador. |
-
----
-
-Com base no documento, vou redigir a seção 12 — Restrições — de forma completa e coerente com tudo que foi definido nas demais seções.
+| Casos de Teste | CT33, CT34, CT35 |
+| Condição de Sucesso | Dados corretos para o período selecionado. Anonimização em exportações estatísticas. Acesso restrito ao perfil administrador. Bloqueio e mensagem de validação para períodos inválidos. |
 
 ---
 
