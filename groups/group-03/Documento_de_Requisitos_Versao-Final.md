@@ -1077,30 +1077,6 @@ Representa onde o sistema será executado.
 
 ---
 
-## 9.7 Ferramentas Recomendadas
-
-Os diagramas podem ser feitos utilizando:
-
-- Draw.io
-- Lucidchart
-- StarUML
-- Visual Paradigm
-- PlantUML
-- Mermaid
-- Figma
-
----
-
-## 9.8 Observações Importantes
-
-- Os diagramas devem representar o sistema REAL do grupo;
-- Evitem diagramas genéricos;
-- Mantenham consistência entre requisitos e diagramas;
-- Diagramas devem possuir nomes claros;
-- Atualizem os diagramas conforme o sistema evoluir.
-
----
-
 ## 10. Plano de Testes
 
 ### 10.1 Estratégia de Teste
