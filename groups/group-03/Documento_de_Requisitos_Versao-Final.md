@@ -1004,44 +1004,33 @@ Administrador dispara comandos manuais pontuais para forçar a realização de u
 +---------------------------+
 ```
 
-# Teste
+# Relacionamento
 
-classDiagram
-    class Usuario {
-        +id
-        +nome
-        +email
-        +senha
-        +login()
-        +logout()
-    }
+```text
+Usuário 1 -------- 1 Aluno
 
-    class Aluno {
-        +idade
-        +anoEscolar
-        +xp
-        +nivel
-        +ganharXP()
-    }
+Usuário 1 -------- 1 Professor
 
-    class Professor {
-        +criarGrupo()
-        +criarMissao()
-    }
+Usuário 1 -------- 1 Administrador
 
-    class Grupo {
-        +id
-        +nome
-        +codigo
-    }
+Professor 1 -------- * Grupo
 
-    Usuario <|-- Aluno
-    Usuario <|-- Professor
-    Usuario <|-- Administrador
+Aluno * -------- * Grupo
 
-    Professor "1" --> "*" Grupo
-    Aluno "*" --> "*" Grupo
-    Grupo "1" --> "*" Missao
+Grupo 1 -------- * Missão
+
+Disciplina 1 -------- * Atividade
+
+Jogo 1 -------- * Atividade
+
+Aluno 1 -------- * Histórico
+
+Aluno * -------- * Conquista
+
+Aluno 1 -------- 1 Ranking
+
+Loja 1 -------- * ItemLoja
+```
     
 
 ## 9.3 Diagrama de Atividades (UML)
