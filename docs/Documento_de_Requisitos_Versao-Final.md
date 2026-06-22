@@ -402,7 +402,7 @@ Como o sistema será testado?
 ### 10.4 Testes de Requisitos Não Funcionais
 - Performance (tempo de resposta)  
 - Segurança  
-- Usabilidade  
+- Usabilidade
 
 ---
 
