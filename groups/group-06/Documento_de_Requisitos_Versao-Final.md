@@ -1105,7 +1105,7 @@ A arquitetura do sistema foi dividida em três camadas principais para garantir 
 
 Serve para mostrar a infraestrutura física do sistema, ou seja, em quais hardwares/servidores o software está instalado e como esses equipamentos se comunicam entre si.
 
-![Diagrama de Implantação](diagrama-de-implantacao.png)
+![Diagrama de Implantação](diagrama-de-implantação.png)
 
 ## Explicação
 
