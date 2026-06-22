@@ -1097,6 +1097,7 @@ O diagrama de sequência ilustra a troca de mensagens entre os objetos do sistem
 
 # 9.5 Diagrama de Componentes
 
+![Diagrama de Componentes](diagrama%20de%20componente.png)
 
 ## Explicação
 
