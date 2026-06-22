@@ -406,15 +406,6 @@ A arquitetura foi planejada para atender aos principais requisitos não funciona
 
 ## 9. Casos de Uso e Diagramas UML
 
-Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
-
-Os diagramas ajudam na:
-- modelagem do sistema;
-- comunicação entre equipe;
-- entendimento da arquitetura e funcionalidades;
-- documentação técnica do projeto.
-
----
 
 # 9.1 Casos de Uso
 
