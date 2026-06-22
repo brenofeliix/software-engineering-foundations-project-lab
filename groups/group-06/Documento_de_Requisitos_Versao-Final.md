@@ -1079,7 +1079,6 @@ No caminho do **Pomodoro**, o sistema avalia constantemente a condição **Ciclo
 
 # 9.4 Diagrama de Sequência (UML)
 
-### Diagrama de Sequência UML
 ![Diagrama de Sequência](diagrama de sequencia uml.png)
 
 ## Explicação
