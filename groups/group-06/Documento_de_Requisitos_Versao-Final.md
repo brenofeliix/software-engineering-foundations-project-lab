@@ -1079,7 +1079,8 @@ No caminho do **Pomodoro**, o sistema avalia constantemente a condição **Ciclo
 
 # 9.4 Diagrama de Sequência (UML)
 
-![Diagrama de Sequência](diagrama%20de%20sequencia%20uml.png)
+![Diagrama de Sequência](diagrama-de-sequencia.png)
+
 
 ## Explicação
 
@@ -1097,7 +1098,8 @@ O diagrama de sequência ilustra a troca de mensagens entre os objetos do sistem
 
 # 9.5 Diagrama de Componentes
 
-![Diagrama de Componentes](diagrama%20de%20componente.png)
+![Diagrama de Componentes](diagrama-de-componente.png)
+
 
 ## Explicação
 
@@ -1117,57 +1119,7 @@ A **infraestrutura de hospedagem** é gerenciada via Git e GitHub. O Frontend Re
 
 Representa onde o sistema será executado fisicamente em ambiente de produção, especificando nós de infraestrutura e protocolos de comunicação de rede.
 
-## Diagrama
-```text
-[Usuário]
-    |
-    | ---- «device» [Dispositivo Mobile]
-    |           Android 8+ / iOS 13+
-    |           |
-    |           | ---- [App React Native]
-    |                       |
-    |                       | ---- [Cache Local - Offline]
-    |
-    | ---- «browser» [Navegador Web]
-                Desktop / Notebook
-                |
-                | ---- [App React.js - SPA]
-    |
-    | (HTTPS)
-    |
-Internet
-    |
-    | (HTTPS)
-    |
-«server» [Vercel - CDN / SSL]
-    |
-    | ---- [Build React.js]
-    |           (Arquivos Estáticos)
-    |
-    v
-«server» [Render - Node.js + Express]
-    |
-    | ---- [API REST]
-    |
-    | ---- [JWT Auth]
-    |
-    | ---- [Firebase FCM]
-    |           (Push Notifications)
-    |
-    | ---- [Google Calendar API]
-    |           (Sincronização de Agenda)
-    |
-    v
-«database» [Supabase - PostgreSQL]
-    |
-    | ---- [PostgreSQL]
-    |           (Dados dos Usuários, Flashcards,
-    |            Tarefas, Sessões, Métricas e Pontuações)
-    |
-    | ---- [Backup Automático]
-```
-
----
+![Diagrama de Implantação](diagrama-de-implantacao.png)
 
 ## Explicação
 
