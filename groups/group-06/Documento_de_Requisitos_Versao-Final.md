@@ -1078,25 +1078,22 @@ No caminho do **Pomodoro**, o sistema avalia constantemente a condição **Ciclo
 ---
 
 # 9.4 Diagrama de Sequência (UML)
+Ele serve para mostrar a ordem das ações e as trocas de informações que acontecem no sistema quando um usuário realiza uma tarefa.
 
 ![Diagrama de Sequência](diagrama-de-sequencia.png)
 
 
 ## Explicação
 
-O diagrama de sequência ilustra a troca de mensagens entre os objetos do sistema ao longo do tempo, evidenciando a ordem das comunicações em cada cenário de uso do CromStudy.
+O diagrama descreve o fluxo de funcionamento do cronômetro Pomodoro em três etapas principais:
 
-**Cenário 1 — Autenticação de Usuário:** o Usuário insere e-mail e senha no Frontend, que realiza uma chamada HTTP via POST /auth/login ao Backend. O Backend consulta o Banco de dados para validar as credenciais com verificação de hash criptográfico. Confirmada a identidade, o Backend gera internamente um token JWT e retorna uma resposta 200 OK ao Frontend. Por fim, o Frontend exibe a dashboard ao usuário.
-
-**Cenário 2 — Inicialização de Ciclo Pomodoro:** o Usuário aciona o botão de início no Frontend, que despacha uma requisição POST /sessao ao Backend. O Backend registra os metadados da sessão no Banco de dados e recebe a confirmação de persistência. Em seguida, responde ao Frontend com a confirmação de que o timer foi iniciado, e o Frontend passa a exibir o contador regressivo de 25:00 na interface do usuário.
-
-**Cenário 3 — Criação de Flashcard:** o Usuário preenche pergunta, resposta e categoria no Frontend, que envia os dados via POST /flashcards ao Backend. O Backend persiste o flashcard no Banco e retorna 201 Created. O Frontend então exibe o novo card na listagem do usuário.
-
-**Cenário 4 — Geração de Quiz no Minijogo:** o Usuário inicializa o modo de jogo e o Frontend solicita ao Backend via GET /minijogo/quiz as questões. O Backend busca os flashcards do usuário no Banco, seleciona perguntas aleatoriamente e retorna a lista ao Frontend. O usuário responde cada questão e o Frontend envia cada resposta via POST /minijogo/resposta. O Backend atualiza a pontuação acumulada no Banco e retorna o placar atualizado, que é exibido ao usuário ao final do quiz.
-
+* **Início do Timer:** O estudante inicia o Pomodoro no Frontend, que requisita o início do timer à API Backend. O backend salva a nova sessão de estudo no Banco de Dados e retorna o status de "Timer Ativo" para o frontend.
+* **Execução:** O Frontend executa o cronômetro na tela para o usuário de forma autônoma.
+* **Finalização:** Ao fim do tempo, o frontend envia o sinal de ciclo concluído. A API Backend atualiza o status da sessão no Banco de Dados e, após a confirmação, retorna o fim do ciclo para o frontend, que toca um alerta sonoro de pausa para o estudante.
 ---
 
 # 9.5 Diagrama de Componentes
+Serve para mostrar como o sistema é dividido em blocos independentes (Frontend e Backend) e como eles se estão organizados e se conectam para funcionar.
 
 ![Diagrama de Componentes](diagrama-de-componente.png)
 
@@ -1117,7 +1114,7 @@ A **infraestrutura de hospedagem** é gerenciada via Git e GitHub. O Frontend Re
 
 # 9.6 Diagrama de Implantação (Deployment)
 
-Representa onde o sistema será executado fisicamente em ambiente de produção, especificando nós de infraestrutura e protocolos de comunicação de rede.
+Serve para mostrar a infraestrutura física do sistema, ou seja, em quais hardwares/servidores o software está instalado e como esses equipamentos se comunicam entre si.
 
 ![Diagrama de Implantação](diagrama-de-implantação.png)
 
