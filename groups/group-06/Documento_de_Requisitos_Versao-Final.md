@@ -1079,63 +1079,8 @@ No caminho do **Pomodoro**, o sistema avalia constantemente a condição **Ciclo
 
 # 9.4 Diagrama de Sequência (UML)
 
-Representa a comunicação entre objetos ao longo do tempo em cenários específicos de uso.
-
-## Cenário 1: Autenticação de Usuário
-
-```text
-Usuário   ->   Frontend:  1: inserir e-mail e senha
-Frontend  ->   Backend:   2: POST /auth/login
-Backend   ->   Banco:     3: validar usuário
-Banco     ->   Backend:   4: usuário válido
-Backend   ->   Backend:   [gerar token JWT]
-Backend   ->   Frontend:  5: 200 OK + token JWT
-Frontend  ->   Usuário:   6: exibir dashboard
-
-```
-
-## Cenário 2: Inicialização de Ciclo Pomodoro
-
-```text
-Usuário   ->   Frontend:  7: iniciar Pomodoro
-Frontend  ->   Backend:   8: POST /sessao
-Backend   ->   Banco:     9: salvar sessão
-Banco     ->   Backend:   10: confirmado
-Backend   ->   Frontend:  11: timer iniciado
-Frontend  ->   Usuário:   12: exibir timer 25:00
-
-```
-
-## Cenário 3: Criação de Flashcard
-
-```text
-Usuário   ->   Frontend:  inserir pergunta, resposta e categoria
-Frontend  ->   Backend:   POST /flashcards
-Backend   ->   Banco:     salvar flashcard
-Banco     ->   Backend:   flashcard salvo
-Backend   ->   Frontend:  201 Created
-Frontend  ->   Usuário:   exibir flashcard na lista
-
-```
-
-## Cenário 4: Geração de Quiz no Minijogo
-
-```text
-Usuário   ->   Frontend:  inicializar modo de jogo
-Frontend  ->   Backend:   GET /minijogo/quiz
-Backend   ->   Banco:     buscar flashcards do usuário
-Banco     ->   Backend:   retornar lista de flashcards
-Backend   ->   Backend:   [selecionar perguntas aleatórias]
-Backend   ->   Frontend:  200 OK + lista de questões
-Frontend  ->   Usuário:   exibir primeira questão do quiz
-Usuário   ->   Frontend:  responder questão
-Frontend  ->   Backend:   POST /minijogo/resposta
-Backend   ->   Banco:     atualizar pontuação acumulada
-Banco     ->   Backend:   pontuação atualizada
-Backend   ->   Frontend:  retornar pontuação atual
-Frontend  ->   Usuário:   exibir resultado e pontuação
-
-```
+### Diagrama de Sequência UML
+![Diagrama de Sequência](diagrama de sequencia uml.png)
 
 ## Explicação
 
@@ -1153,76 +1098,6 @@ O diagrama de sequência ilustra a troca de mensagens entre os objetos do sistem
 
 # 9.5 Diagrama de Componentes
 
-Representa os módulos e componentes principais do sistema e como se acoplam.
-
-## Diagrama
-```text
-[Frontend - React Native / React.js]
-    |
-    | ---- [Componente de Autenticação]
-    |
-    | ---- [Componente de Agenda e Cronograma]
-    |
-    | ---- [Componente de Pomodoro]
-    |
-    | ---- [Componente de Flashcards]
-    |
-    | ---- [Componente de Métricas]
-    |
-    | ---- [Componente de Minijogo]
-    |
-    | ---- [Componente de Perfil]
-    |
-    | (API REST - HTTP/JSON)
-    |
-    v
-[Backend - Node.js + Express]
-    |
-    | ---- [Módulo Usuários]
-    |
-    | ---- [Módulo Agenda]
-    |
-    | ---- [Módulo Flashcards]
-    |
-    | ---- [Módulo Métricas]
-    |
-    | ---- [Módulo Gamificação]
-    |
-    | ---- [Módulo Notificações]
-    |           |
-    |           v
-    |       [Firebase FCM]
-    |           (Notificações Push)
-    |
-    | ---- [JWT]
-    |           (Autenticação e Segurança de Sessões)
-    |
-    | ---- [Swagger]
-    |           (Documentação Automática de Rotas)
-    |
-    | ---- [Google Calendar API]
-    |           (Sincronização de Agenda)
-    |
-    v
-[Banco de Dados - PostgreSQL]
-    (Leitura e Gravação de Tabelas Relacionais)
-
----
-
-[Hospedagem]
-    |
-    | ---- [Vercel]
-    |           (Frontend - React.js)
-    |
-    | ---- [Render]
-                (Backend - Node.js + Express)
-
-[Controle de Versão]
-    |
-    | ---- [Git + GitHub]
-
-```
----
 
 ## Explicação
 
