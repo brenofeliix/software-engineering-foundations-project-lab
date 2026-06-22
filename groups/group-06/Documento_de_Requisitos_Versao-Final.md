@@ -1084,12 +1084,7 @@ Ele serve para mostrar a ordem das ações e as trocas de informações que acon
 
 
 ## Explicação
-
-O diagrama descreve o fluxo de funcionamento do cronômetro Pomodoro em três etapas principais:
-
-* **Início do Timer:** O estudante inicia o Pomodoro no Frontend, que requisita o início do timer à API Backend. O backend salva a nova sessão de estudo no Banco de Dados e retorna o status de "Timer Ativo" para o frontend.
-* **Execução:** O Frontend executa o cronômetro na tela para o usuário de forma autônoma.
-* **Finalização:** Ao fim do tempo, o frontend envia o sinal de ciclo concluído. A API Backend atualiza o status da sessão no Banco de Dados e, após a confirmação, retorna o fim do ciclo para o frontend, que toca um alerta sonoro de pausa para o estudante.
+O diagrama de sequência ilustra o fluxo padrão de comunicação do sistema de forma abstrata. Quando o usuário realiza qualquer ação na interface, o **Frontend** captura o evento e dispara uma requisição para o **Backend**. O Backend processa a regra de negócio necessária, faz a consulta ou atualização diretamente no **Banco de Dados** e, após receber o retorno, envia a resposta tratada para o Frontend atualizar a tela do usuário.
 ---
 
 # 9.5 Diagrama de Componentes
@@ -1100,37 +1095,24 @@ Serve para mostrar como o sistema é dividido em blocos independentes (Frontend 
 
 ## Explicação
 
-O diagrama de componentes apresenta a estrutura modular do CromStudy, organizada em duas grandes camadas de processamento — Frontend e Backend — além das integrações externas e da infraestrutura de hospedagem.
-
-O **Frontend** é desenvolvido em ecossistema híbrido unificado, utilizando React Native para as versões mobile (Android e iOS) e React.js para a versão web. Ele é composto por componentes isolados e modulares de interface, cada um responsável por uma funcionalidade específica: Autenticação, Agenda e Cronograma, Pomodoro, Flashcards, Métricas, Minijogo e Perfil. A comunicação entre o Frontend e os serviços do Backend ocorre exclusivamente por meio de uma interface unificada de *API REST (HTTP/JSON)*.
-
-O *Backend* é construído sobre o runtime Node.js com o framework Express, e divide o processamento das regras de negócio em módulos servidores especializados e independentes: Módulo Usuários, Módulo Agenda, Módulo Flashcards, Módulo Métricas, Módulo Gamificação e Módulo Notificações. Essa camada possui acoplamento exclusivo de leitura e gravação com o componente de banco de dados **PostgreSQL**.
-
-As **dependências e APIs externas** ampliam as capacidades técnicas do sistema. O **Firebase** é utilizado pelo módulo de notificações para entrega de alertas via push notifications (FCM). A **Google Calendar API** é consumida pelo módulo de agenda para sincronização integrada de eventos. O **JWT** garante a criptografia e segurança das sessões autenticadas, e o **Swagger** provê a documentação automática das rotas da API.
-
-A **infraestrutura de hospedagem** é gerenciada via Git e GitHub. O Frontend React.js é distribuído na plataforma Vercel, aproveitando sua rede CDN global. O Backend Node.js + Express é hospedado na plataforma **Render**, que executa as rotas e regras de negócio da aplicação.
-
+A arquitetura do sistema foi dividida em três camadas principais para garantir a separação de responsabilidades:
+* **Camada de Apresentação (Frontend):** Responsável por toda a experiência do usuário e envio das requisições.
+* **Camada de Negócio (API Backend):** Centraliza as regras de negócio do sistema, processando as requisições vindas do cliente.
+* **Camada de Dados (Banco de Dados):** Camada responsável pela persistência, armazenamento seguro e integridade das informações.
 ---
 
 # 9.6 Diagrama de Implantação (Deployment)
 
 Serve para mostrar a infraestrutura física do sistema, ou seja, em quais hardwares/servidores o software está instalado e como esses equipamentos se comunicam entre si.
 
-![Diagrama de Implantação](diagrama-de-implantação.png)
+![Diagrama de Implantação](diagrama-de-implantacao.png)
 
 ## Explicação
 
-O diagrama de implantação descreve a infraestrutura física e em nuvem sobre a qual o CromStudy é executado em ambiente de produção, identificando cada nó de computação e os protocolos de rede utilizados.
-
-O ponto de partida são os *dispositivos do usuário, que se dividem em dois tipos. O primeiro é o **dispositivo mobile** («device»), composto por smartphones com Android 8+ ou iOS 13+, que executam nativamente o artefato *App React Native. Esse aplicativo conta com um subsistema interno de Cache Local (offline), armazenado em disco no próprio dispositivo, que garante o funcionamento de funcionalidades como agenda, flashcards e Pomodoro mesmo sem conexão com a internet. O segundo é o **navegador web** («browser»), executado em computadores desktop ou notebooks, que carrega dinamicamente na memória o artefato *App React.js (SPA)*.
-
-Todos os dispositivos do usuário se comunicam com a infraestrutura em nuvem por meio da **Internet via protocolo HTTPS**, garantindo a criptografia e a segurança dos dados em trânsito.
-
-O primeiro servidor em nuvem é o **Vercel** («server»), responsável pelo provisionamento escalável dos arquivos estáticos do Frontend. Os pacotes compilados do React.js (build) são protegidos e distribuídos globalmente por meio de uma topologia de **CDN com SSL**.
-
-O segundo servidor é o **Render** («server»), que executa a aplicação Backend em Node.js + Express. Esse nó gerencia o roteamento da *API REST, a autenticação por JWT, e realiza chamadas externas para o **Firebase FCM** (envio de push notifications) e para a **Google Calendar API** (sincronização de agenda).
-
-Por fim, o nó de banco de dados é o **Supabase** («database»), um serviço gerenciado em nuvem de alta disponibilidade que executa o motor relacional PostgreSQL. Ele é responsável pela persistência de todos os dados do sistema — usuários, flashcards, tarefas, sessões, métricas e pontuações — e mantém rotinas automatizadas de backup.
+O diagrama de implantação apresenta a infraestrutura física e de rede onde o sistema opera:
+* **Dispositivo do Usuário:** O cliente acessa a aplicação através de um navegador web ou dispositivo móvel.
+* **Servidor de Hospedagem Cloud:** Hospeda o ambiente de execução do Backend, recebendo conexões seguras via protocolo HTTPS.
+* **Servidor de Banco de Dados:** Uma instância isolada (PostgreSQL) que se comunica com o servidor backend para garantir a segurança dos dados armazenados.
 
 ---
 
