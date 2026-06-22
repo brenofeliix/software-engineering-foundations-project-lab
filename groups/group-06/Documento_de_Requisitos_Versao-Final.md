@@ -1119,7 +1119,7 @@ A **infraestrutura de hospedagem** é gerenciada via Git e GitHub. O Frontend Re
 
 Representa onde o sistema será executado fisicamente em ambiente de produção, especificando nós de infraestrutura e protocolos de comunicação de rede.
 
-![Diagrama de Implantação](diagrama-de-implantacao.png)
+![Diagrama de Implantação](diagrama-de-implantação.png)
 
 ## Explicação
 
