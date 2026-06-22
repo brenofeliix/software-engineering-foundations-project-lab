@@ -1084,6 +1084,7 @@ Ele serve para mostrar a ordem das ações e as trocas de informações que acon
 
 
 ## Explicação
+
 O diagrama de sequência ilustra o fluxo de comunicação do sistema de forma abstrata. Quando o usuário realiza qualquer ação na interface, o **Frontend** captura o evento e dispara uma requisição para o **Backend**.
 O **Backend** processa a regra de negócio necessária, faz a consulta ou atualização diretamente do **banco de dados** e, após receber o retorno, envia a resposta tratada para o **Frontend** atualizar a tela do usuário.
 
