@@ -1074,19 +1074,7 @@ Representa a comunicação entre objetos ao longo do tempo.
 
 Representa os módulos e componentes principais do sistema.
 
----
-
-### Exemplo
-
-```text
-[Frontend]
-     |
-     v
-[API Backend]
-     |
-     v
-[Banco de Dados]
-```
+<img width="1760" height="1237" alt="componentes" src="https://github.com/user-attachments/assets/cf382a7a-5b8c-4818-8fd3-25837c82bc58" />
 
 ---
 
@@ -1094,19 +1082,7 @@ Representa os módulos e componentes principais do sistema.
 
 Representa onde o sistema será executado.
 
----
-
-### Exemplo
-
-```text
-[Usuário]
-     |
-Internet
-     |
-[Servidor Web]
-     |
-[Servidor Banco de Dados]
-```
+<img width="1760" height="1664" alt="deploy" src="https://github.com/user-attachments/assets/6bb2e932-3941-4727-88b4-a520be1c44a5" />
 
 ---
 
