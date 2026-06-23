@@ -1186,7 +1186,7 @@ Ele serve para mostrar a ordem das ações e as trocas de informações que acon
 ## Explicação
 
 O diagrama de sequência ilustra o fluxo de comunicação do sistema de forma abstrata. Quando o usuário realiza qualquer ação na interface, o **Frontend** captura o evento e dispara uma requisição para o **Backend**.
-O **Backend** processa a regra de negócio necessária, faz a consulta ou atualização diretamente do **banco de dados** e, após receber o retorno, envia a resposta tratada para o **Frontend** atualizar a tela do usuário.
+O **Backend** processa a regra de negócio necessária, faz a consulta ou atualização via **Prisma Client** e, após receber o retorno, envia a resposta tratada para o **Frontend** atualizar a tela do usuário.
 
 ---
 
@@ -1197,11 +1197,12 @@ Serve para mostrar como o sistema é dividido em blocos independentes (Frontend 
 
 
 ## Explicação
+O diagrama de componentes ilustra como o sistema está organizado e como suas partes se comunicam. A arquitetura foi dividida em camadas para garatinr a separação de responsabilidades: 
+**Camada de apresentação (Frontend):** responsável por toda a experiência do usuário, envio das requisições e armazenamento local de dados via SQlite, permitindo o fucnionamento offline de funcionalidades como cronograma, pomodoro e flshcards.
+**Camada de negócio (API Backend):** centraliza as regras de negócio do sistema, processando as requisições recebidas do Frontend via HTTPS e coordenando a comunicação com o banco de dados e os serviços externos.
+**Camada de dados (Banco de Dados):** responsável pela persistência, armazenanmento seguro e integridade das informações, acessada pelo Backend através do Prisma ORM.
+Além disso, o sistema se integra a serviços externos: Google OAuth 2.0 para autenticação do usuário, Firebase Cloud Messaging para envio de notificações push e SendGrid para disparo de e-mails transacionais. 
 
-A arquitetura do sistema foi dividida em três camadas principais para garantir a separação de responsabilidades:
-* **Camada de Apresentação (Frontend):** Responsável por toda a experiência do usuário e envio das requisições.
-* **Camada de Negócio (API Backend):** Centraliza as regras de negócio do sistema, processando as requisições vindas do cliente.
-* **Camada de Dados (Banco de Dados):** Camada responsável pela persistência, armazenamento seguro e integridade das informações.
 ---
 
 # 9.6 Diagrama de Implantação (Deployment)
@@ -1213,9 +1214,12 @@ Serve para mostrar a infraestrutura física do sistema, ou seja, em quais hardwa
 ## Explicação
 
 O diagrama de implantação apresenta a infraestrutura física e de rede onde o sistema opera:
-* **Dispositivo do Usuário:** O cliente acessa a aplicação através de um navegador web ou dispositivo móvel.
-* **Servidor de Hospedagem Cloud:** Hospeda o ambiente de execução do Backend, recebendo conexões seguras via protocolo HTTPS.
-* **Servidor de Banco de Dados:** Uma instância isolada (PostgreSQL) que se comunica com o servidor backend para garantir a segurança dos dados armazenados.
+
+**Dispositivo do Usuário:** o cliente acessa a aplicação através de um navegador web ou dispositivo móvel. Dentro do dispositivo também roda o SQLite, um banco de dados local que permite o uso de funcionalidades como cronograma, Pomodoro e flashcards mesmo sem conexão com a internet.
+**Servidor de Hospedagem Cloud:** hospeda o Backend desenvolvido em NestJS com Prisma ORM, recebendo as requisições do dispositivo do usuário via HTTPS e REST API, processando as regras de negócio e coordenando a comunicação com os demais serviços.
+**Servidor de Banco de Dados:** instância isolada onde roda o PostgreSQL, responsável pelo armazenamento permanente de todas as informações do sistema. A comunicação com o servidor cloud é feita via Prisma Client através do protocolo TCP/IP.
+
+Além dos nós físicos, o sistema se integra ao Google OAuth 2.0 para autenticação do usuário e aos serviços Firebase e SendGrid para envio de notificações push e e-mails transacionais.
 
 ---
 
