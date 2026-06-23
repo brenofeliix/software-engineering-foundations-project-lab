@@ -735,20 +735,16 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 ```mermaid
 flowchart LR
 
-Actor["
-O
-/|\
-/ \
-Usuário"]
+Actor["O<br/>/|\<br/>/ \<br/>Usuário"]
 
-UC01((Realizar login))
-UC02((Cadastrar conta))
-UC03((Gerenciar cronograma))
-UC04((Usar método Pomodoro))
-UC05((Gerenciar flashcards))
-UC06((Visualizar métricas))
-UC07((Jogar minijogo/quiz))
-UC08((Editar perfil))
+UC01("UC01 — Realizar login")
+UC02("UC02 — Cadastrar conta")
+UC03("UC03 — Gerenciar cronograma")
+UC04("UC04 — Usar método Pomodoro")
+UC05("UC05 — Gerenciar flashcards")
+UC06("UC06 — Visualizar métricas")
+UC07("UC07 — Jogar minijogo/quiz")
+UC08("UC08 — Editar perfil")
 
 Actor --> UC01
 Actor --> UC02
@@ -759,50 +755,8 @@ Actor --> UC06
 Actor --> UC07
 Actor --> UC08
 
-UC05 -.->|include| UC06
-UC05 -.->|include| UC07
-
-style Actor fill:#fff,stroke:#000,stroke-width:2px
-```text
-
-[Maria]
-    |
-    | ---- (UC01 - Realizar Login)
-    |           |
-    |           | ---- (Recuperar Senha)
-    |
-    | ---- (UC02 - Cadastrar Conta)
-    |
-    | ---- (UC03 - Gerenciar Cronograma)
-    |           |
-    |           | ---- (Adicionar Atividade)
-    |           |
-    |           | ---- (Editar Atividade)
-    |           |
-    |           | ---- (Excluir Atividade)
-    |           |
-    |           | ---- (Marcar Tarefa como Concluída)
-    |
-    | ---- (UC04 - Usar Método Pomodoro)
-    |           |
-    |           | ---- (Iniciar Ciclo de Foco - 25 min)
-    |           |
-    |           | ---- (Iniciar Intervalo - 5 min)
-    |           |
-    |           | ---- (Pausar / Encerrar Sessão)
-    |
-    | ---- (UC05 - Gerenciar Flashcards)
-    |           |
-    |           | ---- «include» (UC06 - Visualizar Métricas)
-    |           |
-    |           | ---- «include» (UC07 - Jogar Minijogo/Quiz)
-    |
-    | ---- (UC06 - Visualizar Métricas)
-    |
-    | ---- (UC07 - Jogar Minijogo/Quiz)
-    |
-    | ---- (UC08 - Editar Perfil)
-
+UC05 -.->|inclui| UC06
+UC05 -.->|inclui| UC07
 ```
 ---
 
@@ -926,150 +880,90 @@ style Actor fill:#fff,stroke:#000,stroke-width:2px
 ## Diagrama
 ```mermaid
 classDiagram
-direction LR
+    direction TB
 
-class Usuario {
-    +UUID id
-    +String nome
-    +String email
-    +String senha
-    +login()
-    +editarPerfil()
-}
+    class Usuario {
+        +String id
+        +String nome
+        +String email
+        +String senha
+        +login()
+        +editarPerfil()
+    }
 
-class Cronograma {
-    +UUID id
-    +String diaSemana
-    +Time horarioInicio
-    +Time horarioFim
-    +String materia
-    +salvar()
-}
+    class Cronograma {
+        +String id
+        +String diaSemana
+        +String horarioInicio
+        +String horarioFim
+        +String materia
+        +salvar()
+    }
 
-class Tarefa {
-    +UUID id
-    +String titulo
-    +String descricao
-    +Date data
-    +Boolean status
-    +concluir()
-}
+    class Tarefa {
+        +String id
+        +String titulo
+        +String descricao
+        +String data
+        +Boolean status
+        +concluir()
+    }
 
-class SessaoEstudo {
-    +UUID id
-    +Integer duracao
-    +Integer ciclosPomodoro
-    +String status
-    +iniciar()
-    +encerrar()
-}
+    class SessaoEstudo {
+        +String id
+        +Integer duracao
+        +Integer ciclosPomodoro
+        +String status
+        +iniciar()
+        +encerrar()
+    }
 
-class Flashcard {
-    +UUID id
-    +String pergunta
-    +String resposta
-    +String categoria
-    +Integer acertos
-    +Integer erros
-    +registrarResposta()
-}
+    class Flashcard {
+        +String id
+        +String pergunta
+        +String resposta
+        +String categoria
+        +Integer acertos
+        +Integer erros
+        +registrarResposta()
+    }
 
-class Pontuacao {
-    +UUID id
-    +Integer pontos
-    +String origem
-    +acumular()
-}
+    class Pontuacao {
+        +String id
+        +Integer pontos
+        +String origem
+        +acumular()
+    }
 
-class Notificacao {
-    +UUID id
-    +String mensagem
-    +DateTime dataHora
-    +Boolean lida
-    +disparar()
-}
+    class Notificacao {
+        +String id
+        +String mensagem
+        +String dataHora
+        +Boolean lida
+        +disparar()
+    }
 
-class Minijogo {
-    +UUID idQuiz
-    +Integer pontuacaoTotal
-    +String avatar
-    +iniciarQuiz()
-}
+    class Minijogo {
+        +String idQuiz
+        +Integer pontuacaoTotal
+        +String avatar
+        +iniciarQuiz()
+    }
 
-Usuario "1" *-- "1..*" Cronograma : possui
-Usuario "1" *-- "1..*" Tarefa : gerencia
-Usuario "1" *-- "1..*" SessaoEstudo : realiza
-Usuario "1" *-- "1..*" Flashcard : cria
+    Usuario "1" --> "*" Cronograma : possui
+    Usuario "1" --> "*" Tarefa : gerencia
+    Usuario "1" --> "*" SessaoEstudo : realiza
+    Usuario "1" --> "*" Flashcard : cria
+    Usuario "1" --> "1" Pontuacao : possui
+    Usuario "1" --> "*" Notificacao : recebe
 
-Cronograma "1" o-- "*" Tarefa : organiza
+    Cronograma --> "*" Tarefa : organiza
+    Cronograma --> "*" SessaoEstudo : agenda
 
-SessaoEstudo --> Notificacao : gera
-
-Flashcard --> Pontuacao : recompensa
-
-Pontuacao --> Minijogo : desbloqueia
-
-Minijogo ..> Flashcard : utiliza
-
-```text
-+----------------------+          1..*     +----------------------+
-|       Usuário        |------------------>|     Cronograma       |
-+----------------------+                   +----------------------+
-| - id                 |                   | - diaSemana          |
-| - nome               |                   | - horarioInicio      |
-| - email              |                   | - horarioFim         |
-| - senha              |                   | - materia            |
-+----------------------+                   +----------------------+
-| + login()            |                   | + salvar()           |
-+----------------------+                   +----------------------+
-         |
-         | 1..*
-         v
-+----------------------+       (gera)      +----------------------+
-|       Tarefa         |------------------>|     Pontuação        |
-+----------------------+                   +----------------------+
-| - titulo             |                   | - pontos             |
-| - descricao          |                   | - dataObtida         |
-| - data               |                   +----------------------+
-| - status: Boolean    |                   | + acumular()         |
-+----------------------+                   | + gastar()           |
-| + concluir()         |                   +----------------------+
-+----------------------+                            |
-         |                                          | (gera)
-         | 1..*                                     v
-         v                                +----------------------+
-+----------------------+    «use»         |      Minijogo        |
-|    SessaoEstudo      |         +------->+----------------------+
-+----------------------+         |        | - idQuiz             |
-| - duracao            |         |        | - questoes: List     |
-| - ciclosPomodoro     |         |        | - pontuacaoTotal     |
-| - status             |         |        +----------------------+
-+----------------------+         |        | + iniciarQuiz()      |
-| + iniciar()          |         |        +----------------------+
-+----------------------+         |
-         |                       |
-         | (gera)                |
-         v                       |
-+----------------------+         |
-|     Notificação      |         |
-+----------------------+         |
-| - mensagem           |         |
-| - horario            |         |
-| - tipo               |         |
-+----------------------+         |
-                                 |
-+----------------------+         |
-|      Flashcard       |---------+
-+----------------------+
-| - pergunta           |
-| - resposta           |
-| - categoria          |
-| - acertos            |
-| - erros              |
-+----------------------+
-| + registrarResposta()|
-+----------------------+
-
+    SessaoEstudo --> Notificacao : gera
+    Flashcard --> Pontuacao : recompensa
+    Pontuacao --> Minijogo : desbloqueia
+    Minijogo ..> Flashcard : utiliza
 ```
 ---
 
