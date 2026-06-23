@@ -1034,7 +1034,7 @@ Os diagramas ajudam na:
 
 Os casos de uso representam as interações entre usuários (atores) e o sistema.
 
-<img width="2829" height="3638" alt="Blank diagram" src="https://github.com/user-attachments/assets/81802593-761c-4ba7-8fd4-e0a86aa57b7d" />
+<img width="2829" height="3638" alt="Blank diagram (1)" src="https://github.com/user-attachments/assets/14aa8680-c379-4f3c-bcb6-a26300c872f6" />
 
 
 ## 9.2 Diagrama de Classes (UML)
@@ -1049,7 +1049,7 @@ O diagrama de classes representa:
 
 ---
 
-<img width="4585" height="2405" alt="UML class" src="https://github.com/user-attachments/assets/b9fbee94-219f-4848-baa7-e4f20714429b" />
+<img width="4585" height="2405" alt="UML class (1)" src="https://github.com/user-attachments/assets/34ac8655-37f9-4edb-8f28-f3b6bf24cceb" />
 
 
 ---
