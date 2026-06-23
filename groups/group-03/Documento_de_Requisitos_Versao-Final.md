@@ -73,10 +73,7 @@ No geral, o projeto busca unir tecnologia e educação de forma acessível, torn
 ### 3.2 Stakeholders
 - Alunos (usuários finais): utilizam a plataforma para estudar por meio de jogos educativos.
 - Professores: acompanham o desempenho dos alunos, criam ou gerenciam turmas e utilizam a plataforma como apoio pedagógico.
-- Escolas/Instituições de Ensino: adotam o sistema para uso educacional e acompanham resultados gerais.
 - Pais ou Responsáveis: acompanham o progresso e engajamento dos alunos.
-- Desenvolvedores: responsáveis pela criação, manutenção e evolução do sistema.
-- Equipe de suporte: presta auxílio técnico aos usuários e resolve problemas.
 - Administradores do sistema: gerenciam usuários, conteúdos e funcionamento geral da plataforma.
 - Equipe pedagógica: define conteúdos e valida os jogos educativos.
 - Gestores escolares: analisam relatórios e resultados.
@@ -379,3 +376,827 @@ O sistema deve disponibilizar trilhas de aprendizagem das matérias do ensino fu
 - Histórico financeiro: O sistema deve manter histórico de movimentações financeiras para rastreabilidade e conferência de informações.
 
 - Conformidade fiscal: O sistema deve garantir conformidade com normas contábeis e fiscais aplicáveis à instituição.
+  
+---
+
+##  8. Arquitetura do Sistema
+
+### 8.1 Visão Geral
+A arquitetura escolhida para o sistema será em microserviços, permitindo que cada funcionalidade da plataforma funcione de maneira independente e organizada. A escolha dessa arquitetura garante maior escalabilidade, facilidade de manutenção e melhor desempenho do sistema, tornando possível criar uma plataforma educacional moderna, dinâmica e mais atrativa para reduzir a evasão escolar e aumentar o desempenho dos estudantes.
+
+### 8.2 Componentes
+- Frontend: Interface visual do sistema, onde alunos e professores poderão acessar aulas, atividades interativas, desafios, rankings e acompanhar o progresso de aprendizagem.   
+- Backend: Responsável pelo processamento das informações, gerenciamento das funcionalidades do sistema, autenticação de usuários, regras de negócio e controle das atividades educacionais. . 
+- Banco de dados: Armazena informações dos usuários, conteúdos das aulas, desempenho dos alunos, frequência, histórico de atividades e dados necessários para o funcionamento da plataforma.   
+- APIs externas: Utilizadas para integração com serviços complementares, como envio de notificações, autenticação, recursos multimídia e ferramentas que auxiliem na experiência interativa do aprendizado. 
+
+### 8.3 Tecnologias
+- Linguagem: JavaScript será utilizada no desenvolvimento do sistema, por ser uma linguagem versátil e amplamente utilizada tanto no frontend quanto no backend.
+- Framework: React será utilizado no frontend para criar uma interface interativa e dinâmica, enquanto Node.js será utilizado no backend para processar dados e gerenciar as funcionalidades do sistema.
+- Banco de dados: MySQL será utilizado para armazenar informações como cadastro de usuários, desempenho escolar, atividades realizadas, frequência e demais dados necessários para o funcionamento da plataforma.  
+
+### 8.4 Decisões Arquiteturais
+A arquitetura foi planejada para atender aos principais requisitos não funcionais do sistema, garantindo qualidade, estabilidade e capacidade de crescimento da plataforma.
+
+- Desempenho: A utilização de microserviços permite que diferentes funções do sistema operem de forma independente, reduzindo sobrecarga e melhorando o tempo de resposta durante o acesso simultâneo de vários usuários  
+- Segurança: O sistema contará com autenticação de usuários, controle de acesso por níveis (aluno e professor), criptografia de dados sensíveis e proteção das informações armazenadas no banco de dados. 
+- Escalabilidade: A arquitetura escolhida permite expandir o sistema de maneira gradual, adicionando novos serviços e funcionalidades sem comprometer o funcionamento geral da plataforma, suportando o aumento de usuários ao longo do tempo.
+
+---
+
+## 9. Casos de Uso e Diagramas UML
+
+
+# 9.1 Casos de Uso
+
+### UC01 - Autenticação e Gerenciamento de Conta
+Ator: Usuário (Aluno, Professor ou Administrador)
+
+Descrição: Permite que o usuário realize o cadastro inicial no sistema, acesse a plataforma por meio de credenciais validadas, solicite a recuperação de senhas e gerencie os dados informados em seu perfil.
+
+
+
+Fluxo principal
+Usuário acessa a interface inicial e escolhe realizar o cadastro ou autenticação.
+
+Usuário insere as informações e credenciais requeridas.
+
+Sistema criptografa a senha de forma automática e realiza a validação do login.
+
+Sistema autentica o usuário e libera o acesso às funções mapeadas ao seu respectivo perfil.
+
+
+
+Fluxo alternativo
+Credenciais inválidas ou falha na validação de permissões pelo sistema.
+
+Usuário executa a rotina para recuperar senha por esquecimento.
+
+Usuário edita informações ou realiza a visualização do perfil após o login.
+
+Usuário realiza o encerramento da sessão ativa utilizando a opção Sair.
+
+
+
+### UC02 - Execução de Atividades Pedagógicas e Jogos
+Ator: Aluno
+
+Descrição: Permite ao aluno acessar as trilhas de aprendizado da plataforma, selecionar a disciplina desejada e responder a questões e atividades práticas utilizando os jogos educativos.
+
+
+
+Fluxo principal
+Aluno acessa o ambiente de trilhas de aprendizagem da plataforma.
+
+Sistema classifica de forma automática o aluno por idade e ano escolar para personalizar o conteúdo exposto.
+
+Aluno seleciona a matéria e escolhe a disciplina específica que planeja estudar.
+
+Aluno inicia o jogo didático e responde às atividades integradas.
+
+Sistema registra o desempenho do aluno e armazena os dados no histórico de maneira automática.
+
+
+
+Fluxo alternativo
+Aluno decide praticar ativando o Modo Sortido para responder atividades aleatórias.
+
+
+### UC03 - Evolução e Recompensas (Gamificação)
+Ator: Aluno
+
+Descrição: Mapeia os recursos internos de engajamento do aluno baseados no acúmulo de experiência (XP), recebimento de conquistas por metas batidas, controle de sequência de estudos (streak) e compras na loja virtual.
+
+
+
+Fluxo principal
+Aluno interage no sistema e conclui as tarefas pedagógicas propostas.
+
+Sistema atualiza de forma automática os indicadores de XP, nível, ranking e o streak de acessos seguidos.
+
+Aluno é condecorado e recebe conquistas associadas à evolução demonstrada.
+
+Aluno realiza a consulta ao ranking geral para verificar seu posicionamento.
+
+
+
+Fluxo alternativo
+Aluno acessa a loja interna da plataforma para comprar recompensas utilizando os pontos coletados.
+
+### UC04 - Participação e Cooperação em Grupos
+Ator: Aluno
+
+Descrição: Permite que o estudante faça parte de turmas escolares ou grupos de estudo virtuais, acompanhe os comunicados enviados e cumpra missões designadas.
+
+
+
+Fluxo principal
+Aluno insere o código ou convite recebido para entrar no grupo.
+
+Aluno participa das atividades integradas do grupo e visualiza as missões pedagógicas disponibilizadas.
+
+Aluno realiza e conclui as missões que foram publicadas para a sua turma.
+
+Sistema envia notificações automáticas e expõe avisos emitidos para o aluno.
+
+
+
+Fluxo alternativo
+Aluno realiza apenas a leitura de notificações e avisos sem iniciar missões pendentes.
+
+
+
+### UC05 - Organização de Grupos e Avisos (Professor)
+Ator: Professor
+
+Descrição: Engloba as funções concedidas ao professor para coordenar suas turmas de alunos na plataforma, engajando a criação de novas salas, controle de membros e emissão de avisos informativos.
+
+
+
+Fluxo principal
+Professor solicita a criação de um novo grupo no sistema.
+
+Sistema gera automaticamente o código de convite exclusivo para compartilhamento.
+
+Professor gerencia o grupo realizando a adição ou a remoção manual de alunos.
+
+Professor digita e realiza o envio de avisos gerais direcionados aos estudantes vinculados.
+
+
+
+Fluxo alternativo
+Professor seleciona e executa a exclusão permanente de um grupo ou turma existente.
+
+
+
+### UC06 - Controle e Gestão de Missões (Professor)
+Ator: Professor
+
+Descrição: Responsável pela manutenção pedagógica e publicação de tarefas e missões voltadas aos grupos moderados pelo educador.
+
+
+
+Fluxo principal
+Professor acessa a área operacional da turma e aciona a opção para criar uma nova missão.
+
+Professor preenche os requisitos e publica a missão oficial para que fique visível ao grupo de alunos.
+
+
+
+Fluxo alternativo
+Professor localiza uma missão em aberto para realizar edições ou excluí-la de circulação.
+
+
+
+### UC07 - Monitoramento de Evolução Acadêmica
+Ator: Professor ou Aluno
+
+Descrição: Provê relatórios visuais e históricos do progresso, permitindo ao aluno monitorar seu avanço e ao professor obter indicadores pedagógicos unificados das turmas.
+
+
+
+Fluxo principal
+Usuário acessa o painel de monitoramento (o Aluno visualiza seu progresso pessoal; o Professor seleciona a opção de visualizar seus alunos).
+
+Sistema recupera as informações do banco e realiza a montagem do histórico e evolução.
+
+Professor acompanha o rendimento da turma e emite relatórios consolidados sobre o desempenho dos estudantes.
+
+
+
+Fluxo alternativo
+Professor ou aluno executa uma consulta rápida nos rankings da disciplina para verificação do progresso contextual.
+
+
+
+## UC08 - Administração Geral e Infraestrutura do Sistema
+Ator: Administrador
+
+Descrição: Concede total autoridade técnica ao administrador para operar e manter a integridade operacional e pedagógica do sistema educacional.
+
+
+
+Fluxo principal
+Administrador realiza o login e o sistema executa a validação automática das permissões administrativas.
+
+Administrador acessa os painéis operacionais para gerenciar usuários cadastrados (professores e alunos).
+
+Administrador gerencia conteúdos pedagógicos e disciplinas, podendo cadastrar, editar, excluir ou publicar matérias e gerenciar o funcionamento dos jogos.
+
+Administrador gerencia as regras e itens da loja, parâmetros de rankings e a entrega de recompensas.
+
+Sistema gera de forma contínua o registro de logs de auditoria e executa rotinas de backup automático para preservação dos dados.
+
+
+
+Fluxo alternativo
+Administrador acessa a aba gerencial para visualizar estatísticas de uso gerais da plataforma.
+
+Administrador dispara comandos manuais pontuais para forçar a realização de um backup do sistema.
+
+---
+
+
+
+# Casos de Uso do Sistema
+
+## Usuário
+
+```text
+[Usuário]
+│
+├── (Cadastrar Conta)
+├── (Realizar Login)
+├── (Recuperar Senha)
+├── (Gerenciar Perfil)
+└── (Encerrar Sessão)
+```
+
+---
+
+## Aluno
+
+```text
+[Aluno]
+│
+├── (Acessar Trilhas de Aprendizagem)
+├── (Selecionar Disciplina)
+├── (Responder Atividades)
+├── (Jogar Jogos Educativos)
+├── (Utilizar Modo Sortido)
+├── (Ganhar XP)
+├── (Receber Conquistas)
+├── (Visualizar Streak)
+├── (Consultar Ranking)
+├── (Comprar Recompensas na Loja)
+├── (Entrar em Grupo)
+├── (Visualizar Missões)
+├── (Realizar Missões)
+├── (Visualizar Avisos)
+└── (Receber Notificações)
+```
+
+---
+
+## Professor
+
+```text
+[Professor]
+│
+├── (Criar Grupo)
+├── (Gerenciar Grupo)
+│   ├── (Adicionar Alunos)
+│   └── (Remover Alunos)
+├── (Enviar Avisos)
+├── (Excluir Grupo)
+├── (Criar Missão)
+├── (Publicar Missão)
+├── (Editar Missão)
+├── (Excluir Missão)
+├── (Visualizar Progresso dos Alunos)
+├── (Emitir Relatórios)
+└── (Consultar Ranking)
+```
+
+---
+
+## Administrador
+
+```text
+[Administrador]
+│
+├── (Realizar Login)
+├── (Gerenciar Usuários)
+├── (Gerenciar Conteúdos)
+├── (Gerenciar Disciplinas)
+├── (Gerenciar Jogos)
+├── (Gerenciar Loja)
+├── (Gerenciar Recompensas)
+├── (Gerenciar Rankings)
+├── (Visualizar Estatísticas)
+├── (Visualizar Logs)
+└── (Executar Backup)
+```
+
+---
+
+# Visão Geral
+
+```text
+                              [Usuário]
+                                  │
+          ┌───────────────────────┼────────────────────────┐
+          │                       │                        │
+  (Cadastrar Conta)      (Realizar Login)      (Recuperar Senha)
+          │
+  (Gerenciar Perfil)
+          │
+  (Encerrar Sessão)
+
+
+                              [Aluno]
+                                  │
+ ┌──────────────┬─────────────────┬────────────────┬─────────────────┐
+ │              │                 │                │                 │
+(Acessar) (Selecionar) (Responder Atividades) (Jogar) (Modo Sortido)
+                                                │
+                                                ▼
+                                         (Ganhar XP)
+                                                │
+                                         (Receber Conquistas)
+                                                │
+                                        (Visualizar Streak)
+                                                │
+                                        (Consultar Ranking)
+                                                │
+                                   (Comprar Recompensas)
+                                                │
+                                         (Entrar em Grupo)
+                                                │
+                        ┌───────────────────────┼─────────────────────┐
+                        │                       │                     │
+               (Visualizar Missões)   (Realizar Missões)   (Visualizar Avisos)
+                                                │
+                                       (Receber Notificações)
+
+
+                            [Professor]
+                                 │
+ ┌───────────────┬─────────────────────┬────────────────────┐
+ │               │                     │                    │
+(Criar Grupo) (Gerenciar Grupo) (Criar Missão) (Visualizar Progresso)
+      │               │                    │                    │
+      │         ┌─────┴─────┐        ┌─────┴─────┐              │
+      │         │           │        │           │              │
+(Enviar Avisos) (Adicionar) (Remover) (Editar) (Excluir) (Emitir Relatórios)
+                                                   │
+                                          (Consultar Ranking)
+
+
+                          [Administrador]
+                                │
+ ┌───────────────┬────────────────┬────────────────┬────────────────┐
+ │               │                │                │                │
+(Gerenciar   (Gerenciar      (Gerenciar      (Gerenciar      (Gerenciar
+ Usuários)    Conteúdos)        Jogos)           Loja)         Rankings)
+        │
+(Visualizar Estatísticas)
+        │
+(Visualizar Logs)
+        │
+(Executar Backup)
+```
+
+## 9.2 Diagrama de Classes (UML)
+
+## Classe: Usuário
+
+```text
++---------------------------+
+|          Usuário          |
++---------------------------+
+| - id                      |
+| - nome                    |
+| - email                   |
+| - senha                   |
+| - tipo                    |
++---------------------------+
+| + login()                 |
+| + logout()                |
+| + cadastrar()             |
+| + recuperarSenha()        |
+| + editarPerfil()          |
++---------------------------+
+```
+
+
+
+## Classe: Aluno
+
+```text
++---------------------------+
+|          Aluno            |
++---------------------------+
+| - idade                   |
+| - anoEscolar              |
+| - xp                      |
+| - nivel                   |
+| - streak                  |
++---------------------------+
+| + responderAtividade()    |
+| + ganharXP()              |
+| + visualizarProgresso()   |
+| + entrarGrupo()           |
+| + comprarItem()           |
++---------------------------+
+```
+
+
+
+## Classe: Professor
+
+```text
++---------------------------+
+|        Professor          |
++---------------------------+
+| - instituicao             |
++---------------------------+
+| + criarGrupo()            |
+| + removerAluno()          |
+| + criarMissao()           |
+| + editarMissao()          |
+| + enviarAviso()           |
+| + visualizarRelatorio()   |
++---------------------------+
+```
+
+
+
+## Classe: Administrador
+
+```text
++---------------------------+
+|      Administrador        |
++---------------------------+
+| - permissao               |
++---------------------------+
+| + gerenciarUsuarios()     |
+| + gerenciarConteudos()    |
+| + gerenciarJogos()        |
+| + executarBackup()        |
+| + visualizarLogs()        |
++---------------------------+
+```
+
+
+
+## Classe: Grupo
+
+```text
++---------------------------+
+|          Grupo            |
++---------------------------+
+| - id                      |
+| - nome                    |
+| - codigo                  |
+| - descricao               |
++---------------------------+
+| + adicionarAluno()        |
+| + removerAluno()          |
+| + gerarCodigo()           |
++---------------------------+
+```
+
+
+
+## Classe: Missão
+
+```text
++---------------------------+
+|         Missão            |
++---------------------------+
+| - id                      |
+| - titulo                  |
+| - descricao               |
+| - recompensaXP            |
+| - dataLimite              |
++---------------------------+
+| + publicar()              |
+| + editar()                |
+| + excluir()               |
++---------------------------+
+```
+
+
+
+## Classe: Disciplina
+
+```text
++---------------------------+
+|        Disciplina         |
++---------------------------+
+| - id                      |
+| - nome                    |
++---------------------------+
+| + listarAtividades()      |
++---------------------------+
+```
+
+
+## Classe: Atividade
+
+```text
++---------------------------+
+|        Atividade          |
++---------------------------+
+| - id                      |
+| - titulo                  |
+| - dificuldade             |
+| - pontuacao               |
++---------------------------+
+| + iniciar()               |
+| + finalizar()             |
++---------------------------+
+```
+
+
+
+## Classe: Jogo
+
+```text
++---------------------------+
+|          Jogo             |
++---------------------------+
+| - id                      |
+| - nome                    |
+| - tipo                    |
++---------------------------+
+| + iniciarJogo()           |
+| + registrarResultado()    |
++---------------------------+
+```
+
+
+## Classe: Histórico
+
+```text
++---------------------------+
+|        Histórico          |
++---------------------------+
+| - id                      |
+| - data                    |
+| - pontuacao               |
++---------------------------+
+| + registrar()             |
+| + consultar()             |
++---------------------------+
+```
+
+
+
+## Classe: Conquista
+
+```text
++---------------------------+
+|        Conquista          |
++---------------------------+
+| - id                      |
+| - nome                    |
+| - descricao               |
++---------------------------+
+| + desbloquear()           |
++---------------------------+
+```
+
+
+
+## Classe: Ranking
+
+```text
++---------------------------+
+|         Ranking           |
++---------------------------+
+| - id                      |
+| - posicao                 |
+| - pontuacao               |
++---------------------------+
+| + atualizar()             |
++---------------------------+
+```
+
+
+
+## Classe: Loja
+
+```text
++---------------------------+
+|           Loja            |
++---------------------------+
+| - id                      |
+| - nome                    |
++---------------------------+
+| + listarItens()           |
+| + venderItem()            |
++---------------------------+
+```
+
+
+## Classe: ItemLoja
+
+```text
++---------------------------+
+|        ItemLoja           |
++---------------------------+
+| - id                      |
+| - nome                    |
+| - precoXP                 |
++---------------------------+
+| + aplicarBonus()          |
++---------------------------+
+```
+
+# Relacionamento
+
+```text
+Usuário 1 -------- 1 Aluno
+
+Usuário 1 -------- 1 Professor
+
+Usuário 1 -------- 1 Administrador
+
+Professor 1 -------- * Grupo
+
+Aluno * -------- * Grupo
+
+Grupo 1 -------- * Missão
+
+Disciplina 1 -------- * Atividade
+
+Jogo 1 -------- * Atividade
+
+Aluno 1 -------- * Histórico
+
+Aluno * -------- * Conquista
+
+Aluno 1 -------- 1 Ranking
+
+Loja 1 -------- * ItemLoja
+```
+    
+
+## 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos no sistema.
+
+---
+
+<img width="669" height="2074" alt="diagrama-atividades drawio" src="https://github.com/user-attachments/assets/a20935cf-df53-4a23-8a12-3d86392bcb6e" />
+
+---
+
+## 9.4 Diagrama de Sequência (UML)
+
+Representa a comunicação entre objetos ao longo do tempo.
+
+---
+
+<img width="1440" height="900" alt="diagrama-sequencia drawio" src="https://github.com/user-attachments/assets/74b1d436-715d-4194-bafe-d4b6bb32e639" />
+
+---
+
+## 9.5 Diagrama de Componentes
+
+Representa os módulos e componentes principais do sistema.
+
+---
+
+### Exemplo
+
+<img width="1384" height="733" alt="diagrama-componentes drawio" src="https://github.com/user-attachments/assets/9e7524ee-b413-49ef-9e8b-aaff4a82c513" />
+
+---
+
+## 9.6 Diagrama de Implantação (Deployment)
+
+Representa onde o sistema será executado.
+
+---
+
+### Exemplo
+
+<img width="1158" height="804" alt="diagrama-implantacao drawio" src="https://github.com/user-attachments/assets/df39b044-f11f-4a62-86d4-ff36b7f06f75" />
+
+---
+
+## 10. Plano de Testes
+
+### 10.1 Estratégia de Teste
+
+A validação do sistema será realizada de forma incremental ao longo do ciclo de desenvolvimento, visando garantir a conformidade com os requisitos funcionais e não funcionais especificados. Serão aplicadas diferentes técnicas de teste, abrangendo desde a verificação individual dos componentes até a validação do sistema em ambiente integrado. Os testes de aceitação serão conduzidos com usuários representativos do público-alvo, a fim de avaliar a aderência da solução às necessidades identificadas.
+
+### 10.2 Tipos de Teste
+
+- **Teste Unitário: Verificação individual de métodos, funções e componentes do sistema.
+- **Teste de Integração: Validação da comunicação e interoperabilidade entre módulos.
+- **Teste de Sistema: Avaliação do comportamento do sistema como um todo em ambiente controlado.
+- **Teste de Aceitação: Validação dos requisitos junto aos usuários e demais partes interessadas.
+
+### 10.3 Casos de Teste
+
+#### CT01 – Cadastro de Aluno
+
+**Requisito Relacionado: RF01
+
+**Descrição:** Verificar a capacidade do sistema de realizar o cadastro de novos alunos.
+
+**Dados de Entrada:
+- Nome completo;
+- E-mail válido;
+- Senha válida;
+- Idade;
+- Ano escolar.
+
+**Resultado Esperado:  
+O sistema deve registrar os dados informados e criar a conta do usuário com sucesso.
+
+---
+
+#### CT02 – Autenticação de Usuário
+
+**Requisito Relacionado: RF04
+
+**Descrição:** Verificar a autenticação de usuários previamente cadastrados.
+
+**Dados de Entrada:
+- E-mail válido;
+- Senha correspondente.
+
+**Resultado Esperado: 
+O sistema deve permitir o acesso do usuário às funcionalidades autorizadas.
+
+---
+
+#### CT03 – Registro de Sequência de Estudos (Streak)
+
+**Requisito Relacionado: RF11
+
+**Descrição: Verificar o registro e a atualização da sequência diária de estudos.
+
+**Dados de Entrada:
+- Acessos consecutivos realizados em dias subsequentes.
+
+**Resultado Esperado: 
+O sistema deve atualizar corretamente o contador de sequência de estudos.
+
+### 10.4 Testes de Requisitos Não Funcionais
+
+#### Desempenho
+
+- Avaliar o tempo de resposta das funcionalidades críticas.
+- Verificar a capacidade do sistema sob condições de carga previstas.
+- Validar a escalabilidade da solução.
+
+#### Segurança
+
+- Verificar mecanismos de autenticação e autorização.
+- Avaliar a proteção de dados dos usuários.
+- Testar a resistência a vulnerabilidades comuns, como SQL Injection e XSS.
+
+#### Usabilidade
+
+- Avaliar a facilidade de utilização da interface.
+- Verificar a navegabilidade do sistema.
+- Validar a adequação da solução ao público-alvo.
+
+---
+
+## 11. Critérios de Aceitação
+
+Os requisitos serão considerados aceitos quando atenderem aos seguintes critérios:
+
+- Todos os casos de teste previstos forem executados com sucesso;
+- Os requisitos funcionais forem implementados conforme especificado;
+- O tempo de resposta permanecer dentro dos limites estabelecidos;
+- Não forem identificadas falhas críticas que comprometam a utilização do sistema;
+- Os mecanismos de segurança estiverem operando conforme os requisitos definidos;
+- Os usuários participantes dos testes de aceitação validarem o funcionamento adequado da solução.
+
+---
+
+## 12. Restrições
+
+### Restrições Tecnológicas
+
+- O sistema deverá operar por meio de conexão com a internet.
+- A solução deverá ser compatível com dispositivos móveis e computadores.
+- A infraestrutura utilizada deverá suportar múltiplos acessos simultâneos.
+- O sistema deverá manter tempo de resposta inferior a três segundos em condições normais de operação.
+
+### Restrições Legais
+
+- O sistema deverá realizar o tratamento dos dados pessoais dos usuários em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018).
+- O armazenamento e processamento das informações dos usuários deverão respeitar os princípios de privacidade, finalidade, necessidade e segurança previstos na legislação vigente.
+- O conteúdo educacional disponibilizado na plataforma deverá respeitar a legislação relacionada à propriedade intelectual e aos direitos autorais.
+
+### Restrições de Prazo
+
+- O desenvolvimento do sistema deverá ser concluído dentro do período estabelecido pelo cronograma do projeto.
+- As atividades de análise, implementação, testes e validação deverão ser realizadas dentro dos prazos definidos para cada etapa do desenvolvimento.
+- A versão final do sistema deverá estar disponível para avaliação e entrega até a data prevista pela instituição ou disciplina responsável pelo projeto.
+- Eventuais alterações de escopo após a aprovação dos requisitos poderão impactar os prazos inicialmente estabelecidos..
+
+---
+
+## 13. Premissas
+
+- Os usuários possuirão acesso à internet para utilização da plataforma.
+- Os dispositivos utilizados atenderão aos requisitos mínimos para execução do sistema.
+- Os alunos fornecerão informações corretas durante o processo de cadastro.
+- Os professores utilizarão a plataforma para gerenciamento de grupos e acompanhamento do desempenho dos alunos.
+- A infraestrutura tecnológica necessária para hospedagem e operação do sistema estará disponível durante todo o período de utilização.
+
+---
+
+## 14. Observações Finais
+
+Este documento estabelece os requisitos e critérios necessários para o desenvolvimento do sistema educacional gamificado proposto. As especificações apresentadas servirão como referência para as atividades de análise, desenvolvimento, testes e validação, contribuindo para a construção de uma solução alinhada aos objetivos pedagógicos e tecnológicos definidos para o projeto.
