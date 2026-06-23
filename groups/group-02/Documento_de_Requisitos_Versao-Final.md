@@ -456,6 +456,13 @@ ESCALABILIDADE
 
 ## 9. Casos de Uso e Diagramas UML
 
+Esta seção representa visualmente e descritivamente o funcionamento do Sistema de Auto Atendimento para restaurantes. Os diagramas UML auxiliam na compreensão das funcionalidades do sistema, dos atores envolvidos, dos fluxos de operação e da estrutura principal da aplicação.
+
+Seus principais atores são:
+- **Cliente**: Usa o próprio celular para ver o cardápio, fazer pedidos e pagar via Pix ou cartão.  
+- **Cozinheiro**: Monitora a tela da cozinha para saber o que preparar e avisa o sistema quando o prato está pronto.  
+- **Garçom**: Recebe alertas no celular e leva os pratos prontos até a mesa correspondente.  
+- **Gestor**: Acessa o painel web para ligar/desligar pratos do cardápio e analisar os relatórios financeiros mensais de vendas.  
 Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
 
 Os diagramas ajudam na:
@@ -894,12 +901,26 @@ Representa o fluxo de execução de processos no sistema.
 
 ## 9.4 Diagrama de Sequência (UML)
 
+Mostra a dinâmica do sistema no tempo. Ele detalha o passo a passo cronológico de como as mensagens e os dados viajam entre o usuário, as telas e o backend durante tarefas críticas (como enviar um pedido ou processar um pagamento).
 Representa a comunicação entre objetos ao longo do tempo.
 
 ---
 
 ### Envio de Pedido (Parcial vs. Carrinho Completo)
 
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Sequencia%20-%20Envio%20de%20Pedido.png)
+
+### Processamento de Pagamento Integrado
+
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Sequencia%20-%20Processamento%20de%20Pagamento.png)
+
+### Ciclo de Vida do Pedido (Operacional)
+
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Sequencia%20-%20Ciclo%20de%20Vida%20do%20Pedido.png)
+
+### Autenticação do Gestor e Geração de Relatório Mensal
+
+![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Squencia%20-%20Autenticacao%20dp%20Gestor%20e%20Geracao%20de%20Relatorios.png)
 ```text
 Cliente -> App Cliente: Selecionar "Enviar para Cozinha" (ou "Fechar Carrinho")
 App Cliente -> API Gateway: POST /pedido (dados do item/carrinho)
@@ -964,6 +985,7 @@ Painel Admin -> Gestor: Visualizar ou baixar PDF
 
 ## 9.5 Diagrama de Componentes
 
+Este diagrama representa a visão estática e estrutural do software, mapeando como o sistema é dividido logicamente em módulos independentes e interconectados. Ele ilustra a separação física e de responsabilidades entre as interfaces visuais (Frontend), as regras de negócio e processamento (Backend Server), os serviços de segurança e gateways de terceiros (Integrações Externas), e as estruturas de armazenamento (Persistência). As conexões detalham as dependências lógicas de funcionamento, garantindo que o acoplamento do sistema seja modular, seguro e escalável.
 Representa os módulos e componentes principais do sistema.
 
 ![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/3dd3ba98eacb328822de9d292a7d9a82502e22e1/groups/group-02/Diagrama%20de%20Componentes.png)
@@ -972,6 +994,7 @@ Representa os módulos e componentes principais do sistema.
 
 ## 9.6 Diagrama de Implantação (Deployment)
 
+Este diagrama representa a topologia de infraestrutura física e de rede necessária para a execução do sistema em ambiente real. Ele mapeia os dispositivos de hardware utilizados no salão e na cozinha (dispositivos locais como smartphones, tablets e terminais de pagamento) e a infraestrutura hospedada em nuvem pública (servidores virtuais de aplicação e bancos de dados gerenciados). Além de definir as conexões físicas através de caminhos de comunicação e seus respectivos protocolos de rede (como HTTPS, TLS 1.2 e TCP/IP), o diagrama especifica formalmente quais artefatos de software residem e são executados dentro de cada nó de hardware.
 Representa onde o sistema será executado.
 
 ---
@@ -1142,6 +1165,8 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 ---
 ### 10.4 Testes de Requisitos Não Funcionais
 - Performance (tempo de resposta)
+  - Teste de carga estática: simulação no volume de pedidos para dias normais, 100 pedidos simultâneos.
+  - Teste de pico: simulação do horário de maior movimentação, 200 pedidos simultâneos.  
   - Teste de carga estática: simulação no volume de pedidos para dias normais, 50 pedidos simultâneo.
   - Teste de pico: simulação do horário de maior movimentação, 100 pedidos simultâneos.  
   - Tempo de carregamento do menu não superior a 2 segundos.    
@@ -1161,6 +1186,90 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 
 ##  11. Critérios de Aceitação
 
+Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue abaixo os critérios de aprovação:  
+
+- Métricas
+    - Tempo de carregamento de tela igual ou inferior a 2 segundos.
+    - Concluir o pedido em até 4 clicks.
+    - Retorno de busca por prato em até 1 segundo
+    - Atualização em tempo real dos status dos pedidos.
+    - Envio imediato do pedido à cozinha.
+    - Finalizar o status do pedido imediatamente após o processamento da compra.
+      
+- Testes
+  - Operar perfeitamente todos os módulos lógicos do programa.
+  - Funcionar de forma integrada, atendendo a todas as regras de negócio.
+  - Operar perfeitamente o fluxo de pedido executado pelo cliente da loja.
+  - Manter estabilidade de funcionamento para a carga máxima de clientes previstos na loja.
+  - Impedir ataques simulados e o vazamento de dados.
+  - Comportar-se responsivamente e funcionar perfeitamente nos principais navegadores.
+  - Operar dentro do esperado em diferentes qualidades de conexão de rede.
+  - Adquirir a aprovação dos stakeholders.
+    
+- Condições de sucesso
+
+  **Critério 01 - Menu Principal**  
+  **Dado** que o cliente esteje na mesa do estabelecimento.  
+  **Quando** escanear o QR Code na mesa.  
+  **Então** é redirecionado ao menu principal contendo o cardápio.
+
+  **Critério 02 - Filtro**  
+  **Dado** que o cliente abra o menu principal.  
+  **Quando** selecionar a tag de categoria de prato.  
+  **Então** o sistema exibe os pratos naquela categoria.
+
+  **Critério 03 - Porções**  
+  **Dado** que o cliente selecione o prato.  
+  **Quando** tocar no ícone "+" ou "-".  
+  **Então** o sistema adiciona ou decrementa as porções.
+
+  **Critéiro 04 - Acompanhamentos**  
+  **Dado** que o cliente abra as opções de acompanhamento.  
+  **Quando** marcar ou desmarcar os campos para os mesmos.  
+  **Então** o sistema adiciona e/ou a remove os itens escolhidos.
+
+  **Critéio 05 - Resumo**  
+  **Dado** que o cliene selecione o prato.  
+  **Quando** tocar para enviar o pedido.  
+  **Então** o sistema exibe o resumo do pedido a ser enviado.
+
+  **Critério 06 - Busca**  
+  **Dado** que o cliente toque na barra de pesquisa.  
+  **Quando** enviar um nome de receita.  
+  **Então** o sistema carrega a respectiva receita se encontrada.  
+  **Caso contrário** retorna uma mensagem de não encontrado.
+
+  **Critério 07 - Pagamentos**  
+  **Dado** que o cliente conclua o pedido.  
+  **Quando** selecionar a forma de pagamento.  
+  **Então** o sistema o redireciona para a API correspondente.
+
+  **Critério 08 - Status**  
+  **Dado** que o usuário tenha executado login de colaborador/gestor.  
+  **Quando** tocar para alterar o status.  
+  **Então** o sistema atualiza o andamento do pedido para todas as telas operacionais e do cliente solicitante.
+
+  **Critério 09 - Disponibilidade**  
+  **Dado** que o gestor selecione uma receita no dashboard.  
+  **Quando** clicar no botão on/off.  
+  **Então** o sistema altera a disponibilidade do prato para venda.
+
+  **Critério 10 - Cardápio**  
+  **Dado** que o gestor esteja na tela principal de administrador.  
+  **Quando** clicar para adicionar ou remover pratos.  
+  **Então** o sistema atualiza a estrutura do cardápio.
+
+  **Critério 11 - Finalização automática**  
+  **Dado** que o cliente efetue o pagamento.  
+  **Quando** a API confirmar o pagamento.  
+  **Então** o sistema finaliza o histórico da compra.
+
+  **Critério 12 - Relatórios**  
+  **Dado** que o gestor esteja na tela principal de administrador.  
+  **Quando** clicar para gerar relaório de vendas/estoque/desempenho.  
+  **Então** o sistema gerará um arquivo PDF e efetuará download.
+  
+  
 Defina como validar os requisitos:
 - Métricas  
 - Testes  
@@ -1170,6 +1279,23 @@ Defina como validar os requisitos:
 
 ##  12. Restrições
 
+### Tecnológicas
+- Interface: Desenvolvimento obrigatoriamente em tecnologia web responsiva, compatível com os principais navegadores (Chrome, Firefox, Safari, Edge).  
+- Comunicação e Hardware: Implementação de camada de abstração agnóstica para hardware (comunicação com diferentes Smart POS via TEF ou SDKs). O envio de valores aos terminais deve ser via HTTP Local ou WebSockets, sendo proibida a digitação manual.  
+- Integrações: Conexão com PSPs exclusivamente via APIs RESTful sobre HTTPS (TLS 1.2 ou superior).
+
+### Legais e de Segurança
+- Dados de Pagamento: Uso obrigatório de tokenização para Pix, cartões e carteiras digitais. É terminantemente proibido o armazenamento de dados sensíveis de pagamento em servidores próprios.   
+- Criptografia: Toda a comunicação cliente-servidor deve utilizar HTTPS.  
+- Privacidade (LGPD): Conformidade estrita com a LGPD, exigindo transparência na finalidade da coleta de dados e garantia do direito de exclusão pelo usuário.  
+
+### De prazo
+- Entrega: O projeto completo deve ser entregue em até 6 meses.
+
+### Desempenho e Escalabilidade
+- Disponibilidade: O sistema deve garantir um uptime mínimo de 99,9%.  
+- Velocidade: Tempo de carregamento de páginas inferior a 2 segundos e motor de busca de pratos com resposta em menos de 1 segundo.  
+- Capacidade: Suporte para até 1.000 usuários ativos simultâneos sem perda de fluidez.  
 - O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.  
 - O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).  
 - O projeto deve ser entregue em até 6 meses.  
@@ -1188,6 +1314,28 @@ Defina como validar os requisitos:
 
 ##  13. Premissas
 
+### Conectividade e Dispositivos
+- Acesso à Internet: Conexão obrigatória e estável para os usuários e para todos os dispositivos eletrônicos do estabelecimento.  
+- Hardware dos Usuários: Clientes utilizam smartphones próprios com navegadores modernos (Chrome, Safari, Edge ou Firefox).  
+- Hardware do Estabelecimento: Funcionários e gestores acessam o sistema via smartphone, tablet ou computador, e o local dispõe de maquininhas de pagamento (Smart POS) compatíveis com HTTP Local ou WebSockets.
+
+### Operação e Infraestrutura do Local
+- Sinalização: Todas as mesas devidamente identificadas com QR Codes direcionando para a aplicação web.  
+- Processos e Pessoas: Equipe e gestores cadastrados no sistema e com treinamento básico para operar a interface e atualizar os pedidos em tempo real.
+
+### Infraestrutura Técnica e Integrações
+- Dados Otimizados: Banco de dados de pratos pré-configurado com imagens e descrições leves para garantir a velocidade das buscas.  
+- Servidores (Cloud): Capacidade de escalabilidade horizontal para absorver picos de até 50% na demanda sem perder desempenho.  
+- Gateway de Pagamento (PSP): Provedor com certificação PCI DSS e suporte nativo a APIs REST e Webhooks.  
+
+---
+
+# 14. Observações Finais  
+---  
+- Esta versão precede a prototipagem e a aprovação do cliente.
+- Este documento está sujeito a atualizações com base nas mudanças das regras de negócio.
+- A arquitetura projetada e os testes apresentados cobrem os requisitos descritos para esta versão.
+- As ferramentas tecnológicas listadas para esta versão estão sujeitas a substituições para adequação às mudanças de requisitos.
 - Pressupõe-se que os usuários possuam seus smartphones.
 - Pressupõe-se que os funcionários e gestores do estabelecimento tenham acesso ao sistema via smartphone, tablet, notebook ou desktop.
 - Assume-se que funcionários e gestores possuam cadastro no banco de dados do sistema para realizar-se às autenticações.
