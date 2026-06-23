@@ -1,0 +1,1125 @@
+#  Documento de Requisitos e Projeto de Software
+
+---
+
+## 1. Introdução
+
+Este documento apresenta a definição dos requisitos e a visão geral do sistema **Serpy**, uma plataforma digital voltada para educação, prevenção e resposta a acidentes com animais peçonhentos.
+
+O sistema tem como foco principal auxiliar a população na identificação de animais como serpentes, escorpiões e aranhas, além de fornecer orientações em situações de emergência e contribuir para o mapeamento de áreas de risco.
+
+A proposta busca unir tecnologia e impacto social, oferecendo uma solução acessível tanto para o público geral quanto para profissionais que lidam diretamente com esse tipo de ocorrência.
+
+---
+
+### 1.1 Objetivo
+
+O objetivo deste documento é descrever de forma clara e estruturada:
+
+- As funcionalidades do sistema
+- Os requisitos funcionais e não funcionais
+- O comportamento esperado da aplicação
+- As necessidades dos usuários
+
+Além disso, este documento servirá como base para o desenvolvimento, validação e evolução do sistema ao longo do projeto.
+
+---
+
+### 1.2 Escopo
+
+O sistema Serpy tem como escopo:
+
+- Identificação de animais peçonhentos
+- Disponibilização de informações educativas
+- Orientação em casos de emergência
+- Registro e visualização de ocorrências
+- Mapeamento de áreas de risco
+- Suporte a diferentes perfis de usuários (comum, profissional e administrador)
+
+Fora do escopo do sistema:
+
+- Atendimento médico direto
+- Substituição de profissionais da saúde
+- Diagnósticos clínicos oficiais
+- Responsabilidade por decisões médicas
+
+O sistema atua como ferramenta de apoio informativo e preventivo.
+
+---
+
+### 1.3 Definições, Acrônimos e Abreviações
+
+- **Animais peçonhentos**: Animais que produzem veneno e possuem mecanismo para inoculação (ex: serpentes, escorpiões, aranhas).
+- **Ocorrência**: Registro de encontro ou acidente envolvendo animal peçonhento.
+- **Usuário comum**: Pessoa que utiliza o sistema para consulta e aprendizado.
+- **Profissional**: Usuário com atuação na área (ex: saúde, bombeiros, agentes ambientais).
+- **Administrador**: Responsável pela gestão do sistema.
+- **LGPD**: Lei Geral de Proteção de Dados, que regula o uso de dados pessoais no Brasil.
+- **API**: Interface que permite integração entre sistemas.
+---
+
+##  2. Product Vision
+
+### 2.1 Problema
+Em 2023, o Brasil registrou mais de 341 mil acidentes com animais peçonhentos, alta de 16% em relação ao ano anterior, segundo o Ministério da Saúde. O Instituto Butantan aponta que trabalhadores rurais estão entre os mais atingidos e que o tempo entre a picada e o atendimento é fator decisivo para a gravidade do caso. A falta de informação acessível sobre identificação de animais e procedimentos de emergência agrava diretamente esse cenário.
+
+### 2.2 Solução
+O Serpy é uma plataforma digital mobile e web que reúne identificação de animais peçonhentos, orientação em emergências, monitoramento de áreas de risco e educação preventiva em um único ambiente acessível a qualquer pessoa.
+
+### 2.3 Público-Alvo
+- Trabalhadores rurais, maior grupo de vítimas de acidentes no Brasil
+- Profissionais de saúde, bombeiros, policiais e agentes ambientais
+- Moradores de áreas urbanas próximas à vegetação
+- Comunidades com acesso limitado a serviços de saúde
+- Estudantes e população em geral
+
+### 2.4 Proposta de Valor
+A OMS classifica acidentes com animais peçonhentos como doença tropical negligenciada, e o Brasil se comprometeu a reduzir em 50% a mortalidade ofídica até 2030. O Serpy contribui para esse objetivo levando informação confiável e orientação de emergência para qualquer pessoa com um smartphone, reduzindo o tempo de resposta em situações críticas.
+
+### 2.5 Diferencial
+Soluções existentes são fragmentadas — sites informativos sem geolocalização, apps educativos sem modo emergência, conteúdos em redes sociais sem confiabilidade. O Serpy integra tudo em um único ambiente, com funcionamento offline para regiões com conexão limitada.
+
+### 2.6 Funcionalidades principais (alto nível)
+- Funcionalidade 1: Catálogo de animais peçonhentos com identificação por seleção manual ou imagem
+- Funcionalidade 2: Modo emergência com instruções de primeiros socorros e triagem por sintomas
+- Funcionalidade 3: Mapa colaborativo de ocorrências com alertas de risco por geolocalização
+- Funcionalidade 4: Módulo educacional com conteúdos, quizzes e certificados
+- Funcionalidade 5: Sistema de gamificação com pontuação, badges e ranking de usuários
+- Funcionalidade 6: Painel administrativo para gestão de usuários, conteúdos e estatísticas
+- Funcionalidade 7: Funcionamento offline com sincronização automática ao restabelecer conexão
+
+---
+
+##  3. Visão Geral do Sistema
+
+### 3.1 Descrição Geral
+O sistema proposto, denominado Serpy, tem como objetivo auxiliar na educação, prevenção e resposta a acidentes envolvendo animais peçonhentos, com foco principal em serpentes. O problema abordado é a dificuldade da população em identificar corretamente esses animais e saber como agir em situações de risco ou acidentes, sendo as informações sobre esses animais decisivas nesse tipos de caso. Além disso, há uma carência de ferramentas acessíveis que integram informação, prevenção e monitoramento em um único ambiente. A proposta de solução consiste em um software (web e mobile) que permite ao usuário identificar animais peçonhentos, acessar informações confiáveis ​​sobre suas características e níveis de risco, receber orientações de primeiros socorros em situações de emergência e registrar ocorrências geolocalizadas. O sistema também incorpora funcionalidades de monitoramento de áreas de risco por meio de um mapa de ocorrências, além de um módulo educacional com conteúdos e treinamentos. Para aumentar o engajamento, são utilizados elementos de gamificação, como pontuação, conquistas e desafios.
+
+### 3.2 Stakeholders
+Os principais usuários do sistema são:
+
+- Usuários comuns que buscam identificar animais e obter orientações (Trabalhadores rurais, moradores de áreas urbanas,estudantes)
+- Profissionais da saúde, que utilizam o sistema como apoio informativo
+- Administradores, responsáveis ​​pelo gerenciamento de dados e monitoramento do sistema
+
+### 3.3 Conclusão
+Dessa forma, o sistema integra praticidade, educação e tecnologia, oferecendo suporte tanto para o uso cotidiano quanto para situações de emergência, contribuindo para a redução de acidentes e aumento da conscientização da população.
+
+---
+
+##  4. Requisitos Funcionais
+
+- FR01 - Permitir o cadastro de usuários no sistema.
+- FR02 - Permitir autenticação de usuários por login e senha.
+- FR03 - Permitir recuperação de senha.
+- FR04 - Permitir edição de perfil do usuário.
+- FR05 - Permitir diferenciação de perfis (usuário comum, profissional e administrador).
+- FR06 - Permitir identificar animais peçonhentos por meio de seleção manual.
+- FR07 - Permitir identificar animais por meio de imagem (upload ou câmera).
+- FR08 - Exibir informações detalhadas sobre o animal identificado.
+- FR09 - Exibir nível de risco do animal (baixo, médio, alto).
+- FR10 - Exibir características físicas e comportamento do animal.
+- FR11 - Exibir habitat e regiões onde o animal é encontrado.
+- FR12 - Permitir acesso ao modo emergência.
+- FR13 - Exibir instruções de primeiros socorros.
+- FR14 - Exibir instruções do que não deve ser feito.
+- FR15 - Permitir acesso rápido a orientações por botão de emergência.
+- FR16 - Permitir triagem baseada em sintomas informados pelo usuário.
+- FR17 - Permitir registro de ocorrências com descrição.
+- FR18 - Permitir registro de localização da ocorrência.
+- FR19 - Permitir visualização de ocorrências em mapa.
+- FR20 - Permitir consulta de áreas de risco.
+- FR21 - Permitir filtragem de ocorrências por tipo de animal.
+- FR22 - Permitir acesso ao módulo educacional.
+- FR23 - Permitir visualização de conteúdos educativos.
+- FR24 - Permitir realização de quizzes.
+- FR25 - Permitir acompanhamento de progresso do usuário.
+- FR26 - Permitir emissão de certificados (se aplicável).
+- FR27 - Permitir sistema de pontuação (XP).
+- FR28 - Permitir conquista de badges.
+- FR29 - Permitir visualização de ranking de usuários.
+- FR30 - Permitir controle de sequência de uso (streak).
+- FR31 - Permitir envio de notificações ao usuário.
+- FR32 - Permitir alertas de áreas de risco com base em localização.
+- FR33 - Permitir acesso ao dashboard administrativo.
+- FR34 - Permitir gerenciamento de usuários.
+- FR35 - Permitir gerenciamento de conteúdos.
+- FR36 - Permitir gerenciamento de ocorrências.
+- FR37 - Permitir visualização de estatísticas do sistema.
+- FR38 - Permitir funcionamento básico offline (conteúdos essenciais).
+- FR39 - Permitir sincronização de dados quando conexão for restabelecida.
+
+---
+
+##  5. Requisitos Não Funcionais
+
+### 5.1 Performance (Desempenho)
+- O sistema deve responder requisições em até **2 segundos** em condições normais.
+- O sistema deve suportar no mínimo **1.000 usuários simultâneos**.
+- O carregamento de imagens deve ocorrer em até **3 segundos**.
+- O sistema deve possuir disponibilidade mínima de **99% (uptime)**.
+- As consultas ao banco de dados devem ser otimizadas para evitar lentidão.
+
+### 5.2 Security (Segurança)
+- O sistema deve criptografar senhas utilizando **hash seguro**.
+- O sistema deve implementar **autenticação de usuários (login)**.
+- O sistema deve possuir **controle de acesso por níveis**:
+  - Usuário comum
+  - Profissional
+  - Administrador
+- O sistema deve utilizar **HTTPS** para comunicação segura.
+- O sistema deve seguir diretrizes da **LGPD** para proteção de dados.
+
+### 5.2 Usability (Usabilidade)
+- O sistema deve ser **intuitivo e fácil de navegar**.
+- O sistema deve ser **responsivo** (adaptável a celular e desktop).
+- O sistema deve fornecer **feedback visual** (ex: carregamento, confirmação).
+- O sistema deve utilizar linguagem clara e acessível.
+- O sistema deve possuir acesso rápido a **instruções de emergência**.
+---
+
+##  6. Requisitos Organizacionais
+
+### 6.1 Ambientais
+- O sistema deverá ser acessado via navegador web, sendo compatível com os principais navegadores, como Google Chrome, Mozilla Firefox e Microsoft Edge, em suas versões atualizadas.
+- O sistema deverá ser compatível com sistemas operacionais Windows 10 ou superior, garantindo funcionamento adequado em desktops e notebooks.
+- O sistema deverá ser acessível por dispositivos móveis (smartphones e tablets), sendo compatível com sistemas Android e iOS, por meio de navegadores web.
+- A interface do sistema deverá ser responsiva, adaptando-se automaticamente a diferentes tamanhos de tela, garantindo usabilidade tanto em computadores quanto em dispositivos móveis.
+- Por se tratar de um sistema baseado na web, deverá ser possível acessá-lo em qualquer ambiente que possua conexão com a internet, sem necessidade de instalação local.
+
+- O sistema deverá ser hospedado em ambiente de servidor, podendo ser em infraestrutura local (on-premise) ou em nuvem.
+- O sistema deverá exigir conexão com a internet para seu funcionamento, sendo recomendado o uso de conexão estável e de boa velocidade.
+- O acesso ao sistema deverá ocorrer por meio de navegadores web, permitindo sua utilização em diferentes dispositivos conectados à rede.
+- O sistema deverá utilizar protocolos seguros de comunicação (HTTPS), garantindo a proteção dos dados trafegados.
+
+- O sistema deverá registrar logs das principais operações realizadas pelos usuários, incluindo autenticação (login e logout), cadastros, missões feitas e bônus por participação.
+- O sistema deverá registrar logs de erros e falhas, permitindo a identificação e correção de problemas.
+- Os logs deverão conter informações como data, hora, usuário e ação realizada.
+- Os registros de logs deverão ser armazenados de forma segura e acessível apenas a usuários autorizados (ex: administradores).
+
+
+### 6.2 Operacionais
+- O sistema deverá registrar logs das principais operações realizadas pelos usuários, incluindo autenticação (login e logout), cadastros, missões feitas e bônus por participação.
+- O sistema deverá registrar logs de erros e falhas, permitindo a identificação e correção de problemas.
+- Os logs deverão conter informações como data, hora, usuário e ação realizada.
+- Os registros de logs deverão ser armazenados de forma segura e acessível apenas a usuários autorizados (ex: administradores).
+  
+- O sistema deverá possuir mecanismos de monitoramento para verificar sua disponibilidade e funcionamento contínuo.
+- Deverá ser possível identificar falhas, lentidão ou indisponibilidade do sistema.
+- O sistema deverá possibilitar ações de próximos níveis para aprendizagem rápidas todas as vezes que eles passarem de um nível.
+ 
+
+### 6.3 Desenvolvimento
+- O código-fonte do sistema deverá ser gerenciado por meio de sistema de controle de versão, utilizando a ferramenta Git.
+- O projeto deverá manter um repositório centralizado, permitindo o controle de alterações e o histórico de versões.
+- As alterações no código deverão ser registradas por meio de commits organizados e documentados.
+
+- O desenvolvimento do sistema deverá seguir padrões de codificação.
+- O código deverá utilizar nomenclaturas padronizadas para variáveis, funções e estruturas.
+- O projeto deverá manter uma estrutura organizada de arquivos e módulos.
+- O código deverá ser documentado sempre que necessário para facilitar o entendimento por outros desenvolvedores.
+
+- O sistema deverá incluir testes para validação de suas funcionalidades principais.
+-  ser implementados testes unitários para verificar o funcionamento de componentes individuais.
+- Sempre que possível, deverão ser realizados testes de integração para validar a comunicação entre diferentes partes do sistema.
+- Os testes deverão ser executados regularmente durante o processo de desenvolvimento.
+
+---
+##  7. Requisitos Externos
+
+### 7.1 Reguladores
+O sistema deverá seguir regulamentações e diretrizes relacionadas à proteção de dados e segurança da informação.
+
+- Conformidade com a **LGPD (Lei Geral de Proteção de Dados)**.
+- Proteção de dados pessoais dos usuários.
+- Consentimento para coleta de informações e localização.
+- Adequação a normas de segurança digital e armazenamento de dados.
+- Adequação às diretrizes do Ministério da Saúde relacionadas à divulgação de informações sobre acidentes com animais peçonhentos.
+
+
+### 7.2 Éticos
+
+- O sistema deverá garantir que todos os usuários tenham acesso igual às funcionalidades do aplicativo, sem distinção de idade, gênero, raça ou condição social.
+- O aplicativo deverá apresentar conteúdos educativos utilizando linguagem respeitosa e inclusiva.
+- O conteúdo educativo deverá representar diferentes regiões e contextos do Brasil de forma imparcial.
+- O aplicativo deverá apresentar informações confiáveis sobre animais peçonhentos, baseadas em fontes oficiais ou especialistas.
+- O sistema deverá explicar de forma simples como os dados dos usuários serão utilizados e armazenados.
+- O aplicativo deverá apresentar referências ou fontes utilizadas nos conteúdos educativos sempre que possível.
+- O sistema deverá informar claramente que o aplicativo possui finalidade educativa e preventiva.
+
+### 7.3 Legais
+ O sistema deverá atender às legislações brasileiras aplicáveis ao desenvolvimento e utilização de sistemas digitais, especialmente aquelas relacionadas à proteção de dados, direitos digitais e responsabilidade sobre informações disponibilizadas ao usuário.
+- Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018)
+Responsável pela regulamentação da coleta, armazenamento, processamento e compartilhamento de dados pessoais dos usuários.
+- Marco Civil da Internet (Lei nº 12.965/2014)
+Define princípios, garantias, direitos e deveres para o uso da internet no Brasil, incluindo privacidade e proteção de registros dos usuários.
+- Código de Defesa do Consumidor (Lei nº 8.078/1990)
+Aplicável na transparência das informações fornecidas aos usuários e responsabilidade sobre os serviços digitais disponibilizados.
+- Lei de Direitos Autorais (Lei nº 9.610/1998)
+Relacionada ao uso legal de imagens, conteúdos educativos, materiais gráficos e demais mídias utilizadas no sistema.
+- Constituição Federal de 1988 - Artigo 5º
+Garantia dos direitos fundamentais relacionados à privacidade, intimidade e proteção de dados pessoais.
+- Normas e diretrizes do Ministério da Saúde
+Aplicáveis à divulgação de informações educativas e preventivas sobre acidentes com animais peçonhentos.
+- Normas de Segurança da Informação (ISO/IEC 27001 - referência recomendada)
+Utilizadas como referência para boas práticas de segurança digital, proteção e gerenciamento de informações.
+- Diretrizes de acessibilidade digital (WCAG e eMAG)
+Recomendadas para garantir acessibilidade e inclusão de usuários com deficiência no sistema.
+
+### 7.4 Segurança Externa
+
+O sistema deverá implementar mecanismos de segurança voltados à proteção contra ameaças externas, acessos não autorizados, vazamento de dados e ataques cibernéticos, garantindo a integridade, disponibilidade e confidencialidade das informações armazenadas.
+
+- O sistema deverá utilizar comunicação segura por meio do protocolo HTTPS/TLS em todas as requisições realizadas entre cliente e servidor.
+
+- O sistema deverá possuir mecanismos de proteção contra ataques comuns em aplicações web, incluindo:
+
+*SQL Injection;
+
+*Cross-Site Scripting (XSS);
+
+*Cross-Site Request Forgery (CSRF);
+
+*Brute Force;
+
+*Upload de arquivos maliciosos.
+
+- O sistema deverá limitar tentativas consecutivas de login inválidas, podendo bloquear temporariamente o acesso após múltiplas falhas de autenticação.
+
+- O sistema deverá validar e sanitizar todos os dados recebidos de usuários antes do processamento ou armazenamento.
+
+- O sistema deverá utilizar autenticação segura e controle de permissões baseado em níveis de acesso:
+
+*Usuário comum;
+
+*Profissional;
+
+*Administrador.
+
+- O sistema deverá registrar logs de segurança contendo:
+
+*Tentativas de login;
+
+*Alterações importantes no sistema;
+
+*Acessos administrativos;
+
+*Falhas e erros críticos.
+
+- Os logs de segurança deverão ser armazenados de forma protegida e acessíveis apenas por administradores autorizados.
+
+- O sistema deverá possuir mecanismos de backup periódico para prevenção contra perda de dados.
+
+- O sistema deverá realizar auditorias periódicas de segurança para identificação de vulnerabilidades e possíveis falhas no sistema.
+
+- O sistema deverá manter dependências, bibliotecas e frameworks atualizados para reduzir riscos de exploração de vulnerabilidades conhecidas.
+
+- O sistema deverá proteger informações sensíveis dos usuários conforme as diretrizes da LGPD.
+
+- O sistema deverá possuir mecanismos de monitoramento para detectar atividades suspeitas, acessos incomuns ou possíveis tentativas de invasão.  
+
+### 7.5 Contábeis
+O sistema deverá manter controle das funcionalidades financeiras e registros administrativos, caso existam serviços pagos.
+
+- Registro de transações relacionadas a cursos e certificados.
+- Geração de relatórios financeiros básicos.
+- Histórico de pagamentos realizados.
+- Controle de assinaturas e funcionalidades premium.
+- Armazenamento seguro de comprovantes e registros administrativos.
+---
+# 8. Arquitetura do Sistema
+
+## 8.1 Visão Geral
+
+O sistema Serpy seguirá uma arquitetura baseada em API REST, organizada em camadas, separando frontend, backend e banco de dados.
+
+A arquitetura adotada será do tipo monolítica modular, adequada ao contexto acadêmico do projeto, permitindo desenvolvimento mais simples, manutenção organizada e futura expansão para microsserviços, caso necessário.
+
+O sistema será dividido em:
+
+- Frontend Web
+- Aplicativo Mobile
+- Backend/API
+- Banco de Dados
+- Serviços externos
+
+Essa separação melhora organização, reutilização de código e manutenção.
+
+---
+
+## 8.2 Componentes
+
+### Frontend
+
+Responsável pela interface visual do sistema.
+
+Funções:
+- Login e cadastro
+- Catálogo de animais
+- Mapa de ocorrências
+- Dashboard
+- Módulo educativo
+- Área administrativa
+
+Tecnologias:
+- React
+- Flutter (mobile)
+
+---
+
+### Backend
+
+Responsável pelas regras de negócio do sistema.
+
+Funções:
+- Autenticação
+- Processamento de dados
+- Integração com IA
+- Registro de ocorrências
+- Comunicação com banco
+
+Tecnologias:
+- Node.js
+- API REST
+
+---
+
+### Banco de Dados
+
+Responsável pelo armazenamento das informações.
+
+Dados armazenados:
+- Usuários
+- Animais
+- Ocorrências
+- Alertas
+- Estatísticas
+- Cursos
+
+Tecnologia:
+- MySQL
+
+---
+
+### APIs Externas
+
+Serviços utilizados:
+- APIs de mapas/geolocalização
+- APIs de dados públicos
+- Serviços de IA para reconhecimento de imagem
+
+---
+
+## 8.3 Tecnologias
+
+### Linguagens
+- JavaScript
+- Dart
+- SQL
+
+### Frameworks
+- React
+- Flutter
+- Node.js
+
+### Banco de Dados
+- MySQL
+
+### Ferramentas
+- GitHub
+- Figma
+- Draw.io
+
+---
+
+## 8.4 Decisões Arquiteturais
+
+### Desempenho
+
+A arquitetura separada entre frontend e backend melhora desempenho e organização.
+
+O sistema utilizará:
+- APIs otimizadas
+- Consultas eficientes no banco
+- Carregamento modular
+- Processamento assíncrono
+
+---
+
+### Segurança
+
+O sistema implementará:
+- Criptografia de senhas
+- Autenticação segura
+- Controle de permissões
+- HTTPS
+- Proteção contra SQL Injection e XSS
+
+---
+
+### Escalabilidade
+
+A arquitetura modular permite:
+- Adicionar novas funcionalidades
+- Crescimento do número de usuários
+- Expansão futura para microsserviços
+- Integração com novos serviços externos
+
+---
+
+## 9. Casos de Uso e Diagramas UML
+
+Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+
+Os diagramas ajudam na:
+- modelagem do sistema;
+- comunicação entre equipe;
+- entendimento da arquitetura e funcionalidades;
+- documentação técnica do projeto.
+
+---
+
+# 9.1 Casos de Uso
+
+Os casos de uso representam as interações entre usuários (atores) e o sistema.
+
+---
+```mermaid
+flowchart LR
+
+    UC[Usuário Comum]
+    PF[Profissional]
+    AD[Administrador]
+
+    subgraph Serpy
+
+        subgraph Autenticação
+            LG(Realizar Login)
+            CA(Cadastrar-se)
+            RP(Recuperar Senha)
+        end
+
+        subgraph "Animal / Emergência"
+            IA(Identificar Animal)
+            VD(Ver Detalhes Animal)
+            ME(Modo Emergência)
+            TS(Triagem de Sintomas)
+        end
+
+        subgraph Mapeamento
+            RO(Registrar Ocorrência)
+            VM(Ver Mapa)
+            AR(Áreas de Risco)
+        end
+
+        subgraph "Educação e Gamificação"
+            ED(Módulo Educacional)
+            QZ(Realizar Quiz)
+            RK(Ranking / XP)
+        end
+
+        subgraph Administração
+            GU(Gerenciar Usuários)
+            GC(Gerenciar Conteúdos)
+            GO(Gerenciar Ocorrências)
+            GE(Ver Estatísticas)
+        end
+
+    end
+
+    UC --> LG
+    UC --> CA
+    UC --> RP
+    UC --> IA
+    UC --> VD
+    UC --> ME
+    UC --> TS
+    UC --> RO
+    UC --> VM
+    UC --> AR
+    UC --> ED
+    UC --> QZ
+    UC --> RK
+
+    PF -.-> LG
+    PF -.-> IA
+    PF -.-> VD
+    PF -.-> ME
+    PF -.-> TS
+    PF -.-> RO
+    PF -.-> VM
+
+    AD --> LG
+    AD --> GU
+    AD --> GC
+    AD --> GO
+    AD --> GE
+```
+O Usuário Comum pode acessar funcionalidades como identificação de animais, modo emergência, consulta ao mapa de ocorrências e módulos educacionais. O Profissional possui acesso às funcionalidades de apoio técnico, enquanto o Administrador é responsável pelo gerenciamento do sistema.
+---
+
+## 9.2 Diagrama de Classes (UML)
+
+O diagrama de classes representa:
+
+- estrutura do sistema;
+- entidades;
+- atributos;
+- métodos;
+- relacionamentos.
+
+---
+```mermaid
+classDiagram
+
+class Usuario {
+    +int id
+    +String nome
+    +String email
+    +TipoUsuario tipo
+    +int xp
+    +int streak
+    +login()
+    +logout()
+}
+
+class Animal {
+    +int id
+    +String nome
+    +TipoAnimal tipo
+    +NivelRisco nivelRisco
+    +String habitat
+}
+
+class Ocorrencia {
+    +int id
+    +String descricao
+    +float latitude
+    +float longitude
+    +DateTime dataHora
+}
+
+class PrimeirosSocorros {
+    +int id
+    +String[] instrucoes
+    +String[] sintomas
+}
+
+class ConteudoEducativo {
+    +int id
+    +String titulo
+    +TipoConteudo tipo
+}
+
+class Quiz {
+    +int id
+    +String titulo
+    +int xpRecompensa
+}
+
+class Badge {
+    +int id
+    +String nome
+    +String criterio
+}
+
+class Alerta {
+    +int id
+    +String tipo
+}
+
+Usuario "1" --> "*" Ocorrencia : registra
+Animal "1" --> "*" Ocorrencia : relacionado
+Animal "1" --> "1" PrimeirosSocorros : possui
+Usuario "*" --> "*" Badge : acumula
+ConteudoEducativo "1" --> "*" Quiz : contem
+Ocorrencia ..> Alerta : gera
+```
+As classes centrais do sistema são Usuario, Animal e Ocorrencia. O modelo também contempla recursos de primeiros socorros, conteúdos educativos, quizzes, sistema de conquistas e alertas.
+---
+
+## 9.3 Diagrama de Atividades (UML)
+
+Representa o fluxo de execução de processos no sistema.
+
+---
+```mermaid
+flowchart TD
+
+    A([Início])
+
+    B[Pressionar botão de emergência]
+
+    C[Selecionar ou identificar animal]
+
+    D{Animal identificado?}
+
+    E[Exibir informações do animal]
+
+    F[Exibir primeiros socorros]
+
+    G[Exibir o que não fazer]
+
+    H{Triagem de sintomas?}
+
+    I[Executar triagem]
+
+    J[Registrar ocorrência]
+
+    K([Fim])
+
+    A --> B
+    B --> C
+    C --> D
+
+    D -- Não --> C
+    D -- Sim --> E
+
+    E --> F
+    F --> G
+
+    G --> H
+
+    H -- Sim --> I
+    I --> J
+
+    H -- Não --> J
+
+    J --> K
+```
+O fluxo inicia quando o usuário aciona o modo emergência. Após a identificação do animal, o sistema fornece orientações de primeiros socorros, permite a realização de triagem de sintomas e possibilita o registro da ocorrência.
+---
+
+## 9.4 Diagrama de Sequência (UML)
+
+Representa a comunicação entre objetos ao longo do tempo.
+
+---
+```mermaid
+sequenceDiagram
+
+    actor U as Usuário
+    participant F as Frontend
+    participant B as Backend
+    participant DB as Banco de Dados
+
+    U->>F: Informa email e senha
+
+    F->>B: POST /auth/login
+
+    B->>DB: Consultar usuário
+
+    DB-->>B: Dados encontrados
+
+    B->>B: Validar senha
+
+    B-->>F: JWT + dados
+
+    F-->>U: Login realizado
+```
+O usuário fornece suas credenciais ao frontend, que encaminha a solicitação ao backend. O backend consulta o banco de dados, valida as informações e retorna o token de autenticação.
+---
+
+## 9.5 Diagrama de Componentes
+
+Representa os módulos e componentes principais do sistema.
+
+---
+```mermaid
+flowchart TD
+
+    subgraph UI["Interface de Usuário"]
+        WEB["Frontend Web (React)"]
+        APP["Aplicativo Mobile (Flutter)"]
+    end
+
+    API["Backend API (Node.js)"]
+
+    subgraph DADOS["Dados e Inteligência"]
+        DB["MySQL"]
+        IA["Serviço de IA"]
+    end
+
+    subgraph EXT["Serviços Externos"]
+        MAP["Google Maps / OSM"]
+        PUB["APIs Públicas"]
+        NOT["Notificações"]
+        AUTH["JWT / Redis"]
+    end
+
+    WEB --> API
+    APP --> API
+
+    API --> DB
+    API --> IA
+
+    API --> MAP
+    API --> PUB
+    API --> NOT
+    API --> AUTH
+```
+A solução é composta por aplicações web e mobile que se comunicam com uma API central. A API integra banco de dados, serviços de inteligência artificial e provedores externos.
+---
+
+## 9.6 Diagrama de Implantação (Deployment)
+
+Representa onde o sistema será executado.
+
+---
+```mermaid
+flowchart TD
+
+    subgraph CLIENTE["Dispositivo do Usuário"]
+        NAV["Navegador Web"]
+        REACT["React (SPA)"]
+        FLUTTER["Flutter (Mobile)"]
+        CACHE["Cache Offline (FR38)"]
+    end
+
+    CDN["Servidor Web / CDN
+    Nginx
+    Assets Estáticos
+    Cache de Conteúdo"]
+
+    APP["Servidor de Aplicação
+    Node.js + Express
+    API REST
+    JWT (Auth)
+    Serviço IA (Imagens)
+    WebSocket (Alertas)
+    Sincronização Offline"]
+
+    DB["Servidor de Banco de Dados
+    MySQL
+    Usuários / Ocorrências
+    Animais / Alertas
+    Conteúdo Educacional"]
+
+    CLIENTE -->|HTTPS| CDN
+    CDN -->|HTTP/REST| APP
+    APP -->|SQL/TCP| DB
+
+    subgraph EXT["Serviços Externos"]
+        MAPS["Google Maps API"]
+        OSM["OpenStreetMap"]
+        SINAN["SINAN / Ministério da Saúde"]
+        PUSH["Notificações Push"]
+        CLOUD["IA Cloud"]
+        BACKUP["Backup Storage"]
+        ASSETS["CDN Assets"]
+    end
+
+    APP --> MAPS
+    APP --> OSM
+    APP --> SINAN
+    APP --> PUSH
+    APP --> CLOUD
+    APP --> BACKUP
+    APP --> ASSETS
+```
+O sistema é acessado por dispositivos web e móveis, distribuído por meio de um servidor web/CDN, executado em um servidor de aplicação Node.js e persistido em banco de dados MySQL. Também utiliza serviços externos para mapas, notificações e inteligência artificial.
+---
+
+# 10. Plano de Testes
+
+## 10.1 Estratégia de Teste
+
+O sistema Serpy será testado de forma contínua durante todo o ciclo de desenvolvimento, garantindo que as funcionalidades implementadas atendam aos requisitos definidos e operem corretamente em diferentes cenários de uso.
+
+A estratégia de testes inclui:
+
+- Testes unitários para validação de componentes individuais;
+- Testes de integração para verificar a comunicação entre módulos;
+- Testes de sistema para validação completa da aplicação;
+- Testes de aceitação para confirmar o atendimento aos requisitos do projeto;
+- Testes de usabilidade para avaliar a experiência do usuário;
+- Testes de desempenho para medir tempo de resposta e estabilidade.
+
+---
+
+## 10.2 Tipos de Teste
+
+### Teste Unitário
+
+Verifica o funcionamento isolado de funções, métodos e componentes do sistema.
+
+### Teste de Integração
+
+Valida a comunicação entre frontend, backend, banco de dados e APIs externas.
+
+### Teste de Sistema
+
+Avalia o comportamento do sistema como um todo, simulando situações reais de uso.
+
+### Teste de Aceitação
+
+Confirma se o sistema atende às necessidades dos usuários e aos requisitos definidos.
+
+---
+
+## 10.3 Casos de Teste
+
+### CT01 - Realizar Login
+
+**Requisito relacionado:** RF01
+
+**Descrição:**  
+Validar a autenticação de usuários no sistema.
+
+**Entrada:**  
+E-mail e senha válidos.
+
+**Resultado esperado:**  
+Sistema valida as credenciais e libera o acesso ao usuário.
+
+---
+
+### CT02 - Registrar Ocorrência
+
+**Requisito relacionado:** RF04
+
+**Descrição:**  
+Validar o registro de ocorrências envolvendo animais peçonhentos.
+
+**Entrada:**  
+Descrição da ocorrência, localização e foto opcional.
+
+**Resultado esperado:**  
+Sistema registra a ocorrência e a disponibiliza no mapa.
+
+---
+
+### CT03 - Identificar Animal
+
+**Requisito relacionado:** RF07
+
+**Descrição:**  
+Validar o processo de identificação de animais por imagem.
+
+**Entrada:**  
+Imagem enviada pelo usuário.
+
+**Resultado esperado:**  
+Sistema analisa a imagem e apresenta uma sugestão de identificação.
+
+---
+
+### CT04 - Consultar Catálogo de Animais
+
+**Requisito relacionado:** RF03
+
+**Descrição:**  
+Validar a consulta de informações sobre animais peçonhentos.
+
+**Entrada:**  
+Seleção de um animal presente no catálogo.
+
+**Resultado esperado:**  
+Sistema exibe corretamente informações, imagens, nível de risco e orientações relacionadas ao animal selecionado.
+
+---
+
+### CT05 - Visualizar Mapa de Ocorrências
+
+**Requisito relacionado:** RF05
+
+**Descrição:**  
+Validar a exibição das ocorrências registradas no mapa.
+
+**Entrada:**  
+Acesso ao módulo de mapa.
+
+**Resultado esperado:**  
+Sistema apresenta corretamente as ocorrências cadastradas e suas respectivas localizações.
+
+---
+
+### CT06 - Realizar Quiz Educativo
+
+**Requisito relacionado:** RF08
+
+**Descrição:**  
+Validar o funcionamento do módulo de aprendizado.
+
+**Entrada:**  
+Respostas fornecidas pelo usuário durante um quiz.
+
+**Resultado esperado:**  
+Sistema calcula a pontuação corretamente e registra o progresso do usuário.
+
+---
+
+### CT07 - Receber Alerta de Área de Risco
+
+**Requisito relacionado:** RF11
+
+**Descrição:**  
+Validar o envio de alertas relacionados a áreas com incidência de animais peçonhentos.
+
+**Entrada:**  
+Usuário com localização ativada em uma região classificada como área de risco.
+
+**Resultado esperado:**  
+Sistema envia uma notificação informando sobre o risco na região.
+
+---
+
+### CT08 - Gerar Relatório Estatístico
+
+**Requisito relacionado:** RF10
+
+**Descrição:**  
+Validar a geração de relatórios administrativos.
+
+**Entrada:**  
+Solicitação de relatório por período ou região.
+
+**Resultado esperado:**  
+Sistema gera relatório contendo estatísticas, gráficos e dados das ocorrências registradas.
+
+---
+
+## 10.4 Testes de Requisitos Não Funcionais
+
+### Performance
+
+Objetivo:
+Garantir que o sistema responda adequadamente sob condições normais de uso.
+
+Testes:
+
+- Tempo de resposta inferior a 2 segundos para consultas comuns;
+- Carregamento do mapa em até 3 segundos;
+- Suporte a múltiplos usuários simultâneos;
+- Validação da estabilidade do sistema sob carga.
+
+---
+
+### Segurança
+
+Objetivo:
+Garantir proteção dos dados e acessos ao sistema.
+
+Testes:
+
+- Validação do processo de autenticação;
+- Testes de permissões por perfil de usuário;
+- Proteção contra SQL Injection;
+- Proteção contra ataques XSS;
+- Verificação da criptografia de senhas;
+- Testes de acesso não autorizado.
+
+---
+
+### Usabilidade
+
+Objetivo:
+Avaliar a facilidade de uso da plataforma.
+
+Testes:
+
+- Navegação intuitiva entre telas;
+- Clareza das informações apresentadas;
+- Compatibilidade com dispositivos móveis;
+- Verificação da responsividade da interface;
+- Facilidade de acesso ao modo emergência;
+- Avaliação da experiência do usuário durante o uso do sistema.
+---
+
+# 11. Critérios de Aceitação
+
+Os critérios de aceitação definem as condições necessárias para que os requisitos do sistema sejam considerados atendidos.
+
+## 11.1 Métricas
+
+- Tempo médio de resposta inferior a 2 segundos para operações comuns;
+- Disponibilidade mínima de 99% durante o período de operação;
+- Taxa de sucesso superior a 95% nos testes funcionais;
+- Compatibilidade com os principais navegadores modernos;
+- Compatibilidade com dispositivos Android e iOS.
+
+---
+
+## 11.2 Testes
+
+A validação será realizada através de:
+
+- Testes unitários;
+- Testes de integração;
+- Testes de sistema;
+- Testes de aceitação;
+- Testes de desempenho;
+- Testes de segurança;
+- Testes de usabilidade.
+
+---
+
+## 11.3 Condições de Sucesso
+
+O sistema será considerado aprovado quando:
+
+- Todos os requisitos funcionais estiverem implementados;
+- Os requisitos não funcionais forem atendidos;
+- Os casos de teste apresentarem resultados satisfatórios;
+- Não existirem falhas críticas que comprometam a utilização do sistema;
+- Os usuários conseguirem executar as funcionalidades principais sem dificuldades.
+
+---
+
+# 12. Restrições
+
+As restrições representam limitações que devem ser consideradas durante o desenvolvimento do sistema.
+
+## 12.1 Restrições Tecnológicas
+
+- O desenvolvimento deverá utilizar React para a interface web;
+- O aplicativo mobile deverá ser desenvolvido utilizando Flutter;
+- O backend deverá utilizar Node.js;
+- O banco de dados deverá utilizar MySQL;
+- O versionamento deverá ser realizado através do GitHub;
+- A infraestrutura deverá utilizar apenas tecnologias gratuitas ou de baixo custo durante o desenvolvimento acadêmico.
+
+---
+
+## 12.2 Restrições Legais
+
+- O sistema deverá respeitar a LGPD (Lei Geral de Proteção de Dados);
+- Dados pessoais dos usuários deverão ser armazenados de forma segura;
+- O uso de imagens e conteúdos deverá respeitar direitos autorais;
+- O sistema não poderá substituir diagnóstico ou orientação médica profissional.
+
+---
+
+## 12.3 Restrições de Prazo
+
+- O desenvolvimento deverá seguir o cronograma definido pela disciplina;
+- As entregas deverão respeitar os marcos estabelecidos pelo professor;
+- O escopo poderá ser adaptado caso existam limitações de tempo ou recursos.
+
+---
+
+# 13. Premissas
+
+As premissas representam condições consideradas verdadeiras para o planejamento e desenvolvimento do projeto.
+
+- Os usuários possuirão acesso à internet na maior parte do tempo;
+- Os usuários utilizarão dispositivos móveis ou computadores com acesso à web;
+- Os dados fornecidos pelos usuários serão verdadeiros e atualizados;
+- Os serviços de mapas e geolocalização estarão disponíveis durante o uso do sistema;
+- As APIs externas utilizadas estarão operacionais;
+- Os integrantes da equipe terão acesso ao GitHub para desenvolvimento colaborativo;
+- Os usuários concederão permissão para utilização da localização quando necessário;
+- O sistema será utilizado principalmente em território brasileiro;
+- As informações educativas cadastradas serão revisadas e validadas antes da publicação.
+
+---
+
+# 14. Observações Finais
+
+O Serpy foi concebido como uma plataforma voltada para educação, prevenção e monitoramento de acidentes envolvendo animais peçonhentos, especialmente serpentes, escorpiões e aranhas.
+
+A proposta busca combinar tecnologia, informação e conscientização, oferecendo ferramentas que auxiliem tanto a população em geral quanto profissionais que atuam em situações de risco.
+
+Além de seu caráter educacional, o sistema possui potencial para apoiar iniciativas de saúde pública, pesquisa e monitoramento ambiental por meio da coleta e organização de dados sobre ocorrências.
+
+A arquitetura, os requisitos e os diagramas apresentados neste documento servem como base para o desenvolvimento do projeto e poderão ser refinados conforme a evolução das necessidades identificadas pela equipe e pelos stakeholders.
