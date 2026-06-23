@@ -463,6 +463,13 @@ Seus principais atores são:
 - **Cozinheiro**: Monitora a tela da cozinha para saber o que preparar e avisa o sistema quando o prato está pronto.  
 - **Garçom**: Recebe alertas no celular e leva os pratos prontos até a mesa correspondente.  
 - **Gestor**: Acessa o painel web para ligar/desligar pratos do cardápio e analisar os relatórios financeiros mensais de vendas.  
+Esta seção deve representar visualmente e descritivamente o funcionamento do sistema.
+
+Os diagramas ajudam na:
+- modelagem do sistema;
+- comunicação entre equipe;
+- entendimento da arquitetura e funcionalidades;
+- documentação técnica do projeto.
 
 ---
 
@@ -895,6 +902,7 @@ Representa o fluxo de execução de processos no sistema.
 ## 9.4 Diagrama de Sequência (UML)
 
 Mostra a dinâmica do sistema no tempo. Ele detalha o passo a passo cronológico de como as mensagens e os dados viajam entre o usuário, as telas e o backend durante tarefas críticas (como enviar um pedido ou processar um pagamento).
+Representa a comunicação entre objetos ao longo do tempo.
 
 ---
 
@@ -913,12 +921,72 @@ Mostra a dinâmica do sistema no tempo. Ele detalha o passo a passo cronológico
 ### Autenticação do Gestor e Geração de Relatório Mensal
 
 ![Diagrama de Sequência](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/4770020bc9451d09f240ae4ae36b0ffc194f38ed/groups/group-02/Diagrama%20de%20Squencia%20-%20Autenticacao%20dp%20Gestor%20e%20Geracao%20de%20Relatorios.png)
+```text
+Cliente -> App Cliente: Selecionar "Enviar para Cozinha" (ou "Fechar Carrinho")
+App Cliente -> API Gateway: POST /pedido (dados do item/carrinho)
+API Gateway -> Módulo de Pedidos: encaminhaRequisição()
+Módulo de Pedidos -> Módulo de Pedidos: calcularMaiorTempoPreparo()
+Módulo de Pedidos -> Banco Transacional: salvarPedido(Status: "Recebido")
+Banco Transacional -> Módulo de Pedidos: Confirmação de salvamento
+Módulo de Pedidos -> Painel Cozinha: notificarNovoPedidoInstantaneo()
+Módulo de Pedidos -> API Gateway: Retorna Sucesso (HTTP 201)
+API Gateway -> App Cliente: Exibir mensagem de sucesso + Pop-up
+```
+
+### Processamento de Pagamento Integrado
+
+```text
+Cliente -> App Cliente: Clicar em "Efetuar Pagamento" (Pix ou Cartão)
+App Cliente -> API Gateway: POST /pagamento (dados criptografados TLS 1.2)
+API Gateway -> Módulo de Pedidos: processarPagamento()
+Módulo de Pedidos -> Módulo Tokenização (PCI): tokenizarDadosSensiveis()
+Módulo Tokenização (PCI) -> Camada Agnóstica Smart POS: dispararIntencaoPagamento()
+Camada Agnóstica Smart POS -> Terminal Smart POS (Físico): popularEAtivarTerminal()
+Terminal Smart POS (Físico) -> API Pix / Gateway Externo: processarTransacaoFinanceira()
+API Pix / Gateway Externo -> Terminal Smart POS (Físico): Retorna "Aprovado" (alt: "Erro")
+Terminal Smart POS (Físico) -> Módulo de Pedidos: notificarSucessoPagamento()
+Módulo de Pedidos -> Banco Transacional: atualizarStatusPedido("Finalizado")
+Módulo de Pedidos -> App Cliente: renderizarComprovanteNaTela()
+```
+
+### Ciclo de Vida do Pedido (Operacional)
+
+```text
+Cozinha -> Painel Cozinha: Alterar status para "Em Andamento"
+Painel Cozinha -> API Gateway: PATCH /pedido/{id}/status (novoStatus: "EM_PREPARO")
+API Gateway -> Módulo de Pedidos: atualizarStatus()
+Módulo de Pedidos -> App Cliente: atualizarTelaProgressoCliente() (via Loop/Sincronização)
+
+Cozinha -> Painel Cozinha: Alterar status para "Pronto para Servir"
+Painel Cozinha -> Módulo de Pedidos: notificarPronto()
+Módulo de Pedidos -> App Garçom: dispararNotificacaoVisualSonora()
+
+Garçom -> App Garçom: Alterar status para "Servido" (após levar à mesa)
+App Garçom -> Módulo de Pedidos: PATCH /pedido/{id}/status (novoStatus: "SERVIDO")
+Módulo de Pedidos -> App Cliente: habilitarBotaoEfetuarPagamento()
+```
+
+### Autenticação do Gestor e Geração de Relatório Mensal
+
+```text
+Gestor -> Painel Admin: Digitar credenciais e clicar em "Gerar Relatório"
+Painel Admin -> API Gateway: POST /relatorios/mensal (com token de acesso)
+API Gateway -> Módulo Auth: validarPerfilUsuario(Token)
+Módulo Auth -> API Gateway: Perfil Confirmado ("Gestor") (alt: "Acesso Negado")
+API Gateway -> Módulo de Relatórios e BI: processarFechamentoMensal()
+Módulo de Relatórios e BI -> Banco de Históricos e Logs: buscarDadosVendasEFinancas()
+Banco de Históricos e Logs -> Módulo de Relatórios e BI: retornarMassaDeDados()
+Módulo de Relatórios e BI -> Módulo de Relatórios e BI: compilarGraficosETabelas()
+Módulo de Relatórios e BI -> Painel Admin: exportarPDFEConcluirPainel()
+Painel Admin -> Gestor: Visualizar ou baixar PDF
+```
 
 ---
 
 ## 9.5 Diagrama de Componentes
 
 Este diagrama representa a visão estática e estrutural do software, mapeando como o sistema é dividido logicamente em módulos independentes e interconectados. Ele ilustra a separação física e de responsabilidades entre as interfaces visuais (Frontend), as regras de negócio e processamento (Backend Server), os serviços de segurança e gateways de terceiros (Integrações Externas), e as estruturas de armazenamento (Persistência). As conexões detalham as dependências lógicas de funcionamento, garantindo que o acoplamento do sistema seja modular, seguro e escalável.
+Representa os módulos e componentes principais do sistema.
 
 ![Diagrama](https://github.com/thiagocaixeta01/software-engineering-foundations-project-lab/blob/3dd3ba98eacb328822de9d292a7d9a82502e22e1/groups/group-02/Diagrama%20de%20Componentes.png)
 
@@ -927,6 +995,7 @@ Este diagrama representa a visão estática e estrutural do software, mapeando c
 ## 9.6 Diagrama de Implantação (Deployment)
 
 Este diagrama representa a topologia de infraestrutura física e de rede necessária para a execução do sistema em ambiente real. Ele mapeia os dispositivos de hardware utilizados no salão e na cozinha (dispositivos locais como smartphones, tablets e terminais de pagamento) e a infraestrutura hospedada em nuvem pública (servidores virtuais de aplicação e bancos de dados gerenciados). Além de definir as conexões físicas através de caminhos de comunicação e seus respectivos protocolos de rede (como HTTPS, TLS 1.2 e TCP/IP), o diagrama especifica formalmente quais artefatos de software residem e são executados dentro de cada nó de hardware.
+Representa onde o sistema será executado.
 
 ---
 
@@ -1098,6 +1167,8 @@ A adoção de testes para este sistema será de forma automatizada e incremental
 - Performance (tempo de resposta)
   - Teste de carga estática: simulação no volume de pedidos para dias normais, 100 pedidos simultâneos.
   - Teste de pico: simulação do horário de maior movimentação, 200 pedidos simultâneos.  
+  - Teste de carga estática: simulação no volume de pedidos para dias normais, 50 pedidos simultâneo.
+  - Teste de pico: simulação do horário de maior movimentação, 100 pedidos simultâneos.  
   - Tempo de carregamento do menu não superior a 2 segundos.    
   - Enivo imediato do pedido à cozinha.
     
@@ -1199,6 +1270,10 @@ Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue a
   **Então** o sistema gerará um arquivo PDF e efetuará download.
   
   
+Defina como validar os requisitos:
+- Métricas  
+- Testes  
+- Condições de sucesso  
 
 ---
 
@@ -1221,6 +1296,19 @@ Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue a
 - Disponibilidade: O sistema deve garantir um uptime mínimo de 99,9%.  
 - Velocidade: Tempo de carregamento de páginas inferior a 2 segundos e motor de busca de pratos com resposta em menos de 1 segundo.  
 - Capacidade: Suporte para até 1.000 usuários ativos simultâneos sem perda de fluidez.  
+- O sistema deve ser desenvolvido utilizando-se tecnologia web responsiva.  
+- O sistema deve rodar nos principais navegadores (Chrome, Firefox, Safari, Edge).  
+- O projeto deve ser entregue em até 6 meses.  
+- O sistema deve realizar integrações com Payment Service Providers (PSPs) exclusivamente via APIs RESTful sobre HTTPS com TLS 1.2 ou superior.  
+- O projeto deve implementar uma camada de abstração agnóstica para hardware, permitindo a comunicação com diferentes adquirentes e modelos de Smart POS via TEF ou SDKs.  
+- O sistema deve utilizar obrigatoriamente comunicação via HTTP Local ou WebSockets para o envio de valores aos terminais, vedando a digitação manual.  
+- O sistema deve processar pagamentos via Pix, cartões e carteiras digitais utilizando obrigatoriamente tokenização, sendo proibido o armazenamento de dados sensíveis de pagamento em servidores próprios.  
+- O sistema deve garantir que o tempo de carregamento de qualquer página web seja inferior a 2 segundos.  
+- O projeto deve assegurar que o motor de busca de pratos retorne resultados em menos de 1 segundo.  
+- O sistema deve suportar a carga simultânea de até 1.000 usuários ativos sem perda de fluidez.
+- O projeto deve manter uma disponibilidade mínima de 99,9% (Uptime).  
+- O sistema deve criptografar toda a comunicação cliente-servidor através do protocolo HTTPS.  
+- O projeto deve estar em conformidade estrita com a LGPD, informando a finalidade da coleta de dados e permitindo a exclusão dos mesmos mediante solicitação do usuário.    
 
 ---
 
@@ -1248,6 +1336,24 @@ Mediante os requisitos, arquitetura e testes apresentados nesta versão, segue a
 - Este documento está sujeito a atualizações com base nas mudanças das regras de negócio.
 - A arquitetura projetada e os testes apresentados cobrem os requisitos descritos para esta versão.
 - As ferramentas tecnológicas listadas para esta versão estão sujeitas a substituições para adequação às mudanças de requisitos.
+- Pressupõe-se que os usuários possuam seus smartphones.
+- Pressupõe-se que os funcionários e gestores do estabelecimento tenham acesso ao sistema via smartphone, tablet, notebook ou desktop.
+- Assume-se que funcionários e gestores possuam cadastro no banco de dados do sistema para realizar-se às autenticações.
+- Exige-se que o estabelecimento tenha acesso a internet.
+- Exige-se que os usuários tenham acesso à internet.
+- Exige-se que todos os dispositivos eletrônicos/digitais do estabelecimento estejam conectados à internet.
+- Assume-se que todas as mesas possuam QR Code do endereço da aplicação web e estejam devidamente sinalizadas.
+- Assume-se que o estabelecimento possua maquininha de pagamentos.
+- Assume-se que o usuário final possui um dispositivo com acesso estável à internet e um navegador moderno (Chrome, Safari, Edge ou Firefox) para garantir a performance de carregamento prevista.
+- Pressupõe-se que os estabelecimentos utilizem terminais Smart POS ou hardware de rede compatíveis com os protocolos HTTP Local ou WebSockets para a automação física.
+- Exige-se que o provedor de infraestrutura (Cloud/Servidor) suporte escalabilidade horizontal para absorver picos de 50% de demanda sem degradação de performance.
+- Considera-se que o gateway de pagamento (PSP) escolhido ofereça suporte nativo a Webhooks e APIs baseadas em REST com certificação PCI DSS.  
+- Assume-se que os gestores e a equipe da cozinha possuam treinamento básico para operar a interface administrativa e atualizar o status dos pedidos em tempo real.  
+- Pressupõe-se que a base de dados de pratos e categorias já contenha imagens e descrições otimizadas para garantir o tempo de resposta nas buscas. 
+
+---
+
+# 14. Observações Finais
 
 
 ---
