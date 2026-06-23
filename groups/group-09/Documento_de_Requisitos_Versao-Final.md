@@ -487,10 +487,10 @@ A arquitetura foi definida para atender aos requisitos não funcionais:
 
 ---
 
-##  9. Casos de Uso
+##  9. Casos de Uso e Diagramas
 
+### 9.1 Casos de Uso
 ### UC01 - Visualizar mapa e navegar
-
 **Ator:** Aluno (calouro/veterano), visitante, servidor  
 **Descrição:** O usuário abre o aplicativo e visualiza o mapa do campus, podendo movimentar a câmera e aplicar zoom.  
 **Fluxo principal:**  
@@ -504,48 +504,302 @@ A arquitetura foi definida para atender aos requisitos não funcionais:
 
 ---
 
-### UC02 - Buscar e selecionar um local
-
-**Ator:** Aluno, visitante  
-**Descrição:** O usuário busca por um local pelo nome e centraliza o mapa nele.  
+### UC02 - Aplicar Zoom
+**Ator:** Usuário geral  
+**Descrição:** O usuário aplica zoom in (aproximação) ou zoom out (afastamento) no mapa para visualizar detalhes ou obter uma visão macro do campus.  
 **Fluxo principal:**  
-1. Usuário digita parte do nome no campo de busca.  
-2. Sistema exibe lista de resultados.  
-3. Usuário seleciona um item da lista.  
-4. O mapa centraliza o local e aplica zoom adequado.  
-5. O local é destacado visualmente e um painel com informações detalhadas é exibido.  
+1. Usuário posiciona o cursor/ponto de toque sobre a área do mapa.  
+2. Usuário aciona o scroll do mouse ou realiza o gesto de pinça (em dispositivos móveis).  
+3. O sistema detecta a direção do gesto (zoom in/out) e calcula o novo nível de zoom.  
+4. O sistema valida se o novo nível está dentro dos limites mínimo e máximo permitidos.  
+5. O sistema atualiza a propriedade `zoomLevel` da `Viewport` e re-renderiza o mapa em tempo real (>30 FPS).  
 **Fluxo alternativo:**  
-- Nenhum resultado encontrado: sistema exibe mensagem “Local não encontrado”.
+- Caso o usuário atinja o nível mínimo ou máximo de zoom, o sistema interrompe a movimentação e exibe um feedback visual (ex.: borda do mapa com leve sombra ou indicador de limite).
 
 ---
 
-### UC03 - Acessar cardápio do RU
-
-**Ator:** Aluno  
-**Descrição:** O usuário consulta o cardápio do Restaurante Universitário do dia.  
+### UC03 - Buscar e Centralizar Local
+**Ator:** Usuário geral  
+**Descrição:** O usuário digita o nome de um ponto de interesse (POI) no campo de busca, seleciona o resultado desejado e o sistema centraliza o mapa no local, destacando-o e exibindo suas informações.  
 **Fluxo principal:**  
-1. Usuário clica no ícone “RU” na Central de Serviços.  
-2. Se houver internet, sistema requisita o cardápio atualizado e exibe.  
-3. Se não houver internet, exibe último cardápio em cache com indicação “offline”.  
+1. Usuário clica no campo de busca da interface.  
+2. Usuário digita o nome (ou parte do nome) do local desejado (ex.: "Bloco A").  
+3. O sistema aciona o `Buscador` para filtrar a lista de `PontoDeInteresse` de forma *case-insensitive*.  
+4. O sistema exibe a lista de resultados correspondentes na interface.  
+5. Usuário seleciona o local desejado na lista de resultados.  
+6. O sistema obtém as coordenadas (`coordX`, `coordY`) do POI selecionado.  
+7. O sistema chama o método `CentralizarEm()` da `Viewport` para reposicionar a câmera com animação fluida.  
+8. O sistema aplica destaque visual ao POI no mapa (alteração de borda/cor).  
+9. O sistema exibe um painel informativo (pop-up) com detalhes e serviços do local.  
 **Fluxo alternativo:**  
-- Serviço externo indisponível: mensagem de erro amigável e opção de tentar novamente.
+- Caso a busca não retorne nenhum resultado, o sistema exibe a mensagem "Nenhum local encontrado" e permanece aguardando o ajuste do termo de busca pelo usuário.
 
 ---
 
-### UC04 - Ver roteiro entre salas (grade horária)
-
-**Ator:** Aluno (veterano)  
-**Descrição:** O usuário faz login, insere sua grade horária e o sistema sugere roteiro entre salas consecutivas.  
+### UC04 - Filtrar por Categorias
+**Ator:** Usuário geral  
+**Descrição:** O usuário filtra os pontos de interesse exibidos no mapa de acordo com categorias específicas (ex.: Alimentação, Ensino, Administrativo, Estacionamento, Banheiros).  
 **Fluxo principal:**  
-1. Usuário acessa “Minha Grade”.  
-2. Realiza autenticação.  
-3. Insere ou importa sua grade (disciplinas, salas, horários).  
-4. Sistema armazena dados criptografados localmente.  
-5. Usuário seleciona “Roteiro de hoje”.  
-6. Sistema destaca no mapa o trajeto entre a primeira e segunda sala, etc.  
+1. Usuário acessa o menu ou botão de filtros na interface.  
+2. O sistema exibe a lista de categorias disponíveis (extraídas dos atributos dos `PontoDeInteresse`).  
+3. Usuário seleciona uma ou mais categorias desejadas.  
+4. O sistema percorre a lista de POIs e oculta aqueles cuja categoria não corresponde às selecionadas.  
+5. O sistema atualiza a renderização do mapa, exibindo apenas os POIs filtrados.  
+6. (Opcional) O sistema ajusta a viewport para enquadrar todos os POIs exibidos.  
 **Fluxo alternativo:**  
-- Credenciais incorretas: mensagem de erro sem armazenar dados.
+- Caso o usuário desmarque todas as categorias, o sistema restaura automaticamente a exibição padrão com todos os POIs visíveis.
 
+---
+
+### UC05 - Ver Localização Atual
+**Ator:** Usuário geral  
+**Descrição:** O usuário visualiza sua posição física atual no mapa do campus através do recurso de geolocalização do dispositivo.  
+**Fluxo principal:**  
+1. Usuário clica no botão "Minha Localização" (ícone de alvo/mira).  
+2. O sistema solicita permissão de acesso à geolocalização do dispositivo (caso ainda não tenha sido concedida).  
+3. O sistema obtém as coordenadas atuais (`localizacaoX`, `localizacaoY`) do dispositivo.  
+4. O sistema atualiza o objeto `Usuario` com as novas coordenadas.  
+5. O sistema centraliza a `Viewport` nas coordenadas do usuário.  
+6. O sistema insere um marcador diferenciado (ex.: ponto azul pulsante) no mapa para indicar a posição exata.  
+**Fluxo alternativo:**  
+- Caso o sistema não consiga obter a localização (GPS desativado, permissão negada ou sinal fraco), exibe uma mensagem de erro com orientações para ativar o serviço de localização.
+
+---
+
+### UC06 - Acessar Grade e Roteiro de Aulas
+**Ator:** Aluno (calouro/veterano)  
+**Descrição:** O aluno consulta sua grade horária de aulas e, ao selecionar uma disciplina, obtém um roteiro de deslocamento (caminho) no mapa até a sala onde ocorrerá a aula.  
+**Fluxo principal:**  
+1. Aluno acessa a funcionalidade "Minha Grade" no menu principal.  
+2. O sistema carrega a `gradeHoraria` associada ao `Usuario` logado.  
+3. O sistema exibe a grade horária em formato de tabela/listagem.  
+4. Aluno seleciona uma disciplina/aula específica da grade.  
+5. O sistema identifica o `PontoDeInteresse` (sala/bloco) correspondente à disciplina.  
+6. O sistema obtém a localização atual do aluno (via UC05).  
+7. O sistema chama o método `ObterRoteiro()` para calcular o trajeto entre a localização atual e a sala de destino.  
+8. O sistema desenha a rota calculada sobre o mapa e exibe orientações textuais (ex.: "Vire à esquerda no Bloco B").  
+**Fluxo alternativo:**  
+- Caso o aluno não possua grade horária cadastrada no sistema, o sistema exibe a mensagem "Nenhuma grade encontrada. Entre em contato com a coordenação acadêmica."
+
+---
+
+### UC07 - Consultar Cardápio RU e Ônibus
+**Ator:** Usuário geral  
+**Descrição:** O usuário consulta informações atualizadas sobre o cardápio do Restaurante Universitário (RU) e os horários de saída dos ônibus internos/universitários, obtidos via integração com a API institucional.  
+**Fluxo principal:**  
+1. Usuário acessa o módulo "Serviços" no aplicativo.  
+2. Usuário seleciona a opção desejada: "Cardápio RU" ou "Horários de Ônibus".  
+3. O sistema aciona o `Módulo de Sincronização` para realizar uma requisição HTTPS ao `API Gateway` da UFR Cloud.  
+4. O sistema recebe os dados (cardápio do dia ou lista de horários) e armazena em cache local.  
+5. O sistema exibe as informações em formato legível (texto/tabela) para o usuário.  
+**Fluxo alternativo:**  
+- Caso a conexão com o servidor falhe ou o tempo expire, o sistema consulta o cache local (`Banco SQLite`) e exibe os dados da última sincronização bem-sucedida, acompanhados de um aviso de "Dados desatualizados" para o usuário.
+
+---
+
+### UC08 - Visualizar Mural de Avisos
+**Ator:** Usuário geral  
+**Descrição:** O usuário visualiza o mural de avisos institucionais publicados, podendo ativar um filtro que exibe apenas os avisos geograficamente próximos à sua localização atual.  
+**Fluxo principal:**  
+1. Usuário acessa a tela "Mural de Avisos" no menu.  
+2. O sistema carrega a lista de `Aviso` do banco local (cache).  
+3. O sistema exibe os avisos ordenados por data de publicação (mais recentes primeiro).  
+4. Usuário ativa o filtro "Avisos Próximos" (toggle/checkbox).  
+5. O sistema obtém a localização atual do usuário.  
+6. O sistema percorre a lista de avisos e utiliza o método `FiltrarPorProximidade()` (comparando as coordenadas do aviso com a do usuário).  
+7. O sistema atualiza a lista exibida, mostrando apenas os avisos relevantes geograficamente.  
+**Fluxo alternativo:**  
+- Caso não existam avisos cadastrados no sistema, o aplicativo exibe a mensagem "Nenhum aviso disponível no momento."  
+- Caso o filtro de proximidade seja desativado, o sistema restaura a exibição da lista completa de avisos.
+---
+## 9.2 Diagrama de Casos de Uso
+
+```mermaid
+graph TD
+    subgraph Atores
+        U[Usuário Geral]
+        C[Aluno: Calouro / Veterano] --> U
+        V[Visitante] --> U
+        S[Servidor] --> U
+    end
+
+    subgraph Sistema Guia para Calouros
+        UC1(RF01/RF02: Visualizar e Navegar no Mapa)
+        UC2(RF03: Aplicar Zoom)
+        UC3(RF10/RF11: Buscar e Centralizar Local)
+        UC4(RF07/RF08: Filtrar por Categorias)
+        UC5(RF09: Ver Localização Atual)
+        UC6(Acessar Grade e Roteiro de Aulas)
+        UC7(Consultar Cardápio RU e Ônibus)
+        UC8(Visualizar Mural de Avisos)
+    end
+
+    U --> UC1
+    U --> UC2
+    U --> UC3
+    U --> UC4
+    U --> UC5
+    U --> UC7
+    U --> UC8
+    C --> UC6
+```
+
+## 9.3 Diagrama de Classes (UML)
+
+```mermaid
+classDiagram
+    class Mapa {
+        +List~PontoDeInteresse~ locais
+        +Renderizar() Void
+        +Atualizar() Void
+    }
+    class Viewport {
+        +float posX
+        +float posY
+        +float zoomLevel
+        +Movimentar(float dx, float dy) Void
+        +DefinirZoom(float nivel) Void
+        +CentralizarEm(float x, float y) Void
+    }
+    class PontoDeInteresse {
+        +int id
+        +String nome
+        +String categoria
+        +float coordX
+        +float coordY
+        +String informacoes
+        +Destacar() Void
+    }
+    class Buscador {
+        +List~PontoDeInteresse~ buscar(String termo)
+    }
+    class Usuario {
+        +String id
+        +String gradeHoraria
+        +float localizacaoX
+        +float localizacaoY
+        +ObterRoteiro() List
+    }
+    class ServicoAcademico {
+        +ObterCardapioRU() String
+        +ObterHorariosOnibus() List
+    }
+    class MuralAvisos {
+        +List~Aviso~ avisos
+        +FiltrarPorProximidade(float x, float y) List
+    }
+    class Aviso {
+        +String titulo
+        +String conteudo
+        +float coordX
+        +float coordY
+    }
+
+    Mapa "1" *-- "0..*" PontoDeInteresse : possui
+    Mapa --> Viewport : controlado por
+    Buscador --> PontoDeInteresse : pesquisa
+    Usuario --> Mapa : interage
+    MuralAvisos "1" *-- "0..*" Aviso : contem
+```
+
+## 9.4 Diagrama de Atividades (UML)
+
+```mermaid
+stateDiagram-v2
+    [*] --> TelaInicial : Abrir Aplicativo
+    TelaInicial --> DigitandoBusca : Usuário interage com campo de busca
+    DigitandoBusca --> FiltrandoLocais : Digita termo (Case-Insensitive)
+    
+    state verificar_resultados <<choice>>
+    FiltrandoLocais --> verificar_resultados
+    verificar_resultados --> NenhumResultado : Lista vazia
+    verificar_resultados --> ExibirResultados : Correspondência encontrada
+    
+    NenhumResultado --> DigitandoBusca : Ajustar termo de busca
+    ExibirResultados --> ItemSelecionado : Usuário clica no local desejado
+    
+    ItemSelecionado --> CentralizarViewport : Mover câmera para coordenadas do POI
+    CentralizarViewport --> AplicarDestaque : Alterar borda/cor do bloco (RF06)
+    AplicarDestaque --> ExibirPainelInfo : Renderizar pop-up com detalhes/serviços
+    ExibirPainelInfo --> [*] : Concluído
+```
+
+## 9.5 Diagrama de Sequência (UML)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor U as Usuário
+    participant UI as Interface (OpenGL UI)
+    participant B as Buscador
+    participant M as GerenciadorMapa
+    participant V as Viewport/Câmera
+
+    U->>UI: Digita nome do local ("Bloco A")
+    UI->>B: buscar("Bloco A")
+    B-->>UI: Retorna Lista de POIs correspondentes
+    U->>UI: Seleciona o "Bloco A" na lista de resultados
+    UI->>M: ObterCoordenadas(POI)
+    M-->>UI: Retorna (CoordX, CoordY)
+    UI->>V: CentralizarEm(CoordX, CoordY)
+    V-->>UI: Viewport reposicionada (Animação Fluida)
+    UI->>M: DestacarLocalSelecionado(POIId)
+    M-->>UI: Renderiza realce visual no mapa (>30 FPS)
+    UI-->>U: Exibe mapa centralizado com dados do Bloco A
+```
+
+## 9.6 Diagrama de Componentes
+```mermaid
+graph TD
+    subgraph Cliente["Aplicativo Cliente"]
+        UI["Interface do Usuário"]
+        Busca["Mecanismo de Busca"]
+        Render["Renderizador OpenGL"]
+        Gerente["Gerenciador de Dados Local"]
+        Cache["Cache/Banco Local SQLite"]
+        Sinc["Módulo de Sincronização"]
+        
+        UI --> Busca
+        UI --> Render
+        Busca --> Gerente
+        Render --> Gerente
+        Gerente --> Cache
+        Sinc --> Cache
+    end
+
+    subgraph Cloud["Infraestrutura Externa"]
+        API["API Gateway"]
+        Servico["Serviço Acadêmico / Avisos"]
+        
+        Sinc -->|HTTPS / TLS| API
+        API --> Servico
+    end
+```
+
+## 9.7 Diagrama de Implantação (Deployment)
+
+```mermaid
+graph TD
+    subgraph Device["Dispositivo do Usuário"]
+        subgraph Runtime["Ambiente de Execução"]
+            A1["Artefato: GuiaCalourosApp"]
+            A2[("Arquivo Local: Dados")]
+            A1 --- A2
+        end
+    end
+
+    subgraph Server["Servidor Institucional"]
+        subgraph Web["Servidor Web"]
+            A3["API REST Backend"]
+        end
+        subgraph DB["Banco de Dados"]
+            A4[("Base Institucional")]
+        end
+        A3 --- A4
+    end
+
+    A1 -->|HTTPS| A3
+```
 ---
 ##  10. Plano de Testes
 
@@ -626,24 +880,56 @@ Para que o sistema seja aceito, os seguintes critérios devem ser cumpridos:
 | CA08 | Entrega no prazo | Todos os artefatos entregues até a data estipulada | Cumprimento do cronograma do laboratório |
 ---
 
-##  12. Restrições
+## 12. Restrições
 
-- Tecnológicas  
-- Legais  
-- De prazo  
+- **Tecnológicas:**
+  - O sistema deve ser desenvolvido utilizando OpenGL 3.3+ para renderização gráfica.
+  - O sistema não pode depender de serviços pagos de terceiros (APIs de mapas, geolocalização, etc.).
+  - O mapa deve ser armazenado em arquivos estáticos locais (JSON/XML) e funcionar offline.
+  - A comunicação com APIs externas (RU, ônibus) deve ser feita exclusivamente via HTTPS/TLS.
+  - O sistema deve ser compatível com dispositivos com suporte mínimo a OpenGL (GPUs integradas básicas).
+  - O código-fonte deve ser escrito em C++17 (ou Python 3.10+) e gerenciado com CMake.
+
+- **Legais:**
+  - O sistema deve estar em conformidade com a LGPD (Lei nº 13.709/2018) para proteção de dados pessoais.
+  - Deve respeitar o Marco Civil da Internet (Lei nº 12.965/2014).
+  - Uso de bibliotecas de terceiros deve respeitar suas licenças de uso (MIT, Apache, GPL etc.).
+  - O sistema deve seguir as políticas internas de TI da UFR quanto ao uso de dados acadêmicos.
+  - O sistema não pode armazenar dados biométricos ou informações sensíveis além do necessário.
+
+- **De prazo:**
+  - O projeto deve ser entregue dentro do semestre letivo vigente (conforme calendário acadêmico).
+  - O protótipo funcional deve estar pronto para apresentação até a data estipulada pelo professor.
+  - Cada etapa do projeto (requisitos, arquitetura, protótipo, testes) deve ser entregue em marcos específicos.
+  - O código-fonte deve estar disponível em repositório Git até a data de entrega final.
 
 ---
 
-##  13. Premissas
+## 13. Premissas
 
-- Usuário terá acesso à internet  
-- Sistema será usado em dispositivos móveis  
+- **Usuário terá acesso à internet** para atualizações de RU, ônibus e avisos (funcionalidades complementares).
+- **Sistema será usado em dispositivos móveis** (Android, iOS, HyperOS), sendo a interface otimizada para telas menores e toque.
+- Os dispositivos dos usuários possuem suporte básico à OpenGL.
+- Os dados acadêmicos (grade horária, localização de salas) serão fornecidos pela instituição ou por fontes públicas confiáveis.
+- O mapa do campus não sofre alterações estruturais frequentes, permitindo um levantamento inicial estático.
+- Os usuários possuem habilidades básicas de interação com mapas digitais (zoom, arrasto, toque).
+- A localização do usuário (GPS) estará disponível na maioria dos dispositivos.
+- A UFR fornecerá ou autorizará o uso de dados institucionais para o projeto.
+- O sistema será utilizado em ambiente acadêmico com finalidade educacional.
+- O ambiente de desenvolvimento (IDE, compilador) estará configurado corretamente.
+- As APIs externas para RU e ônibus estarão disponíveis e estáveis no momento do uso.
 
 ---
 
-##  14. Observações Finais
+## 14. Observações Finais
 
-Informações adicionais relevantes.
+- Este documento consolida todos os requisitos e diretrizes para o desenvolvimento do **MapUFR - Sistema de Mapeamento Interativo e Central de Serviços da UFR**.
+- O documento é **dinâmico** e pode ser revisado conforme novos requisitos forem identificados ou mudanças forem solicitadas pelos stakeholders.
+- Qualquer alteração significativa deve ser comunicada a todos os membros da equipe e ao professor/orientador.
+- Em caso de conflito de prazos, priorizar as funcionalidades de maior valor para o usuário (navegação, busca, mapa) em detrimento de funcionalidades complementares.
+- Todas as decisões arquiteturais e de escopo devem ser documentadas no repositório do projeto.
+- O sistema será desenvolvido com foco em **usabilidade, desempenho e segurança**, atendendo às necessidades da comunidade acadêmica da UFR.
+- A equipe está comprometida com a entrega de um produto funcional, bem documentado e alinhado com os requisitos especificados neste documento.
 
 ---
 
