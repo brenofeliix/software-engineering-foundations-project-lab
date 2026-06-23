@@ -732,46 +732,31 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 # 9.1 Casos de Uso 
 
 ## Diagrama
-```text
+```mermaid
+flowchart LR
 
-[Maria]
-    |
-    | ---- (UC01 - Realizar Login)
-    |           |
-    |           | ---- (Recuperar Senha)
-    |
-    | ---- (UC02 - Cadastrar Conta)
-    |
-    | ---- (UC03 - Gerenciar Cronograma)
-    |           |
-    |           | ---- (Adicionar Atividade)
-    |           |
-    |           | ---- (Editar Atividade)
-    |           |
-    |           | ---- (Excluir Atividade)
-    |           |
-    |           | ---- (Marcar Tarefa como Concluída)
-    |
-    | ---- (UC04 - Usar Método Pomodoro)
-    |           |
-    |           | ---- (Iniciar Ciclo de Foco - 25 min)
-    |           |
-    |           | ---- (Iniciar Intervalo - 5 min)
-    |           |
-    |           | ---- (Pausar / Encerrar Sessão)
-    |
-    | ---- (UC05 - Gerenciar Flashcards)
-    |           |
-    |           | ---- «include» (UC06 - Visualizar Métricas)
-    |           |
-    |           | ---- «include» (UC07 - Jogar Minijogo/Quiz)
-    |
-    | ---- (UC06 - Visualizar Métricas)
-    |
-    | ---- (UC07 - Jogar Minijogo/Quiz)
-    |
-    | ---- (UC08 - Editar Perfil)
+Actor["O<br/>/|\<br/>/ \<br/>Usuário"]
 
+UC01("UC01 — Realizar login")
+UC02("UC02 — Cadastrar conta")
+UC03("UC03 — Gerenciar cronograma")
+UC04("UC04 — Usar método Pomodoro")
+UC05("UC05 — Gerenciar flashcards")
+UC06("UC06 — Visualizar métricas")
+UC07("UC07 — Jogar minijogo/quiz")
+UC08("UC08 — Editar perfil")
+
+Actor --> UC01
+Actor --> UC02
+Actor --> UC03
+Actor --> UC04
+Actor --> UC05
+Actor --> UC06
+Actor --> UC07
+Actor --> UC08
+
+UC05 -.->|inclui| UC06
+UC05 -.->|inclui| UC07
 ```
 ---
 
@@ -893,66 +878,92 @@ A aplicação poderá ser escalada verticalmente (aumento de recursos do servido
 # 9.2 Diagrama de Classes (UML)
 
 ## Diagrama
+```mermaid
+classDiagram
+    direction TB
 
-```text
-+----------------------+          1..*     +----------------------+
-|       Usuário        |------------------>|     Cronograma       |
-+----------------------+                   +----------------------+
-| - id                 |                   | - diaSemana          |
-| - nome               |                   | - horarioInicio      |
-| - email              |                   | - horarioFim         |
-| - senha              |                   | - materia            |
-+----------------------+                   +----------------------+
-| + login()            |                   | + salvar()           |
-+----------------------+                   +----------------------+
-         |
-         | 1..*
-         v
-+----------------------+       (gera)      +----------------------+
-|       Tarefa         |------------------>|     Pontuação        |
-+----------------------+                   +----------------------+
-| - titulo             |                   | - pontos             |
-| - descricao          |                   | - dataObtida         |
-| - data               |                   +----------------------+
-| - status: Boolean    |                   | + acumular()         |
-+----------------------+                   | + gastar()           |
-| + concluir()         |                   +----------------------+
-+----------------------+                            |
-         |                                          | (gera)
-         | 1..*                                     v
-         v                                +----------------------+
-+----------------------+    «use»         |      Minijogo        |
-|    SessaoEstudo      |         +------->+----------------------+
-+----------------------+         |        | - idQuiz             |
-| - duracao            |         |        | - questoes: List     |
-| - ciclosPomodoro     |         |        | - pontuacaoTotal     |
-| - status             |         |        +----------------------+
-+----------------------+         |        | + iniciarQuiz()      |
-| + iniciar()          |         |        +----------------------+
-+----------------------+         |
-         |                       |
-         | (gera)                |
-         v                       |
-+----------------------+         |
-|     Notificação      |         |
-+----------------------+         |
-| - mensagem           |         |
-| - horario            |         |
-| - tipo               |         |
-+----------------------+         |
-                                 |
-+----------------------+         |
-|      Flashcard       |---------+
-+----------------------+
-| - pergunta           |
-| - resposta           |
-| - categoria          |
-| - acertos            |
-| - erros              |
-+----------------------+
-| + registrarResposta()|
-+----------------------+
+    class Usuario {
+        +String id
+        +String nome
+        +String email
+        +String senha
+        +login()
+        +editarPerfil()
+    }
 
+    class Cronograma {
+        +String id
+        +String diaSemana
+        +String horarioInicio
+        +String horarioFim
+        +String materia
+        +salvar()
+    }
+
+    class Tarefa {
+        +String id
+        +String titulo
+        +String descricao
+        +String data
+        +Boolean status
+        +concluir()
+    }
+
+    class SessaoEstudo {
+        +String id
+        +Integer duracao
+        +Integer ciclosPomodoro
+        +String status
+        +iniciar()
+        +encerrar()
+    }
+
+    class Flashcard {
+        +String id
+        +String pergunta
+        +String resposta
+        +String categoria
+        +Integer acertos
+        +Integer erros
+        +registrarResposta()
+    }
+
+    class Pontuacao {
+        +String id
+        +Integer pontos
+        +String origem
+        +acumular()
+    }
+
+    class Notificacao {
+        +String id
+        +String mensagem
+        +String dataHora
+        +Boolean lida
+        +disparar()
+    }
+
+    class Minijogo {
+        +String idQuiz
+        +Integer pontuacaoTotal
+        +String avatar
+        +iniciarQuiz()
+    }
+
+    Usuario "1" --> "*" Cronograma : possui
+    Usuario "1" --> "*" Tarefa : gerencia
+    Usuario "1" --> "*" SessaoEstudo : realiza
+    Usuario "1" --> "*" Flashcard : cria
+    Usuario "1" --> "1" Pontuacao : possui
+    Usuario "1" --> "*" Notificacao : recebe
+
+    Cronograma --> "*" Tarefa : organiza
+    Cronograma --> "*" SessaoEstudo : agenda
+
+    SessaoEstudo --> Notificacao : gera
+    Flashcard --> Pontuacao : recompensa
+    Pontuacao --> Minijogo : desbloqueia
+    Minijogo ..> Flashcard : utiliza
 ```
 ---
 
@@ -978,67 +989,70 @@ Representa o fluxo de execução de processos no sistema desde a entrada do usu�
 
 ## Diagrama
 
-```text
-[Início]
-    |
-[Acessar o aplicativo]
-    |
-{Tem conta?}
-    | Não
-[Cadastrar]
-    |
-[Preencher nome, e-mail e senha]
-    |
-[Sistema valida e cria a conta]
-    |
-[Retornar ao login]
+```mermaid
+flowchart TD
 
-    | Sim
-[Fazer login]
-    |
-{Credenciais válidas?}
-    | Não
-[Exibir erro]
-    |
-[Retornar ao preenchimento]
+A([Início])
 
-    | Sim
-[Acessar dashboard]
-    |
-{Escolher funcionalidade}
-    |
-    | ---- [Cronograma]
-    |           |
-    |       [Adicionar/Editar tarefa]
-    |           |
-    |       [Salvar no checklist]
-    |
-    | ---- [Minijogo]
-    |           |
-    |       [Sistema gera quiz dos flashcards]
-    |           |
-    |       [Usuário responde questões]
-    |           |
-    |       [Sistema atualiza pontuação]
-    |
-    | ---- [Iniciar Pomodoro]
-                |
-            [Sistema inicia contagem de 25 minutos]
-                |
-            {Ciclo finalizado?}
-                | Não
-            [Continuar loop de foco]
+B[Acessar aplicativo]
 
-                | Sim
-            [Emitir alerta sonoro]
-                |
-            [Iniciar intervalo de 5 minutos]
-                |
-            [Revisar flashcards]
-                |
-[Fim]
+C{Tem conta?}
+
+D[Cadastrar]
+
+E[Fazer login]
+
+F{Credenciais válidas?}
+
+G[Exibir erro]
+
+H[Acessar dashboard]
+
+I{Escolher funcionalidade}
+
+J[Cronograma]
+
+K[Minijogo]
+
+L[Iniciar Pomodoro]
+
+M{Ciclo finalizado?}
+
+N[Revisar flashcards]
+
+O([Fim])
+
+A --> B
+B --> C
+
+C -- Não --> D
+D --> E
+
+C -- Sim --> E
+
+E --> F
+
+F -- Não --> G
+G --> F
+
+F -- Sim --> H
+
+H --> I
+
+I --> J
+
+I --> K
+
+I --> L
+
+L --> M
+
+M -- Não --> L
+
+M -- Sim --> N
+
+N --> O
 ```
-
 ---
 
 ## Explicação
@@ -1058,235 +1072,54 @@ No caminho do **Pomodoro**, o sistema avalia constantemente a condição **Ciclo
 ---
 
 # 9.4 Diagrama de Sequência (UML)
+Ele serve para mostrar a ordem das ações e as trocas de informações que acontecem no sistema quando um usuário realiza uma tarefa.
 
-Representa a comunicação entre objetos ao longo do tempo em cenários específicos de uso.
+![Diagrama de Sequência](diagrama-de-sequencia.png)
 
-## Cenário 1: Autenticação de Usuário
-
-```text
-Usuário   ->   Frontend:  1: inserir e-mail e senha
-Frontend  ->   Backend:   2: POST /auth/login
-Backend   ->   Banco:     3: validar usuário
-Banco     ->   Backend:   4: usuário válido
-Backend   ->   Backend:   [gerar token JWT]
-Backend   ->   Frontend:  5: 200 OK + token JWT
-Frontend  ->   Usuário:   6: exibir dashboard
-
-```
-
-## Cenário 2: Inicialização de Ciclo Pomodoro
-
-```text
-Usuário   ->   Frontend:  7: iniciar Pomodoro
-Frontend  ->   Backend:   8: POST /sessao
-Backend   ->   Banco:     9: salvar sessão
-Banco     ->   Backend:   10: confirmado
-Backend   ->   Frontend:  11: timer iniciado
-Frontend  ->   Usuário:   12: exibir timer 25:00
-
-```
-
-## Cenário 3: Criação de Flashcard
-
-```text
-Usuário   ->   Frontend:  inserir pergunta, resposta e categoria
-Frontend  ->   Backend:   POST /flashcards
-Backend   ->   Banco:     salvar flashcard
-Banco     ->   Backend:   flashcard salvo
-Backend   ->   Frontend:  201 Created
-Frontend  ->   Usuário:   exibir flashcard na lista
-
-```
-
-## Cenário 4: Geração de Quiz no Minijogo
-
-```text
-Usuário   ->   Frontend:  inicializar modo de jogo
-Frontend  ->   Backend:   GET /minijogo/quiz
-Backend   ->   Banco:     buscar flashcards do usuário
-Banco     ->   Backend:   retornar lista de flashcards
-Backend   ->   Backend:   [selecionar perguntas aleatórias]
-Backend   ->   Frontend:  200 OK + lista de questões
-Frontend  ->   Usuário:   exibir primeira questão do quiz
-Usuário   ->   Frontend:  responder questão
-Frontend  ->   Backend:   POST /minijogo/resposta
-Backend   ->   Banco:     atualizar pontuação acumulada
-Banco     ->   Backend:   pontuação atualizada
-Backend   ->   Frontend:  retornar pontuação atual
-Frontend  ->   Usuário:   exibir resultado e pontuação
-
-```
 
 ## Explicação
 
-O diagrama de sequência ilustra a troca de mensagens entre os objetos do sistema ao longo do tempo, evidenciando a ordem das comunicações em cada cenário de uso do CromStudy.
-
-**Cenário 1 — Autenticação de Usuário:** o Usuário insere e-mail e senha no Frontend, que realiza uma chamada HTTP via POST /auth/login ao Backend. O Backend consulta o Banco de dados para validar as credenciais com verificação de hash criptográfico. Confirmada a identidade, o Backend gera internamente um token JWT e retorna uma resposta 200 OK ao Frontend. Por fim, o Frontend exibe a dashboard ao usuário.
-
-**Cenário 2 — Inicialização de Ciclo Pomodoro:** o Usuário aciona o botão de início no Frontend, que despacha uma requisição POST /sessao ao Backend. O Backend registra os metadados da sessão no Banco de dados e recebe a confirmação de persistência. Em seguida, responde ao Frontend com a confirmação de que o timer foi iniciado, e o Frontend passa a exibir o contador regressivo de 25:00 na interface do usuário.
-
-**Cenário 3 — Criação de Flashcard:** o Usuário preenche pergunta, resposta e categoria no Frontend, que envia os dados via POST /flashcards ao Backend. O Backend persiste o flashcard no Banco e retorna 201 Created. O Frontend então exibe o novo card na listagem do usuário.
-
-**Cenário 4 — Geração de Quiz no Minijogo:** o Usuário inicializa o modo de jogo e o Frontend solicita ao Backend via GET /minijogo/quiz as questões. O Backend busca os flashcards do usuário no Banco, seleciona perguntas aleatoriamente e retorna a lista ao Frontend. O usuário responde cada questão e o Frontend envia cada resposta via POST /minijogo/resposta. O Backend atualiza a pontuação acumulada no Banco e retorna o placar atualizado, que é exibido ao usuário ao final do quiz.
+O diagrama de sequência ilustra o fluxo de comunicação do sistema de forma abstrata. Quando o usuário realiza qualquer ação na interface, o **Frontend** captura o evento e dispara uma requisição para o **Backend**.
+O **Backend** processa a regra de negócio necessária, faz a consulta ou atualização via **Prisma Client** e, após receber o retorno, envia a resposta tratada para o **Frontend** atualizar a tela do usuário.
 
 ---
 
 # 9.5 Diagrama de Componentes
+Serve para mostrar como o sistema é dividido em blocos independentes (Frontend e Backend) e como eles se estão organizados e se conectam para funcionar.
 
-Representa os módulos e componentes principais do sistema e como se acoplam.
+![Diagrama de Componentes](diagrama-de-componente.png)
 
-## Diagrama
-```text
-[Frontend - React Native / React.js]
-    |
-    | ---- [Componente de Autenticação]
-    |
-    | ---- [Componente de Agenda e Cronograma]
-    |
-    | ---- [Componente de Pomodoro]
-    |
-    | ---- [Componente de Flashcards]
-    |
-    | ---- [Componente de Métricas]
-    |
-    | ---- [Componente de Minijogo]
-    |
-    | ---- [Componente de Perfil]
-    |
-    | (API REST - HTTP/JSON)
-    |
-    v
-[Backend - Node.js + Express]
-    |
-    | ---- [Módulo Usuários]
-    |
-    | ---- [Módulo Agenda]
-    |
-    | ---- [Módulo Flashcards]
-    |
-    | ---- [Módulo Métricas]
-    |
-    | ---- [Módulo Gamificação]
-    |
-    | ---- [Módulo Notificações]
-    |           |
-    |           v
-    |       [Firebase FCM]
-    |           (Notificações Push)
-    |
-    | ---- [JWT]
-    |           (Autenticação e Segurança de Sessões)
-    |
-    | ---- [Swagger]
-    |           (Documentação Automática de Rotas)
-    |
-    | ---- [Google Calendar API]
-    |           (Sincronização de Agenda)
-    |
-    v
-[Banco de Dados - PostgreSQL]
-    (Leitura e Gravação de Tabelas Relacionais)
-
----
-
-[Hospedagem]
-    |
-    | ---- [Vercel]
-    |           (Frontend - React.js)
-    |
-    | ---- [Render]
-                (Backend - Node.js + Express)
-
-[Controle de Versão]
-    |
-    | ---- [Git + GitHub]
-
-```
----
 
 ## Explicação
+O diagrama de componentes ilustra como o sistema está organizado e como suas partes se comunicam. A arquitetura foi dividida em camadas para garatinr a separação de responsabilidades: 
 
-O diagrama de componentes apresenta a estrutura modular do CromStudy, organizada em duas grandes camadas de processamento — Frontend e Backend — além das integrações externas e da infraestrutura de hospedagem.
+**Camada de apresentação (Frontend):** responsável por toda a experiência do usuário, envio das requisições e armazenamento local de dados via SQlite, permitindo o fucnionamento offline de funcionalidades como cronograma, pomodoro e flshcards.
 
-O **Frontend** é desenvolvido em ecossistema híbrido unificado, utilizando React Native para as versões mobile (Android e iOS) e React.js para a versão web. Ele é composto por componentes isolados e modulares de interface, cada um responsável por uma funcionalidade específica: Autenticação, Agenda e Cronograma, Pomodoro, Flashcards, Métricas, Minijogo e Perfil. A comunicação entre o Frontend e os serviços do Backend ocorre exclusivamente por meio de uma interface unificada de *API REST (HTTP/JSON)*.
+**Camada de negócio (API Backend):** centraliza as regras de negócio do sistema, processando as requisições recebidas do Frontend via HTTPS e coordenando a comunicação com o banco de dados e os serviços externos.
 
-O *Backend* é construído sobre o runtime Node.js com o framework Express, e divide o processamento das regras de negócio em módulos servidores especializados e independentes: Módulo Usuários, Módulo Agenda, Módulo Flashcards, Módulo Métricas, Módulo Gamificação e Módulo Notificações. Essa camada possui acoplamento exclusivo de leitura e gravação com o componente de banco de dados **PostgreSQL**.
+**Camada de dados (Banco de Dados):** responsável pela persistência, armazenanmento seguro e integridade das informações, acessada pelo Backend através do Prisma ORM.
 
-As **dependências e APIs externas** ampliam as capacidades técnicas do sistema. O **Firebase** é utilizado pelo módulo de notificações para entrega de alertas via push notifications (FCM). A **Google Calendar API** é consumida pelo módulo de agenda para sincronização integrada de eventos. O **JWT** garante a criptografia e segurança das sessões autenticadas, e o **Swagger** provê a documentação automática das rotas da API.
-
-A **infraestrutura de hospedagem** é gerenciada via Git e GitHub. O Frontend React.js é distribuído na plataforma Vercel, aproveitando sua rede CDN global. O Backend Node.js + Express é hospedado na plataforma **Render**, que executa as rotas e regras de negócio da aplicação.
+Além disso, o sistema se integra a serviços externos: Google OAuth 2.0 para autenticação do usuário, Firebase Cloud Messaging para envio de notificações push e SendGrid para disparo de e-mails transacionais. 
 
 ---
 
 # 9.6 Diagrama de Implantação (Deployment)
 
-Representa onde o sistema será executado fisicamente em ambiente de produção, especificando nós de infraestrutura e protocolos de comunicação de rede.
+Serve para mostrar a infraestrutura física do sistema, ou seja, em quais hardwares/servidores o software está instalado e como esses equipamentos se comunicam entre si.
 
-## Diagrama
-```text
-[Usuário]
-    |
-    | ---- «device» [Dispositivo Mobile]
-    |           Android 8+ / iOS 13+
-    |           |
-    |           | ---- [App React Native]
-    |                       |
-    |                       | ---- [Cache Local - Offline]
-    |
-    | ---- «browser» [Navegador Web]
-                Desktop / Notebook
-                |
-                | ---- [App React.js - SPA]
-    |
-    | (HTTPS)
-    |
-Internet
-    |
-    | (HTTPS)
-    |
-«server» [Vercel - CDN / SSL]
-    |
-    | ---- [Build React.js]
-    |           (Arquivos Estáticos)
-    |
-    v
-«server» [Render - Node.js + Express]
-    |
-    | ---- [API REST]
-    |
-    | ---- [JWT Auth]
-    |
-    | ---- [Firebase FCM]
-    |           (Push Notifications)
-    |
-    | ---- [Google Calendar API]
-    |           (Sincronização de Agenda)
-    |
-    v
-«database» [Supabase - PostgreSQL]
-    |
-    | ---- [PostgreSQL]
-    |           (Dados dos Usuários, Flashcards,
-    |            Tarefas, Sessões, Métricas e Pontuações)
-    |
-    | ---- [Backup Automático]
-```
-
----
+![Diagrama de Implantação](diagrama-de-implantação.png)
 
 ## Explicação
 
-O diagrama de implantação descreve a infraestrutura física e em nuvem sobre a qual o CromStudy é executado em ambiente de produção, identificando cada nó de computação e os protocolos de rede utilizados.
+O diagrama de implantação apresenta a infraestrutura física e de rede onde o sistema opera:
 
-O ponto de partida são os *dispositivos do usuário, que se dividem em dois tipos. O primeiro é o **dispositivo mobile** («device»), composto por smartphones com Android 8+ ou iOS 13+, que executam nativamente o artefato *App React Native. Esse aplicativo conta com um subsistema interno de Cache Local (offline), armazenado em disco no próprio dispositivo, que garante o funcionamento de funcionalidades como agenda, flashcards e Pomodoro mesmo sem conexão com a internet. O segundo é o **navegador web** («browser»), executado em computadores desktop ou notebooks, que carrega dinamicamente na memória o artefato *App React.js (SPA)*.
+**Dispositivo do Usuário:** o cliente acessa a aplicação através de um navegador web ou dispositivo móvel. Dentro do dispositivo também roda o SQLite, um banco de dados local que permite o uso de funcionalidades como cronograma, Pomodoro e flashcards mesmo sem conexão com a internet.
 
-Todos os dispositivos do usuário se comunicam com a infraestrutura em nuvem por meio da **Internet via protocolo HTTPS**, garantindo a criptografia e a segurança dos dados em trânsito.
+**Servidor de Hospedagem Cloud:** hospeda o Backend desenvolvido em NestJS com Prisma ORM, recebendo as requisições do dispositivo do usuário via HTTPS e REST API, processando as regras de negócio e coordenando a comunicação com os demais serviços.
 
-O primeiro servidor em nuvem é o **Vercel** («server»), responsável pelo provisionamento escalável dos arquivos estáticos do Frontend. Os pacotes compilados do React.js (build) são protegidos e distribuídos globalmente por meio de uma topologia de **CDN com SSL**.
+**Servidor de Banco de Dados:** instância isolada onde roda o PostgreSQL, responsável pelo armazenamento permanente de todas as informações do sistema. A comunicação com o servidor cloud é feita via Prisma Client através do protocolo TCP/IP.
 
-O segundo servidor é o **Render** («server»), que executa a aplicação Backend em Node.js + Express. Esse nó gerencia o roteamento da *API REST, a autenticação por JWT, e realiza chamadas externas para o **Firebase FCM** (envio de push notifications) e para a **Google Calendar API** (sincronização de agenda).
-
-Por fim, o nó de banco de dados é o **Supabase** («database»), um serviço gerenciado em nuvem de alta disponibilidade que executa o motor relacional PostgreSQL. Ele é responsável pela persistência de todos os dados do sistema — usuários, flashcards, tarefas, sessões, métricas e pontuações — e mantém rotinas automatizadas de backup.
+Além dos nós físicos, o sistema se integra ao Google OAuth 2.0 para autenticação do usuário e aos serviços Firebase e SendGrid para envio de notificações push e e-mails transacionais.
 
 ---
 
